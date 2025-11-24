@@ -1,0 +1,1218 @@
+WEBVTT
+
+1
+00:00:00.540 --> 00:00:04.100
+Zhongzheng Xu: Okay… And…
+
+2
+00:00:04.630 --> 00:00:24.429
+Zhongzheng Xu: Okay, we can go ahead and start. So, I will first start with some pretty abstract questions. So, when you hear the term multi-agent system, what does it mean to you? And, for example, like, how do you see it different from, like, let's say, a single agent or a single LLM?
+
+3
+00:00:26.590 --> 00:00:39.640
+Mohneet Kaur Amandeep Singh Sandhu: So… I think when we're working with multi-agents, a multi-agent system, it… Essentially means,
+
+4
+00:00:39.820 --> 00:00:44.810
+Mohneet Kaur Amandeep Singh Sandhu: you're not using a single L&M that tries to do everything to a team of
+
+5
+00:00:44.930 --> 00:00:53.339
+Mohneet Kaur Amandeep Singh Sandhu: specialized agents, or that can collaborate just like we do in a real workflow. So a single agent
+
+6
+00:00:53.520 --> 00:00:57.280
+Mohneet Kaur Amandeep Singh Sandhu: It's most of the times good for linear tasks, but it…
+
+7
+00:00:57.410 --> 00:01:09.590
+Mohneet Kaur Amandeep Singh Sandhu: tends to hallucinate. It struggles with long reasoning chains, and and most of the times, it can't scale across complex, call… complex tool calls.
+
+8
+00:01:09.680 --> 00:01:29.429
+Mohneet Kaur Amandeep Singh Sandhu: And on the other hand, a multi-agent system, it makes sure that it breaks the problem into different roles. For example, a planner, that, you know, that can decide the next steps, an analyzer that can execute those tasks, those tasks.
+
+9
+00:01:29.620 --> 00:01:37.459
+Mohneet Kaur Amandeep Singh Sandhu: And a critic that can check, for correctness, or, like, a validator that can enforce
+
+10
+00:01:37.670 --> 00:01:54.510
+Mohneet Kaur Amandeep Singh Sandhu: reliability, so that our answers are what we're expecting it to be. So each agent is specifically optimized for a specific kind of behavior, and there's coordination between them, which makes it more accurate, than a single agent.
+
+11
+00:01:55.160 --> 00:02:10.369
+Zhongzheng Xu: I see, okay. It's a very comprehensive definition. Okay. And can you tell me about, just one or two representative projects that you have done in the past, that used multi-agent systems?
+
+12
+00:02:11.550 --> 00:02:19.620
+Mohneet Kaur Amandeep Singh Sandhu: So… Oh, okay.
+
+13
+00:02:19.930 --> 00:02:20.790
+Mohneet Kaur Amandeep Singh Sandhu: I would think.
+
+14
+00:02:21.580 --> 00:02:22.300
+Mohneet Kaur Amandeep Singh Sandhu: Okay.
+
+15
+00:02:22.770 --> 00:02:39.660
+Mohneet Kaur Amandeep Singh Sandhu: So, in my internship at Amazon, this last summer, I worked on creating a project where we were building an autonomous root cause analysis system. It was built for very large-scale operational logs.
+
+16
+00:02:39.660 --> 00:02:43.240
+Mohneet Kaur Amandeep Singh Sandhu: At Amazon. And, so,
+
+17
+00:02:43.360 --> 00:02:47.609
+Mohneet Kaur Amandeep Singh Sandhu: We had different types of agents in that, which coordinated
+
+18
+00:02:47.880 --> 00:03:07.539
+Mohneet Kaur Amandeep Singh Sandhu: Instead of just one model. So we had the… all… all of this information that I know about it is through that itself, the planner region, which decomposed the incident question into steps. There was a retriever agent, which pulled the relevant log slices. There was an analyzer agent, which generated…
+
+19
+00:03:07.930 --> 00:03:30.669
+Mohneet Kaur Amandeep Singh Sandhu: We generated the domain, specific Python code to inspect patents, because the data was so huge that most of the times it would hallucinate to, you know, pinpoint that what was the root cause behind the failure of delivery at the right time. So we had to make sure that we are, you know, using just a subset of the dataset to get
+
+20
+00:03:30.730 --> 00:03:32.960
+Mohneet Kaur Amandeep Singh Sandhu: the pattern,
+
+21
+00:03:33.040 --> 00:03:47.270
+Mohneet Kaur Amandeep Singh Sandhu: And obviously, we understood the risk that there could be a possibility where the subset of data that we are using and the Python code that we are generating
+
+22
+00:03:47.770 --> 00:03:55.639
+Mohneet Kaur Amandeep Singh Sandhu: and hoping that it would generalize to the entire dataset, there is a possibility that some root cause agent would be missed. But…
+
+23
+00:03:56.000 --> 00:04:08.829
+Mohneet Kaur Amandeep Singh Sandhu: that's something that, we need to improve on, of course. There was a critic agent that reviewed the code for correctness, a validation agent which performed the TSNE checks and the SHAP attribution to ensure
+
+24
+00:04:09.160 --> 00:04:19.159
+Mohneet Kaur Amandeep Singh Sandhu: we have reliability. That was one of the projects that I worked on recently that used multi-agents.
+
+25
+00:04:19.630 --> 00:04:23.330
+Zhongzheng Xu: I see, I see. And in that project, did you…
+
+26
+00:04:23.650 --> 00:04:27.180
+Zhongzheng Xu: Like, what was your role? Did you focus on
+
+27
+00:04:27.480 --> 00:04:33.319
+Zhongzheng Xu: A specific component, like maybe writing system prompts, or you're kind of doing the entire project.
+
+28
+00:04:34.190 --> 00:04:43.969
+Mohneet Kaur Amandeep Singh Sandhu: So I was doing the entire project. I was just given the problem statement that this is what… this is the problem that we're currently facing, and
+
+29
+00:04:44.280 --> 00:04:46.629
+Mohneet Kaur Amandeep Singh Sandhu: The major, the most…
+
+30
+00:04:46.730 --> 00:04:55.520
+Mohneet Kaur Amandeep Singh Sandhu: important problem that I kept facing was the amount of data set that we had, the number of columns, it was just way too large, you know?
+
+31
+00:04:55.520 --> 00:04:56.049
+Zhongzheng Xu: It's way too long.
+
+32
+00:04:56.050 --> 00:05:08.430
+Mohneet Kaur Amandeep Singh Sandhu: So, way too large. So, it took a lot of time to come up with some form of way to make sure that the LN doesn't hallucinate, and we can, we can…
+
+33
+00:05:08.690 --> 00:05:19.949
+Mohneet Kaur Amandeep Singh Sandhu: understand at least 90 to… I think, the threshold was 95%, I think. I don't remember, but 95% of the, reasons why the package was missed. So…
+
+34
+00:05:20.610 --> 00:05:28.690
+Mohneet Kaur Amandeep Singh Sandhu: my responsibility was… I mean, I was just given the problem statement, so I had to do everything on my own, and
+
+35
+00:05:29.350 --> 00:05:48.940
+Mohneet Kaur Amandeep Singh Sandhu: Yeah, so that was one of the main things that I had come up with, and the other thing was the… I proposed that we used, DSPY-based prompt signatures, that created the domain-specific Python analyzers instead of relying on, the fixed prompts.
+
+36
+00:05:49.780 --> 00:05:50.600
+Mohneet Kaur Amandeep Singh Sandhu: Every time.
+
+37
+00:05:51.540 --> 00:06:04.719
+Zhongzheng Xu: I see. And for that project, do you remember, like, what kind of frameworks did you use? Like, some popular ones, like, LaneChain, LaneGraph?
+
+38
+00:06:05.100 --> 00:06:08.159
+Mohneet Kaur Amandeep Singh Sandhu: So,
+
+39
+00:06:08.300 --> 00:06:22.099
+Mohneet Kaur Amandeep Singh Sandhu: we, of course, used the SPY for prompt, prompt programming, prompt engineering, and the agent signatures, and, we did use, in the beginning, we did use LAMChain for, we…
+
+40
+00:06:22.190 --> 00:06:29.880
+Mohneet Kaur Amandeep Singh Sandhu: I mean, I tried considering the possibility of integrating land graphs as well, but the time period was too short to, you know, understand.
+
+41
+00:06:30.070 --> 00:06:37.060
+Mohneet Kaur Amandeep Singh Sandhu: both of those things, I was a little familiar with the working of Langchain, so we used Langchain for orchestrating the
+
+42
+00:06:37.210 --> 00:06:40.260
+Mohneet Kaur Amandeep Singh Sandhu: Planner, analyzer, and critic workflows.
+
+43
+00:06:40.580 --> 00:06:50.540
+Zhongzheng Xu: Okay, and then, so you said that you have a planner, and then… or could you,
+
+44
+00:06:50.790 --> 00:06:53.600
+Zhongzheng Xu: Can I have you go over, like, the high-level strategy?
+
+45
+00:06:53.600 --> 00:06:58.010
+Mohneet Kaur Amandeep Singh Sandhu: Second, I… I think I… my yoga.
+
+46
+00:06:58.010 --> 00:06:58.740
+Zhongzheng Xu: Okay.
+
+47
+00:06:59.800 --> 00:07:03.569
+Mohneet Kaur Amandeep Singh Sandhu: Not working that well. Let me just switch to normal audio.
+
+48
+00:07:03.820 --> 00:07:04.580
+Zhongzheng Xu: Okay.
+
+49
+00:07:08.320 --> 00:07:10.110
+Mohneet Kaur Amandeep Singh Sandhu: Can you owe me fine now?
+
+50
+00:07:10.110 --> 00:07:11.179
+Zhongzheng Xu: Yeah, yeah, I can.
+
+51
+00:07:12.700 --> 00:07:13.720
+Zhongzheng Xu: Okay, here.
+
+52
+00:07:18.160 --> 00:07:18.890
+Mohneet Kaur Amandeep Singh Sandhu: you know.
+
+53
+00:07:18.890 --> 00:07:19.660
+Zhongzheng Xu: Okay.
+
+54
+00:07:19.780 --> 00:07:27.219
+Zhongzheng Xu: Okay. And then, could you just briefly go over the high-level structure again? So you have a planner, and then…
+
+55
+00:07:35.020 --> 00:07:36.340
+Mohneet Kaur Amandeep Singh Sandhu: Hello?
+
+56
+00:07:36.340 --> 00:07:36.800
+Zhongzheng Xu: Hello?
+
+57
+00:07:36.800 --> 00:07:41.550
+Mohneet Kaur Amandeep Singh Sandhu: Yeah, sorry, I'm so sorry. There's just some network issue.
+
+58
+00:07:41.550 --> 00:07:44.590
+Zhongzheng Xu: Oh, I guess, okay, network issue. No worries.
+
+59
+00:07:44.590 --> 00:07:47.930
+Mohneet Kaur Amandeep Singh Sandhu: So, at higher level, okay.
+
+60
+00:07:48.220 --> 00:07:51.689
+Mohneet Kaur Amandeep Singh Sandhu: So the system followed, like.
+
+61
+00:07:51.830 --> 00:08:11.270
+Mohneet Kaur Amandeep Singh Sandhu: we have a planner, we… next, then we have the worker, the critic, and finally the validator. That was the architecture. So the planner agent interprets the user query and breaks it into actionable steps. So in this case, the user was the operators who had to manually write those reports behind why the delivery was delayed.
+
+62
+00:08:11.270 --> 00:08:15.700
+Mohneet Kaur Amandeep Singh Sandhu: Then we have the retriever or the worker agent, which… which,
+
+63
+00:08:15.890 --> 00:08:31.979
+Mohneet Kaur Amandeep Singh Sandhu: which executed those steps, like, you know, the data was stored on Redshift, so querying the Redshift data, analyzing the event logs, generating the Python code to run specific checks. Then I had the critic agent, which evaluated the
+
+64
+00:08:31.980 --> 00:08:46.360
+Mohneet Kaur Amandeep Singh Sandhu: outputs, the JSON structured outputs that I got for correctness, or, like, logical consistency as well, so… and finally, I had the validator agent, which performed statistical validation.
+
+65
+00:08:46.360 --> 00:09:02.269
+Mohneet Kaur Amandeep Singh Sandhu: Using TSNE and SHAP, and drift scores, there was, again, some different kind of score that we came up with, as a part of the project, and schema checks to confirm that the results are reliable. So…
+
+66
+00:09:02.630 --> 00:09:04.590
+Mohneet Kaur Amandeep Singh Sandhu: Yeah.
+
+67
+00:09:04.590 --> 00:09:12.179
+Zhongzheng Xu: Okay, alright, thank you for clarifying. And then… Was this…
+
+68
+00:09:12.430 --> 00:09:23.990
+Zhongzheng Xu: Your, idea to, like, use a multi-agent system for this specific task, since you mentioned that you were just given the task, or did they kind of say, you have to do this?
+
+69
+00:09:24.840 --> 00:09:42.000
+Mohneet Kaur Amandeep Singh Sandhu: Not really. Again, they… I… I was just given the problem statement at hand, and it was a very open-ended discussion that I… I was… they were open to discussing any ideas, so I proposed the multi-Asian approach.
+
+70
+00:09:42.000 --> 00:09:47.599
+Mohneet Kaur Amandeep Singh Sandhu: Because when I analyzed the problem, I realized that a single LLM necessarily… I…
+
+71
+00:09:48.020 --> 00:09:50.750
+Mohneet Kaur Amandeep Singh Sandhu: So, again, the time period was very short, right? It's just.
+
+72
+00:09:50.750 --> 00:09:51.600
+Zhongzheng Xu: Okay.
+
+73
+00:09:51.600 --> 00:10:10.990
+Mohneet Kaur Amandeep Singh Sandhu: So I had to, like… I did not have the time to test, like, first start with testing a single LLM, because from what… from how much experience I had working with agents, I thought that… that it wouldn't be reliable for multi-step reasoning, or tool calling, and statistical validation at the same time.
+
+74
+00:10:11.360 --> 00:10:16.900
+Zhongzheng Xu: Okay, I see, I see. That's fair. And then… So…
+
+75
+00:10:17.390 --> 00:10:27.179
+Zhongzheng Xu: So I guess it was kind of intuitive to have this multi-agent system, but could you walk me through of, like, how did you go from
+
+76
+00:10:27.180 --> 00:10:42.180
+Zhongzheng Xu: okay, I know that it's going to be a multi-agent system, to knowing exactly, how many, like, how many agents that you'll have, what are every single individual agents, and kind of, like, what their role is going to be.
+
+77
+00:10:44.360 --> 00:10:50.010
+Mohneet Kaur Amandeep Singh Sandhu: I think… So…
+
+78
+00:10:50.040 --> 00:11:01.749
+Zhongzheng Xu: Or did the high-level structure change over time? Did you have, like, the critic agent at the very beginning, or you kind of added that later?
+
+79
+00:11:03.050 --> 00:11:10.300
+Mohneet Kaur Amandeep Singh Sandhu: I mean, of course, the plan did change a couple of times as we went along, but
+
+80
+00:11:11.060 --> 00:11:13.389
+Mohneet Kaur Amandeep Singh Sandhu: I… so… because…
+
+81
+00:11:14.560 --> 00:11:21.720
+Mohneet Kaur Amandeep Singh Sandhu: So first, like, I started from, like, the end… I had… of course, I had regular discussions with my mentor as well.
+
+82
+00:11:22.140 --> 00:11:25.610
+Mohneet Kaur Amandeep Singh Sandhu: And I, I would just, you know,
+
+83
+00:11:26.270 --> 00:11:31.690
+Mohneet Kaur Amandeep Singh Sandhu: like, put an image out that, okay, this is what I think,
+
+84
+00:11:32.200 --> 00:11:35.980
+Mohneet Kaur Amandeep Singh Sandhu: we can, you know, move forward with. And, of course, I had
+
+85
+00:11:36.120 --> 00:11:48.780
+Mohneet Kaur Amandeep Singh Sandhu: my co-team members as well, who really helped me. So I… I tried to, like, break it down into, like, first understanding the incident, by manually going through each of those logs and
+
+86
+00:11:48.850 --> 00:11:51.690
+Mohneet Kaur Amandeep Singh Sandhu: defining the question, you know, and then…
+
+87
+00:11:51.710 --> 00:12:12.289
+Mohneet Kaur Amandeep Singh Sandhu: pull the right slices of logs, then analyzing the patterns, or writing the code. I tried doing all of this manually by myself for, like, almost a month. That's what I was told, that for a month, I need to do all of those things that I expect the LLM to do manually, the way operators would do it.
+
+88
+00:12:12.290 --> 00:12:18.089
+Mohneet Kaur Amandeep Singh Sandhu: And, summarizing all of it using Jira. So, that… that gave me, like.
+
+89
+00:12:18.090 --> 00:12:21.770
+Zhongzheng Xu: natural phase boundaries, I would say. I see.
+
+90
+00:12:21.770 --> 00:12:26.149
+Mohneet Kaur Amandeep Singh Sandhu: phase, is, like, as a candidate.
+
+91
+00:12:26.300 --> 00:12:32.879
+Mohneet Kaur Amandeep Singh Sandhu: You know, and so after that, I would, like, turn those phases that I had,
+
+92
+00:12:32.980 --> 00:12:37.080
+Mohneet Kaur Amandeep Singh Sandhu: that I had in mind, that, okay, this is how it should be executed.
+
+93
+00:12:37.110 --> 00:12:53.219
+Mohneet Kaur Amandeep Singh Sandhu: into, like, capabilities or responsibilities. So the understand and plan phase would be the planner region. Then I would pull the logs and run the analysis. So that would be… that is something that I would want
+
+94
+00:12:53.220 --> 00:13:05.199
+Mohneet Kaur Amandeep Singh Sandhu: an analyzer region to perform. So, the actions that I performed, from start to end in the first month, I tried visualizing, okay, this is what I want, and
+
+95
+00:13:05.200 --> 00:13:22.879
+Mohneet Kaur Amandeep Singh Sandhu: for this particular purpose, it's… for this particular phase, it's a little independent from the next or the previous phases, so I need a different agent for it. Or if it… or even if it's dependent on the first or the next phase, this is how I want the orchestration to be.
+
+96
+00:13:23.730 --> 00:13:32.160
+Zhongzheng Xu: Okay, I see. And I guess in that same, month, you also kind of figured out, like, how do you, how do you,
+
+97
+00:13:32.940 --> 00:13:41.020
+Zhongzheng Xu: Orchestrate among agents, like, what kind of tools, or, like, how do you manage the memory also in that process?
+
+98
+00:13:41.590 --> 00:13:42.300
+Mohneet Kaur Amandeep Singh Sandhu: Yes.
+
+99
+00:13:44.150 --> 00:13:45.100
+Mohneet Kaur Amandeep Singh Sandhu: I see.
+
+100
+00:13:46.000 --> 00:13:51.430
+Mohneet Kaur Amandeep Singh Sandhu: Yeah, I think it was the first month itself. The first month was very… was a little…
+
+101
+00:13:51.530 --> 00:13:54.729
+Mohneet Kaur Amandeep Singh Sandhu: I mean, just understanding how Amazon worked and how the delivery
+
+102
+00:13:55.370 --> 00:14:11.200
+Mohneet Kaur Amandeep Singh Sandhu: worked, which… which… I was very surprised that it took me a really long time. And I had to think very carefully about the orchestration and the memory part as well, otherwise, because the system would just become a black box. You know, so…
+
+103
+00:14:12.370 --> 00:14:17.590
+Mohneet Kaur Amandeep Singh Sandhu: Yeah, I mean, they just taught me a lot of things, like, on the orchestration side, I remember I…
+
+104
+00:14:17.730 --> 00:14:28.229
+Mohneet Kaur Amandeep Singh Sandhu: We learned something about the planner-centric, there was some graph-style pattern, like, defining each agent with a very clear contract input.
+
+105
+00:14:28.230 --> 00:14:28.550
+Zhongzheng Xu: Totally.
+
+106
+00:14:28.550 --> 00:14:33.470
+Mohneet Kaur Amandeep Singh Sandhu: and tools it can call using DSPY and Langchain. So, yeah.
+
+107
+00:14:33.790 --> 00:14:39.320
+Zhongzheng Xu: Okay. And then… So, they taught you, like.
+
+108
+00:14:39.650 --> 00:14:44.779
+Zhongzheng Xu: This general knowledge, and, you kind of just apply to your own project.
+
+109
+00:14:46.250 --> 00:14:49.390
+Mohneet Kaur Amandeep Singh Sandhu: Yeah, the…
+
+110
+00:14:50.280 --> 00:15:00.090
+Mohneet Kaur Amandeep Singh Sandhu: the DSPY and Langchain part, of course, I knew a little bit about it and knew how to work with it, but, like.
+
+111
+00:15:00.220 --> 00:15:23.720
+Mohneet Kaur Amandeep Singh Sandhu: planning the loops, tool calling, the agent patents, was my contribution, but my mentor, and my buddy, I don't remember, but I think that's what he was called, but he really helped me in figuring out how to translate those ideas into a real production-level system, because I'd never worked on, like, such a large scale.
+
+112
+00:15:25.280 --> 00:15:32.580
+Zhongzheng Xu: I see, I see. And then, do you remember, like, if we had to…
+
+113
+00:15:32.730 --> 00:15:34.560
+Zhongzheng Xu: Write the system prompts?
+
+114
+00:15:35.430 --> 00:15:37.070
+Zhongzheng Xu: For, like, agents.
+
+115
+00:15:38.200 --> 00:15:52.940
+Mohneet Kaur Amandeep Singh Sandhu: So before we, integrated DSPY, yes, I had to write those, prompts manually by myself, and I… honestly, I think, by the, end of…
+
+116
+00:15:53.230 --> 00:16:12.979
+Mohneet Kaur Amandeep Singh Sandhu: 2.5 months itself, we'd been using the manually written… The manual process itself. Like, you know, for each agent, I would define things like who you are, what your role and your scope is, what things are you allowed to do, or the tools, the data, the constraints, or what…
+
+117
+00:16:12.990 --> 00:16:27.030
+Mohneet Kaur Amandeep Singh Sandhu: what you must output, like the schema, or the form, or the success criteria, and what you must not do. That was a very frustrating part of the prompt writing, like, I had to…
+
+118
+00:16:27.040 --> 00:16:34.429
+Mohneet Kaur Amandeep Singh Sandhu: I literally displayed my frustration in every problem, like, okay, you were not supposed to do this, how many times do I tell you?
+
+119
+00:16:35.220 --> 00:16:35.990
+Mohneet Kaur Amandeep Singh Sandhu: But yeah.
+
+120
+00:16:35.990 --> 00:16:46.910
+Zhongzheng Xu: That's, that's funny, okay. So, I guess it was, like, a lot of trial and error, sometimes they give you unexpected behavior, and you have to manually add that to the prompt.
+
+121
+00:16:46.910 --> 00:16:48.200
+Mohneet Kaur Amandeep Singh Sandhu: Yeah, right.
+
+122
+00:16:48.370 --> 00:16:50.690
+Zhongzheng Xu: Okay, that's frustrating, interesting.
+
+123
+00:16:51.050 --> 00:17:00.210
+Zhongzheng Xu: Okay. And then I think you talked a little bit about how did you, like, evaluate the system? You have some certain type of score.
+
+124
+00:17:02.080 --> 00:17:14.530
+Zhongzheng Xu: But, could you briefly go over, like, how did you, how did you monitor the system, or once, let's say, you had the first prototype, once it's running, did you have…
+
+125
+00:17:14.660 --> 00:17:21.990
+Zhongzheng Xu: Any tools that help to, like, monitor the system? Maybe checking, like, the traces.
+
+126
+00:17:22.220 --> 00:17:25.139
+Zhongzheng Xu: Seeing, like, intermediate outputs like that.
+
+127
+00:17:26.900 --> 00:17:35.709
+Mohneet Kaur Amandeep Singh Sandhu: So, okay, talking about the score, the score was, we called it the thrift score, just…
+
+128
+00:17:36.120 --> 00:17:43.660
+Mohneet Kaur Amandeep Singh Sandhu: to give it a name, but, it was… So the data that we had, right, since,
+
+129
+00:17:44.020 --> 00:17:51.739
+Mohneet Kaur Amandeep Singh Sandhu: the data set is so huge, and we're using Python code to… Create tools.
+
+130
+00:17:52.230 --> 00:17:59.040
+Mohneet Kaur Amandeep Singh Sandhu: you know, that could be generalized to the entire dataset. Now, I can't use the entire dataset, for
+
+131
+00:17:59.040 --> 00:18:13.720
+Mohneet Kaur Amandeep Singh Sandhu: finding some pattern, because then it would hallucinate. So what I want to do is, I want to select a subset of data, and the patterns that I get from those, for the root causes, I use that, those, that subset data to create, Python tools.
+
+132
+00:18:14.200 --> 00:18:18.449
+Mohneet Kaur Amandeep Singh Sandhu: tools that can be generalized to the entire, data.
+
+133
+00:18:18.450 --> 00:18:19.380
+Zhongzheng Xu: Okay. Okay.
+
+134
+00:18:19.380 --> 00:18:37.319
+Mohneet Kaur Amandeep Singh Sandhu: So, but what happens is that, now, the main thing that we kept thinking about was, okay, I understand that I need a subset of data, but what would be the technique used to get that subset? So there are different ways, like, you know, very simple ones, like, maybe random, or,
+
+135
+00:18:37.810 --> 00:18:40.599
+Mohneet Kaur Amandeep Singh Sandhu: the centroid way, or, you know, all those different…
+
+136
+00:18:40.740 --> 00:18:53.919
+Mohneet Kaur Amandeep Singh Sandhu: things. But again, like, if you're using a method like Centroid, it would just give you the most common ones, so we, we…
+
+137
+00:18:54.180 --> 00:19:11.949
+Mohneet Kaur Amandeep Singh Sandhu: we thought that, okay, if my data can be converted into LSTM using embeddings, and if I use that data set, and then I see how much the product is changing stages.
+
+138
+00:19:12.180 --> 00:19:22.900
+Mohneet Kaur Amandeep Singh Sandhu: like, let's say today it was ingested, then tomorrow it was, sorry, I don't remember the terms, what the workflow that a product goes through.
+
+139
+00:19:22.900 --> 00:19:35.679
+Mohneet Kaur Amandeep Singh Sandhu: But, it was staged, it was packed, all of these stages, right? So, we observe that when a prop… when a product is going through multiple stages, back and forth.
+
+140
+00:19:35.890 --> 00:19:53.059
+Mohneet Kaur Amandeep Singh Sandhu: you know, some… it does most of the times lead to not being delivered at time. So, we need… we need those tracking IDs that are unusual. So, that's… that's why you used LSTM embeddings for… to understand,
+
+141
+00:19:53.670 --> 00:20:03.320
+Mohneet Kaur Amandeep Singh Sandhu: The packages that are showing the most unusual behavior compared to the most common ones, and then just use those selective, packages.
+
+142
+00:20:03.390 --> 00:20:17.829
+Mohneet Kaur Amandeep Singh Sandhu: And, based on that, we compared, like, different techniques. So it's not like that, okay, we thought about this. We implemented the math, and we just chose that technique. No, we… we compared it with different techniques, and the,
+
+143
+00:20:18.210 --> 00:20:28.639
+Mohneet Kaur Amandeep Singh Sandhu: we got the most unique root causes through that technique, so that's what we went ahead with. And, for every run of the pipeline, we…
+
+144
+00:20:28.780 --> 00:20:33.560
+Mohneet Kaur Amandeep Singh Sandhu: We tried to produce a structured trace,
+
+145
+00:20:33.800 --> 00:20:38.469
+Mohneet Kaur Amandeep Singh Sandhu: So when the agent acted, of course, we had the planner, the analyzer, and all those things.
+
+146
+00:20:38.470 --> 00:20:39.340
+Zhongzheng Xu: Yo.
+
+147
+00:20:39.340 --> 00:20:48.540
+Mohneet Kaur Amandeep Singh Sandhu: What tools were called were the Redshift, of course, Redshift query, S3 Read, Python Sandbox, Shab.
+
+148
+00:20:48.540 --> 00:20:55.140
+Zhongzheng Xu: Was that through, Amazon's, some, like, some Amazon tools? AWS tools?
+
+149
+00:20:56.020 --> 00:20:56.480
+Mohneet Kaur Amandeep Singh Sandhu: Yes.
+
+150
+00:20:56.480 --> 00:20:59.129
+Zhongzheng Xu: Like, the structured, traces.
+
+151
+00:20:59.750 --> 00:21:01.429
+Mohneet Kaur Amandeep Singh Sandhu: Yeah, AWS tools.
+
+152
+00:21:01.430 --> 00:21:02.750
+Zhongzheng Xu: Oh, okay, okay.
+
+153
+00:21:04.140 --> 00:21:09.060
+Mohneet Kaur Amandeep Singh Sandhu: And… So…
+
+154
+00:21:10.720 --> 00:21:20.840
+Mohneet Kaur Amandeep Singh Sandhu: I, the way we tried to evaluate, so, again, the time period was so, so short that we, of course, couldn't
+
+155
+00:21:21.390 --> 00:21:37.280
+Mohneet Kaur Amandeep Singh Sandhu: really experiment with it that much, but we tried to compare it with the amount of time that it takes the operators compared to the amount of time it takes the LLM to create the final report behind the root causes in a particular station on a particular date.
+
+156
+00:21:37.280 --> 00:21:48.670
+Mohneet Kaur Amandeep Singh Sandhu: And, get those reports, we share it with the operators, and, after we share it with the operators, we needed, like, you know, like a thumbs up, that, okay, this looks good.
+
+157
+00:21:48.670 --> 00:21:51.279
+Mohneet Kaur Amandeep Singh Sandhu: And, maybe this is something that can be…
+
+158
+00:21:51.290 --> 00:22:05.040
+Mohneet Kaur Amandeep Singh Sandhu: worked on further ahead, and in production as well. So, that's something that we did get. We did get, like, thumbs up from the operators as well. They liked the kind of results that their LLM was returning.
+
+159
+00:22:05.250 --> 00:22:06.909
+Zhongzheng Xu: Nice, nice.
+
+160
+00:22:07.140 --> 00:22:12.820
+Mohneet Kaur Amandeep Singh Sandhu: But yeah, time, I think time, and the…
+
+161
+00:22:13.550 --> 00:22:36.120
+Mohneet Kaur Amandeep Singh Sandhu: operator's approval and their ability to trace back, like, if they see some reason, like, okay, the main reason was, let's say that a product was placed in a different bag than it was expected to, and that's the reason that it was… that the product delivery was delayed. Now, when the operator looks at this report, there should be some way that it can trace back
+
+162
+00:22:36.160 --> 00:22:37.230
+Mohneet Kaur Amandeep Singh Sandhu: Oh…
+
+163
+00:22:37.610 --> 00:22:53.730
+Mohneet Kaur Amandeep Singh Sandhu: trace back to the data that was used to, get that decision, in the report. So that traceability was also possible, so, overall, they liked it. So, of course, more things could be done.
+
+164
+00:22:53.730 --> 00:22:54.429
+Zhongzheng Xu: I see.
+
+165
+00:22:54.430 --> 00:22:56.000
+Mohneet Kaur Amandeep Singh Sandhu: The time was short, so…
+
+166
+00:22:56.270 --> 00:23:06.999
+Zhongzheng Xu: Yeah, yeah, totally understand. Okay, just for clarification, so, strictly talking about, like, just monitoring the pipeline, the system, you…
+
+167
+00:23:07.100 --> 00:23:16.980
+Zhongzheng Xu: Primarily just relied on the, like, the trace logs, the structured logs, and you're inspecting, like, the tool use, the outputs.
+
+168
+00:23:18.920 --> 00:23:20.610
+Zhongzheng Xu: those information.
+
+169
+00:23:21.510 --> 00:23:22.180
+Mohneet Kaur Amandeep Singh Sandhu: Hmm.
+
+170
+00:23:22.400 --> 00:23:23.130
+Zhongzheng Xu: Okay.
+
+171
+00:23:23.360 --> 00:23:28.950
+Zhongzheng Xu: And then… so, I think you already talked a lot, but,
+
+172
+00:23:29.570 --> 00:23:38.750
+Zhongzheng Xu: when you're developing, have you run into, like, other, issues? Like, bugs, that is more, maybe, like, engineering?
+
+173
+00:23:41.000 --> 00:23:44.290
+Mohneet Kaur Amandeep Singh Sandhu: I did.
+
+174
+00:23:44.770 --> 00:23:50.829
+Mohneet Kaur Amandeep Singh Sandhu: So initially, since… Okay, let me think…
+
+175
+00:23:50.990 --> 00:23:59.469
+Mohneet Kaur Amandeep Singh Sandhu: I was actually very much engrossed in the statistical part, but, some of the issues Engineering-based issues.
+
+176
+00:23:59.570 --> 00:24:03.840
+Mohneet Kaur Amandeep Singh Sandhu: Like, oh yeah, there was one, the tool called…
+
+177
+00:24:03.840 --> 00:24:21.399
+Mohneet Kaur Amandeep Singh Sandhu: tool calls, made were failing a couple… a lot of times. There were schema mismatches, sometimes. But most importantly, tool call… tool calls failed a lot of times, and the… or the Python code, timed out.
+
+178
+00:24:21.690 --> 00:24:26.210
+Mohneet Kaur Amandeep Singh Sandhu: that was one of the things that, I felt…
+
+179
+00:24:26.350 --> 00:24:42.719
+Mohneet Kaur Amandeep Singh Sandhu: was one of the hardest issues, because for a really long time, I couldn't figure out what was going wrong about it, because there were times when it's, you know, working from start to end, perfectly giving me the report, but there were also times when we just…
+
+180
+00:24:42.940 --> 00:24:54.980
+Mohneet Kaur Amandeep Singh Sandhu: I don't remember the exact error that I would get, but just failed or something, and I did not understand. I would go over the code again and again, so it was an engineering-based problem.
+
+181
+00:24:54.980 --> 00:24:57.889
+Zhongzheng Xu: Oh, okay. Did you figure out the reason eventually?
+
+182
+00:24:58.630 --> 00:25:07.299
+Mohneet Kaur Amandeep Singh Sandhu: So… I mean, we spoke about… so… I'm not sure, honestly.
+
+183
+00:25:07.300 --> 00:25:07.990
+Zhongzheng Xu: Okay.
+
+184
+00:25:07.990 --> 00:25:19.559
+Mohneet Kaur Amandeep Singh Sandhu: went wrong. I mean, me and my mentor, we, like, we tried understanding that, but we thought that… so we were… we were using Claude for that purpose, and
+
+185
+00:25:19.810 --> 00:25:26.320
+Mohneet Kaur Amandeep Singh Sandhu: we thought that, like, sometimes even when you're using ChatGPT, right, it would just stop working, or…
+
+186
+00:25:27.040 --> 00:25:33.220
+Mohneet Kaur Amandeep Singh Sandhu: Something like that. So, I thought that that's something that's happening… that's happening with the clot model as well.
+
+187
+00:25:33.220 --> 00:25:38.010
+Zhongzheng Xu: We couldn't figure it out. So it's probably more like an AI issue, LLM issue.
+
+188
+00:25:38.010 --> 00:25:39.690
+Mohneet Kaur Amandeep Singh Sandhu: Yeah, I guess so.
+
+189
+00:25:40.130 --> 00:25:42.369
+Zhongzheng Xu: Okay. And less engineering, okay.
+
+190
+00:25:42.740 --> 00:25:51.560
+Zhongzheng Xu: And, okay, so…
+
+191
+00:25:55.290 --> 00:26:01.189
+Zhongzheng Xu: Okay, let's talk about, like, the same issue. Like, if sometimes the model just doesn't behave.
+
+192
+00:26:01.610 --> 00:26:07.970
+Zhongzheng Xu: Like, LLM can just fail sometimes. Do you think there's anything that can help with that?
+
+193
+00:26:08.660 --> 00:26:13.520
+Zhongzheng Xu: It's a big… it's a big question. It's okay if you don't have an answer.
+
+194
+00:26:14.680 --> 00:26:21.090
+Mohneet Kaur Amandeep Singh Sandhu: Yeah, I mean, does… I've been.
+
+195
+00:26:22.170 --> 00:26:32.600
+Mohneet Kaur Amandeep Singh Sandhu: Honestly, that was the… by the end of second month, I felt like my internship was not data science related, but just prompt engineering related.
+
+196
+00:26:33.650 --> 00:26:47.769
+Mohneet Kaur Amandeep Singh Sandhu: won't behave like I want it to, and I would just crib in front of my manager every day. It feels like I'm just doing prompting, and I'm just talking to, the LLM every day. That's the only thing that I'm talking to.
+
+197
+00:26:48.720 --> 00:26:56.139
+Mohneet Kaur Amandeep Singh Sandhu: Because they might hallucinate for a single column, they might choose the wrong tool, they might produce code that doesn't even make any sense at all.
+
+198
+00:26:56.140 --> 00:26:56.930
+Zhongzheng Xu: I woke up.
+
+199
+00:26:56.930 --> 00:27:02.180
+Mohneet Kaur Amandeep Singh Sandhu: convincing. It is so convinvincible all the time, because I, I… see.
+
+200
+00:27:02.190 --> 00:27:20.800
+Mohneet Kaur Amandeep Singh Sandhu: when I start my day, I read it, like, one or two, like, one or two, code bases, and I'm like, okay, I… I… my brain is working. By the third time, I get so convinced by what the LLM is saying, that even if in my subconscious, I know that what it is telling me is wrong.
+
+201
+00:27:21.960 --> 00:27:24.950
+Mohneet Kaur Amandeep Singh Sandhu: The way it tells it is so convincing that
+
+202
+00:27:25.560 --> 00:27:44.289
+Mohneet Kaur Amandeep Singh Sandhu: We could easily convince her, okay, yeah, maybe it's right. So, because we tried to log every agent step, you know, the tool calling and the intermediate output, so we could immediately see where the breakdown happened. For example, if the planner chose the wrong next action.
+
+203
+00:27:44.630 --> 00:27:56.179
+Mohneet Kaur Amandeep Singh Sandhu: the trace can tell us, or if the analyzer generated code, referencing a missing field, which is not even present. So we can see it in the tool logs.
+
+204
+00:27:56.400 --> 00:28:01.179
+Mohneet Kaur Amandeep Singh Sandhu: So, I think that is something that helped me, you know.
+
+205
+00:28:01.730 --> 00:28:11.459
+Mohneet Kaur Amandeep Singh Sandhu: understand better where exactly the LLM misbehaved, and, where it's important that I, you know.
+
+206
+00:28:11.460 --> 00:28:30.169
+Mohneet Kaur Amandeep Singh Sandhu: Like, pinpoint exactly where it's off track, and that makes it just much easier to adjust the prompts, or tighten the tool schemas, or redefine the agent responsibility, so that the model behaves consistently throughout.
+
+207
+00:28:32.200 --> 00:28:42.530
+Zhongzheng Xu: And, you talked about, like, intermediate outputs. So, I guess at the time, it was pretty painful that I guess you have to look at the outputs manually and try to…
+
+208
+00:28:42.660 --> 00:28:44.710
+Zhongzheng Xu: See where exactly it failed.
+
+209
+00:28:45.670 --> 00:28:53.340
+Mohneet Kaur Amandeep Singh Sandhu: Yes, I had to, I had to do that. Like, for every step, I had to manually look at all the outputs. It was…
+
+210
+00:28:53.600 --> 00:29:05.339
+Mohneet Kaur Amandeep Singh Sandhu: I mean, now that I think about it, the project was not that difficult, but then each step took a lot of time, because there was a lot of use of LLMs involved, multi-agents.
+
+211
+00:29:05.340 --> 00:29:15.919
+Mohneet Kaur Amandeep Singh Sandhu: Can be direct, because of the output that every agent gets you, gives you, you have to look at it and make sure that that is the output that the next agent
+
+212
+00:29:15.990 --> 00:29:23.860
+Mohneet Kaur Amandeep Singh Sandhu: is expecting, and if not, then how does the next agent handle it? Even that, I felt, was,
+
+213
+00:29:23.910 --> 00:29:39.979
+Mohneet Kaur Amandeep Singh Sandhu: very important and time-consuming, so I had to manually inspect the traces, the outputs, to understand where the things were breaking. But I think that phase is unavoidable in any multi-agent system, and before you.
+
+214
+00:29:39.980 --> 00:29:40.420
+Zhongzheng Xu: Right.
+
+215
+00:29:40.420 --> 00:29:55.139
+Mohneet Kaur Amandeep Singh Sandhu: To make the monitoring, you need to understand the failure modes yourself as well. So once I manually debugged a few runs, I started seeing patterns, like, or the planner misunderstood certain query types, or the analyzer,
+
+216
+00:29:55.330 --> 00:29:58.110
+Mohneet Kaur Amandeep Singh Sandhu: I don't know, some… hallucinated the column names.
+
+217
+00:29:58.560 --> 00:30:10.530
+Mohneet Kaur Amandeep Singh Sandhu: So, after that, I just… I automated most of the painful parts, so I tried adding structured traces so that it's easier for me as well. And, you know,
+
+218
+00:30:11.680 --> 00:30:23.129
+Mohneet Kaur Amandeep Singh Sandhu: Yeah, I mean, so I… so that I don't have to inspect the raw outputs anymore. So the… yeah, I mean, the first runs were very manual and messy, but…
+
+219
+00:30:23.320 --> 00:30:31.579
+Mohneet Kaur Amandeep Singh Sandhu: That's actually exactly what informed the design of, you know, monitoring, or checking the reliability that
+
+220
+00:30:31.800 --> 00:30:39.770
+Mohneet Kaur Amandeep Singh Sandhu: eventually made things a little smoother for me, but I mean, by that time, it was anyways pretty late, so…
+
+221
+00:30:39.770 --> 00:30:47.239
+Zhongzheng Xu: Okay. Yeah. I… I definitely agree with what you said, like, that's just the…
+
+222
+00:30:47.280 --> 00:30:55.830
+Zhongzheng Xu: like, the problems that you described are pretty common with just all kinds, every multi-agent system. And I think that's why, I think
+
+223
+00:30:55.830 --> 00:31:08.330
+Zhongzheng Xu: Most of the frameworks, like LaneChain, they have some sort of error handling or, like, a fallback, strategy, where if it doesn't output a schema that you want, it just goes to, like, a failure branch.
+
+224
+00:31:08.890 --> 00:31:14.290
+Zhongzheng Xu: Things like that. But yeah, that's… It's very relatable.
+
+225
+00:31:14.570 --> 00:31:20.669
+Zhongzheng Xu: Okay, let me try to locate the next question.
+
+226
+00:31:23.120 --> 00:31:31.309
+Zhongzheng Xu: And then, okay, I'm… the next… Maybe 2 or 3 questions?
+
+227
+00:31:31.420 --> 00:31:40.849
+Zhongzheng Xu: And they're the final two or three questions. They're going to be, like, more, abstract and high level. It doesn't have to be the specific top, project that you just talked about.
+
+228
+00:31:40.990 --> 00:31:44.030
+Zhongzheng Xu: So, first of all,
+
+229
+00:31:44.360 --> 00:31:52.240
+Zhongzheng Xu: So, some people would describe as how much they trust some AI systems.
+
+230
+00:31:53.940 --> 00:32:01.199
+Zhongzheng Xu: like, they would describe their relationship with AI systems in terms of how much they trust or rely on them. Do you feel like that's relevant?
+
+231
+00:32:01.480 --> 00:32:03.170
+Zhongzheng Xu: To your experience.
+
+232
+00:32:05.570 --> 00:32:12.249
+Mohneet Kaur Amandeep Singh Sandhu: How much they rely on their LLM system.
+
+233
+00:32:12.550 --> 00:32:20.629
+Mohneet Kaur Amandeep Singh Sandhu: and how much they trust it. I do think that the trust part is relevant, but I see it…
+
+234
+00:32:20.970 --> 00:32:29.039
+Mohneet Kaur Amandeep Singh Sandhu: you know, I think I see it in a diff… differently than just how much I trust the system.
+
+235
+00:32:29.490 --> 00:32:41.100
+Mohneet Kaur Amandeep Singh Sandhu: I mean, it's like… evaluating… The predictability or the transparency, and of course, the…
+
+236
+00:32:41.710 --> 00:32:53.289
+Mohneet Kaur Amandeep Singh Sandhu: That's a term, verifiability? I don't know. But, like, to what extent can I verify it? So, I don't trust an AI system the way I trust a person, of course.
+
+237
+00:32:53.290 --> 00:32:54.010
+Zhongzheng Xu: You wouldn't.
+
+238
+00:32:54.340 --> 00:32:58.990
+Mohneet Kaur Amandeep Singh Sandhu: I trust the system to the extent that I understand its behaviors.
+
+239
+00:32:59.540 --> 00:33:06.840
+Mohneet Kaur Amandeep Singh Sandhu: Its limits, or how it was trained, or the quality of its data, or… You know…
+
+240
+00:33:07.050 --> 00:33:13.250
+Mohneet Kaur Amandeep Singh Sandhu: And, like, when I design the multi-agent systems, I try to…
+
+241
+00:33:13.360 --> 00:33:20.280
+Mohneet Kaur Amandeep Singh Sandhu: trust, like, that when I give clear rolls, or layers, or tool grounding, or the consistency checks.
+
+242
+00:33:20.550 --> 00:33:31.519
+Mohneet Kaur Amandeep Singh Sandhu: So, yes, of course, trust matters, but not blind trust. It's structured, that comes from making the system more, auditable.
+
+243
+00:33:31.860 --> 00:33:36.619
+Mohneet Kaur Amandeep Singh Sandhu: Yeah, so I think I just trusted to that extent, but not blind trust.
+
+244
+00:33:36.620 --> 00:33:42.989
+Zhongzheng Xu: Okay. Since you mentioned, like, transparency, and then… Do you think…
+
+245
+00:33:43.230 --> 00:33:45.430
+Zhongzheng Xu: So let's say, you built…
+
+246
+00:33:45.620 --> 00:33:48.220
+Zhongzheng Xu: some pipeline, some MAS, some,
+
+247
+00:33:48.390 --> 00:33:54.030
+Zhongzheng Xu: multi-agent systems. Do you think there's going to be,
+
+248
+00:33:55.050 --> 00:34:08.239
+Zhongzheng Xu: like, signals or visual cues that would make you think, okay, this is pretty transparent, and this system is predictable, I can expect the behaviors coming out from it.
+
+249
+00:34:08.610 --> 00:34:17.220
+Zhongzheng Xu: Like, what kind of signals or indicators, that would make you think that, okay, this is…
+
+250
+00:34:17.480 --> 00:34:22.049
+Zhongzheng Xu: the system is trustworthy, I can, it's pretty predictable.
+
+251
+00:34:29.499 --> 00:34:32.189
+Mohneet Kaur Amandeep Singh Sandhu: I… Oh…
+
+252
+00:34:32.389 --> 00:34:33.769
+Zhongzheng Xu: It's okay if you don't know.
+
+253
+00:34:35.310 --> 00:34:40.129
+Mohneet Kaur Amandeep Singh Sandhu: I think… I'm not sure, honestly.
+
+254
+00:34:40.630 --> 00:34:41.890
+Zhongzheng Xu: Okay, okay.
+
+255
+00:34:42.130 --> 00:34:45.860
+Mohneet Kaur Amandeep Singh Sandhu: I think when I… when I see…
+
+256
+00:34:46.489 --> 00:35:00.339
+Mohneet Kaur Amandeep Singh Sandhu: patterns multiple times, like, stable orchestration, or, consistent tool calls, or, the intermediate outputs that I'm getting are more interpretable.
+
+257
+00:35:00.340 --> 00:35:07.669
+Mohneet Kaur Amandeep Singh Sandhu: If I see those patterns consistently, I think that's when I feel that the system is transparent enough.
+
+258
+00:35:07.670 --> 00:35:09.210
+Zhongzheng Xu: Or that I can…
+
+259
+00:35:09.420 --> 00:35:13.860
+Mohneet Kaur Amandeep Singh Sandhu: anticipated behavior. Not perfectly, of course, but…
+
+260
+00:35:13.860 --> 00:35:14.390
+Zhongzheng Xu: Hmm.
+
+261
+00:35:15.080 --> 00:35:16.710
+Mohneet Kaur Amandeep Singh Sandhu: A little reliably.
+
+262
+00:35:17.670 --> 00:35:18.700
+Zhongzheng Xu: I see.
+
+263
+00:35:19.280 --> 00:35:19.920
+Zhongzheng Xu: I see.
+
+264
+00:35:19.920 --> 00:35:21.370
+Mohneet Kaur Amandeep Singh Sandhu: I don't know if that's the answer.
+
+265
+00:35:21.370 --> 00:35:28.410
+Zhongzheng Xu: Yeah, no, no, it's a pretty vague question, too. And then…
+
+266
+00:35:29.430 --> 00:35:40.139
+Zhongzheng Xu: So, you mentioned that, a lot of times the system had, like, tool calls, issues. I'm… I'm a little bit interested about, like.
+
+267
+00:35:40.300 --> 00:35:48.899
+Zhongzheng Xu: Are you talking about, so let's say you have the same input, same user query, whatever, and if you run the pipeline, like.
+
+268
+00:35:49.510 --> 00:35:51.139
+Zhongzheng Xu: 10 different times.
+
+269
+00:35:51.540 --> 00:35:54.879
+Zhongzheng Xu: Is there going to be a situation where, like.
+
+270
+00:35:55.000 --> 00:35:57.959
+Zhongzheng Xu: 8 out of the 10 times, it was doing…
+
+271
+00:35:58.280 --> 00:36:03.580
+Zhongzheng Xu: Correctly. And then the two times it failed, or failed to call the right tool.
+
+272
+00:36:05.770 --> 00:36:08.850
+Zhongzheng Xu: Is that what it is, or is just, like, different testing?
+
+273
+00:36:11.020 --> 00:36:16.100
+Mohneet Kaur Amandeep Singh Sandhu: So, like, yeah, of course it did happen, like, a lot of times that…
+
+274
+00:36:17.320 --> 00:36:31.939
+Mohneet Kaur Amandeep Singh Sandhu: the output was just not what I was expecting. Like, especially early on, I did see cases where the same, input would sometimes, route slightly differently, or call the wrong tool.
+
+275
+00:36:32.750 --> 00:36:35.120
+Mohneet Kaur Amandeep Singh Sandhu: So… Oh.
+
+276
+00:36:38.360 --> 00:36:45.520
+Mohneet Kaur Amandeep Singh Sandhu: I'm sorry, I got a little carried away with, the… what I was thinking about. Could you repeat your question once?
+
+277
+00:36:45.520 --> 00:36:51.270
+Zhongzheng Xu: Yeah, yeah, so I was just wondering if, the, like, the tool called, failure that we talked about.
+
+278
+00:36:52.650 --> 00:36:59.270
+Zhongzheng Xu: was… So… Was that the case?
+
+279
+00:37:00.240 --> 00:37:03.230
+Zhongzheng Xu: Or, wha- was it, like…
+
+280
+00:37:03.400 --> 00:37:06.749
+Zhongzheng Xu: If you just run the same system without changing any code.
+
+281
+00:37:07.190 --> 00:37:14.450
+Zhongzheng Xu: Let's say you run the system 5 times, using exact same input, exact same task.
+
+282
+00:37:14.630 --> 00:37:22.189
+Zhongzheng Xu: Is it going to be like, okay, it worked 4 out of 5 times, but then it failed, that one time?
+
+283
+00:37:26.480 --> 00:37:36.850
+Zhongzheng Xu: So you said it was a, it was also, like, an LLM issue. Like, sometimes LLM works, but then, like, very rarely they just fail completely.
+
+284
+00:37:37.140 --> 00:37:40.900
+Mohneet Kaur Amandeep Singh Sandhu: Honestly, like, 80-90% of the time, if the…
+
+285
+00:37:41.290 --> 00:37:45.710
+Mohneet Kaur Amandeep Singh Sandhu: if… if… I mean,
+
+286
+00:37:46.820 --> 00:37:56.810
+Mohneet Kaur Amandeep Singh Sandhu: Yeah, if the output that I was expecting, I did not get that. That was… most of the times, because of LLM fail. The other times, it was…
+
+287
+00:37:57.660 --> 00:38:09.839
+Mohneet Kaur Amandeep Singh Sandhu: Okay, I got the report, I looked at the report, and then I manually looked at the dataset to understand… and of course, for the data that I'd been using, for those
+
+288
+00:38:09.840 --> 00:38:26.429
+Mohneet Kaur Amandeep Singh Sandhu: I mean, every day the operators are writing the reports, right? So I have a view of what the operators have written, and comparing it with what my LLM has given me as well. Right. So I would compare it with that, and sometimes I felt that it, it…
+
+289
+00:38:26.560 --> 00:38:34.889
+Mohneet Kaur Amandeep Singh Sandhu: pinpointed to some root cause that even the operators did not catch. …you know, catch, or,
+
+290
+00:38:34.910 --> 00:38:46.949
+Mohneet Kaur Amandeep Singh Sandhu: did not go dive that deep, because the LLM, I… I realized that, for example, if, there was a very, common
+
+291
+00:38:47.280 --> 00:38:57.700
+Mohneet Kaur Amandeep Singh Sandhu: issue, like, something called container… container hierarchy mismatch. So the…
+
+292
+00:38:58.000 --> 00:39:02.299
+Mohneet Kaur Amandeep Singh Sandhu: the LLM would really capture that very well.
+
+293
+00:39:03.490 --> 00:39:10.379
+Mohneet Kaur Amandeep Singh Sandhu: it needs context of what that meant. Like, the container hierarchy mismatch, what does it even mean?
+
+294
+00:39:11.190 --> 00:39:12.949
+Mohneet Kaur Amandeep Singh Sandhu: The operator looks at it.
+
+295
+00:39:13.050 --> 00:39:31.860
+Mohneet Kaur Amandeep Singh Sandhu: they would understand it, but if, like, you know, it needs to… the way an operator would write it, they won't, in their reports, they won't write something like, okay, these many products failed delivery because of container hierarchy mismatched. They would write it in a format that's more human-readable and understandable.
+
+296
+00:39:31.860 --> 00:39:32.710
+Zhongzheng Xu: Very little, okay.
+
+297
+00:39:32.710 --> 00:39:37.119
+Mohneet Kaur Amandeep Singh Sandhu: So, that was something that I would… I feel was, like.
+
+298
+00:39:37.340 --> 00:39:57.249
+Mohneet Kaur Amandeep Singh Sandhu: an issue. Sometimes the LLM would, see, okay, container hierarchy mismatch. It would try to, get from its own understanding what it meant, and then, you know, rephrase that, in the actual report. So I feel that we cannot really,
+
+299
+00:39:57.550 --> 00:40:01.049
+Mohneet Kaur Amandeep Singh Sandhu: be that reliable on the LLM to just, you know.
+
+300
+00:40:01.150 --> 00:40:18.239
+Mohneet Kaur Amandeep Singh Sandhu: look at those words based on just its knowledge, understand, and rephrase it in the actual report, because then it might lead to hallucination as well. So I think that's, another failure, in the kind of report that we were expecting, that we did not get, when… when
+
+301
+00:40:18.880 --> 00:40:30.849
+Mohneet Kaur Amandeep Singh Sandhu: we encountered this kind of issue, but mostly it was LLM failure, 80-90% of the time. But otherwise, this was also, like, a good enough problem that we were thinking about.
+
+302
+00:40:31.760 --> 00:40:32.569
+Zhongzheng Xu: I see.
+
+303
+00:40:33.070 --> 00:40:37.619
+Zhongzheng Xu: Okay. Yeah, that was actually all the questions I have.
+
+304
+00:40:37.860 --> 00:40:44.950
+Zhongzheng Xu: Okay, 45 minutes. But yeah. Okay, I can stop the recording.
+

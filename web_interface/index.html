@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Transcript Viewer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f8f9fa;
+            --interviewer-bg: #e9ecef;
+            --interviewer-text: #212529;
+            --participant-bg: #d1e7dd;
+            --participant-text: #0f5132;
+            --font-family: 'Instrument Sans', sans-serif;
+            --accent-color: #495057;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-color);
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px 0;
+        }
+
+        h1 {
+            font-weight: 600;
+            margin-bottom: 10px;
+            letter-spacing: -0.02em;
+        }
+
+        .file-input-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .file-input-btn {
+            border: 1px solid #ccc;
+            display: inline-block;
+            padding: 8px 16px;
+            cursor: pointer;
+            background-color: white;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .file-input-btn:hover {
+            background-color: #f1f1f1;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        input[type="file"] {
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .transcript-container {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            padding-bottom: 60px;
+        }
+
+        .message-row {
+            display: flex;
+            flex-direction: column;
+            max-width: 85%;
+            position: relative;
+            transition: transform 0.2s ease;
+        }
+
+        .message-row:hover .copy-btn {
+            opacity: 1;
+        }
+
+        .message-row.interviewer {
+            align-self: flex-start;
+        }
+
+        .message-row.participant {
+            align-self: flex-end;
+        }
+
+        .speaker-label {
+            font-size: 0.75rem;
+            margin-bottom: 4px;
+            font-weight: 600;
+            color: #6c757d;
+            padding: 0 4px;
+        }
+
+        .participant .speaker-label {
+            text-align: right;
+        }
+
+        .message-bubble {
+            padding: 16px 20px;
+            border-radius: 16px;
+            position: relative;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+            font-size: 1rem;
+        }
+
+        .interviewer .message-bubble {
+            background-color: var(--interviewer-bg);
+            color: var(--interviewer-text);
+            border-bottom-left-radius: 4px;
+        }
+
+        .participant .message-bubble {
+            background-color: var(--participant-bg);
+            color: var(--participant-text);
+            border-bottom-right-radius: 4px;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0;
+            background-color: white;
+            border: 1px solid #dee2e6;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: #6c757d;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .interviewer .copy-btn {
+            right: -45px;
+        }
+
+        .participant .copy-btn {
+            left: -45px;
+        }
+
+        .copy-btn:hover {
+            background-color: #f8f9fa;
+            color: #212529;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .copy-btn:active {
+            transform: translateY(-50%) scale(0.95);
+        }
+
+        .copy-icon {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+
+        .empty-state {
+            text-align: center;
+            color: #adb5bd;
+            margin-top: 60px;
+            font-weight: 500;
+        }
+
+        /* Toast notification */
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .check-icon {
+            width: 16px;
+            height: 16px;
+            stroke: #4ade80;
+            stroke-width: 2;
+            fill: none;
+        }
+
+        @media (max-width: 768px) {
+            .message-row {
+                max-width: 95%;
+            }
+            
+            .copy-btn {
+                opacity: 1; /* Always show on mobile */
+                width: 28px;
+                height: 28px;
+            }
+            
+            .interviewer .copy-btn {
+                right: -35px;
+            }
+
+            .participant .copy-btn {
+                left: -35px;
+            }
+        }
+
+        .floating-copy-btn {
+            position: fixed;
+            display: none;
+            background-color: #212529;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            z-index: 2000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transform: translate(-50%, -45px);
+            animation: fadeIn 0.2s ease;
+        }
+        
+        .floating-copy-btn::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -6px;
+            border-width: 6px;
+            border-style: solid;
+            border-color: #212529 transparent transparent transparent;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translate(-50%, -35px); }
+            to { opacity: 1; transform: translate(-50%, -45px); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Interview Transcript</h1>
+        <div class="file-input-wrapper">
+            <span class="file-input-btn">Load JSONL File</span>
+            <input type="file" id="fileInput" accept=".jsonl,.json">
+        </div>
+    </header>
+
+    <div id="transcriptContainer" class="transcript-container">
+        <div class="empty-state">
+            Upload a JSONL file to view the transcript
+        </div>
+    </div>
+</div>
+
+<div id="toast" class="toast">
+    <svg class="check-icon" viewBox="0 0 24 24">
+        <polyline points="20 6 9 17 4 12"></polyline>
+    </svg>
+    Copied to clipboard
+</div>
+
+<div id="floatingBtn" class="floating-copy-btn">Copy</div>
+
+<script>
+    const fileInput = document.getElementById('fileInput');
+    const transcriptContainer = document.getElementById('transcriptContainer');
+    const toast = document.getElementById('toast');
+    let toastTimeout;
+
+    fileInput.addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const content = e.target.result;
+            renderTranscript(content);
+            // Update button text
+            document.querySelector('.file-input-btn').textContent = file.name;
+        };
+        reader.readAsText(file);
+    });
+
+    function renderTranscript(content) {
+        transcriptContainer.innerHTML = '';
+        const lines = content.trim().split('\n');
+
+        lines.forEach((line, index) => {
+            if (!line.trim()) return;
+
+            try {
+                const data = JSON.parse(line);
+                const speaker = data.speaker || 'Unknown';
+                const text = data.text || '';
+                
+                // Determine class based on speaker
+                // Normalize speaker string for comparison
+                const speakerLower = speaker.toLowerCase();
+                const isInterviewer = speakerLower.includes('interviewer');
+                const className = isInterviewer ? 'interviewer' : 'participant';
+                
+                const row = document.createElement('div');
+                row.className = `message-row ${className}`;
+                
+                const label = document.createElement('div');
+                label.className = 'speaker-label';
+                label.textContent = speaker;
+                
+                const bubble = document.createElement('div');
+                bubble.className = 'message-bubble';
+                bubble.textContent = text;
+                
+                const copyBtn = document.createElement('button');
+                copyBtn.className = 'copy-btn';
+                copyBtn.title = 'Copy to clipboard';
+                copyBtn.innerHTML = `
+                    <svg class="copy-icon" viewBox="0 0 24 24">
+                        <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+                    </svg>
+                `;
+                
+                copyBtn.onclick = () => copyText(text);
+                
+                row.appendChild(label);
+                row.appendChild(bubble);
+                row.appendChild(copyBtn);
+                
+                transcriptContainer.appendChild(row);
+            } catch (err) {
+                console.error('Error parsing line ' + index, err);
+            }
+        });
+    }
+
+    function copyText(text) {
+        navigator.clipboard.writeText(text).then(() => {
+            showToast();
+        }).catch(err => {
+            console.error('Failed to copy text: ', err);
+        });
+    }
+
+    function showToast() {
+        toast.classList.add('show');
+        
+        if (toastTimeout) {
+            clearTimeout(toastTimeout);
+        }
+        
+        toastTimeout = setTimeout(() => {
+            toast.classList.remove('show');
+        }, 2000);
+    }
+
+    // Floating copy button logic
+    const floatingBtn = document.getElementById('floatingBtn');
+
+    document.addEventListener('mouseup', (e) => {
+        // Wait briefly for selection to update
+        setTimeout(() => {
+            const selection = window.getSelection();
+            const text = selection.toString().trim();
+
+            if (text.length > 0) {
+                const range = selection.getRangeAt(0);
+                const rect = range.getBoundingClientRect();
+
+                // Check if selection is visible and not just a click
+                if (rect.width > 0 && rect.height > 0) {
+                    floatingBtn.style.display = 'block';
+                    // Position centered above the selection
+                    floatingBtn.style.top = rect.top + 'px';
+                    floatingBtn.style.left = (rect.left + rect.width / 2) + 'px';
+                }
+            } else {
+                floatingBtn.style.display = 'none';
+            }
+        }, 10);
+    });
+
+    // Hide on scroll
+    window.addEventListener('scroll', () => {
+        floatingBtn.style.display = 'none';
+    }, { passive: true });
+
+    // Handle copy click
+    floatingBtn.addEventListener('mousedown', (e) => {
+        e.preventDefault(); // Prevent losing selection
+        const text = window.getSelection().toString().trim();
+        if (text) {
+            copyText(text);
+            floatingBtn.style.display = 'none';
+            window.getSelection().removeAllRanges();
+        }
+    });
+</script>
+
+</body>
+</html>

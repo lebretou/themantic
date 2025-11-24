@@ -1,0 +1,161 @@
+{"speaker": "Interviewer", "text": "Alright, okay, we can go ahead and get started. So I'm going to start with a pretty abstract question. When you hear the term \"multi-agent system,\" what does it mean to you?"}
+{"speaker": "Participant", "text": "So, a multi-agent system is like a system with multiple agents, and each agent works on a specific task. Yeah. So they need to collaborate and interact with each other. That's what I would define."}
+{"speaker": "Interviewer", "text": "Okay, and then, could you tell me about one or two representative projects that you've worked on that have used a multi-agent system?"}
+{"speaker": "Participant", "text": "Yeah, yeah, so last summer I interned and I worked on, like, a blending agent. So it's, like, yeah, so that's, like, a quite simpler version of documentation, because the main agent, like, the whole system. The task is to, like, allow the user to have a plan, like, what they want to do, right? And the whole system has two great plans: like, supporting, like, providing step-by-step plans for the user, and then helping the user to track the plan, like, what progress they have made so far. So it includes, like, the main agent, which is, like, we'll work with the user and like, return the response to the user, and another one, another agent is, like, the planning agent."}
+{"speaker": "Interviewer", "text": "So it's..."}
+{"speaker": "Participant", "text": "Just for planning specifically and also to keep track of the progress. Yeah, because I defined a schema. Like, what is the step ID? What does that step do, and has the user done that? Like, what is the progress? Have they done it or not yet? Yeah, so the planning agents work on that specifically. And then there's a main agent which is there, like, coordinating. So getting information from the planning agent and then returning to the user, and receiving commands from the user, and interacting with the planning agent to update the progress."}
+{"speaker": "Interviewer", "text": "Okay, so, just for clarification, the users are the ones that actually execute the tasks, right?"}
+{"speaker": "Participant", "text": "Yes, exactly. So, like, they completed this task and they just let the agent know that they've done this step. But there's also the ability to come in and update the step to be this or that."}
+{"speaker": "Interviewer", "text": "Okay, I see. And then, so there's two agents: one that's talking to the user and then another planning agent that's overseeing the entire progress. Okay, and then, so like, for this project, did you use any framework like LangChain or LangGraph?"}
+{"speaker": "Participant", "text": "Yeah, I use both and also LangSmith's documentation."}
+{"speaker": "Interviewer", "text": "Lane Smith's suitable debug."}
+{"speaker": "Participant", "text": "Yeah, because I use that for tracing in people."}
+{"speaker": "Interviewer", "text": "Yeah. Interesting. You're actually the first interviewee that mentioned LangSmith. Like, what was your experience using LangSmith?"}
+{"speaker": "Participant", "text": "I think that's useful for my experience. I just used, like, the simplest approach. I was part of that tracing, because I think it's pretty nice, because it helped me debug much easier, and I don't have to add print statements everywhere else in the code."}
+{"speaker": "Interviewer", "text": "Okay."}
+{"speaker": "Participant", "text": "Yeah, and it also helped me track the tool calling and what they get from the tools, as well as managing the memory of the agent."}
+{"speaker": "Interviewer", "text": "Okay. So we'll actually talk about managing tools and memory in a bit. But before that, I have a couple more high-level questions. So for the system that I just described, what kind of tasks have users done?"}
+{"speaker": "Participant", "text": "So it's mostly for Adobe because the engine is Adobe, so it's like for Adobe products."}
+{"speaker": "Interviewer", "text": "I'm ready to help, but the text you've provided only contains \"So…\" \n\nCould you please provide the full interview text that needs to be corrected?"}
+{"speaker": "Participant", "text": "Actually, my internship is just a prototype version. It's not yet deployed in the process."}
+{"speaker": "Interviewer", "text": "Okay."}
+{"speaker": "Participant", "text": "Yeah, but like, the main purpose will be helping the user to do some tasks with other people, just like maybe registering for premium subscription or canceling the subscription, yeah, like that."}
+{"speaker": "Interviewer", "text": "Oh, I see. And then, like, did you think that a multi-agent system, or having that kind of structure, is going to be helpful versus maybe just having a single LLM?"}
+{"speaker": "Participant", "text": "So, from my experience and from different documents I read, I believe multiple agents will be better. I don't know, it's kind of like a trade-off. So, the agent, especially if you use small language models, it can specialize in that task only, so it will provide better solutions or better accuracy than a huge LM. But the trade-off is there can be some errors, right? The agent is not always correct, so the errors can be aggregated every time with tool calling and stuff. So, that's a risk with that. Also, from my experience so far working with agents, because they have to communicate with each other, it takes quite a lot of time. It's a process."}
+{"speaker": "Interviewer", "text": "I said."}
+{"speaker": "Participant", "text": "Yeah, so the latency is pretty high. And another part is using agent-to-agent communication. I haven't tested that really much. But like, I would be working on a huge agent system, and they… I heard from my mentor that there are communication issues between agents. Because, yeah, like, complications with agent-to-agent communication are simply marked down, and yeah, there can be errors as well."}
+{"speaker": "Interviewer", "text": "Okay, do you know, like, usually what types of errors would occur?"}
+{"speaker": "Participant", "text": "So, photos... your system, I don't know, because I don't work on that. But for my project, it can be like, maybe the prompt is not clear enough. Or there can be edge cases that the problem doesn't cover, so the agent will just decide something else, like routing to something else. I don't..."}
+{"speaker": "Interviewer", "text": "Okay."}
+{"speaker": "Participant", "text": "To me? Yeah."}
+{"speaker": "Interviewer", "text": "So actually, it's…"}
+{"speaker": "Participant", "text": "I think it's very challenging to control the behavior of the agents."}
+{"speaker": "Interviewer", "text": "I see. Okay, so for the same project, could you walk me through how you designed the entire structure, including how you designed system prompts, how you managed the tools, the memory, like what contexts are shared between the agents, stuff like that."}
+{"speaker": "Participant", "text": "Hold on, I need to pull that report up."}
+{"speaker": "Interviewer", "text": "Okay."}
+{"speaker": "Participant", "text": "So, it's simply like thinking about it similar to if-else. Let me share the screen."}
+{"speaker": "Interviewer", "text": "Oh, yeah."}
+{"speaker": "Participant", "text": "Can you allow me to do that?"}
+{"speaker": "Interviewer", "text": "Yeah."}
+{"speaker": "Participant", "text": "Alright, so it is."}
+{"speaker": "Interviewer", "text": "Can you see that GitHub one? Yes, yeah."}
+{"speaker": "Participant", "text": "So, it's more like this. For the user prompts, we need routing, like whether to use the blender or not, because."}
+{"speaker": "Interviewer", "text": "That's competitive."}
+{"speaker": "Participant", "text": "Depending on the prompt, it can be like just simple questions, like \"Hi\" and \"hello\" from a user."}
+{"speaker": "Interviewer", "text": "Yeah."}
+{"speaker": "Participant", "text": "So, for that case, we don't need to use the planner, right? So, we just use some agents and provide a final response."}
+{"speaker": "Interviewer", "text": "And otherwise, if a user asks, like..."}
+{"speaker": "Participant", "text": "Help me provide steps to do this task."}
+{"speaker": "Interviewer", "text": "I'm ready to help transcribe and correct the interview text, but it looks like you've only provided \"And then…\" as the text to fix.\n\nPlease provide the full transcription that needs to be corrected, and I'll apply all the corrections you've outlined (transcription errors, stutters, grammar, spelling, etc.) without any explanations."}
+{"speaker": "Participant", "text": "Yeah, we need an agent to work on multiple parts of us. So this is, yeah, like, a pretty simple version of mine. Because in the future, later than this, I will work on, like, separating them, like, the planning agents separately. Yeah. But, yeah, so... Likely, hold on. The process of, like, designing, right?"}
+{"speaker": "Interviewer", "text": "Hey."}
+{"speaker": "Participant", "text": "So, yeah, at first I decided whether to use the blending agent or not, so that's why I got lost with arrows here, two directions here. And then, yeah, like, not using agents when done is pretty simple. But when using the planning, I have to provide thinking about what are the tools or things—tools—like, I need to go right to the agent, right?"}
+{"speaker": "Interviewer", "text": "Right."}
+{"speaker": "Participant", "text": "And so, yeah, and then that's why I have to think about, like, what are the features that we need to allow the user to do with their plan. Like, they need to be able to remove one step of the plan. Or they want to change, update the step? Or, like, add a new step, like, provide more detailed steps. Is it a deadline? So that's why… Yeah, it has modules… actually, it's novel, like, it's more like a tool. It turned into a toast. Yeah, so that's how I got to this one. Yeah, I think…"}
+{"speaker": "Interviewer", "text": "I see. And then, how did you design the system prompts? And then, like you said, providing tools to the agents—was it easy, or did you have to do a lot of trial and error?"}
+{"speaker": "Participant", "text": "Yeah, plus try and, because advertise, just think of some test case, and then I try with that. And when it doesn't behave as I expect, I like just note down that, like that, and then I yeah, just turn to ChatGPT to help me fine-tune the prompt, updating the prompt properly."}
+{"speaker": "Interviewer", "text": "I see. And okay, I guess you already talked about most of the challenges, but just thinking back on this entire architecture design, was there any—what was the most challenging part for you?"}
+{"speaker": "Participant", "text": "For me, the most challenging part is, like, well… where the user interacts with a plan, like, working with the staff in the plan, right? Because currently I'm just setting to use the step ID. So it means that the user has to specify the step ID when, like, which step they want to update or make a change. But like, I wanted to improve to, like, yeah, just from… I want to… this step, like, this step working on creating… Like, register for a new user. For example, I wanted to, like, the agent should be allowed… should be able to determine which step that is by themselves, but not, like, explicitly… experience… Explicitly saying the step. So that was the challenge that I haven't solved yet."}
+{"speaker": "Interviewer", "text": "Okay, I see. So they have to, like, kind of manually log their progress. Okay. Alright, and then you said that you used Lansmith for, like, monitoring the system. Like, what components of Lansmith do you think was the most helpful?"}
+{"speaker": "Participant", "text": "The one on the night shift is more like a…"}
+{"speaker": "Interviewer", "text": "Like, what makes you think that the tool is helpful? Was it the log traces?"}
+{"speaker": "Participant", "text": "Yeah, the lock tracing. So when I have a prompt from the user, I know what is the input for each node and what is the output. And then I can also trace which step, which direction it will go next. Yeah, and because I'm also using the memory. The conversation will continue between the agent and the user."}
+{"speaker": "Interviewer", "text": "Thank you."}
+{"speaker": "Participant", "text": "But Joe, what... I'll fit it into the memory."}
+{"speaker": "Interviewer", "text": "I see. And then, like, when you're still implementing the system, when you're still coding, did you run into any bugs? Like, can you recall any pretty difficult bugs that you had? No, it's okay."}
+{"speaker": "Participant", "text": "Yeah, I don't remember much of that."}
+{"speaker": "Interviewer", "text": "Okay. I see. And then so you set—I think you mentioned it—but were you able to actually test the systems with some real users, or were you just mostly testing yourself?"}
+{"speaker": "Participant", "text": "I'm mostly testing myself, yeah, because I know it's not yet deployed."}
+{"speaker": "Interviewer", "text": "Okay. And since you're testing yourself, like, when did you—so what made you feel confident that this system is pretty reliable and consistent?"}
+{"speaker": "Participant", "text": "No, actually, I don't think so."}
+{"speaker": "Interviewer", "text": "Oh, you don't think so?"}
+{"speaker": "Participant", "text": "Yeah, I think this one needs a lot more improvement."}
+{"speaker": "Interviewer", "text": "Okay."}
+{"speaker": "Participant", "text": "Well, what makes you think that way? Yeah, like, from all those flaws that I told you about, it's quite difficult to control which direction it will go, especially whether you use blending or not. Like, at first, for example, for some tasks, I have to explicitly say that I want to plan this so that it will trigger the planning agent."}
+{"speaker": "Interviewer", "text": "Otherwise..."}
+{"speaker": "Participant", "text": "So, for some time, I just, like, do this, and it's just like the agent recharges. Like, for some test cases, I asked it to do something, the middle step as well, but like the LLM, not integrating it. It just felt like it doesn't need the planning."}
+{"speaker": "Interviewer", "text": "Oh, I see. So, like, triggering the planning agent."}
+{"speaker": "Participant", "text": "Yeah."}
+{"speaker": "Interviewer", "text": "Interesting. Do you think it was, like, a prompt issue, or..."}
+{"speaker": "Participant", "text": "Yeah, that can be the prompt issue, so that's why I try to update the prompt. But I'm not confident that it will be able to cover all the edge cases, especially in production."}
+{"speaker": "Interviewer", "text": "I'm ready to help transcribe and correct the interview text about LLM-based multi-agent systems. However, the text you've provided appears incomplete (just \"When…\").\n\nPlease provide the full text that needs to be corrected, and I'll apply the corrections according to your instructions."}
+{"speaker": "Participant", "text": "Yeah, there are many different scenarios with the users. Yeah, I just haven't tied that up yet. Watch."}
+{"speaker": "Interviewer", "text": "I see. And then, do you think this is—I don't know if you've done it, but like, if you just use the same exact prompt, same input, do you think it's sometimes relative to the planning agent, sometimes it doesn't?"}
+{"speaker": "Participant", "text": "Hmm. Yeah, I don't remember when, like, but for some days I remember it can be like that."}
+{"speaker": "Interviewer", "text": "Okay."}
+{"speaker": "Participant", "text": "Yes, so that's what I meant. It's not really stable."}
+{"speaker": "Interviewer", "text": "Okay. I see. So I know this is a past project, and you probably haven't looked at it for a while, but if you have—let's say Langsmith, or just Langchain, LangGraph in general—if there's some new feature that you could add to it that would help you with the process of developing, what do you think it could be?"}
+{"speaker": "Participant", "text": "That's interesting. Yeah, I don't know. I don't have any ideas now, because last time when I used LangGraph, I believe we have like different functions already."}
+{"speaker": "Interviewer", "text": "Yeah, it's pretty good. What about, okay, maybe not LangChain… LangSmith?"}
+{"speaker": "Participant", "text": "Yes, ma'am. Last minute, I... yeah, the issue is I don't use this much. Okay. Like, I just use it simply for..."}
+{"speaker": "Interviewer", "text": "We're done."}
+{"speaker": "Participant", "text": "Administration, yeah. So I think the tracing works pretty well. It shows me all the input and output. So I can trace each tool calling for each end node here."}
+{"speaker": "Interviewer", "text": "I see. Yeah, so I'm actually… I haven't used LangSmith myself, but I know it does show you, like, input and output. Does it also help you with managing memory and context?"}
+{"speaker": "Participant", "text": "The context part is for the length graph."}
+{"speaker": "Interviewer", "text": "Okay, complex."}
+{"speaker": "Participant", "text": "Yeah, LangChain does support, like, memory tracking. This allows me to add memory to the agent."}
+{"speaker": "Interviewer", "text": "Okay, I see. But does Landsmith also help you, like, visualize that?"}
+{"speaker": "Participant", "text": "Yeah, it also shows the memory when tracing."}
+{"speaker": "Interviewer", "text": "I see. So I can check that as well. And then, you said that you don't really think the system is reliable. Like, when do you think—what signals or indicators do you think, if you see them, would make you think this system is pretty reliable and consistent, and you can trust having users actually use it?"}
+{"speaker": "Participant", "text": "Hmm, it's pretty tough. Actually, because of that, I really hate working with AI agents in general. Yeah. What is the signal that lets me know that it's reliable? Pretty challenging, yeah, because I haven't thought of that, because mostly it's from the agent's output. Like, depending on the prompts and the input of the users, the output of the language model maybe can be changed a bit."}
+{"speaker": "Interviewer", "text": "I see. So maybe, like, after we have run a dataset of different prompts, and then the final output, or like, the traces are aligning with your expectations."}
+{"speaker": "Participant", "text": "Yeah."}
+{"speaker": "Interviewer", "text": "Okay, I see."}
+{"speaker": "Participant", "text": "Yeah, so otherwise, I think just focus on the prompt engineering part."}
+{"speaker": "Interviewer", "text": "Okay, so you would say that prompt engineering was probably the most important."}
+{"speaker": "Participant", "text": "Yeah. Especially if I want the agent to follow my expectations at each node here, I had to write very, very detailed prompts."}
+{"speaker": "Interviewer", "text": "For the prompts? I see, and then okay. Let me just try to locate the questions. Okay, let's go back to being more abstract, so maybe not just this project. So, like, for what types of problems do you think a multi-agent system works the best? Or, for what kind of tasks do you think it's appropriate to use a multi-agent system?"}
+{"speaker": "Participant", "text": "So, what kind of task?"}
+{"speaker": "Interviewer", "text": "Yeah, like, what kind of problems do you think… so if you're the product manager and you have some tasks for your software engineers to do, like, what type of tasks do you think you'd have them do? Okay, you guys should use a multi-agent system?"}
+{"speaker": "Participant", "text": "Then I would refer to Adobe's broader agent system, because I think they are... The codebase is spreading well. Like that very well. Actually, I can send you that. So there is one that I locked into. What are you? So, Adobe's Agent Orchestrator, I think they did very well for that. Because, rather than using the whole approach of one agent to work on different tasks, they just use the agent to do some specific tasks, like from prompt to SQL. Yeah, so I think that is much more reliable, especially if you fine-tune the language model just for that task only. So I think it's much more reliable than just using a generic language model to do different tasks."}
+{"speaker": "Interviewer", "text": "I see. I'm not too familiar with this. So what does this do? The link that you just shared?"}
+{"speaker": "Participant", "text": "Oh yeah, so it's like a product from Adobe, it's called Adobe Orchestrator. It's like, I don't really remember a lot, but I remember there are some agents that work on just that specific problem."}
+{"speaker": "Interviewer", "text": "Okay."}
+{"speaker": "Participant", "text": "They have just one—the whole agent, just, I mean, one agent just for, like, converting from text to SQL query. Yeah."}
+{"speaker": "Interviewer", "text": "I see. So they provide all of these specialized agents."}
+{"speaker": "Participant", "text": "Yeah, exactly."}
+{"speaker": "Interviewer", "text": "Oh, I see. And then, does... I'm just looking at the screenshot here. So, users just put in the prompt, and then it does everything for you."}
+{"speaker": "Participant", "text": "Yeah, so they have, like, an orchestrator, so it will decide where to route the user prompt to, which agent to execute next. So, because there are multiple specialized agents—like, one is working with databases, one is working with different parts of, like, the LLM system, the photo system. Yeah, so depending on the user's prompt, the orchestrator will route it to that agent."}
+{"speaker": "Interviewer", "text": "I see."}
+{"speaker": "Participant", "text": "So I think, yeah, no. So back to your question, like, what are the signals to make our system more reliable? I think it's to break down the agents, the whole system, and use specialized agents rather than having one agent do multiple tasks, like a general agent or a general language model for an agent."}
+{"speaker": "Interviewer", "text": "I see. And then this tool also can use multiple agents for a single task, right? Each for specialized subtasks."}
+{"speaker": "Participant", "text": "Wait, can you repeat the question? So, for each prompt…"}
+{"speaker": "Interviewer", "text": "Yeah, so for this tool that you just shared, let's say the user inputs some task. Does the system use just a single agent, or does it also... if the task is..."}
+{"speaker": "Participant", "text": "I'm ready to help! However, I notice the text you've provided only contains \"Oh.\" which appears to be complete as is. \n\nCould you please provide the full interview transcript that needs correction?"}
+{"speaker": "Interviewer", "text": "I'm ready to help transcribe and correct interview text about LLM-based multi-agent systems. However, the text you provided only contains \"Located.\" which appears to be incomplete or a fragment.\n\nPlease provide the full interview transcript that you'd like me to correct, and I'll apply the corrections according to your guidelines without adding any explanations."}
+{"speaker": "Participant", "text": "That's a good question. I think I'm... I'll skip this part."}
+{"speaker": "Interviewer", "text": "Okay. That's fine. And I just have a last question. I think we already talked about this, so feel free to skip. So, just going back to developing the entire system, when you're coding."}
+{"speaker": "Participant", "text": "Hmm."}
+{"speaker": "Interviewer", "text": "What are some challenges, and what do you think can help with that?"}
+{"speaker": "Participant", "text": "So I think, yeah, back to that one, it's one of the challenges is because it should follow, like, a graph, right? Because it has direction from this agent, like, to this node, to another node, or between agents."}
+{"speaker": "Interviewer", "text": "I don't have any text to fix. The text provided only contains \"Yeah. So…\" which appears to be a natural conversational opening without any errors to correct.\n\nIf you have more substantial interview content you'd like me to transcribe and correct, please provide it and I'll be happy to help."}
+{"speaker": "Participant", "text": "The difficult part is I have to write everything down, like on a paper or in a note, to keep track of which nodes are interacting with each other, like which components are interacting with each other. And then I will implement based on that. Otherwise, it's very confusing and it just looks like a mess to me. Yeah, that's interesting."}
+{"speaker": "Interviewer", "text": "That's interesting. Okay, I can end the meeting or end the recording. Actually, so I wanted to talk about what kind of research I think we're doing, or what kind of tools that we'll build in the end, because, you know, the reason why—I can share my screen real quick."}
+{"speaker": "Participant", "text": "Okay."}
+{"speaker": "Interviewer", "text": "So, you know how currently there are these tools."}
+{"speaker": "Participant", "text": "Yeah, I know that one."}
+{"speaker": "Interviewer", "text": "Yeah, yeah."}
+{"speaker": "Participant", "text": "I appreciate your detailed instructions, but the text provided is only:\n\n\"local.\"\n\nThis appears to be either incomplete or a single word fragment. There are no transcription errors, stutters, grammar errors, or spelling errors to correct in this minimal content.\n\nIf you have a longer interview transcript that needs correction, please provide the full text and I'll apply the corrections according to your guidelines."}
+{"speaker": "Interviewer", "text": "It's for low-code, like, building of your multi-agent system. There's all kinds of tools that look like this. But then, so we think that one problem with these tools is that even though they provide good visuals—like, they're showing very clearly the entire structure of your system—and then they also show, like, inputs and outputs, and also what kind of tools maybe our agent is using. But I feel like they're just not as flexible as if you're just using LangChain or LangGraph, because it's just Python, like, you can do whatever."}
+{"speaker": "Participant", "text": "Hmm."}
+{"speaker": "Interviewer", "text": "So we're thinking to maybe build an add-on to LangChain or LangGraph, so that you can actually visualize in real time when we were still developing the system. And that's kind of different from LangSmith, because LangSmith is more so when you have the system ready, or at least you have a working prototype. Yeah. But before that, you can't really visualize the system."}
+{"speaker": "Participant", "text": "Oh, that's cool. I… Hold on, I remember Linegraph has something similar. But, like, it's difficult, somehow it's difficult to use. Because last time when I tried with my computer, it just doesn't work. I forget what that's called, but I'm pretty sure it's available on Linegraph as well. Oh, it's called Linecraft Studio."}
+{"speaker": "Interviewer", "text": "Than graphs to do."}
+{"speaker": "Participant", "text": "So it's a lot to visualize."}
+{"speaker": "Interviewer", "text": "Yeah, I know."}
+{"speaker": "Participant", "text": "Yeah."}
+{"speaker": "Interviewer", "text": "Yeah."}
+{"speaker": "Participant", "text": "Oh yeah, also another issue, I think can be a problem with multi-agents and AI agents in general for me is because every time we call an agent, it's working, right? It will like call in a request to hosts, right? It can be like a bottleneck when we scale to production."}
+{"speaker": "Interviewer", "text": "Hmm, can you explain more?"}
+{"speaker": "Participant", "text": "So, firstly, when I have to send requests to the model."}
+{"speaker": "Interviewer", "text": "Yeah."}
+{"speaker": "Participant", "text": "From Avil, it may take some time to get the response back, right?"}
+{"speaker": "Interviewer", "text": "Okay."}
+{"speaker": "Participant", "text": "This can't be processed in a batch?"}
+{"speaker": "Interviewer", "text": "I see."}
+{"speaker": "Participant", "text": "So, yeah, I think that's a bottleneck. If the system, like a multi-agent system, is complicated, it may increase the latency as well."}
+{"speaker": "Interviewer", "text": "Yeah."}
+{"speaker": "Participant", "text": "Even though I know there should be some research working on parallelizing the components in the agent system, but I haven't looked into that yet."}
+{"speaker": "Interviewer", "text": "Yeah, I think that's the reason why a lot of these frameworks all have some sort of fallback strategies, if you like. Oh yeah, I thought of that. Yeah, if you fail, let's say, 3 times in a row, then it just goes to a failure branch."}
+{"speaker": "Participant", "text": "Hmm, yeah."}
+{"speaker": "Interviewer", "text": "Yeah. Okay, I think I can stop recording now."}

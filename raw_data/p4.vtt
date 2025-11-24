@@ -1,0 +1,1626 @@
+WEBVTT
+
+1
+00:00:02.780 --> 00:00:08.540
+Zhongzheng Xu: Alright, okay, we can go ahead and get started. So…
+
+2
+00:00:08.660 --> 00:00:17.840
+Zhongzheng Xu: I'm going to start with, like, a pretty abstract question. So, when you hear the term, multi-agent system, what does it mean to you?
+
+3
+00:00:18.230 --> 00:00:25.339
+Quan Nguyen: So, a mediation system is, like, a system of, like, multiple agents, and each agent will work on a specific task.
+
+4
+00:00:26.120 --> 00:00:31.040
+Quan Nguyen: Yeah. So, and they need to, like, collaborate and interact with each other.
+
+5
+00:00:31.230 --> 00:00:33.549
+Quan Nguyen: So that's what I would define.
+
+6
+00:00:33.960 --> 00:00:43.960
+Zhongzheng Xu: Okay, and then, could you tell me about, like, one or two representative projects that you've worked on that have used a multi-agent system?
+
+7
+00:00:44.440 --> 00:00:52.150
+Quan Nguyen: Yeah, yeah, so the last summer, I interned and I worked on, like, like a blending agent. So…
+
+8
+00:00:52.570 --> 00:00:55.280
+Quan Nguyen: It's, like, yeah, so that's, like, a s…
+
+9
+00:00:55.640 --> 00:01:00.390
+Quan Nguyen: quite a simpler version of documentations, because, the main…
+
+10
+00:01:00.560 --> 00:01:05.350
+Quan Nguyen: the main agent, like, the whole system. The task is to…
+
+11
+00:01:06.000 --> 00:01:21.800
+Quan Nguyen: like, allow user to, like, like, user having a plan, like, what they want to do, right? And the whole system has two great plans, like, supporting, like, providing step-by-step plans for the user, and then helping the user to track
+
+12
+00:01:21.930 --> 00:01:25.919
+Quan Nguyen: the plan… the plan, like, what is the progress they have made so far?
+
+13
+00:01:26.950 --> 00:01:29.560
+Quan Nguyen: Saw it in… include, like, the…
+
+14
+00:01:29.710 --> 00:01:31.720
+Quan Nguyen: The main agent, which is, like.
+
+15
+00:01:32.670 --> 00:01:35.910
+Quan Nguyen: like, we'll work with, Yusu, and…
+
+16
+00:01:36.270 --> 00:01:42.199
+Quan Nguyen: Like, return the response to the user, and another one… another agent is, like, the planning agent.
+
+17
+00:01:42.220 --> 00:01:43.210
+Zhongzheng Xu: So it's…
+
+18
+00:01:43.210 --> 00:01:49.170
+Quan Nguyen: Just for planning specifically. And also keep track of the progress, like.
+
+19
+00:01:49.860 --> 00:01:55.600
+Quan Nguyen: Yeah, because I defined, like, a schema. Like, what is the pro… like, what is the step ID?
+
+20
+00:01:55.910 --> 00:02:03.970
+Quan Nguyen: what does that step doing, and is the user done that? Like, what is the progress? Like, have they done it, or not yet?
+
+21
+00:02:04.170 --> 00:02:08.669
+Quan Nguyen: Yeah, so that… Planning agents just work on that specifically.
+
+22
+00:02:08.810 --> 00:02:13.720
+Quan Nguyen: And, like, yeah, and then there's a main agent, which is there. Like.
+
+23
+00:02:13.920 --> 00:02:16.209
+Quan Nguyen: walking with, like, call up. Hmm.
+
+24
+00:02:16.720 --> 00:02:27.749
+Quan Nguyen: So, like, getting information from the planning agent, and then return to the user, and, like, receiving command from the user, and interact with the planning agent to update the progress.
+
+25
+00:02:28.780 --> 00:02:38.230
+Zhongzheng Xu: Okay, so, just for clarification, like, the users are the ones that actually execute the tasks, right?
+
+26
+00:02:38.230 --> 00:02:43.710
+Quan Nguyen: Yes, exactly. So, like, they done this task, and they just let the agent know that.
+
+27
+00:02:43.890 --> 00:02:49.979
+Quan Nguyen: like, they've done this step, but theirs can be… they can also come in, like, to update
+
+28
+00:02:50.240 --> 00:02:52.299
+Quan Nguyen: The step to be this or that.
+
+29
+00:02:52.770 --> 00:02:56.619
+Zhongzheng Xu: Okay, I see. And then… so there's…
+
+30
+00:02:57.020 --> 00:03:05.170
+Zhongzheng Xu: Two agents, one that's talking to the user, and then another planning agent that's overseeing the entire progress.
+
+31
+00:03:05.970 --> 00:03:09.390
+Zhongzheng Xu: Okay, and then,
+
+32
+00:03:09.850 --> 00:03:17.449
+Zhongzheng Xu: So, like, for this project, did you use any framework, like, like LaneChain, Lane Graph.
+
+33
+00:03:17.450 --> 00:03:21.019
+Quan Nguyen: Yeah, yeah, yeah. I use both and also Landsmith's 2D book.
+
+34
+00:03:21.290 --> 00:03:23.000
+Zhongzheng Xu: Lane Smith's suitable debug.
+
+35
+00:03:23.000 --> 00:03:26.220
+Quan Nguyen: Yeah, because I use that for tracing in people.
+
+36
+00:03:26.220 --> 00:03:26.760
+Zhongzheng Xu: Yeah.
+
+37
+00:03:27.050 --> 00:03:36.640
+Zhongzheng Xu: Interesting. You're actually the first interviewee that mentioned, Langsmith. Like, what was your experience using Langsmith?
+
+38
+00:03:37.330 --> 00:03:43.080
+Quan Nguyen: I think that's sold for my experience, I just used, like, the simplest I was part of that.
+
+39
+00:03:43.610 --> 00:03:55.620
+Quan Nguyen: just like that tracing, because I think it's pretty nice, because it helped me, like, debug much easier, and I don't have to, like, add a print statement everywhere else in the code.
+
+40
+00:03:56.300 --> 00:03:56.700
+Zhongzheng Xu: Okay.
+
+41
+00:03:56.700 --> 00:04:00.509
+Quan Nguyen: Yeah, and it also helped me track the, tool calling.
+
+42
+00:04:00.970 --> 00:04:04.979
+Quan Nguyen: And, like, what do they get from the tools? And, like, managing the…
+
+43
+00:04:05.080 --> 00:04:07.460
+Quan Nguyen: The memory of the agent as well.
+
+44
+00:04:08.060 --> 00:04:14.050
+Zhongzheng Xu: Okay. So… We'll actually talk about
+
+45
+00:04:14.170 --> 00:04:17.050
+Zhongzheng Xu: Managing tools and memory in a bit.
+
+46
+00:04:18.399 --> 00:04:25.910
+Zhongzheng Xu: And then, but before that, I have a couple more, high-level questions. So,
+
+47
+00:04:27.730 --> 00:04:34.010
+Zhongzheng Xu: So, for the system that I just described, like, what kind of tasks have you, like, have a user done?
+
+48
+00:04:35.350 --> 00:04:41.020
+Quan Nguyen: So, it's mostly for Adobe, because the engine is Adobe, so it's, like, for Adobe products.
+
+49
+00:04:41.080 --> 00:04:42.360
+Zhongzheng Xu: So…
+
+50
+00:04:42.360 --> 00:04:44.729
+Quan Nguyen: Actually, my internship is just, like.
+
+51
+00:04:45.560 --> 00:04:49.599
+Quan Nguyen: more like a prototype version. It's not yet deployed in the process.
+
+52
+00:04:49.600 --> 00:04:50.140
+Zhongzheng Xu: Okay.
+
+53
+00:04:50.340 --> 00:04:59.520
+Quan Nguyen: Yeah, but, like, the main purpose will be, like, yeah, helping the user to do some tasks with other people just, like, maybe register for premium, subscription.
+
+54
+00:04:59.630 --> 00:05:02.829
+Quan Nguyen: Or, like, canceling the subscription, yeah, like that.
+
+55
+00:05:03.010 --> 00:05:04.880
+Zhongzheng Xu: Oh, I see, I see.
+
+56
+00:05:05.130 --> 00:05:13.639
+Zhongzheng Xu: And then, like… Did you, did you think that a multi-agent system, like.
+
+57
+00:05:14.700 --> 00:05:22.770
+Zhongzheng Xu: Or having that kind of structure is going to be helpful, versus maybe just having, like, a single LLM.
+
+58
+00:05:24.740 --> 00:05:33.079
+Quan Nguyen: So, from my experience and, like, from different documents I read, I believe, like, this thing, yeah, multiple agents will be better.
+
+59
+00:05:33.510 --> 00:05:35.950
+Quan Nguyen: I don't know, it's kind of like a trade-off.
+
+60
+00:05:36.300 --> 00:05:43.810
+Quan Nguyen: So, the agent, like, especially if you use, like, small language models, it can just, like, specialize in that task only, so it will be…
+
+61
+00:05:43.940 --> 00:05:44.820
+Quan Nguyen: Randa?
+
+62
+00:05:44.930 --> 00:05:49.929
+Quan Nguyen: like, provide better solution or, like, better accuracy than, like, a huge LM.
+
+63
+00:05:50.370 --> 00:05:51.590
+Quan Nguyen: Also.
+
+64
+00:05:51.700 --> 00:06:00.990
+Quan Nguyen: But, like, the trade-off is there can be some errors, right? The agent, like, is not always correct, so they… the errors can be aggregated every time, like.
+
+65
+00:06:01.330 --> 00:06:02.889
+Quan Nguyen: Tool calling and stuff.
+
+66
+00:06:03.090 --> 00:06:06.710
+Quan Nguyen: So, that's a risk with that. Also…
+
+67
+00:06:07.130 --> 00:06:14.590
+Quan Nguyen: From my experience so far, like, working with agents, like, because they have to communicate with each other, it takes quite a lot of time.
+
+68
+00:06:14.810 --> 00:06:15.930
+Quan Nguyen: It's a process.
+
+69
+00:06:16.350 --> 00:06:17.010
+Zhongzheng Xu: I said.
+
+70
+00:06:17.010 --> 00:06:20.799
+Quan Nguyen: Yeah, so the latency is pretty high. And…
+
+71
+00:06:21.290 --> 00:06:26.939
+Quan Nguyen: Another part is, using agent-to-agent. I haven't tested that, really much.
+
+72
+00:06:27.040 --> 00:06:31.269
+Quan Nguyen: But, like, I would be working on, like, a huge agent system, and they…
+
+73
+00:06:31.600 --> 00:06:35.590
+Quan Nguyen: I heard from my mentor, she said that, like, there, I can…
+
+74
+00:06:35.700 --> 00:06:39.460
+Quan Nguyen: System also has troubling with communication between agents.
+
+75
+00:06:39.560 --> 00:06:46.510
+Quan Nguyen: Because, yeah, like, complication… Through agent-to-agent is simply, like, marked down and…
+
+76
+00:06:47.210 --> 00:06:48.909
+Quan Nguyen: Yeah, there can be errors as well.
+
+77
+00:06:49.380 --> 00:06:55.229
+Zhongzheng Xu: Okay, do you know, like, usually what type of errors would occur?
+
+78
+00:06:57.490 --> 00:06:59.059
+Quan Nguyen: So, photos…
+
+79
+00:06:59.310 --> 00:07:08.250
+Quan Nguyen: your system, I don't know, because I don't work on that. But for my project, it can be, like, maybe the prompt is not clear enough.
+
+80
+00:07:08.350 --> 00:07:16.029
+Quan Nguyen: Or, like, there can be edge cases that the problem doesn't cover, so the agent will just decide something else that
+
+81
+00:07:16.390 --> 00:07:19.989
+Quan Nguyen: like, routing to something else, I don't ex…
+
+82
+00:07:20.320 --> 00:07:20.730
+Zhongzheng Xu: Okay.
+
+83
+00:07:20.730 --> 00:07:22.020
+Quan Nguyen: to me? Yeah.
+
+84
+00:07:22.200 --> 00:07:23.539
+Zhongzheng Xu: So, actually, it's…
+
+85
+00:07:23.810 --> 00:07:28.739
+Quan Nguyen: I think it's very challenging and difficult to control the behavior of the agents.
+
+86
+00:07:29.520 --> 00:07:31.100
+Zhongzheng Xu: I see.
+
+87
+00:07:31.620 --> 00:07:35.279
+Zhongzheng Xu: Okay, so,
+
+88
+00:07:35.620 --> 00:07:55.120
+Zhongzheng Xu: So for the same project, could you walk me through from, like, how you design the entire structure, including how did you design system prompts, how did you manage the tools, the memory, like, what contexts are shared between the agents, stuff like that.
+
+89
+00:07:56.270 --> 00:07:59.539
+Quan Nguyen: Hold on, I need to pull that report up.
+
+90
+00:07:59.540 --> 00:08:00.740
+Zhongzheng Xu: Okay.
+
+91
+00:08:32.049 --> 00:08:37.690
+Quan Nguyen: So, it's simply, like, I will think about, like, similar to if-else. Let me share the screen.
+
+92
+00:08:38.059 --> 00:08:39.309
+Zhongzheng Xu: Oh, yeah.
+
+93
+00:08:39.309 --> 00:08:40.299
+Quan Nguyen: Can you allow me to do that?
+
+94
+00:08:40.299 --> 00:08:41.009
+Zhongzheng Xu: Yeah.
+
+95
+00:08:47.430 --> 00:08:49.629
+Quan Nguyen: Alright, so it's.
+
+96
+00:08:54.150 --> 00:08:57.930
+Zhongzheng Xu: Can you see that, GitHub one? Yes. Yeah, yeah.
+
+97
+00:08:57.930 --> 00:09:00.710
+Quan Nguyen: So, it's more like… like this.
+
+98
+00:09:02.660 --> 00:09:08.580
+Quan Nguyen: Like, so for the user prompts, we need to routing, like, whether to use the blender or not, because.
+
+99
+00:09:08.580 --> 00:09:08.960
+Zhongzheng Xu: That's competitive.
+
+100
+00:09:08.960 --> 00:09:11.710
+Quan Nguyen: Depending on the promise, can be, like, just simple questions, like.
+
+101
+00:09:12.900 --> 00:09:15.560
+Quan Nguyen: Maybe hi and hello from user.
+
+102
+00:09:15.780 --> 00:09:16.160
+Zhongzheng Xu: Yeah.
+
+103
+00:09:16.160 --> 00:09:21.599
+Quan Nguyen: So, for that case, we don't need to use the planner, right? So, we just use some agents and…
+
+104
+00:09:21.990 --> 00:09:23.399
+Quan Nguyen: Provide a final response.
+
+105
+00:09:23.580 --> 00:09:26.320
+Zhongzheng Xu: And otherwise, if user asks, like.
+
+106
+00:09:26.530 --> 00:09:30.269
+Quan Nguyen: Help provide me steps to do this task.
+
+107
+00:09:30.470 --> 00:09:31.540
+Zhongzheng Xu: And then…
+
+108
+00:09:31.800 --> 00:09:34.040
+Quan Nguyen: Yeah, we need an agent to…
+
+109
+00:09:34.930 --> 00:09:41.240
+Quan Nguyen: all on multiple parts of us. So this is, yeah, like, a pretty simple version of mine, like, the…
+
+110
+00:09:42.820 --> 00:09:50.300
+Quan Nguyen: Because in the future, like, later than this, I will work on, like, separating them, like, the planning agencies separately.
+
+111
+00:09:51.930 --> 00:09:52.650
+Quan Nguyen: Yeah.
+
+112
+00:09:54.150 --> 00:10:00.360
+Quan Nguyen: But, yeah, so… Likely, hold on.
+
+113
+00:10:01.080 --> 00:10:03.459
+Quan Nguyen: The process of, like, designing, right?
+
+114
+00:10:03.770 --> 00:10:04.150
+Zhongzheng Xu: Yo.
+
+115
+00:10:04.150 --> 00:10:12.050
+Quan Nguyen: So, yeah, at first I decided, like, whether to use the blending agent or not, so that's why I got lost to…
+
+116
+00:10:12.800 --> 00:10:21.460
+Quan Nguyen: arrows here, two directions here. And then, yeah, like, not using… when done using agents, pretty simple. But when using the planning.
+
+117
+00:10:21.700 --> 00:10:28.110
+Quan Nguyen: I have to provide… thinking of, like, what are the tools or things…
+
+118
+00:10:28.900 --> 00:10:31.630
+Quan Nguyen: tools, like, I need to go right to the agent, right?
+
+119
+00:10:31.890 --> 00:10:32.680
+Zhongzheng Xu: Right.
+
+120
+00:10:32.790 --> 00:10:40.199
+Quan Nguyen: And so, yeah, and then that's why I have to think about, like, what are the features that we need to allow the user to…
+
+121
+00:10:40.940 --> 00:10:46.069
+Quan Nguyen: to… do with their plan. Like, they have need… they can…
+
+122
+00:10:46.370 --> 00:10:50.169
+Quan Nguyen: They should be allowed to remove the one step of the plane.
+
+123
+00:10:50.380 --> 00:10:53.539
+Quan Nguyen: Or they want to change, update the step?
+
+124
+00:10:54.090 --> 00:10:57.670
+Quan Nguyen: Or, like, adding a new step, like, providing more detailed step.
+
+125
+00:10:57.820 --> 00:10:59.060
+Quan Nguyen: It's a deadline?
+
+126
+00:10:59.210 --> 00:11:05.000
+Quan Nguyen: So that's why… Yeah, it has modules… actually, it's novel, like, it's more like a tool.
+
+127
+00:11:06.040 --> 00:11:07.579
+Quan Nguyen: It turned into a toast.
+
+128
+00:11:07.760 --> 00:11:12.340
+Quan Nguyen: Yeah, so that's… how I got to this one.
+
+129
+00:11:17.660 --> 00:11:18.929
+Quan Nguyen: Yeah, I think…
+
+130
+00:11:20.200 --> 00:11:30.929
+Zhongzheng Xu: I see. And then, did you, how did you, like, design, or what was the process of, like, designing, system prompts, and then,
+
+131
+00:11:31.550 --> 00:11:36.580
+Zhongzheng Xu: like you said, like, providing tools to the agents, was it…
+
+132
+00:11:36.970 --> 00:11:42.559
+Zhongzheng Xu: Was it easy, or did you have to, sort of, trial and… trial and error?
+
+133
+00:11:42.560 --> 00:11:58.489
+Quan Nguyen: Yeah, plus try and, because, advertise, just think of some test case, and then I try with that, and when it doesn't behave as I expect, I, like, just note down that white hair like that, and then I, yeah, just turn to Jatuity to
+
+134
+00:11:58.610 --> 00:12:01.549
+Quan Nguyen: Help me fine-tune the prompt. Updating the prompt.
+
+135
+00:12:01.690 --> 00:12:02.490
+Quan Nguyen: Profitly.
+
+136
+00:12:02.910 --> 00:12:04.449
+Zhongzheng Xu: I see. I see.
+
+137
+00:12:05.280 --> 00:12:11.010
+Zhongzheng Xu: And, okay.
+
+138
+00:12:11.470 --> 00:12:18.230
+Zhongzheng Xu: I guess you already talked about most of the challenges, but just… Think… Thinking back,
+
+139
+00:12:18.800 --> 00:12:26.690
+Zhongzheng Xu: of this entire architecture design, was there any, like… what was, like, the most challenging part for you?
+
+140
+00:12:27.370 --> 00:12:33.060
+Quan Nguyen: For me, the most challenging part is, like, well…
+
+141
+00:12:35.320 --> 00:12:40.570
+Quan Nguyen: Where the user to, like, a plan, like, working with the staff in the plan, right?
+
+142
+00:12:41.150 --> 00:12:48.139
+Quan Nguyen: Because, currently I'm just setting to use the like, the step ID?
+
+143
+00:12:48.680 --> 00:12:54.330
+Quan Nguyen: So, it means that the user have to specify the step ID when
+
+144
+00:12:54.670 --> 00:13:04.850
+Quan Nguyen: like, which step they want to update or make a change. But, like, I wanted to improve to, like, yeah, just from… I want to… this step, like, this step working on
+
+145
+00:13:05.100 --> 00:13:10.000
+Quan Nguyen: creating… Like, register for a new user.
+
+146
+00:13:10.850 --> 00:13:12.660
+Quan Nguyen: For example, it,
+
+147
+00:13:12.770 --> 00:13:22.649
+Quan Nguyen: I wanted to, like, the agent should be allowed… should be able to determine which step is that by their own, but not, like, explicit… experience…
+
+148
+00:13:23.400 --> 00:13:26.090
+Quan Nguyen: Explicitly saying the step.
+
+149
+00:13:26.820 --> 00:13:31.109
+Quan Nguyen: So that was the challenge that I haven't solved yet.
+
+150
+00:13:31.340 --> 00:13:35.370
+Zhongzheng Xu: Okay, I see. So they have to, like, kind of manually…
+
+151
+00:13:35.930 --> 00:13:38.010
+Zhongzheng Xu: Log their progress.
+
+152
+00:13:39.040 --> 00:13:39.850
+Zhongzheng Xu: Okay.
+
+153
+00:13:41.220 --> 00:13:49.870
+Zhongzheng Xu: Alright, and then, you said that you used, Lanesmith for, like, monitoring the system.
+
+154
+00:13:50.060 --> 00:13:57.889
+Zhongzheng Xu: Like, what components of Landsmith, do you think was the most helpful?
+
+155
+00:14:00.170 --> 00:14:00.830
+Zhongzheng Xu: Lifetime.
+
+156
+00:14:00.830 --> 00:14:03.830
+Quan Nguyen: The one on the night space is… More like a…
+
+157
+00:14:04.060 --> 00:14:09.910
+Zhongzheng Xu: Like, what makes you think that the tool is helpful? Like, was it the log traces?
+
+158
+00:14:09.910 --> 00:14:16.150
+Quan Nguyen: Yeah, the lock tracing, so, like, when I have a prompt done from the user, I know which
+
+159
+00:14:16.490 --> 00:14:21.140
+Quan Nguyen: What is the input for each node, and what is the output?
+
+160
+00:14:21.250 --> 00:14:26.840
+Quan Nguyen: And then I can also trace, like, which step, like, which direction it will go next.
+
+161
+00:14:28.870 --> 00:14:31.429
+Quan Nguyen: Yeah, and because I'm also using the memory.
+
+162
+00:14:31.560 --> 00:14:36.320
+Quan Nguyen: Like, because the conversation will continue, like, between the agent and the user.
+
+163
+00:14:36.700 --> 00:14:37.060
+Zhongzheng Xu: Thank you.
+
+164
+00:14:37.060 --> 00:14:40.739
+Quan Nguyen: But Joe, what… I'll fit it into the memory.
+
+165
+00:14:41.420 --> 00:14:44.360
+Zhongzheng Xu: I see. And then,
+
+166
+00:14:44.480 --> 00:14:50.219
+Zhongzheng Xu: Like, when you're still, let's say, implementing the system, when you're still coding.
+
+167
+00:14:50.550 --> 00:14:58.189
+Zhongzheng Xu: Did you run into any bugs? Like… Can you recall, like,
+
+168
+00:14:58.670 --> 00:15:01.149
+Zhongzheng Xu: Pretty difficult book that you had.
+
+169
+00:15:06.620 --> 00:15:07.610
+Zhongzheng Xu: No, it's okay.
+
+170
+00:15:07.610 --> 00:15:10.019
+Quan Nguyen: Yeah, I don't remember much better.
+
+171
+00:15:10.370 --> 00:15:11.300
+Zhongzheng Xu: Okay.
+
+172
+00:15:11.520 --> 00:15:12.440
+Zhongzheng Xu: I see.
+
+173
+00:15:12.720 --> 00:15:21.770
+Zhongzheng Xu: And then… So, you set…
+
+174
+00:15:22.160 --> 00:15:28.219
+Zhongzheng Xu: I think you mentioned it, but, like, so were you able to actually, test the systems with,
+
+175
+00:15:28.600 --> 00:15:32.640
+Zhongzheng Xu: Some real users, or were you just mostly testing yourself?
+
+176
+00:15:32.990 --> 00:15:35.929
+Quan Nguyen: I'm mostly testing myself, yeah, because…
+
+177
+00:15:36.170 --> 00:15:38.180
+Quan Nguyen: I know it's not yet deployed.
+
+178
+00:15:38.760 --> 00:15:44.830
+Zhongzheng Xu: Okay. And… Since you're testing yourself, like…
+
+179
+00:15:45.620 --> 00:15:50.379
+Zhongzheng Xu: When did you, so, what made you feel, like, confident?
+
+180
+00:15:50.650 --> 00:15:55.279
+Zhongzheng Xu: That this system is pretty reliable and consistent.
+
+181
+00:15:56.010 --> 00:15:57.719
+Quan Nguyen: No, actually, I don't think so.
+
+182
+00:15:57.720 --> 00:15:58.660
+Zhongzheng Xu: Oh, you don't think so?
+
+183
+00:15:58.660 --> 00:15:59.130
+Quan Nguyen: Yeah.
+
+184
+00:16:00.160 --> 00:16:02.890
+Quan Nguyen: Yeah, I think this one, we need a lot more improvement.
+
+185
+00:16:03.730 --> 00:16:04.490
+Zhongzheng Xu: Okay.
+
+186
+00:16:04.490 --> 00:16:07.339
+Quan Nguyen: Well, what makes you… what makes you think that way?
+
+187
+00:16:07.980 --> 00:16:11.170
+Quan Nguyen: Yeah, like, from all those flaws that I told you for, like.
+
+188
+00:16:11.280 --> 00:16:18.249
+Quan Nguyen: It's quite difficult to control which direction it will go to, especially whether you use the blending or not.
+
+189
+00:16:18.390 --> 00:16:23.189
+Quan Nguyen: like, at first, for example, for some tasks, I…
+
+190
+00:16:24.280 --> 00:16:28.700
+Quan Nguyen: have to explicitly say that I want to plan this.
+
+191
+00:16:29.250 --> 00:16:32.700
+Quan Nguyen: So that it will just… it will trigger the planning agent.
+
+192
+00:16:32.750 --> 00:16:34.119
+Zhongzheng Xu: Otherwise…
+
+193
+00:16:34.520 --> 00:16:41.030
+Quan Nguyen: So, for some time, I just, like, do this, and it's just, like, the agent recharge, like…
+
+194
+00:16:42.450 --> 00:16:48.699
+Quan Nguyen: for some… because for some test case, I asked it to from, like, To do something.
+
+195
+00:16:49.480 --> 00:16:53.850
+Quan Nguyen: the middle step as well, but, like, the Lee, not intriguing it.
+
+196
+00:16:54.020 --> 00:16:57.340
+Quan Nguyen: It just felt like it doesn't need the planning.
+
+197
+00:16:57.860 --> 00:17:01.510
+Zhongzheng Xu: Oh, I see. So, like, triggering the planning agent.
+
+198
+00:17:01.510 --> 00:17:02.180
+Quan Nguyen: Yeah.
+
+199
+00:17:03.280 --> 00:17:04.619
+Zhongzheng Xu: Interesting.
+
+200
+00:17:04.970 --> 00:17:07.709
+Zhongzheng Xu: Do you think it was, like, a prompt issue, or…
+
+201
+00:17:08.640 --> 00:17:13.959
+Quan Nguyen: Yeah, that can be the prompt issue, so that's why, I mean, I try to update the prompt.
+
+202
+00:17:14.450 --> 00:17:22.459
+Quan Nguyen: But, like, I'm not confident that it will be able to cover all the edge cases, especially in the production.
+
+203
+00:17:23.410 --> 00:17:24.710
+Zhongzheng Xu: When…
+
+204
+00:17:24.710 --> 00:17:28.779
+Quan Nguyen: Yeah, there are many different scenarios with the users.
+
+205
+00:17:29.780 --> 00:17:33.419
+Quan Nguyen: Yeah, I just haven't… Tied up that.
+
+206
+00:17:33.760 --> 00:17:34.440
+Quan Nguyen: Watch.
+
+207
+00:17:35.290 --> 00:17:36.210
+Zhongzheng Xu: I see.
+
+208
+00:17:36.630 --> 00:17:39.709
+Zhongzheng Xu: And then… Do you think this is…
+
+209
+00:17:40.790 --> 00:17:51.569
+Zhongzheng Xu: I don't know if you have done it, but, like, if you just use the same exact prompt, same input, do you think it's sometimes relative to the planning agent, sometimes it doesn't?
+
+210
+00:17:53.370 --> 00:17:54.040
+Quan Nguyen: Hmm.
+
+211
+00:17:57.140 --> 00:18:03.650
+Quan Nguyen: Yeah, I… I don't remember when, like, yeah, but for some… I remember for some days.
+
+212
+00:18:04.460 --> 00:18:05.969
+Quan Nguyen: It can be like that.
+
+213
+00:18:06.140 --> 00:18:06.960
+Zhongzheng Xu: Okay.
+
+214
+00:18:07.310 --> 00:18:11.020
+Quan Nguyen: Yes, so that's what I meant. It's not… really stable.
+
+215
+00:18:11.600 --> 00:18:14.569
+Zhongzheng Xu: Okay. I see. I see.
+
+216
+00:18:14.910 --> 00:18:22.470
+Zhongzheng Xu: So I know this is a past project, and you haven't… and you probably haven't looked at it for a while, but…
+
+217
+00:18:22.470 --> 00:18:38.370
+Zhongzheng Xu: if you have, like, so, let's say Lanesmith, or just Langchain, LaneGraph in general, if there's some new feature that you can add to it that would help you with the process of developing, what do you think
+
+218
+00:18:38.650 --> 00:18:39.779
+Zhongzheng Xu: They can be.
+
+219
+00:18:43.420 --> 00:18:46.990
+Quan Nguyen: That's interesting.
+
+220
+00:18:53.860 --> 00:18:55.140
+Quan Nguyen: Yeah, I don't know.
+
+221
+00:18:55.350 --> 00:19:01.359
+Quan Nguyen: I don't have any ideas now, because last time when I used Langraph, I pretty… I believe this.
+
+222
+00:19:02.410 --> 00:19:07.740
+Quan Nguyen: like, cover pretty… We have, like, different functions already.
+
+223
+00:19:08.190 --> 00:19:15.560
+Zhongzheng Xu: Yeah, it's pretty good. What about, okay, maybe not Lance… Lane Chain, what about, like, Lanesmith?
+
+224
+00:19:17.410 --> 00:19:18.160
+Quan Nguyen: Yes, ma'am?
+
+225
+00:19:18.750 --> 00:19:24.859
+Quan Nguyen: Last minute, I… yeah, the issue is I don't use this much. Okay. Like, I just use simply for…
+
+226
+00:19:24.860 --> 00:19:25.270
+Zhongzheng Xu: We're deep.
+
+227
+00:19:25.270 --> 00:19:26.490
+Quan Nguyen: Administration, yeah.
+
+228
+00:19:27.040 --> 00:19:30.809
+Quan Nguyen: So, and I think, like, the tracing works pretty well.
+
+229
+00:19:31.680 --> 00:19:33.639
+Quan Nguyen: It shows me all the, like, the…
+
+230
+00:19:34.130 --> 00:19:36.549
+Quan Nguyen: It takes, and the input and output.
+
+231
+00:19:36.680 --> 00:19:42.110
+Quan Nguyen: So I can trace, like, For each end node here, each tool calling.
+
+232
+00:19:44.530 --> 00:19:45.350
+Zhongzheng Xu: I see.
+
+233
+00:19:54.060 --> 00:19:58.020
+Zhongzheng Xu: Oh yeah, so… I'm actually…
+
+234
+00:19:58.770 --> 00:20:08.190
+Zhongzheng Xu: I haven't used Langsmith myself, but I know it… it does… it does show you, like, input and output.
+
+235
+00:20:08.370 --> 00:20:14.459
+Zhongzheng Xu: Does it also help you with, like, managing, memory and context?
+
+236
+00:20:15.400 --> 00:20:18.059
+Quan Nguyen: The context part is for the length graph.
+
+237
+00:20:20.130 --> 00:20:20.900
+Zhongzheng Xu: Okay, complex.
+
+238
+00:20:20.900 --> 00:20:24.989
+Quan Nguyen: Yeah, Linecraft does support, like, memory tracking.
+
+239
+00:20:25.950 --> 00:20:29.669
+Quan Nguyen: This, like, yeah, allow me to add memory to the agent.
+
+240
+00:20:30.300 --> 00:20:37.270
+Zhongzheng Xu: Okay, I see. But does Landsmith also help you, like, visual, like, visualize that?
+
+241
+00:20:37.780 --> 00:20:41.380
+Quan Nguyen: Yeah, it's all when tracing, it also shows the memory.
+
+242
+00:20:41.930 --> 00:20:44.070
+Zhongzheng Xu: I see. So I can check that as well.
+
+243
+00:20:45.360 --> 00:20:46.070
+Zhongzheng Xu: I see.
+
+244
+00:20:54.920 --> 00:20:58.400
+Zhongzheng Xu: And then, you said that… you,
+
+245
+00:20:59.260 --> 00:21:01.629
+Zhongzheng Xu: Even, like, even now, you don't really…
+
+246
+00:21:01.940 --> 00:21:05.859
+Zhongzheng Xu: think the system is reliable. Like…
+
+247
+00:21:08.510 --> 00:21:15.519
+Zhongzheng Xu: When do you… like, what signals or indicators Do you think…
+
+248
+00:21:16.340 --> 00:21:24.699
+Zhongzheng Xu: If you, like, if you see them, you would think, this system is pretty reliable and consistent, and you can trust having users actually use it.
+
+249
+00:21:25.270 --> 00:21:25.890
+Quan Nguyen: Hmm.
+
+250
+00:21:26.350 --> 00:21:27.750
+Quan Nguyen: It's pretty tough.
+
+251
+00:21:27.970 --> 00:21:35.720
+Quan Nguyen: Actually, Because of that, I really hate working with AI agents in general.
+
+252
+00:21:36.430 --> 00:21:37.370
+Quan Nguyen: Yeah.
+
+253
+00:21:38.880 --> 00:21:42.999
+Quan Nguyen: What is the signal that let me know that it's reliable?
+
+254
+00:21:49.540 --> 00:21:57.570
+Quan Nguyen: pretty challenging, yeah, because I haven't thought of that, because mostly it's… From the agent's output.
+
+255
+00:21:58.450 --> 00:22:02.229
+Quan Nguyen: like… Depending on the prompts and the…
+
+256
+00:22:03.380 --> 00:22:10.670
+Quan Nguyen: The input of the users, the output of the language model maybe can be changed a bit.
+
+257
+00:22:13.330 --> 00:22:19.069
+Zhongzheng Xu: I see. So, maybe, like… After we have run,
+
+258
+00:22:19.330 --> 00:22:24.170
+Zhongzheng Xu: Like, a dataset of different prompts, and then…
+
+259
+00:22:24.960 --> 00:22:32.080
+Zhongzheng Xu: And then the final output is… or, like, the traces are aligning with your expectation.
+
+260
+00:22:32.320 --> 00:22:33.010
+Quan Nguyen: Yeah.
+
+261
+00:22:33.450 --> 00:22:34.599
+Zhongzheng Xu: Okay, I see.
+
+262
+00:22:34.950 --> 00:22:36.170
+Quan Nguyen: Yeah, so…
+
+263
+00:22:36.540 --> 00:22:40.700
+Quan Nguyen: Otherwise, I think just, focus on the prompt engineering part.
+
+264
+00:22:41.950 --> 00:22:48.760
+Zhongzheng Xu: Okay, so you would say that, prompt engineering… prompt engineering was probably the most important.
+
+265
+00:22:49.160 --> 00:22:49.960
+Quan Nguyen: Yeah.
+
+266
+00:22:50.700 --> 00:22:53.599
+Quan Nguyen: Especially if I want the agent to…
+
+267
+00:22:53.860 --> 00:22:59.000
+Quan Nguyen: like, especially at each… at each node here, and if I want it to be…
+
+268
+00:22:59.180 --> 00:23:03.709
+Quan Nguyen: follow my expectation, I had to write very, very detailed.
+
+269
+00:23:04.650 --> 00:23:05.649
+Quan Nguyen: What a prompt.
+
+270
+00:23:05.990 --> 00:23:06.989
+Zhongzheng Xu: For the prompts?
+
+271
+00:23:07.400 --> 00:23:14.790
+Zhongzheng Xu: I see and then… Okay.
+
+272
+00:23:14.960 --> 00:23:18.500
+Zhongzheng Xu: Let me just try to locate the questions.
+
+273
+00:23:20.650 --> 00:23:30.079
+Zhongzheng Xu: okay, let's go back to, being more abstract, so maybe, maybe not just this project.
+
+274
+00:23:30.500 --> 00:23:33.710
+Zhongzheng Xu: So, like, for what types…
+
+275
+00:23:33.860 --> 00:23:39.050
+Zhongzheng Xu: What type of problems do you think a multi-agent system works the best?
+
+276
+00:23:41.970 --> 00:23:47.950
+Zhongzheng Xu: Or, like, for what kind of tasks that you think it's appropriate to, use a multi-agent system?
+
+277
+00:23:49.600 --> 00:23:52.369
+Quan Nguyen: So… What kind of task?
+
+278
+00:23:52.770 --> 00:23:55.130
+Zhongzheng Xu: Yeah, like, what kind of problems?
+
+279
+00:23:55.490 --> 00:24:01.829
+Zhongzheng Xu: Do you think… so if you're the product manager, and then you have some tasks.
+
+280
+00:24:02.050 --> 00:24:04.979
+Zhongzheng Xu: To have your software engineers do,
+
+281
+00:24:05.330 --> 00:24:12.370
+Zhongzheng Xu: Like, what type of tasks do you think you'll have them? Okay, you guys should use a multi-agent system?
+
+282
+00:24:14.900 --> 00:24:21.129
+Quan Nguyen: Then I would refer to Adobe's broader, like, agent system, because, I think they are…
+
+283
+00:24:21.280 --> 00:24:23.680
+Quan Nguyen: The code base is spreading well.
+
+284
+00:24:24.060 --> 00:24:25.480
+Quan Nguyen: Like that very well.
+
+285
+00:24:25.930 --> 00:24:28.919
+Quan Nguyen: Actually, I can send you that, I… because…
+
+286
+00:24:43.470 --> 00:24:45.740
+Quan Nguyen: So there is one that I…
+
+287
+00:24:46.190 --> 00:24:47.929
+Quan Nguyen: locked into that, what are you?
+
+288
+00:24:48.900 --> 00:24:53.239
+Quan Nguyen: So, Adobe… Adobe is Agent Orchestrator, so I think it's
+
+289
+00:24:53.540 --> 00:24:55.130
+Quan Nguyen: They did very well for that.
+
+290
+00:24:55.370 --> 00:25:05.099
+Quan Nguyen: Because… Yeah, because, rather than, like, using the whole, like, one agent to work on different tasks.
+
+291
+00:25:05.420 --> 00:25:11.739
+Quan Nguyen: They just use the agent to do some specific tasks, like, from prompt to SQL…
+
+292
+00:25:13.430 --> 00:25:17.829
+Quan Nguyen: Yeah, so I think that is much more reliable, especially if you fine-tune the
+
+293
+00:25:17.950 --> 00:25:25.149
+Quan Nguyen: the language model just for that task only. So I think it's much more reliable than just using a generic
+
+294
+00:25:25.480 --> 00:25:28.009
+Quan Nguyen: Luggage model to do different tasks.
+
+295
+00:25:31.140 --> 00:25:35.740
+Zhongzheng Xu: I see. I don't… I'm not too familiar with this…
+
+296
+00:25:36.650 --> 00:25:41.399
+Zhongzheng Xu: So what does this do? The link that you just shared?
+
+297
+00:25:41.400 --> 00:25:46.020
+Quan Nguyen: Oh, yeah, so it's, like, a product from Adobe, it's called Adobe… agents called Orchestrator.
+
+298
+00:25:46.520 --> 00:25:47.549
+Quan Nguyen: like,
+
+299
+00:25:49.100 --> 00:25:59.250
+Quan Nguyen: I don't really remember a lot, but I remember there is… there are some agents that work on just exactly that specific problem.
+
+300
+00:25:59.570 --> 00:25:59.980
+Zhongzheng Xu: Okay.
+
+301
+00:25:59.980 --> 00:26:07.240
+Quan Nguyen: They have just one… the whole agent, just, I mean, one agent just for, like, converting from prompt.
+
+302
+00:26:07.420 --> 00:26:09.980
+Quan Nguyen: like, from text to SQL query.
+
+303
+00:26:10.970 --> 00:26:11.780
+Quan Nguyen: Yeah.
+
+304
+00:26:12.120 --> 00:26:12.850
+Zhongzheng Xu: I see.
+
+305
+00:26:13.670 --> 00:26:19.249
+Zhongzheng Xu: So, so… They provide all of these specialized agents.
+
+306
+00:26:19.430 --> 00:26:20.680
+Quan Nguyen: Yeah, yeah, exactly.
+
+307
+00:26:21.130 --> 00:26:22.390
+Zhongzheng Xu: Oh, I see.
+
+308
+00:26:23.010 --> 00:26:28.699
+Zhongzheng Xu: And then, does… I'm just looking at the screenshot here.
+
+309
+00:26:31.710 --> 00:26:39.250
+Zhongzheng Xu: So, you still, like, kind of input a… users just put in the prompt, and then… it does…
+
+310
+00:26:39.610 --> 00:26:41.439
+Zhongzheng Xu: It does everything for you.
+
+311
+00:26:42.320 --> 00:27:00.959
+Quan Nguyen: Yeah, so they have, like, an orchestrator, so it will decide it to route the user prompt to which agent to, like, execute the users from next. So, because there are multiple specialized agents, so, like, one is working with, databases, one is working with,
+
+312
+00:27:02.700 --> 00:27:07.280
+Quan Nguyen: Yeah, different parts of, like, LP system, the photo system.
+
+313
+00:27:07.540 --> 00:27:14.390
+Quan Nguyen: Yeah, so it, depending on the use of sprung, the orchestrator will routing To that agent.
+
+314
+00:27:14.700 --> 00:27:15.470
+Zhongzheng Xu: I see.
+
+315
+00:27:15.790 --> 00:27:18.499
+Quan Nguyen: So I think, yeah, no, it,
+
+316
+00:27:18.700 --> 00:27:27.259
+Quan Nguyen: So back to your question, like, what to make, what are the signals to make our system be more reliable? I think it's to break down
+
+317
+00:27:27.570 --> 00:27:33.840
+Quan Nguyen: The agents, the whole system, and to use, agent… specialized agents, rather than…
+
+318
+00:27:34.240 --> 00:27:41.459
+Quan Nguyen: One agent should do multiple tasks, so, like, a general agent, a general language model for an agent.
+
+319
+00:27:42.270 --> 00:27:43.110
+Zhongzheng Xu: I see.
+
+320
+00:27:43.210 --> 00:27:44.060
+Zhongzheng Xu: I see.
+
+321
+00:27:47.400 --> 00:27:49.080
+Zhongzheng Xu: And then this,
+
+322
+00:27:49.410 --> 00:27:57.600
+Zhongzheng Xu: this tool also… so for, like, for a single task, it can be using multiple agents, right? Each for…
+
+323
+00:27:58.200 --> 00:28:00.980
+Zhongzheng Xu: Specialized, subtasks.
+
+324
+00:28:03.460 --> 00:28:06.930
+Quan Nguyen: Wait, can you… can you repeat the question? So, for each prompt…
+
+325
+00:28:07.250 --> 00:28:11.390
+Zhongzheng Xu: Yeah, so for, this tool that you just shared,
+
+326
+00:28:12.020 --> 00:28:15.249
+Zhongzheng Xu: Let's say the user inputs some task.
+
+327
+00:28:16.080 --> 00:28:24.350
+Zhongzheng Xu: does the system use just a single agent, or it also… if the task is.
+
+328
+00:28:24.350 --> 00:28:24.880
+Quan Nguyen: Oh.
+
+329
+00:28:24.880 --> 00:28:25.340
+Zhongzheng Xu: Located.
+
+330
+00:28:25.340 --> 00:28:29.350
+Quan Nguyen: That's a good question. I think I'm… Mitch this part.
+
+331
+00:28:30.120 --> 00:28:31.460
+Zhongzheng Xu: Okay, okay.
+
+332
+00:28:33.430 --> 00:28:40.930
+Zhongzheng Xu: That's fine. And,
+
+333
+00:28:41.640 --> 00:28:45.910
+Zhongzheng Xu: I just have a last question. I think we already talked about this,
+
+334
+00:28:47.420 --> 00:28:50.830
+Zhongzheng Xu: feel free to skip. So…
+
+335
+00:28:51.070 --> 00:28:56.719
+Zhongzheng Xu: Just going back to developing the entire system, when you're coding.
+
+336
+00:28:56.890 --> 00:28:57.490
+Quan Nguyen: Hmm.
+
+337
+00:28:57.680 --> 00:29:03.939
+Zhongzheng Xu: What are some challenges, and what do you think can help with that?
+
+338
+00:29:07.330 --> 00:29:14.010
+Quan Nguyen: So I think, yeah, back to the… that one, it's… one of the challenges is…
+
+339
+00:29:14.300 --> 00:29:23.559
+Quan Nguyen: Because it should be followed, like, a graph, right? Because it has direction from this agent, like, to this node, to another node, or, like, between agents.
+
+340
+00:29:23.560 --> 00:29:24.580
+Zhongzheng Xu: Yeah. So…
+
+341
+00:29:25.560 --> 00:29:29.559
+Quan Nguyen: difficult part is I have to write everything on
+
+342
+00:29:29.850 --> 00:29:34.339
+Quan Nguyen: Like, a paper or on a note to keep track of, like, which
+
+343
+00:29:35.340 --> 00:29:38.040
+Quan Nguyen: Which node is interacting with each other?
+
+344
+00:29:39.010 --> 00:29:41.600
+Quan Nguyen: Like, which component is interacting with each other?
+
+345
+00:29:41.700 --> 00:29:47.239
+Quan Nguyen: And then I will implement based on that. Otherwise, it's very, very, like, confusing and…
+
+346
+00:29:47.620 --> 00:29:50.250
+Quan Nguyen: It just looked like a mess to me.
+
+347
+00:29:50.610 --> 00:29:53.149
+Quan Nguyen: Yeah, yeah. That's interesting.
+
+348
+00:29:54.060 --> 00:29:55.900
+Zhongzheng Xu: That's interesting. Okay.
+
+349
+00:29:56.780 --> 00:30:02.529
+Zhongzheng Xu: Okay, I can end the meeting, or end the recording.
+
+350
+00:30:07.940 --> 00:30:11.940
+Zhongzheng Xu: Actually, so… I…
+
+351
+00:30:12.130 --> 00:30:16.590
+Zhongzheng Xu: I want… I wanted to end because I wanted to talk about, like, what kind of…
+
+352
+00:30:17.020 --> 00:30:28.509
+Zhongzheng Xu: research that I think, we're doing, or, like, what kind of tools that we'll build, in the end, is because, you know how… because the reason why,
+
+353
+00:30:30.350 --> 00:30:32.200
+Zhongzheng Xu: I can share my screen real quick.
+
+354
+00:30:32.200 --> 00:30:32.880
+Quan Nguyen: Okay.
+
+355
+00:30:43.140 --> 00:30:51.060
+Zhongzheng Xu: So… You know how currently there's, these tools .
+
+356
+00:30:51.990 --> 00:30:53.399
+Quan Nguyen: Yeah, I know that one.
+
+357
+00:30:53.400 --> 00:30:53.860
+Zhongzheng Xu: Yeah, yeah.
+
+358
+00:30:53.860 --> 00:30:54.680
+Quan Nguyen: local.
+
+359
+00:30:55.240 --> 00:31:05.070
+Zhongzheng Xu: It's for low-code, like, building of your multi-agent system. There's all kinds of tools that look like this.
+
+360
+00:31:08.210 --> 00:31:10.449
+Zhongzheng Xu: Things like these.
+
+361
+00:31:10.680 --> 00:31:12.509
+Zhongzheng Xu: But then…
+
+362
+00:31:12.850 --> 00:31:28.230
+Zhongzheng Xu: So, we think that one problem of… with these tools is that even though they provide good visuals, like, they, they're showing very clearly of the entire structure of your system, and then they also show, like, inputs and outputs.
+
+363
+00:31:28.520 --> 00:31:31.789
+Zhongzheng Xu: Also, like, what kind of tools?
+
+364
+00:31:32.040 --> 00:31:36.199
+Zhongzheng Xu: That maybe our agent is using.
+
+365
+00:31:37.100 --> 00:31:46.569
+Zhongzheng Xu: But I feel like they're just not as flexible as if you're just using Langchain or LaneGraph, because it's just Python, like, you can do whatever.
+
+366
+00:31:46.570 --> 00:31:47.330
+Quan Nguyen: Hmm.
+
+367
+00:31:47.330 --> 00:31:54.530
+Zhongzheng Xu: So we're thinking to maybe… Make… to maybe, build, like, an add-on to…
+
+368
+00:31:54.670 --> 00:31:57.820
+Zhongzheng Xu: to Lane Chain Lane Graph, so that you can actually
+
+369
+00:31:58.210 --> 00:32:04.140
+Zhongzheng Xu: visualize in real time when we were still, like, developing the system.
+
+370
+00:32:05.680 --> 00:32:15.439
+Zhongzheng Xu: And that's kind of different from… from Lanesmith, because Lanesmith is more so when you have the system ready, or at least you have, like, a working prototype. Yeah.
+
+371
+00:32:16.680 --> 00:32:21.300
+Zhongzheng Xu: But before that, you can't really, like, visualize the system.
+
+372
+00:32:21.920 --> 00:32:28.040
+Quan Nguyen: Oh, that's cool. I… Hold on, I remember LineGraph has the similar, similar.
+
+373
+00:32:29.800 --> 00:32:34.200
+Quan Nguyen: But, like, it's… Difficult, somehow it's difficult to use.
+
+374
+00:32:34.440 --> 00:32:38.549
+Quan Nguyen: Because last time when I tried with my com- computer, it just doesn't work.
+
+375
+00:32:41.580 --> 00:32:44.380
+Quan Nguyen: I forget what is that called, like,
+
+376
+00:32:44.620 --> 00:32:50.679
+Quan Nguyen: But, pretty sure it's available on LineGraph as well. Oh, it's called Linecraft Studio.
+
+377
+00:32:51.170 --> 00:32:52.319
+Zhongzheng Xu: Than graphs to do.
+
+378
+00:32:53.240 --> 00:32:55.090
+Quan Nguyen: So it's a lot to visualize one.
+
+379
+00:32:55.090 --> 00:32:56.290
+Zhongzheng Xu: Yeah, I know.
+
+380
+00:32:56.290 --> 00:32:56.870
+Quan Nguyen: Yeah.
+
+381
+00:32:58.870 --> 00:32:59.430
+Zhongzheng Xu: Yeah.
+
+382
+00:33:02.280 --> 00:33:08.360
+Quan Nguyen: Oh, yeah, also another issue, like, I think can be, a problem with the multi-agents.
+
+383
+00:33:08.690 --> 00:33:14.189
+Quan Nguyen: an AI agent in general, for me, is because every time we call
+
+384
+00:33:14.990 --> 00:33:20.230
+Quan Nguyen: Like, an agent's working, right? It will, like, call in a request.
+
+385
+00:33:20.440 --> 00:33:22.579
+Quan Nguyen: Two, hosts, right?
+
+386
+00:33:23.330 --> 00:33:27.380
+Quan Nguyen: It can be, like, a bottleneck when we scale to production.
+
+387
+00:33:30.580 --> 00:33:32.840
+Zhongzheng Xu: Hmm, can you explain more?
+
+388
+00:33:34.080 --> 00:33:38.940
+Quan Nguyen: Mmm… So, I mean, firstly, it's when we…
+
+389
+00:33:39.780 --> 00:33:43.089
+Quan Nguyen: I have to, like, send requests to the model.
+
+390
+00:33:43.230 --> 00:33:44.090
+Zhongzheng Xu: Yeah.
+
+391
+00:33:44.180 --> 00:33:48.610
+Quan Nguyen: from Avil, it may take some time and to get the response back, right?
+
+392
+00:33:48.810 --> 00:33:49.200
+Zhongzheng Xu: Okay.
+
+393
+00:33:50.710 --> 00:33:53.720
+Quan Nguyen: This snake cannot be processed in a batch?
+
+394
+00:33:54.150 --> 00:33:55.470
+Zhongzheng Xu: I see.
+
+395
+00:33:55.470 --> 00:34:03.060
+Quan Nguyen: So, yeah, I think that's a bottleneck. So, if the system, like, multi-agent system is complicated.
+
+396
+00:34:03.270 --> 00:34:06.720
+Quan Nguyen: It may increase the latency as well.
+
+397
+00:34:06.940 --> 00:34:07.660
+Zhongzheng Xu: Yeah.
+
+398
+00:34:07.660 --> 00:34:13.409
+Quan Nguyen: Even though I know, like, there should be some research working on paralleling… parallelizing the…
+
+399
+00:34:13.580 --> 00:34:17.569
+Quan Nguyen: components in the agent system, but I haven't logged into that yet.
+
+400
+00:34:18.110 --> 00:34:19.840
+Zhongzheng Xu: Yeah, yeah, yeah.
+
+401
+00:34:21.620 --> 00:34:26.189
+Zhongzheng Xu: I think that's the reason why, like, a lot of these frameworks, they all have some…
+
+402
+00:34:26.679 --> 00:34:33.119
+Zhongzheng Xu: sort of, fallback strategies, if you like… Oh, yeah, I thought of that.
+
+403
+00:34:33.800 --> 00:34:40.979
+Zhongzheng Xu: Yeah, if you fail, let's say, 3 times in a row, then it just goes to a failure branch.
+
+404
+00:34:40.989 --> 00:34:42.409
+Quan Nguyen: Hmm. Yeah. Yeah.
+
+405
+00:34:44.020 --> 00:34:44.810
+Zhongzheng Xu: Yeah.
+
+406
+00:34:46.020 --> 00:34:49.409
+Zhongzheng Xu: Okay, I think I can stop recording now.
+

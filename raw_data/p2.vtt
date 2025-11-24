@@ -1,0 +1,1482 @@
+WEBVTT
+
+1
+00:00:03.870 --> 00:00:07.100
+Zhongzheng Xu: Alright, we can go ahead and start. So…
+
+2
+00:00:07.300 --> 00:00:21.389
+Zhongzheng Xu: I'll first start from some more abstract question. So, when you hear the term multi-agent system, like, what does it mean to you? And, for example, like, how do you see it different from, let's say, a single agent or a single LLM model?
+
+3
+00:00:23.450 --> 00:00:41.389
+Bin Hu: So for the multi-agent system, I believe, so each agent should have different goals and, and equipped it with different tools or capabilities. For example, they're accessing
+
+4
+00:00:41.390 --> 00:00:52.260
+Bin Hu: But they can access different sources or, interact with the, environment in a more diverse way, so each agent can,
+
+5
+00:00:52.500 --> 00:01:04.299
+Bin Hu: Do what… what they can do the best, and therefore, they can… they can collaborate in a more efficient way, and achieve,
+
+6
+00:01:04.849 --> 00:01:12.010
+Bin Hu: And, complete more, complicated tasks, so I think that's the,
+
+7
+00:01:13.440 --> 00:01:19.459
+Bin Hu: That's the strength of building the multi-agent system to me, yeah.
+
+8
+00:01:20.480 --> 00:01:33.190
+Zhongzheng Xu: So just, first of all, like, each agent should have slightly different, or just different, task or goal, and then they have access to different tools, or, share… some shared context.
+
+9
+00:01:34.280 --> 00:01:38.089
+Bin Hu: Yeah, yeah, I think, I think yes.
+
+10
+00:01:40.690 --> 00:01:51.169
+Zhongzheng Xu: Okay, okay, and, can you all… can you talk about your, experience with, using or developing, multi-agent systems?
+
+11
+00:01:51.170 --> 00:01:55.699
+Bin Hu: Yeah, so I think I can share, show my screen? Yeah.
+
+12
+00:01:55.860 --> 00:01:56.380
+Zhongzheng Xu: outlet.
+
+13
+00:01:56.380 --> 00:02:09.539
+Bin Hu: It has been, many… two years ago, I participated in two different projects involving multi-agent, system. Let me share my browser…
+
+14
+00:02:10.259 --> 00:02:12.580
+Bin Hu: I can see that? Can you see my screen?
+
+15
+00:02:12.900 --> 00:02:13.760
+Zhongzheng Xu: Yeah, yeah.
+
+16
+00:02:13.760 --> 00:02:17.590
+Bin Hu: Yeah, there's basically two, two projects.
+
+17
+00:02:18.640 --> 00:02:23.310
+Bin Hu: So let me talk about the first one. So,
+
+18
+00:02:23.620 --> 00:02:39.800
+Bin Hu: So… so this one is somehow, interesting, I believe. It's two years… two years, in the summer in 2023, I, built such a simulation platform, which involves different,
+
+19
+00:02:40.150 --> 00:02:49.040
+Bin Hu: different agents, always diverse personnel. They, travel… they can travel around the map.
+
+20
+00:02:49.220 --> 00:03:07.719
+Bin Hu: As you can see to the right, and, when… and so this… this is also geo… geograph… geograph-grounded, so, they can know which country they're in, and, they… when… when there are, agents that… that are,
+
+21
+00:03:08.430 --> 00:03:27.869
+Bin Hu: geographically close to each other, a conversation could be triggered, so we can see in the call-in in the middle, so it starts conversation, and some participants, who were involved, and they started to talk… talk to each other.
+
+22
+00:03:28.450 --> 00:03:46.640
+Bin Hu: And, so here, all the agents, they're all, at that time, I think they're all GPT 3.5, based, and the only thing different is they have different personas. So you can see, I think.
+
+23
+00:03:46.850 --> 00:03:52.740
+Bin Hu: the sale in the center. You can see, their friend… they, they are…
+
+24
+00:03:53.620 --> 00:04:01.060
+Bin Hu: They're initialized with, different ages, different place of birth, and different,
+
+25
+00:04:02.180 --> 00:04:08.980
+Bin Hu: different habits, something like that. So, we can build, we can build,
+
+26
+00:04:09.710 --> 00:04:17.019
+Bin Hu: a very high-level girl, for example, they should share where they have gone.
+
+27
+00:04:17.269 --> 00:04:17.639
+Zhongzheng Xu: I have to.
+
+28
+00:04:17.640 --> 00:04:29.939
+Bin Hu: into, or, what's, what's interesting, what's interesting, they, see in different locations. But, on this one, that's a very, prototype, because
+
+29
+00:04:30.180 --> 00:04:41.939
+Bin Hu: Because, after, one month or two months of developing, we found there is an open source project which is developing, unless, you know.
+
+30
+00:04:42.620 --> 00:04:55.930
+Bin Hu: faster way than ours, so we just aborted this project. So this is my very first-hand experience about the multi-agent system, but it's very simple, as you can see.
+
+31
+00:04:55.930 --> 00:05:14.380
+Bin Hu: And the second one, it's also in 2023, so we built, systems that, that we wish to, leverage the power of multi-agent system to, give a more calibrated.
+
+32
+00:05:14.400 --> 00:05:20.370
+Bin Hu: Confidence estimation for a certain question. So,
+
+33
+00:05:20.710 --> 00:05:23.399
+Bin Hu: So first, maybe I can…
+
+34
+00:05:23.580 --> 00:05:43.519
+Bin Hu: talk about more… talk a bit more, in detail. So, for example, so we want to give a… give an agent one question, right? So, so, so an agent can give a, so agent can give a, give an answer, and it can… it can say, this… this…
+
+35
+00:05:44.510 --> 00:05:52.209
+Bin Hu: answer is 80% to be correct, so it's… it's the, confidence. But some… that,
+
+36
+00:05:52.330 --> 00:06:07.639
+Bin Hu: we wish that the confidence can be more calibrated. So, for example, if we select a bunch of questions, a bunch of answers, that the agent has 80% of confidence. We hope,
+
+37
+00:06:07.890 --> 00:06:11.230
+Bin Hu: The 80% of these answers can be correct.
+
+38
+00:06:11.710 --> 00:06:13.229
+Zhongzheng Xu: Match the accuracy.
+
+39
+00:06:13.230 --> 00:06:21.989
+Bin Hu: Yeah, so that's… that means more calibrated. So, here, we want… we want to, collaborate the…
+
+40
+00:06:22.300 --> 00:06:28.379
+Bin Hu: we want to involve multiple agents in the… in a debate system. So, agent debate was a very,
+
+41
+00:06:28.980 --> 00:06:45.569
+Bin Hu: popular topic in 2023. So, we did that. We involved the agents, so we asked them to do the second… to two phases debate, and the agents can revise their
+
+42
+00:06:45.570 --> 00:06:49.379
+Bin Hu: Revise their initial answer, get…
+
+43
+00:06:49.740 --> 00:07:09.199
+Bin Hu: revise their initial answer based on other, other models' critiques. So you can see these agents are in different models. They can be, ChatGPT, the, Mistral, or, Cohere. So, they have different,
+
+44
+00:07:10.500 --> 00:07:20.990
+Bin Hu: different internal knowledge, so they may be able to assist other agents to have a more comprehend… comprehensively,
+
+45
+00:07:21.950 --> 00:07:27.099
+Bin Hu: consider answer. So… So basically, that's…
+
+46
+00:07:27.570 --> 00:07:38.139
+Bin Hu: We were doing, and finally we can see that it did help the model in their confidence estimation in multiple datasets.
+
+47
+00:07:38.450 --> 00:07:43.379
+Bin Hu: Yeah, so that's the two, two projects I…
+
+48
+00:07:43.490 --> 00:07:53.500
+Bin Hu: have the first, first-hand experience with motivation systems. So it's not… so they're all… they're both in very controlled,
+
+49
+00:07:54.060 --> 00:08:04.450
+Bin Hu: they're both in very counter experiment settings, so they couldn't do something, free-form exploration. So,
+
+50
+00:08:05.300 --> 00:08:10.440
+Bin Hu: Yeah, so I think that's a limitation… I assume. …in my experience. Yeah.
+
+51
+00:08:10.770 --> 00:08:12.200
+Zhongzheng Xu: Oh, but
+
+52
+00:08:12.210 --> 00:08:31.840
+Zhongzheng Xu: I think this is deviating away from our interview, but it's okay. I've already read, quite a bit of literature on confidence collaboration, and then I see that it's, the results are much better compared to self-verbalized, or just, sampling.
+
+53
+00:08:31.940 --> 00:08:33.280
+Zhongzheng Xu: sampling methods.
+
+54
+00:08:33.289 --> 00:08:34.339
+Bin Hu: Yeah, yeah.
+
+55
+00:08:35.090 --> 00:08:35.940
+Zhongzheng Xu: That's good.
+
+56
+00:08:36.110 --> 00:08:39.470
+Zhongzheng Xu: Okay. But then the… the accuracy…
+
+57
+00:08:39.669 --> 00:08:43.519
+Zhongzheng Xu: Or not accuracy, the confidence,
+
+58
+00:08:43.730 --> 00:08:52.539
+Zhongzheng Xu: And then also the way that models update their confidence is still more so just using prompt and then their self-correction, right?
+
+59
+00:08:53.190 --> 00:08:58.460
+Bin Hu: That's correct. We… we prompt them to do the update.
+
+60
+00:08:59.320 --> 00:09:00.070
+Zhongzheng Xu: I see.
+
+61
+00:09:00.430 --> 00:09:04.499
+Zhongzheng Xu: Okay, and then, I can…
+
+62
+00:09:05.140 --> 00:09:11.610
+Zhongzheng Xu: proceed in the interview. So, could you talk about a little bit
+
+63
+00:09:11.810 --> 00:09:19.140
+Zhongzheng Xu: About the development, so, for example, like, what, framework did you use? I saw Lane Chance.
+
+64
+00:09:19.140 --> 00:09:24.739
+Bin Hu: Yeah, of course, we only use LenChain. So, we, we just… we…
+
+65
+00:09:25.190 --> 00:09:38.609
+Bin Hu: We consider the length graph also, but for such simple functionality, the lynching is, good to, perform some, simple agent,
+
+66
+00:09:38.770 --> 00:09:40.610
+Bin Hu: agent, development.
+
+67
+00:09:40.910 --> 00:09:41.680
+Zhongzheng Xu: Okay.
+
+68
+00:09:44.770 --> 00:09:53.040
+Zhongzheng Xu: And then, so… I think one of the… Hmm…
+
+69
+00:09:53.750 --> 00:10:01.390
+Zhongzheng Xu: Challenges you guys have is probably, developing the system prompts, right?
+
+70
+00:10:02.140 --> 00:10:08.869
+Bin Hu: Yeah, yeah, so, we actually did not, try… so you mean the second one, right?
+
+71
+00:10:09.610 --> 00:10:14.450
+Bin Hu: calibration. Yeah, that's correct. So, we… actually, we didn't,
+
+72
+00:10:14.540 --> 00:10:30.550
+Bin Hu: optimize the prompt in, in certain, high-level methods. We, we just, tried, a few, a few candidates, for the prompt, and we simply chose the,
+
+73
+00:10:31.050 --> 00:10:35.930
+Bin Hu: One with… with the most calibrated, confidence.
+
+74
+00:10:36.180 --> 00:10:39.250
+Bin Hu: So… Yeah, yes.
+
+75
+00:10:39.740 --> 00:10:46.050
+Zhongzheng Xu: Okay. So… I guess, let's keep talking about the second project.
+
+76
+00:10:46.050 --> 00:10:46.400
+Bin Hu: Yeah.
+
+77
+00:10:46.400 --> 00:10:52.420
+Zhongzheng Xu: So it seems to me that, like, the… the structure of the entire system is pretty,
+
+78
+00:10:52.710 --> 00:10:55.240
+Zhongzheng Xu: It's pretty,
+
+79
+00:10:55.640 --> 00:11:09.670
+Zhongzheng Xu: how do you put it? Like, it's pretty intuitive, since you're just having the agents, doing debates. Were there any changes to your initial idea of the structure to the final,
+
+80
+00:11:10.210 --> 00:11:12.889
+Zhongzheng Xu: Architect, or the structure of the system.
+
+81
+00:11:13.740 --> 00:11:23.590
+Bin Hu: I think it's, the final one is pretty similar… pretty close to, the initial, initial…
+
+82
+00:11:23.830 --> 00:11:25.740
+Bin Hu: scope,
+
+83
+00:11:26.250 --> 00:11:41.899
+Bin Hu: of the framework? Yeah, because, there is actually only two stages. So, the first stage, there's only one, agent, involved, and they give the initial,
+
+84
+00:11:42.340 --> 00:11:53.209
+Bin Hu: initial, result, and the second stage is to have a group discussion and change the first stage result. So…
+
+85
+00:11:54.230 --> 00:12:04.379
+Bin Hu: Yeah, that's because the framework is quite simple, so we didn't update the structure many times.
+
+86
+00:12:04.520 --> 00:12:09.169
+Bin Hu: And the initial result is, good enough, so…
+
+87
+00:12:11.330 --> 00:12:16.039
+Bin Hu: Yeah, so we didn't, update, much time.
+
+88
+00:12:16.330 --> 00:12:17.090
+Zhongzheng Xu: Okay.
+
+89
+00:12:17.370 --> 00:12:22.970
+Zhongzheng Xu: I see. And then… I don't know if this one is…
+
+90
+00:12:22.970 --> 00:12:39.859
+Zhongzheng Xu: relevant to, your specific projects. But, as you may know, like, a lot of people use multi-agent system for automation, and then something that they have to deal with is, like, the context management, or, like.
+
+91
+00:12:39.970 --> 00:12:55.430
+Zhongzheng Xu: the memory, among agents. For example, like, what are some shared variables, shared data, and what are something that should be specific to an individual agent? Also, the tool management, like, what tool…
+
+92
+00:12:55.520 --> 00:13:03.030
+Zhongzheng Xu: an agent should have access to. Did you have to deal with anything that I mentioned?
+
+93
+00:13:04.040 --> 00:13:21.970
+Bin Hu: So because our, so for the ex… for the exp… For the project I have been involved in, we didn't face this challenge because, the context of the whole conversation is, is very manageable.
+
+94
+00:13:22.340 --> 00:13:30.210
+Bin Hu: Because there will not be… In terms of the environment variable that,
+
+95
+00:13:30.630 --> 00:13:33.399
+Bin Hu: That, that's fed to the agent.
+
+96
+00:13:33.750 --> 00:13:36.100
+Bin Hu: yep.
+
+97
+00:13:36.700 --> 00:13:38.609
+Zhongzheng Xu: Okay. Yeah.
+
+98
+00:13:38.960 --> 00:13:49.499
+Zhongzheng Xu: totally okay. And okay, and then… let's talk about a little bit on,
+
+99
+00:13:49.530 --> 00:13:58.740
+Zhongzheng Xu: like, implement… implementation of the system and, back to when you were still developing them. So just talking about
+
+100
+00:13:58.740 --> 00:14:15.119
+Zhongzheng Xu: like, coding. So when you're using LaneChain, and then, let's say you have a first… a prototype of the system, how did you interact with, and then, like, sort of monitor the behavior of the system?
+
+101
+00:14:16.400 --> 00:14:19.879
+Bin Hu: I should give more detail about how you,
+
+102
+00:14:20.250 --> 00:14:22.679
+Bin Hu: To act or monitor the system.
+
+103
+00:14:22.840 --> 00:14:26.119
+Zhongzheng Xu: Yeah, so for example,
+
+104
+00:14:27.180 --> 00:14:31.689
+Zhongzheng Xu: let's talk about the debate project, I guess. Yeah.
+
+105
+00:14:34.290 --> 00:14:47.209
+Zhongzheng Xu: Okay, I guess for that project, there's a couple things you should probably care about, which is, the collaborations, whether it's good or not, or, like, whether the result is correct.
+
+106
+00:14:47.210 --> 00:14:56.539
+Zhongzheng Xu: Did you also pay attention to, let's say, like, the intermediate, outputs from the agents? Like, what are some of the arguments?
+
+107
+00:14:57.810 --> 00:15:07.760
+Bin Hu: So… So, in this project, actually, there is,
+
+108
+00:15:07.900 --> 00:15:12.400
+Bin Hu: There's no… nothing we call the intermediate,
+
+109
+00:15:12.910 --> 00:15:29.660
+Bin Hu: So, I believe you're referring to some interactions between agents, that's not very relevant to the final result, or should be visible to the users in the intermediate stage, is that correct?
+
+110
+00:15:29.660 --> 00:15:32.129
+Zhongzheng Xu: It's more so just…
+
+111
+00:15:32.430 --> 00:15:38.900
+Zhongzheng Xu: How did you make sure that the, like, each agent is doing what it should be doing, I guess?
+
+112
+00:15:38.900 --> 00:15:44.119
+Bin Hu: Yeah, because, because, because, We also,
+
+113
+00:15:44.600 --> 00:15:54.570
+Bin Hu: Give me one second to, organize my words. So, I think the… I think the interaction between agents are actually,
+
+114
+00:15:54.690 --> 00:16:03.440
+Bin Hu: data we'll be, actively collecting. So, and we can… because, this experiment setting is pretty,
+
+115
+00:16:04.340 --> 00:16:08.860
+Bin Hu: pretty simple, I believe, because they're only doing,
+
+116
+00:16:09.310 --> 00:16:15.700
+Bin Hu: limited terms of interaction. And, what their, what their,
+
+117
+00:16:19.400 --> 00:16:30.020
+Bin Hu: And their interaction can, can make a difference in their, in the final result. So, we will collect them all, and, and…
+
+118
+00:16:32.090 --> 00:16:42.740
+Bin Hu: investigate, out there actively, contributing in the conversation. So…
+
+119
+00:16:42.990 --> 00:16:49.369
+Bin Hu: Yeah, so maybe this doesn't… doesn't address your concern, but that's because the, the
+
+120
+00:16:49.990 --> 00:16:52.100
+Bin Hu: Experiment setting is pretty simple.
+
+121
+00:16:52.270 --> 00:17:01.509
+Bin Hu: We don't simply read them all. We read the, we can, we can, we read their intermediate, output,
+
+122
+00:17:01.770 --> 00:17:06.599
+Bin Hu: Manually, and we can… we can see what's… what's going on there.
+
+123
+00:17:06.609 --> 00:17:10.829
+Zhongzheng Xu: Yeah, that's good. No, that's, that's kind of the response I was looking for.
+
+124
+00:17:11.339 --> 00:17:19.419
+Zhongzheng Xu: Did you also, like, so… Still the debate, our system.
+
+125
+00:17:20.369 --> 00:17:26.549
+Zhongzheng Xu: did you observe any pattern? Like, for example, if, for example, something like…
+
+126
+00:17:27.079 --> 00:17:38.289
+Zhongzheng Xu: okay, the LLM… the LLMs are initially, overall, pretty overconfident, and then they see some arguments, and then they drop their confidence.
+
+127
+00:17:39.380 --> 00:17:42.209
+Bin Hu: I think, yes, but I couldn't,
+
+128
+00:17:43.480 --> 00:17:51.230
+Bin Hu: Let me see if I can, find some data… it's just two… two men… two years ago.
+
+129
+00:17:51.230 --> 00:17:51.590
+Zhongzheng Xu: Okay.
+
+130
+00:17:51.590 --> 00:17:56.680
+Bin Hu: Let me, let me try if we collect some data here.
+
+131
+00:18:17.630 --> 00:18:19.569
+Bin Hu: Hmm, give me one second…
+
+132
+00:18:46.500 --> 00:18:48.589
+Bin Hu: Yes, I think, best…
+
+133
+00:18:49.080 --> 00:18:56.840
+Bin Hu: we didn't, I didn't keep a copy of data, but it's mentioned in the appendix. Let me share my screen again.
+
+134
+00:18:57.160 --> 00:18:57.900
+Zhongzheng Xu: Okay.
+
+135
+00:19:03.710 --> 00:19:05.010
+Zhongzheng Xu: Give me one second.
+
+136
+00:19:15.340 --> 00:19:29.870
+Bin Hu: Yeah, so, basically it's mentioning the figure 4, so it shows, before, before and post, after the second stage of the, distribution of models captains,
+
+137
+00:19:30.090 --> 00:19:38.410
+Bin Hu: change. So, so we… So first is the average accuracy, so you can see there,
+
+138
+00:19:38.640 --> 00:19:56.469
+Bin Hu: The, the bins in the, 2.2 and 0.5, they, almost disappeared, and, and, and the confidence around 0.9, it, it's,
+
+139
+00:19:58.240 --> 00:20:04.139
+Bin Hu: It, it increases a lot, and, this is for the,
+
+140
+00:20:04.380 --> 00:20:15.220
+Bin Hu: average accuracy… average confidence, so generally increases. And for the calibration, so a desired calibration is more close to the line.
+
+141
+00:20:17.320 --> 00:20:24.940
+Bin Hu: line in the graph. So, so we can see, both, increase, increasement in both,
+
+142
+00:20:27.060 --> 00:20:28.010
+Bin Hu: Indose.
+
+143
+00:20:28.120 --> 00:20:31.880
+Bin Hu: accuracy and, calibration.
+
+144
+00:20:33.330 --> 00:20:34.100
+Zhongzheng Xu: I see.
+
+145
+00:20:34.350 --> 00:20:35.340
+Zhongzheng Xu: Okay.
+
+146
+00:20:35.910 --> 00:20:42.710
+Zhongzheng Xu: And then… So, when you're still just, implementing the system,
+
+147
+00:20:42.960 --> 00:20:49.890
+Zhongzheng Xu: say, using LaneChain. Were there any, like, common bugs or, issues that you run into?
+
+148
+00:20:54.220 --> 00:20:56.670
+Zhongzheng Xu: Sorry, I know it's a long time ago.
+
+149
+00:20:56.670 --> 00:21:12.499
+Bin Hu: Long time. It's a so long time, yeah. But, I couldn't remember, actually, because, I don't see, other users, having such… having many problems when they are trying to incorporate,
+
+150
+00:21:14.070 --> 00:21:27.050
+Bin Hu: a long tree, sorry, a long list of actions. But here, because the agents in these settings, they are basically doing the conversation.
+
+151
+00:21:27.380 --> 00:21:32.500
+Bin Hu: They don't even incorporate the tools that, the…
+
+152
+00:21:33.490 --> 00:21:38.050
+Bin Hu: The tour in the… Yeah.
+
+153
+00:21:38.290 --> 00:21:46.900
+Bin Hu: that's building, land chain. So, what we're doing is mostly about the,
+
+154
+00:21:47.520 --> 00:21:54.119
+Bin Hu: how the prompt, the memory, and, the conversation. So,
+
+155
+00:21:54.770 --> 00:21:59.370
+Bin Hu: So, yeah, we didn't incorporate many advanced,
+
+156
+00:21:59.370 --> 00:22:03.520
+Zhongzheng Xu: Yeah. Was memory… Was memory hard to manage?
+
+157
+00:22:04.140 --> 00:22:08.890
+Bin Hu: It's not… not hard to manage, because, actually, this,
+
+158
+00:22:09.260 --> 00:22:13.909
+Bin Hu: Actually, these two projects, they use one codebase.
+
+159
+00:22:14.570 --> 00:22:19.519
+Bin Hu: So, so the memory is actually more, involved in the simulation part.
+
+160
+00:22:19.520 --> 00:22:20.200
+Zhongzheng Xu: Okay.
+
+161
+00:22:20.490 --> 00:22:21.980
+Bin Hu: Yeah.
+
+162
+00:22:23.010 --> 00:22:26.769
+Zhongzheng Xu: How did you, how did you sort of manage the memory in this one?
+
+163
+00:22:27.450 --> 00:22:33.470
+Bin Hu: Basically, we… we only…
+
+164
+00:22:34.080 --> 00:22:52.399
+Bin Hu: though I mentioned the memory, so actually, we're, so most, most of the time, we, keep the four conversations, because… Right. Because for, GPT 3.5, the context window is pretty, is, is, pretty long.
+
+165
+00:22:52.400 --> 00:22:56.379
+Bin Hu: And, and when the, context,
+
+166
+00:22:56.990 --> 00:22:59.360
+Bin Hu: When the… when the count… oh, sorry.
+
+167
+00:22:59.520 --> 00:23:01.679
+Bin Hu: When they,
+
+168
+00:23:02.080 --> 00:23:20.710
+Bin Hu: Contact goes longer, and beyond the, con- contacts window that we can manage, we will use a, we'll use another agent to summarize the past experience, and then, and we only keep the summarized,
+
+169
+00:23:21.010 --> 00:23:30.499
+Bin Hu: experience in the memory. So we simply truncated the long-term memory and only keep a summarized version.
+
+170
+00:23:32.120 --> 00:23:32.930
+Zhongzheng Xu: That's it.
+
+171
+00:23:33.340 --> 00:23:41.510
+Zhongzheng Xu: And then, I guess, for… And some of, are…
+
+172
+00:23:42.830 --> 00:23:47.810
+Zhongzheng Xu: So basically, in this project, each agent has sort of their own memory.
+
+173
+00:23:48.310 --> 00:23:48.980
+Bin Hu: Yes.
+
+174
+00:23:48.980 --> 00:23:52.940
+Zhongzheng Xu: They have some similar… System prompt, I guess.
+
+175
+00:23:53.280 --> 00:23:55.290
+Bin Hu: Yes, that exact thing.
+
+176
+00:23:55.290 --> 00:23:56.070
+Zhongzheng Xu: Okay.
+
+177
+00:23:56.460 --> 00:23:57.390
+Zhongzheng Xu: I see.
+
+178
+00:23:57.510 --> 00:24:05.799
+Zhongzheng Xu: And then… since… okay, again, still talking about this project, I feel like…
+
+179
+00:24:06.240 --> 00:24:11.090
+Zhongzheng Xu: The longer you run this… Simulation,
+
+180
+00:24:11.410 --> 00:24:16.519
+Zhongzheng Xu: Were, like, were there any unexpected behaviors you saw from the agents?
+
+181
+00:24:16.760 --> 00:24:18.310
+Bin Hu: Yeah, so…
+
+182
+00:24:18.310 --> 00:24:18.780
+Zhongzheng Xu: Fascinating.
+
+183
+00:24:18.780 --> 00:24:33.950
+Bin Hu: So we, we also tried different models, like some, I think the Llama 2, or, some even smaller model, in 2023, and we did see some,
+
+184
+00:24:34.380 --> 00:24:37.279
+Bin Hu: Patterns that the agents are
+
+185
+00:24:38.620 --> 00:24:45.329
+Bin Hu: They try to repeat their… repeat some words, and, yeah, yeah, so, like.
+
+186
+00:24:46.410 --> 00:24:49.989
+Bin Hu: The repeated output, or…
+
+187
+00:24:54.230 --> 00:24:59.259
+Bin Hu: I'm sorry, I couldn't, recall, the most of the,
+
+188
+00:24:59.460 --> 00:25:00.589
+Zhongzheng Xu: Okay. It's okay.
+
+189
+00:25:00.590 --> 00:25:15.049
+Bin Hu: No behaviors. So, but, but I, I think they're, they're mostly, similar to those, those, behaviors that the, L image are given a very long context.
+
+190
+00:25:17.380 --> 00:25:25.009
+Bin Hu: Especially, we are dealing, we are using a somehow smaller model. For example, they will output the
+
+191
+00:25:26.230 --> 00:25:36.830
+Bin Hu: Sorry, for example, they will… sometimes, the row flipping is another And those are,
+
+192
+00:25:37.160 --> 00:25:54.740
+Bin Hu: phenomenon I observed, so it will forget, the person that we gave it at first, which is also kept in the memory and the system prompt, and after a certain interaction with another agent, the agent will,
+
+193
+00:25:55.600 --> 00:25:58.790
+Bin Hu: Believe, he's the… another agent, my mistake.
+
+194
+00:26:00.650 --> 00:26:01.530
+Bin Hu: Yeah, yeah.
+
+195
+00:26:01.750 --> 00:26:09.129
+Bin Hu: So, I think that's also, investigated in another paper I co-authored, but,
+
+196
+00:26:09.480 --> 00:26:14.600
+Bin Hu: But it's, it's not about, it's not focused on the multi-agent system.
+
+197
+00:26:15.320 --> 00:26:16.020
+Zhongzheng Xu: hyphen.
+
+198
+00:26:16.330 --> 00:26:19.030
+Bin Hu: Yeah, this… just a, repeated…
+
+199
+00:26:19.490 --> 00:26:27.600
+Bin Hu: repeated output, or the row flipping. There are the two, abnormal behavior, I can't recall.
+
+200
+00:26:28.430 --> 00:26:30.330
+Zhongzheng Xu: Okay.
+
+201
+00:26:31.000 --> 00:26:37.630
+Zhongzheng Xu: That's pretty interesting. So what was… what was, like, the initial goal of this project? Just to.
+
+202
+00:26:37.630 --> 00:26:43.579
+Bin Hu: So, so, for this project, so, at the begin- at,
+
+203
+00:26:44.640 --> 00:26:54.099
+Bin Hu: So at the beginning, I was, asked to collaborate, in this project, because someone is doing the… doing the, debate.
+
+204
+00:26:54.100 --> 00:26:58.160
+Zhongzheng Xu: And, that was another intern in my,
+
+205
+00:26:58.210 --> 00:27:01.660
+Bin Hu: in my undergraduate… the lab, I…
+
+206
+00:27:01.750 --> 00:27:22.020
+Bin Hu: was in, in the undergrad study. And I, and because, the, the intern cannot, manage both the, both the debate and the simulation, so, my advisor asked me to mainly develop the simulation project and, develop the backbone.
+
+207
+00:27:22.020 --> 00:27:25.500
+Bin Hu: I mean, the multi-agent system interaction, code.
+
+208
+00:27:25.560 --> 00:27:28.759
+Bin Hu: So, yes.
+
+209
+00:27:29.430 --> 00:27:37.579
+Bin Hu: So… so we didn't set a very specific goal for this. My advisor has multiple
+
+210
+00:27:37.890 --> 00:27:47.659
+Bin Hu: very opened ideas, like… like, he wants to do a simulation, like, in… with, more than 100.
+
+211
+00:27:47.790 --> 00:27:50.470
+Bin Hu: More than 100 agents.
+
+212
+00:27:50.610 --> 00:27:55.460
+Bin Hu: But, just I met, like what I mentioned, we…
+
+213
+00:27:55.650 --> 00:28:00.260
+Bin Hu: This project has, has been… aborted… aborted.
+
+214
+00:28:00.260 --> 00:28:00.860
+Zhongzheng Xu: Yeah.
+
+215
+00:28:01.170 --> 00:28:06.050
+Bin Hu: There's one interesting thing I think I'd share with you. So…
+
+216
+00:28:06.860 --> 00:28:09.780
+Bin Hu: One year later, in 2024, I…
+
+217
+00:28:10.180 --> 00:28:12.909
+Bin Hu: There is another intern who,
+
+218
+00:28:13.400 --> 00:28:20.380
+Bin Hu: take, who, continue to work, work on this project, and I think they have,
+
+219
+00:28:21.640 --> 00:28:24.549
+Bin Hu: They have a publication.
+
+220
+00:28:25.220 --> 00:28:29.040
+Bin Hu: on the… Open this experiment setting.
+
+221
+00:28:29.720 --> 00:28:33.959
+Bin Hu: Give me one second, maybe you will be interested in this.
+
+222
+00:28:45.970 --> 00:28:48.470
+Zhongzheng Xu: Yeah, I also saw a couple…
+
+223
+00:28:48.590 --> 00:28:55.450
+Zhongzheng Xu: I think the simulation now scaled up to even, a million, if I'm not wrong.
+
+224
+00:28:55.890 --> 00:28:59.969
+Zhongzheng Xu: the number of agents, I think there's a paper.
+
+225
+00:29:01.560 --> 00:29:09.539
+Bin Hu: Yeah, I'll… Oh, I saw on the paper, but I have not,
+
+226
+00:29:10.100 --> 00:29:20.009
+Bin Hu: take a very close look at this. So this is definitely the, continuation… this… this is, this definitely…
+
+227
+00:29:20.130 --> 00:29:24.089
+Bin Hu: is continued from my password. I put in the chat box.
+
+228
+00:29:27.030 --> 00:29:27.800
+Zhongzheng Xu: I see.
+
+229
+00:29:32.700 --> 00:29:33.940
+Zhongzheng Xu: Okay.
+
+230
+00:29:37.300 --> 00:29:39.590
+Zhongzheng Xu: Alright, we can go back to our interview.
+
+231
+00:29:39.590 --> 00:29:39.930
+Bin Hu: Oh, okay.
+
+232
+00:29:39.930 --> 00:29:44.119
+Zhongzheng Xu: Yeah, so…
+
+233
+00:29:48.950 --> 00:29:52.189
+Zhongzheng Xu: Just a second, trying to locate the question.
+
+234
+00:30:02.970 --> 00:30:10.450
+Zhongzheng Xu: Okay, so you said that since your, structure was fairly simple, and then just using LaneChain.
+
+235
+00:30:10.450 --> 00:30:26.050
+Bin Hu: Yeah, yeah. So, even with… I believe even without the lenshin, so we can manage… we can, build this system, even, because we simply, call the models API and give the
+
+236
+00:30:26.190 --> 00:30:32.289
+Bin Hu: context. So we don't even need an agent framework for this.
+
+237
+00:30:32.880 --> 00:30:41.620
+Bin Hu: Yeah, so… so the agent is more… is more specifically, Related to the first simulation.
+
+238
+00:30:42.330 --> 00:30:45.200
+Bin Hu: For another second debate once.
+
+239
+00:30:45.490 --> 00:30:46.800
+Zhongzheng Xu: Yeah, okay.
+
+240
+00:30:47.130 --> 00:30:56.130
+Zhongzheng Xu: I guess LaneChain or the LaneGraph mostly are helpful because of, like, tools and, like, memory management, but you guys don't.
+
+241
+00:30:56.130 --> 00:30:56.939
+Bin Hu: Yeah, yeah, even the…
+
+242
+00:30:56.940 --> 00:30:57.480
+Zhongzheng Xu: Excellent.
+
+243
+00:30:57.480 --> 00:30:59.020
+Bin Hu: and wrote in, yeah.
+
+244
+00:31:00.860 --> 00:31:03.750
+Zhongzheng Xu: Okay. And then…
+
+245
+00:31:04.480 --> 00:31:13.699
+Zhongzheng Xu: actually, I just have 3 more questions, maybe 2. And they're more, like, broad and abstract. So,
+
+246
+00:31:14.810 --> 00:31:27.319
+Zhongzheng Xu: it doesn't have to be the specific projects that you worked on, but for what types of problems do you think a multi-agent system works the best? Or what kind of tasks they're good at?
+
+247
+00:31:27.610 --> 00:31:28.990
+Zhongzheng Xu: Or maybe bad at.
+
+248
+00:31:32.410 --> 00:31:44.069
+Bin Hu: So, I believe the multi-agent system can be the best, when they're trying to manage their, they want to achieve their
+
+249
+00:31:44.830 --> 00:31:49.650
+Bin Hu: multiple girls in the same time. For example,
+
+250
+00:31:49.970 --> 00:31:54.829
+Bin Hu: But they can… they can work on their, specific goal,
+
+251
+00:31:56.570 --> 00:32:03.270
+Bin Hu: I'm sorry, I think let me manage my words. Maybe I can get, come up with an example.
+
+252
+00:32:16.490 --> 00:32:25.310
+Bin Hu: Yes. So, so for example, if we gave… if we are trying to, ask one,
+
+253
+00:32:26.480 --> 00:32:35.570
+Bin Hu: one LM agent with different tasks. For example, can I write on the whiteboard?
+
+254
+00:32:35.860 --> 00:32:36.390
+Zhongzheng Xu: Yeah, yeah.
+
+255
+00:32:36.390 --> 00:32:39.079
+Bin Hu: Oh, okay, I can see your whiteboard.
+
+256
+00:32:39.480 --> 00:32:47.190
+Bin Hu: So, for example, it tried to… for example, there is a task wand, Task 2?
+
+257
+00:32:47.440 --> 00:32:49.050
+Bin Hu: and Task 3.
+
+258
+00:32:49.870 --> 00:32:56.260
+Bin Hu: So, for example, if you want to one agent to deal with
+
+259
+00:32:56.390 --> 00:33:02.999
+Bin Hu: These three tasks at the same time, and each task, it has, subtasks.
+
+260
+00:33:03.290 --> 00:33:10.199
+Bin Hu: And, for example, each task, needs an interval to complete.
+
+261
+00:33:13.660 --> 00:33:31.789
+Bin Hu: So, so for example, task 1 has such tests and tasks, and it says task queue has different… have this, Task 3 have this. So, if you are asking one, one agent to complete this, the agent can be, cannot… maybe not, able to.
+
+262
+00:33:31.790 --> 00:33:37.330
+Bin Hu: manage the multitask at the same time, because, because
+
+263
+00:33:37.640 --> 00:33:46.699
+Bin Hu: in their, I believe that's because, their instruction tuning stage, they are not exposed to such a
+
+264
+00:33:46.760 --> 00:34:00.570
+Bin Hu: complicated setting. So, by the, multi-agent system, we're able to split, most… a complicated task into, into multiple paralleled
+
+265
+00:34:00.610 --> 00:34:10.100
+Bin Hu: Small tasks, and even though we need the, need to, need to…
+
+266
+00:34:10.219 --> 00:34:21.020
+Bin Hu: give some shared content to the agent. We can achieve this by a shared memory, or even the conversations between the agents. So I think that's the first,
+
+267
+00:34:22.670 --> 00:34:27.909
+Bin Hu: first, cases, I believe the motivation system can work the best.
+
+268
+00:34:28.940 --> 00:34:34.130
+Bin Hu: And the second one is, when they're trying to
+
+269
+00:34:34.889 --> 00:34:38.510
+Bin Hu: When a model is trying… is,
+
+270
+00:34:39.199 --> 00:34:46.269
+Bin Hu: is capable of multiple, I mean, the tools or specific actions, so…
+
+271
+00:34:46.880 --> 00:34:53.629
+Bin Hu: That's similar, it's pretty similar to this, because, if, if, if, we are, we are feeding,
+
+272
+00:34:53.820 --> 00:34:59.859
+Bin Hu: Sorry, if we are equipping one agent with multiple,
+
+273
+00:35:00.060 --> 00:35:15.369
+Bin Hu: tools, that means we… even though we… we assume these, tools are caught by a very simple API that can be learned in, very simple instructions, but the numerous,
+
+274
+00:35:15.530 --> 00:35:31.429
+Bin Hu: tools will make the instruction, super long in the prompt, so we need to teach how, how an agent should, call the, call the, call the tool. So this will…
+
+275
+00:35:32.600 --> 00:35:40.090
+Bin Hu: And even some tools are not even necessary in one setting, but we hope that the agent can
+
+276
+00:35:40.420 --> 00:35:49.109
+Bin Hu: can know, there is a tool existing. So, by multi-agent system, we can split,
+
+277
+00:35:49.550 --> 00:35:53.010
+Bin Hu: Split… split the agent with,
+
+278
+00:35:54.140 --> 00:36:03.869
+Bin Hu: Split, sorry. We can split, the capabilities, or that, through, through,
+
+279
+00:36:05.110 --> 00:36:10.790
+Bin Hu: Sorry. So, sorry.
+
+280
+00:36:11.170 --> 00:36:16.639
+Bin Hu: We can split the tools into different agents and ask them only to do, what are…
+
+281
+00:36:17.380 --> 00:36:36.090
+Bin Hu: to perform the… which tools are most frequently used. And as well as, so after we call the, task management, the two call in, also, the sec… third one can be the contacts management.
+
+282
+00:36:36.090 --> 00:36:50.049
+Bin Hu: Because after we, splitting one agent into multi-agent systems, each agent's context, context will be much more manageable, so we don't have to actively,
+
+283
+00:36:50.240 --> 00:36:56.439
+Bin Hu: compress or summarize their memory. So, a model can
+
+284
+00:36:57.280 --> 00:37:00.870
+Bin Hu: Be more robust in their behavior.
+
+285
+00:37:02.840 --> 00:37:21.420
+Bin Hu: basically, that's the three, that's three cases. I believe the multi-agent system can perform much better than single agents. It's from the perspective of a language… language model agent, because I'm not exposed to the, vision… vision…
+
+286
+00:37:21.480 --> 00:37:25.970
+Bin Hu: agents, or… other. So, yeah, that's my perspective.
+
+287
+00:37:27.130 --> 00:37:39.620
+Zhongzheng Xu: Okay, so to summarize, the three scenarios are… so, first of all, when the tasks are inherently dividable into smaller subtasks, and then also when there's
+
+288
+00:37:40.030 --> 00:37:54.030
+Zhongzheng Xu: A second scenario is, like, when there's numerous tools, and then we want to split the tools into multiple agents so that each agent will have, a smaller range of tool selection.
+
+289
+00:37:54.740 --> 00:37:55.470
+Bin Hu: Yes.
+
+290
+00:37:55.630 --> 00:37:58.670
+Zhongzheng Xu: And then the third is for better, context management.
+
+291
+00:37:59.010 --> 00:38:02.069
+Bin Hu: Yeah, yeah, absolutely. Okay.
+
+292
+00:38:03.730 --> 00:38:11.730
+Zhongzheng Xu: I think that's a… that's a pretty comprehensive response. I guess it's what a lot of people are saying, too.
+
+293
+00:38:12.280 --> 00:38:20.169
+Zhongzheng Xu: Okay, and then I just have a final question. I feel like this might not be too applicable to you.
+
+294
+00:38:20.260 --> 00:38:33.369
+Zhongzheng Xu: And I probably have asked… already asked similar questions. So basically, what are the biggest challenges, do you think, developing a multi-agent system is?
+
+295
+00:38:33.540 --> 00:38:39.800
+Zhongzheng Xu: And then, is there anything, for example, if there's some add-on features you can add to LaneChain.
+
+296
+00:38:40.000 --> 00:38:41.450
+Zhongzheng Xu: What would that be?
+
+297
+00:38:43.420 --> 00:38:46.619
+Bin Hu: Oh, that's a… that's actually a very big file.
+
+298
+00:38:46.620 --> 00:38:48.620
+Zhongzheng Xu: It is a big question.
+
+299
+00:38:48.620 --> 00:38:50.680
+Bin Hu: Now, let me think for a while.
+
+300
+00:39:03.170 --> 00:39:07.679
+Bin Hu: Yeah, so I believe, one…
+
+301
+00:39:10.970 --> 00:39:21.420
+Bin Hu: One feature that I hope that should be incorporated into Lynching is the task scheduling, a very
+
+302
+00:39:21.420 --> 00:39:34.829
+Bin Hu: flexible task scheduling for a certain agent. So I'm not sure if that has already been incorporated into LendChain or LandGraph, but let me illustrate what kind of step it is.
+
+303
+00:39:34.960 --> 00:39:39.530
+Bin Hu: So… Let me use the whiteboard.
+
+304
+00:39:39.970 --> 00:39:41.030
+Zhongzheng Xu: Yeah, go ahead.
+
+305
+00:39:41.290 --> 00:39:43.880
+Bin Hu: Yeah, so, so for, for example.
+
+306
+00:39:45.380 --> 00:39:57.640
+Bin Hu: Let's say, this only applies to, a very open problem, so there is no targeted answer, that can be
+
+307
+00:39:58.270 --> 00:40:04.040
+Bin Hu: and be trained model to, do the optimization. We can only…
+
+308
+00:40:04.260 --> 00:40:08.980
+Bin Hu: Asked in order to do more free-form exploration.
+
+309
+00:40:09.410 --> 00:40:10.390
+Bin Hu: So…
+
+310
+00:40:11.320 --> 00:40:19.410
+Bin Hu: So, so for task scheduling, so for task scheduling, we wish the model to first do some planning.
+
+311
+00:40:19.680 --> 00:40:21.200
+Bin Hu: like this.
+
+312
+00:40:21.870 --> 00:40:32.800
+Bin Hu: So… But this cannot… this also a plan, can be different from, what's…
+
+313
+00:40:33.670 --> 00:40:40.249
+Bin Hu: different from the real scenario… real circumstance. So, the model have to,
+
+314
+00:40:40.990 --> 00:40:48.100
+Bin Hu: Changed the… changed their plan, When they're doing the exploration.
+
+315
+00:40:48.310 --> 00:41:05.180
+Bin Hu: And so there can be multiple general goals, so if I spend much time on certain, on certain subtasks, maybe it should give up, give it up, and go to the…
+
+316
+00:41:05.650 --> 00:41:17.109
+Bin Hu: last, last add, or it may come up with more subtasks to do in certain in certain…
+
+317
+00:41:18.260 --> 00:41:24.270
+Bin Hu: In certain steps, so maybe it will create some new… New steps to do.
+
+318
+00:41:26.080 --> 00:41:37.299
+Bin Hu: So, and it should… Should assess how each stat makes the agent closer to its final goal.
+
+319
+00:41:37.800 --> 00:41:51.620
+Bin Hu: So… I believe that's the very rough structure of, of the…
+
+320
+00:41:52.570 --> 00:41:55.469
+Bin Hu: what I said, the task scheduling.
+
+321
+00:41:55.570 --> 00:42:03.510
+Bin Hu: for… for… For an agent system. I'm not sure if they… someone has… has,
+
+322
+00:42:04.410 --> 00:42:12.020
+Bin Hu: It has built a very… such a similar feature, but I believe it's the most important.
+
+323
+00:42:12.170 --> 00:42:13.630
+Bin Hu: feature…
+
+324
+00:42:14.060 --> 00:42:14.470
+Zhongzheng Xu: Okay.
+
+325
+00:42:14.470 --> 00:42:20.750
+Bin Hu: That the model… that an agent can use in the freeform exploration, because,
+
+326
+00:42:21.950 --> 00:42:30.570
+Bin Hu: Because, first, it's… first, it's an unseen scenario. And…
+
+327
+00:42:30.790 --> 00:42:38.950
+Bin Hu: And the, and the experiment might not be fully, visible to the agent in certain…
+
+328
+00:42:39.130 --> 00:42:43.359
+Bin Hu: in certain steps. So, whenever…
+
+329
+00:42:43.520 --> 00:42:52.570
+Bin Hu: The more the agent is doing certain exploration, the… The environment will change.
+
+330
+00:42:52.750 --> 00:42:58.740
+Bin Hu: So, it will… so it needs to, manage certain… task scheduling.
+
+331
+00:42:59.000 --> 00:43:07.930
+Bin Hu: in the exploration. So, yeah, so I believe that's the…
+
+332
+00:43:10.030 --> 00:43:14.729
+Bin Hu: feature I would like to add to the lenshin.
+
+333
+00:43:14.920 --> 00:43:16.030
+Bin Hu: package.
+
+334
+00:43:16.170 --> 00:43:21.870
+Bin Hu: But it's very rough, a rough, rough Friday.
+
+335
+00:43:22.750 --> 00:43:29.320
+Zhongzheng Xu: So you're saying, like, correct me if I'm wrong, so you're saying that you want to have
+
+336
+00:43:30.060 --> 00:43:36.630
+Zhongzheng Xu: You want the agent to have the ability of dealing with, like, unseen scenario.
+
+337
+00:43:37.260 --> 00:43:41.959
+Bin Hu: And open in the, open exploration.
+
+338
+00:43:42.340 --> 00:43:43.600
+Bin Hu: a task.
+
+339
+00:43:43.810 --> 00:43:44.660
+Bin Hu: Yeah.
+
+340
+00:43:45.010 --> 00:43:51.300
+Zhongzheng Xu: Yeah, so, I know that some of… some of the frameworks do have… .
+
+341
+00:43:52.560 --> 00:43:54.730
+Bin Hu: Back to React, and…
+
+342
+00:43:56.040 --> 00:44:02.029
+Zhongzheng Xu: like, like Lanking. So I know that it has some…
+
+343
+00:44:02.660 --> 00:44:15.489
+Zhongzheng Xu: A mechanism called, fallback, which is basically when… when it gets a certain input that is not expected, it goes to a different branch.
+
+344
+00:44:15.770 --> 00:44:22.740
+Zhongzheng Xu: And then try something else, or just throw in the error. But it's…
+
+345
+00:44:22.740 --> 00:44:24.340
+Bin Hu: Yeah, yeah.
+
+346
+00:44:25.520 --> 00:44:30.589
+Bin Hu: It has been explored by multiple, multiple…
+
+347
+00:44:31.780 --> 00:44:41.779
+Bin Hu: agent frameworks, and I, I think, I think the lane chain has also incorporated some of the framework, like the React.
+
+348
+00:44:42.070 --> 00:44:46.100
+Bin Hu: I'm not pretty sure about this, let me check.
+
+349
+00:44:53.260 --> 00:44:56.050
+Bin Hu: Yeah, so, so…
+
+350
+00:44:59.030 --> 00:45:07.559
+Bin Hu: Let me, let me send that in the toolbox, the chat box. Oops, it's on the, it's on whiteboard. Okay, anyway.
+
+351
+00:45:07.840 --> 00:45:10.210
+Bin Hu: So, it has already,
+
+352
+00:45:11.560 --> 00:45:18.699
+Zhongzheng Xu: already incorporated some frameworks, but I wish that this framework can be more.
+
+353
+00:45:18.700 --> 00:45:25.179
+Bin Hu: flexible and apply to the unseen scenario, or N, even though the
+
+354
+00:45:26.390 --> 00:45:32.689
+Bin Hu: More, free-form exploration and more dynamic environment.
+
+355
+00:45:33.710 --> 00:45:40.149
+Bin Hu: So, ultimately, we wish that an agent can mimic human,
+
+356
+00:45:40.150 --> 00:45:40.580
+Zhongzheng Xu: Yo.
+
+357
+00:45:40.580 --> 00:45:47.560
+Bin Hu: human, decision in a complicated scenario, but it cannot… but… That…
+
+358
+00:45:47.690 --> 00:45:53.580
+Bin Hu: those frameworks that's already incorporated in, lenshin, they're actually very…
+
+359
+00:45:54.710 --> 00:46:01.300
+Bin Hu: very simple and cannot deal with in those, complicated tasks. So,
+
+360
+00:46:01.450 --> 00:46:09.510
+Bin Hu: Yeah, so that's my… my idea, and I wish that the lenshin can… Approved.
+
+361
+00:46:09.950 --> 00:46:22.640
+Zhongzheng Xu: Okay. Would it be correct if I say that so, you… you think that… Currently,
+
+362
+00:46:23.130 --> 00:46:25.590
+Zhongzheng Xu: No matter how these frameworks
+
+363
+00:46:25.780 --> 00:46:43.400
+Zhongzheng Xu: are working. They still follow the human-defined structure or pattern, but then it would be good if the agents or the model has the ability to even change the environment or change the structure, depending on,
+
+364
+00:46:43.670 --> 00:46:44.680
+Zhongzheng Xu: the task.
+
+365
+00:46:51.500 --> 00:46:59.399
+Bin Hu: This can be one, one fiscal interpretation of what I generally prefer.
+
+366
+00:46:59.570 --> 00:47:00.460
+Bin Hu: Yeah.
+
+367
+00:47:04.140 --> 00:47:06.370
+Zhongzheng Xu: I see. That's interesting, that's interesting.
+
+368
+00:47:12.250 --> 00:47:13.300
+Zhongzheng Xu: Okay.
+
+369
+00:47:13.410 --> 00:47:18.139
+Zhongzheng Xu: That was actually my last question, and then…
+
+370
+00:47:18.850 --> 00:47:20.840
+Zhongzheng Xu: Let me just stop the recording.
+

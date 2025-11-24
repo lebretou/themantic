@@ -1,0 +1,1322 @@
+WEBVTT
+
+1
+00:00:04.780 --> 00:00:06.310
+Zhongzheng Xu: Duncan's…
+
+2
+00:00:10.750 --> 00:00:11.990
+Zhongzheng Xu: Okay…
+
+3
+00:00:16.160 --> 00:00:34.979
+Zhongzheng Xu: Okay, I guess we can go ahead and start. So, I will start with some, more, like, abstract questions. So, like, when you hear the word, multi-agent system, like, what does it mean? For example, like, how is it different from just a single agent or a single LLM?
+
+4
+00:00:35.780 --> 00:00:51.660
+afaan: So, thing… when we talk about it's not like… it shouldn't be, like, a one answer, why it is different. But, so, first of all, when we talk about difference, so, multi-agent, and when we talk about agent, we say it should be LLM, but multi-agent is not a…
+
+5
+00:00:51.660 --> 00:01:09.980
+afaan: there will be multiple agents, first of all, when we break down the word, but if we talk about a product, let's say a particular X use case, there are 10 agents used, and one agent is a manager agent or orchestration agent, but that doesn't mean the remaining 10 agents will have LLM. First of all, they are differentiated with it.
+
+6
+00:01:10.260 --> 00:01:26.189
+afaan: Agentic workflow is mainly because one agent is involved, and then more in 99% of cases, only a single agentic workflow, LLM is there, but in multiple agentic workflow, it doesn't mean LLM will be involved.
+
+7
+00:01:26.480 --> 00:01:41.399
+afaan: And we can take a RAC pipeline. RAG is a basic RAC pipeline is a use case of a single agent workflow, but multiple agents is not about just LLM. It's about end-to-end flow with LLM, how…
+
+8
+00:01:41.580 --> 00:01:52.210
+afaan: Each entity should work, and the main role in that is the orchestration agent, because when we talk about the agent, it's not just a sequential flow from start to end.
+
+9
+00:01:52.430 --> 00:02:05.209
+afaan: Multi-agent is basically not from start to end, or independent agents, if we talk about a space of a multiple multi-agent workflow, multiple agents are there.
+
+10
+00:02:05.210 --> 00:02:19.940
+afaan: not connected with each other. It's the job of the orchestrator agent to identify which agent to go, and if we create a workflow, like A, B, C, D, E, so it's one workflow of organization, but if use case changes without any code change.
+
+11
+00:02:19.990 --> 00:02:28.420
+afaan: every time is not… it doesn't going to be ABCD, it's DCBA, and, like, this agentic workflow will change.
+
+12
+00:02:28.430 --> 00:02:42.070
+afaan: So, we can say it's no… so it differs from agentic workflow. Single agent workflow is, we will always going to change the pattern of how each agent going to interact.
+
+13
+00:02:43.560 --> 00:02:54.149
+Zhongzheng Xu: I see, I see. It's… it's interesting you said that, like, multi-agent, is not, like, a… like, a linear, sequential process.
+
+14
+00:02:54.360 --> 00:03:00.090
+Zhongzheng Xu: I feel like… I feel like sometimes they can't, right? Like,
+
+15
+00:03:00.310 --> 00:03:11.149
+Zhongzheng Xu: Sometimes it's just, like, multiple agents each have different, tool calls, or, like, access to different tools. But then the whole pipeline is still, like, linear.
+
+16
+00:03:12.550 --> 00:03:20.049
+afaan: Yeah, the pipeline is linear, but depending… so… so it's not like each agent will be called.
+
+17
+00:03:20.390 --> 00:03:30.890
+afaan: Every time. That is also… based on the user input, sometimes this agent will be needed, and sometimes not. So, I will take an example where, suppose a prompt is used, LLM.
+
+18
+00:03:30.930 --> 00:03:47.359
+afaan: giving a response. So, for a particular case, we will get a correct response, so it will pass through the pipeline. So sometimes we do not get a correct response. So, it will go to the fallback, and sometimes if in fallback, we write, should update the prompt.
+
+19
+00:03:47.360 --> 00:03:53.399
+afaan: Based on route feedback, prompt updation will occur, and this cycle will go over. So, like this, the flow changes.
+
+20
+00:03:53.730 --> 00:03:55.410
+Zhongzheng Xu: Yeah, I see, I see.
+
+21
+00:03:55.520 --> 00:03:58.430
+Zhongzheng Xu: Alright, okay.
+
+22
+00:04:00.020 --> 00:04:18.200
+Zhongzheng Xu: I'll go to the next question. So, I think you already talked a little bit about it, in your, like, the Google form that you took, but, like, what is your role and experience in, developing or using, multi-agent system?
+
+23
+00:04:19.029 --> 00:04:24.009
+afaan: So, basically… so you're talking about my academic, or before, also?
+
+24
+00:04:24.010 --> 00:04:25.779
+Zhongzheng Xu: Oh, anything, anything. Just any.
+
+25
+00:04:25.780 --> 00:04:34.740
+afaan: So, I'm an international student here, first of all. So, I did my undergraduation in computer science, now I'm doing my master's.
+
+26
+00:04:34.910 --> 00:04:35.280
+Zhongzheng Xu: So.
+
+27
+00:04:35.280 --> 00:04:49.810
+afaan: I graduated in 2022, and after that, for 3 years, I've worked as a… as a LLM engineer in Morgan Stanley. So there, first, my experience starts from there, where we were… I have worked on agentic workflows.
+
+28
+00:04:50.110 --> 00:05:08.159
+afaan: So, whereas a financial firm, they do not have structured data, they have unstructured data, and unstructured, I mean just PDFs. So, no Python code, you can detect the pattern to read a PDF and get a structured data. We need an agentic AI system there.
+
+29
+00:05:08.260 --> 00:05:17.269
+afaan: So, initially, we started with single prompt, that is LLM, then we expanded to Agent Workflow Single Agent, then we expanded to multi-prompt, multi-agent.
+
+30
+00:05:17.270 --> 00:05:29.399
+afaan: So how there we have worked, we… so each… each data source is different, each data type is different. So it's, like, we can say it's, like, an infinite possibility of how much data we will get.
+
+31
+00:05:29.430 --> 00:05:38.669
+afaan: So, that part is done by a manual analyst. So, it writes a document. So, what my agent… multi-agency workflow is.
+
+32
+00:05:38.670 --> 00:05:51.109
+afaan: first agent is reading the data. There is another agent. When we read the data, we get the page, so where… where we use vector embeddings to get… because documents are more than 100 pages document. So, we use a…
+
+33
+00:05:51.390 --> 00:06:04.110
+afaan: we use embeddings to get correct pages. Once we get the correct pages, so suppose we have to extract 10 data. So, as I can say, there are an infinite possibilities of data, so we can't write prompts for each data.
+
+34
+00:06:04.230 --> 00:06:15.439
+afaan: And we can't write a generic prompt. Bird has manual analyst, they prepared a documentation, which is, you know, so I have an agent that read that documentation and create prompt for me.
+
+35
+00:06:15.660 --> 00:06:18.609
+afaan: So I'm using LLM to create prompt itself.
+
+36
+00:06:18.910 --> 00:06:22.500
+afaan: And then use that prompt to extract that data that I want.
+
+37
+00:06:22.740 --> 00:06:35.430
+afaan: Then in other regions that are doing validation, data storage, normal process. And so that's what I have worked for in Mormon's journey, and after coming to, you know, Maryland.
+
+38
+00:06:35.660 --> 00:06:42.099
+afaan: So at UMD, I have been worked as a research scientist in iSchool, research assistant at iSchool.
+
+39
+00:06:42.130 --> 00:06:58.939
+afaan: Where it's under Cody Button, where mainly I'm using LLM in agility workflow for crisis fact. There is a project going on under Universal Man. So, it's a dataset that they have created, which is a dataset of social data science.
+
+40
+00:06:58.970 --> 00:07:22.630
+afaan: Which involve crisis-related data. So, it's already there for textual data. I'm working with LLMs in Agentic workflow to get data for images and other multimodalities. And along with it, I'm also working with Professor Tiani Ro, where we have just completed our research, which is design chart, where we are using LLM Agentic workflow to fine-tune a model
+
+41
+00:07:22.630 --> 00:07:23.450
+afaan: So…
+
+42
+00:07:23.610 --> 00:07:33.840
+afaan: We are doing LoRa fine-tuning and full fine-tuning, where we have created a dataset using Shark5 dataset, where a basic goal is to create a JSON with design choices.
+
+43
+00:07:33.840 --> 00:07:43.789
+afaan: With just reading the CSV, our fine-tuned LLM can give a particular industry-level, specific industry-level data.
+
+44
+00:07:44.730 --> 00:07:47.660
+Zhongzheng Xu: I see. So, for those,
+
+45
+00:07:47.860 --> 00:07:54.350
+Zhongzheng Xu: projects that you just, you just described, like, what kind of, framework did you use? Like, lane chain, lane graph?
+
+46
+00:07:54.810 --> 00:07:56.340
+afaan: Yeah, Langchen and Langorov.
+
+47
+00:07:56.340 --> 00:07:57.840
+Zhongzheng Xu: Then channeling graph, okay.
+
+48
+00:07:57.840 --> 00:07:58.300
+afaan: Yeah.
+
+49
+00:07:58.300 --> 00:07:58.950
+Zhongzheng Xu: I see.
+
+50
+00:07:58.950 --> 00:08:06.579
+afaan: Oh, I'm… but I'm in a recent hackathon project, I'm exploring towards MCP and Google ADK framework also.
+
+51
+00:08:07.800 --> 00:08:09.090
+Zhongzheng Xu: I said, okay.
+
+52
+00:08:09.240 --> 00:08:13.499
+Zhongzheng Xu: Yeah, it seems like, LaneGraph is still… The more popular choices.
+
+53
+00:08:13.500 --> 00:08:14.839
+afaan: More popular choice, yeah.
+
+54
+00:08:14.840 --> 00:08:15.340
+Zhongzheng Xu: Yeah.
+
+55
+00:08:15.340 --> 00:08:27.549
+afaan: It's derived from LanChain, and LanChain… because Google ADKs, it's coming, like, now only, MCP, Google ADK. But previously, from the start, is the LanChain that have started to develop everything.
+
+56
+00:08:27.770 --> 00:08:32.220
+Zhongzheng Xu: Yeah. Have you ever had a chance to use one of those, like.
+
+57
+00:08:32.350 --> 00:08:40.819
+Zhongzheng Xu: like, more, like, visual tools, the ones with, like, nodes as, agents, and then you can draw links.
+
+58
+00:08:42.770 --> 00:08:43.350
+afaan: Cool.
+
+59
+00:08:43.700 --> 00:08:45.220
+afaan: Lyco…
+
+60
+00:08:45.390 --> 00:08:48.560
+Zhongzheng Xu: Like, there's… there's this tool called…
+
+61
+00:08:50.800 --> 00:08:55.530
+Zhongzheng Xu: I guess I can share my screen, show you real quick.
+
+62
+00:08:55.530 --> 00:08:56.050
+afaan: Yeah.
+
+63
+00:09:04.300 --> 00:09:05.250
+Zhongzheng Xu: Sure.
+
+64
+00:09:13.690 --> 00:09:14.600
+Zhongzheng Xu: Okay.
+
+65
+00:09:20.670 --> 00:09:27.590
+Zhongzheng Xu: So… I think, people have, like, came out with… can you see my screen?
+
+66
+00:09:28.220 --> 00:09:28.920
+afaan: Yeah, yeah, I can see.
+
+67
+00:09:28.920 --> 00:09:39.250
+Zhongzheng Xu: Yeah, people came out with, like, this kind of interface, but I guess it's not really, it doesn't really fit your tasks, because they're… they're more for, like,
+
+68
+00:09:41.540 --> 00:09:43.510
+Zhongzheng Xu: How do I make this bigger?
+
+69
+00:09:44.200 --> 00:09:52.089
+Zhongzheng Xu: it's more for, like, like, daily tasks, so they have, like, some type of, trigger, that, like.
+
+70
+00:09:52.280 --> 00:09:59.940
+Zhongzheng Xu: Say whenever you get a Gmail, a new email, it triggers the pipeline, and then it do something.
+
+71
+00:09:59.940 --> 00:10:07.480
+afaan: So, so as you're talking about visualization and notes, I haven't particularly used any, but I've used Neo4J.
+
+72
+00:10:09.070 --> 00:10:10.250
+Zhongzheng Xu: Oh, what is it called?
+
+73
+00:10:10.620 --> 00:10:27.789
+afaan: It's called NeoForge. It's a graphical database. So, basically, agent… it's… when it was developed, it's not developed for agent workflow, it's a graphical entity database, where it's… we do normal SQL-like queries. But later on, they integrated agents in that workflow.
+
+74
+00:10:28.610 --> 00:10:30.100
+Zhongzheng Xu: Oh, okay.
+
+75
+00:10:30.100 --> 00:10:42.830
+afaan: And it's integrated with… and it's, data sources integration with anything, even Google Cloud, AWS, HDR, you can directly connect your cloud environment. But it's not an open source, and it's for commercial use.
+
+76
+00:10:42.830 --> 00:10:54.689
+afaan: So, basically, when I cannot take it on long-term, when I do, like, some small class projects or hackathons, I use that. I'll basically create an account and get GCP free credits for one month.
+
+77
+00:10:55.300 --> 00:10:55.690
+Zhongzheng Xu: Okay.
+
+78
+00:10:55.690 --> 00:10:56.780
+afaan: End user, yeah.
+
+79
+00:10:57.290 --> 00:11:03.280
+Zhongzheng Xu: Okay, and I think you,
+
+80
+00:11:03.510 --> 00:11:12.320
+Zhongzheng Xu: Okay, so for, like, let's say for the first project that you talked about, the one that, like, structures data.
+
+81
+00:11:12.640 --> 00:11:14.510
+afaan: Like…
+
+82
+00:11:14.590 --> 00:11:15.960
+Zhongzheng Xu: Is the system…
+
+83
+00:11:16.780 --> 00:11:26.330
+Zhongzheng Xu: perhaps, like, you're going to, like, reuse the systems, like, over and over, right? Whenever there's new data that comes in? Or is it pretty automatic? It just triggers itself?
+
+84
+00:11:28.610 --> 00:11:40.339
+afaan: Yes, it automatically triggers itself, because we have a collaboration with Azure and JCP, so there is a data lake that we have stored, so whenever new data comes, we have created a PubSub request.
+
+85
+00:11:40.480 --> 00:11:47.059
+afaan: So, PubSub is basically publisher and subscriber. Whenever any data comes, we get a trigger request, and our pipeline will start.
+
+86
+00:11:48.010 --> 00:11:49.879
+Zhongzheng Xu: Okay. And then.
+
+87
+00:11:49.880 --> 00:12:07.580
+afaan: And one more point, we also target the volume also, because we do not do one-to-one processing, we do processing on a bunch of volume, so we are based on fiscal year and the quarter we are, because in financial terms, quarter, the data volume changes.
+
+88
+00:12:07.580 --> 00:12:11.110
+afaan: So, we target, like, at which data voluma trigger should trigger.
+
+89
+00:12:12.190 --> 00:12:13.030
+Zhongzheng Xu: Okay.
+
+90
+00:12:13.470 --> 00:12:13.980
+afaan: Oops.
+
+91
+00:12:13.980 --> 00:12:22.019
+Zhongzheng Xu: I see. And then you said that, like, the reason why you had LLM is because, the… the data was…
+
+92
+00:12:22.310 --> 00:12:24.889
+Zhongzheng Xu: In PDF, right? And you kind of need…
+
+93
+00:12:24.890 --> 00:12:38.309
+afaan: Data was in PDF, and only PDF is not the case, because if it's in PDF and a pattern is structured, we can use normal reject expression or Pythonic code to detect that pattern in a code format and get the data. But in PDF,
+
+94
+00:12:38.310 --> 00:12:47.950
+afaan: things changes. Companies… because companies who are writing the reports, they are not AI system, or not any system was giving the structure. They were humans who are writing those reports.
+
+95
+00:12:47.950 --> 00:12:49.589
+afaan: And your money may fall in.
+
+96
+00:12:49.590 --> 00:12:50.990
+Zhongzheng Xu: And handwriting, okay.
+
+97
+00:12:50.990 --> 00:12:53.819
+afaan: It's not handwriting, it's like a Word document.
+
+98
+00:12:54.050 --> 00:12:54.510
+Zhongzheng Xu: Oh, okay.
+
+99
+00:12:54.510 --> 00:13:13.269
+afaan: document, it's like, it's not handwriting, but it's not different than handwriting. They're writing a report, like, in a notes document using a computer, but those are human analysts. They won't follow the same pattern. Companies' pattern changes, report types changes, so the uncertainty in there is too much.
+
+100
+00:13:13.710 --> 00:13:15.390
+Zhongzheng Xu: Okay, I see, I see.
+
+101
+00:13:15.490 --> 00:13:24.809
+Zhongzheng Xu: And it seems like, just given a task, like, a pipeline is probably the best choice, to automate, like, different parts.
+
+102
+00:13:25.740 --> 00:13:26.640
+afaan: Yes.
+
+103
+00:13:26.840 --> 00:13:27.740
+Zhongzheng Xu: Okay.
+
+104
+00:13:28.020 --> 00:13:42.440
+Zhongzheng Xu: Alright, I'll jump to, the next, next question. So, again, let's still talk about, the data project. Could you walk me through from, like.
+
+105
+00:13:42.510 --> 00:13:59.009
+Zhongzheng Xu: when you had the initial idea to, when you have the concrete, multi-agent system architecture set up, so, like, what were, like, the first couple things that you decided? Like, the roles of the agents, or,
+
+106
+00:13:59.210 --> 00:14:02.190
+Zhongzheng Xu: Did you, like, sketch out the architecture?
+
+107
+00:14:03.730 --> 00:14:26.289
+afaan: Yeah, so as I said, first of all, our initial goal was not to go directly towards the multi-agent, because as I was a professional LLM engineer there, I've worked for 3 years. So, initial, we are… there was a Pythonic and manual analyst available. So, first, we eliminated with direct prompting. So, we have just write a Pythonic script, and we replace the prompting.
+
+108
+00:14:26.420 --> 00:14:43.119
+afaan: replace the manual part with just prompting with one algorithm. Then go on to secure single agent workflow. Then when we go on to the multi-agenting workflow, so firstly is our PubSub part we have added, where we are getting the volume of data, and when to trigger our pipeline.
+
+109
+00:14:43.120 --> 00:14:49.850
+afaan: And as soon as we trigger, so the second agent we added is to read the data. That's the PDF.
+
+110
+00:14:49.850 --> 00:14:56.820
+afaan: And then when we read the PDF, we got to know if we pass entire PDF, our token limit will shoot up.
+
+111
+00:14:57.330 --> 00:14:58.020
+Zhongzheng Xu: Right.
+
+112
+00:14:58.240 --> 00:15:02.070
+afaan: Because at a firm, cost is also an important factor.
+
+113
+00:15:02.650 --> 00:15:18.479
+afaan: So, then what we done? We foresee the vector database. So, then we got to know the Mistral database. Why Mr? Because Mistral has the very, very scalable DB when we scale it in… with the help of Google Cloud.
+
+114
+00:15:18.480 --> 00:15:27.180
+afaan: And it's natural language pairing is very best, as we tested out experiments. So, then what we done?
+
+115
+00:15:27.770 --> 00:15:35.069
+afaan: We added an agent that, first of all, that will take these new documents.
+
+116
+00:15:35.120 --> 00:15:52.059
+afaan: new doc… if we get any new documents and old documents, there are two criteria also. If we get a new document, we take the document first, include it in vector database of Mr. DB, then… then there is a… we have a data… other database, where what kind of data we need to extract.
+
+117
+00:15:52.230 --> 00:15:56.210
+afaan: From a document that changes from year to year, quarter to quarter.
+
+118
+00:15:56.210 --> 00:16:19.240
+afaan: And companies to company. So, based on that, we got a company name, we match it to the database with which fiscal year we are processing, and which quarter we are processing. So, we got, like, these are, like, X amount of doc, data points, data points we need to extract. So, first of all, as we got this data point, we get a data definition. So, we use, then, another agent that used this data definition.
+
+119
+00:16:19.240 --> 00:16:23.990
+afaan: And, query on the vector database to get the page numbers.
+
+120
+00:16:24.040 --> 00:16:35.739
+afaan: Then we have got a shrunken size, shrinking size of a PDF, that in this PDF data will be available. We need to query only this PDF. So one agent will return these PDF numbers.
+
+121
+00:16:36.000 --> 00:16:58.919
+afaan: Then, there will be another agent which will again use these data point names, X names we have got, and there is a data rules document we have. That will… each data point which have a rule, like what kind of… basically instructions to extract the data. So, we will use that and pass it to that rules document. This is an LLM agent.
+
+122
+00:16:58.920 --> 00:17:06.680
+afaan: what it will do, LLM agent, will use this rule document, and with X this amount of data sources, and create prompt for us.
+
+123
+00:17:06.869 --> 00:17:12.939
+afaan: Okay. For data extraction. And at the end, it will be a JSON format in which we will get the data.
+
+124
+00:17:12.940 --> 00:17:37.530
+afaan: Then there is an LLM executor agent who will take this prompt, and take these pages that we have get, and use this prompt, and in the input, we'll take only the shink and size document pages, and extract the data. And as we got the data, then there are other 3-4 agents that will take this data, process it, and then validate it, and everything is correct, then push it into the database.
+
+125
+00:17:37.630 --> 00:17:48.480
+afaan: So, this process is also, like, 4 to 5 regions, and at the end, there was an orchestration again. And we also have validation, you know, to check if we are getting a correct format of data or not.
+
+126
+00:17:49.280 --> 00:17:55.629
+Zhongzheng Xu: Okay, so, like, so when you decide the, for example, like, the system prompt for all of those agents.
+
+127
+00:17:57.140 --> 00:18:00.329
+Zhongzheng Xu: Did you have to, like, trial and error, or…
+
+128
+00:18:00.330 --> 00:18:18.240
+afaan: Yes, we have to trial and error. We have done trial and error making this timeline, like, minimum 6 to… 6 months to 1 year. And how we have assessed the accuracy, because as a financial firm, we have historical data available. So first, we have tested our pipeline with historical data.
+
+129
+00:18:18.240 --> 00:18:22.250
+afaan: So, in that data, we have ground truth available for 10 years minimum.
+
+130
+00:18:22.310 --> 00:18:27.619
+afaan: So we have used that data to test our pipeline. Then we have made it run production.
+
+131
+00:18:28.080 --> 00:18:30.950
+Zhongzheng Xu: Okay. Did it, like, eventually reach…
+
+132
+00:18:31.520 --> 00:18:35.369
+Zhongzheng Xu: Oh, like, what was the accuracy in the end?
+
+133
+00:18:35.810 --> 00:18:39.510
+Zhongzheng Xu: like, a hundred… probably not 100%, right?
+
+134
+00:18:39.760 --> 00:18:41.800
+Zhongzheng Xu: Or, I always worked.
+
+135
+00:18:43.160 --> 00:18:45.870
+afaan: It's more than 90, and that's our aim.
+
+136
+00:18:45.870 --> 00:18:46.930
+Zhongzheng Xu: More than I need.
+
+137
+00:18:46.930 --> 00:18:47.520
+afaan: Yeah.
+
+138
+00:18:48.630 --> 00:18:52.130
+Zhongzheng Xu: Okay, and did you look into those, like.
+
+139
+00:18:52.610 --> 00:18:56.110
+Zhongzheng Xu: less than 10%? Like, what was the errors?
+
+140
+00:18:56.730 --> 00:19:12.539
+afaan: So, when we looked around that, it's basically the data formatting errors are there. When LLM couldn't able to give us the proper structure of the data, that's where that data is thrown out. Because when we talk about LLM and data extraction, it's hardly that LLM will fail.
+
+141
+00:19:12.540 --> 00:19:27.649
+afaan: Because that LLM doesn't have a space to hallucinate. Because we are giving the LLM the definition, we are giving the LLM on… in this page, we have the data. Only you need to do is, on a particular data point, you need to map it. This data is for this.
+
+142
+00:19:28.190 --> 00:19:33.250
+afaan: Okay. So here, we are… LLM does not have the space to think too much.
+
+143
+00:19:34.250 --> 00:19:42.390
+Zhongzheng Xu: I see. So, because it's mostly just, like, text-related tasks. And you guys have very specific, definitions.
+
+144
+00:19:42.780 --> 00:19:43.540
+afaan: Yes.
+
+145
+00:19:43.540 --> 00:19:43.950
+Zhongzheng Xu: Okay.
+
+146
+00:19:43.950 --> 00:19:49.670
+afaan: So, because the definitions, it's not only defines, it's a set of rules.
+
+147
+00:19:49.670 --> 00:19:50.059
+Zhongzheng Xu: It's a flood.
+
+148
+00:19:50.060 --> 00:19:51.600
+afaan: You know, this step, this step.
+
+149
+00:19:52.600 --> 00:19:58.409
+Zhongzheng Xu: I see. And then, could you also talk about, like, how did you define, or…
+
+150
+00:19:58.410 --> 00:20:13.560
+Zhongzheng Xu: eventually come up with the context and, for example, like, memory management of… or the entire orchestration between agents. Because I know, this, this project used Lane Graph, right? Lane chain.
+
+151
+00:20:13.560 --> 00:20:14.789
+afaan: Yes, yeah, thank you.
+
+152
+00:20:14.790 --> 00:20:17.720
+Zhongzheng Xu: I know that Langraph has, like, their states.
+
+153
+00:20:18.070 --> 00:20:26.150
+Zhongzheng Xu: what's called, the state as their memory. So basically, like, each agent just, either retrieve or, like, update the states. That's, like, the shared…
+
+154
+00:20:26.420 --> 00:20:27.760
+Zhongzheng Xu: context.
+
+155
+00:20:31.010 --> 00:20:31.700
+afaan: Okay.
+
+156
+00:20:32.720 --> 00:20:36.440
+afaan: So, first of all, I have used, like,
+
+157
+00:20:40.370 --> 00:20:41.250
+afaan: Okay.
+
+158
+00:20:43.110 --> 00:20:52.479
+afaan: Okay, so first of all, how I can say memory optimization we have done? Yeah, so first of all, we haven't, focused…
+
+159
+00:20:52.800 --> 00:21:12.740
+afaan: We haven't focused much on how we should do the memory allocation, because we have used GCP, so when we talk about scaling, GCP automatically does that all part, because our pipeline, everything was done by GCP, so orchestration is not an issue for us.
+
+160
+00:21:12.740 --> 00:21:13.280
+Zhongzheng Xu: Yeah, yeah.
+
+161
+00:21:13.280 --> 00:21:17.440
+afaan: We haven't… but we are focused on tokens, so our cost should be minimized.
+
+162
+00:21:18.080 --> 00:21:21.260
+Zhongzheng Xu: Okay, yeah, that's fine, it's not always relevant.
+
+163
+00:21:21.580 --> 00:21:27.330
+Zhongzheng Xu: Okay. And then… I think…
+
+164
+00:21:27.750 --> 00:21:33.319
+Zhongzheng Xu: Okay, I'm gonna ask this question. So, like, before you go into, like, actually,
+
+165
+00:21:33.810 --> 00:21:38.829
+Zhongzheng Xu: writing the code, when you're still, like, trying to design, and maybe…
+
+166
+00:21:39.120 --> 00:21:46.009
+Zhongzheng Xu: Think about, like, the overall architecture, what, like, what was the hardest part for you?
+
+167
+00:21:47.190 --> 00:21:49.469
+Zhongzheng Xu: Or what was, like, the biggest challenge?
+
+168
+00:21:50.180 --> 00:22:07.719
+afaan: The biggest challenge was the orchestration part, like, how this agent should work together. And the main part was… because the… this is the different thing that we are doing. We are not creating the problem, we are telling LLM itself to create the problem. That was the hard challenge for us.
+
+169
+00:22:08.140 --> 00:22:13.179
+Zhongzheng Xu: And to create a system from for that, we have to do, like, many trial and errors.
+
+170
+00:22:13.620 --> 00:22:15.000
+Zhongzheng Xu: Trial and errors, okay.
+
+171
+00:22:15.000 --> 00:22:15.570
+afaan: Yeah.
+
+172
+00:22:16.100 --> 00:22:21.750
+Zhongzheng Xu: I see. Did you also have, like, the rules for the… Like, the prompt writer.
+
+173
+00:22:23.060 --> 00:22:35.940
+afaan: Yes, so that's what I'm telling about the system prompt. So there we have mentioned many rules when we read the document and create a prompt, so we shouldn't get a destination and all. So that's why…
+
+174
+00:22:36.540 --> 00:22:54.230
+afaan: We have provided there many instructions that you should read only from this document to create a prompt. And prompt, you should give an output format of the prompt that you have created. So, like that, we have specified many instructions.
+
+175
+00:22:54.970 --> 00:22:56.170
+Zhongzheng Xu: Okay, I see.
+
+176
+00:22:57.570 --> 00:22:58.390
+Zhongzheng Xu: Yeah.
+
+177
+00:22:59.730 --> 00:23:02.120
+Zhongzheng Xu: And also, just a side note.
+
+178
+00:23:02.120 --> 00:23:03.130
+afaan: So…
+
+179
+00:23:03.130 --> 00:23:12.139
+Zhongzheng Xu: Actually, there has been, I think, 12 people signed up, and I think your, your project, or your experience is, like, by far the most, sophisticated.
+
+180
+00:23:12.690 --> 00:23:17.430
+Zhongzheng Xu: People, people, I can tell you some of the other responses. They're mostly, like.
+
+181
+00:23:17.610 --> 00:23:23.379
+Zhongzheng Xu: a pipeline for summarizing, like, research paper. Things like that.
+
+182
+00:23:24.480 --> 00:23:25.660
+afaan: Okay, okay, okay.
+
+183
+00:23:26.250 --> 00:23:29.110
+Zhongzheng Xu: Yeah, and okay, so…
+
+184
+00:23:29.810 --> 00:23:35.439
+Zhongzheng Xu: I want to now talk about, a little bit, on, like, debugging.
+
+185
+00:23:35.680 --> 00:23:36.820
+Zhongzheng Xu: So…
+
+186
+00:23:38.010 --> 00:23:46.380
+Zhongzheng Xu: First of all, can you tell me how, like, you usually interact with or monitor the system once it's up and running?
+
+187
+00:23:48.190 --> 00:23:54.160
+Zhongzheng Xu: And, how do you, like, how do you verify the result? I guess you talked about it a little bit, you have ground truth.
+
+188
+00:23:54.300 --> 00:23:56.829
+Zhongzheng Xu: But let's say…
+
+189
+00:23:57.010 --> 00:24:05.040
+Zhongzheng Xu: Did you have, like, a monitoring interface or any methods that you used to monitor the results?
+
+190
+00:24:05.860 --> 00:24:15.969
+afaan: So, first of all, as I said, we have ground truth. So, initial debugging, we use the ground truth, but that is for that type of debugging is for end result.
+
+191
+00:24:15.970 --> 00:24:40.889
+afaan: But before that, we have… we have used Google Cloud Logging, so as our system is complicated, we can't just, if we use a normal print statement, and we say, your error, try catch, and say, your error has occurred. We are never going to find out at which module we have faced that error. So that's why we have Google Cloud Logging. Why? Because using the Google Cloud Logging, it will give us the
+
+192
+00:24:40.890 --> 00:24:52.849
+afaan: exact location, basically exact module where error has been occurred, then we can use a live Google Cloud debugger to get all the state variables at that point of logging, and debug it.
+
+193
+00:24:53.260 --> 00:25:06.680
+afaan: So yeah, so that's the… this is the two kinds of law debugging we have done. One is the… using the ground truth to get the metric-level debugging, and other is the programmatical-level debug.
+
+194
+00:25:07.300 --> 00:25:16.430
+Zhongzheng Xu: Okay. So for the Google Cloud, like, debugging, usually, like, what kind of errors does it throw out? Like, compiling errors, or…
+
+195
+00:25:16.680 --> 00:25:17.750
+Zhongzheng Xu: Like.
+
+196
+00:25:17.750 --> 00:25:37.580
+afaan: It's, it's… sometimes it was so resource errors, you're not getting the model LLM, you're not getting the correct LLM, API key expired, or system variable changed. This all, it's not syntact. Sometimes we got syntactical error, but that's a rarely. More of them is our runtime memory error.
+
+197
+00:25:39.210 --> 00:25:40.100
+Zhongzheng Xu: I see.
+
+198
+00:25:40.570 --> 00:25:47.740
+Zhongzheng Xu: Okay. And then… So for the… okay, more questions about the Google Cloud. So.
+
+199
+00:25:48.370 --> 00:25:52.219
+Zhongzheng Xu: Because I haven't had a chance to look at it, like, what kind of…
+
+200
+00:25:52.970 --> 00:25:58.000
+Zhongzheng Xu: system is that? Is there, like, like, a dashboard for you to monitor?
+
+201
+00:25:58.480 --> 00:26:05.970
+afaan: Yeah, so Google Cloud Logging, there is a service, there is a kind of dashboard that gives us ability to monitor everything.
+
+202
+00:26:06.420 --> 00:26:12.719
+afaan: And apart from the other services we use, it's just for deploying and running our server live.
+
+203
+00:26:12.840 --> 00:26:16.770
+afaan: So it shouldn't be on a system, but actual server.
+
+204
+00:26:17.300 --> 00:26:24.550
+Zhongzheng Xu: Okay. And then, like, what type of information will you see? Like, like, latency?
+
+205
+00:26:24.730 --> 00:26:25.890
+Zhongzheng Xu: Or like…
+
+206
+00:26:25.890 --> 00:26:38.950
+afaan: S latency, if a particular we have gotten an error result also, throughput of error, the frequency, what we are getting, the error of data, both error occurring where data are… are we getting the data.
+
+207
+00:26:38.950 --> 00:26:46.120
+afaan: What are the inputs, what are the outputs, data getting stored at the database, then you're getting the throughput of that also.
+
+208
+00:26:46.390 --> 00:26:47.789
+afaan: So, like that, yeah.
+
+209
+00:26:48.550 --> 00:26:49.370
+Zhongzheng Xu: Okay.
+
+210
+00:26:50.150 --> 00:26:51.010
+Zhongzheng Xu: Okay.
+
+211
+00:26:51.760 --> 00:26:58.530
+Zhongzheng Xu: And then, alright, so the next… next question is gonna be a little bit abstract.
+
+212
+00:26:58.640 --> 00:27:03.539
+Zhongzheng Xu: Like, so, some people describe,
+
+213
+00:27:03.690 --> 00:27:11.950
+Zhongzheng Xu: their, like, relationship with AI systems, in terms of, like, how much they trust or rely on them. Do you feel like that's relevant?
+
+214
+00:27:13.340 --> 00:27:16.970
+afaan: So, for my project, it was totally relevant.
+
+215
+00:27:17.300 --> 00:27:27.370
+afaan: But, it's not like we are trusting AI. I'm using LNM to do a specific task, and I'm measuring it using my ground truth.
+
+216
+00:27:28.370 --> 00:27:29.550
+Zhongzheng Xu: Yeah.
+
+217
+00:27:29.800 --> 00:27:30.530
+afaan: Yeah.
+
+218
+00:27:30.530 --> 00:27:41.140
+Zhongzheng Xu: So it's just… there were two steps. It's not I'm trusting AI, it's not like I'm not trusting AI. I'm using my own metric to determine if I should trust this prompt or not.
+
+219
+00:27:41.140 --> 00:27:44.299
+afaan: And at a point where I get the best from Diamonds in there.
+
+220
+00:27:44.800 --> 00:27:49.709
+Zhongzheng Xu: And you're using strategies to make it more reliable, or, like, consistent.
+
+221
+00:27:49.710 --> 00:27:51.080
+afaan: More consistent, yes.
+
+222
+00:27:51.080 --> 00:27:56.460
+Zhongzheng Xu: Yeah. Okay. Okay, and, for the…
+
+223
+00:27:56.890 --> 00:28:06.330
+Zhongzheng Xu: the framework, the Google Cloud or, Langraph. Are there, are there any signals of, like,
+
+224
+00:28:07.950 --> 00:28:14.460
+Zhongzheng Xu: This is also a little bit abstract, but, like, signals of confidence, or, like, the uncertainty in the system.
+
+225
+00:28:16.660 --> 00:28:33.679
+afaan: So, I haven't found, like, the… any uncertainty at that time, but obviously there are… there are uncertainty in response output format, but in some cases, majorly, the LLM results are focusing strictly relying on the JSON format.
+
+226
+00:28:35.350 --> 00:28:38.520
+Zhongzheng Xu: Oh, sometimes they don't strictly follow?
+
+227
+00:28:38.930 --> 00:28:41.689
+afaan: Yeah, sometimes they didn't… they didn't follow.
+
+228
+00:28:43.600 --> 00:28:47.009
+Zhongzheng Xu: Do you have a sense of, like, why that might be, if you have already defined.
+
+229
+00:28:47.010 --> 00:28:56.490
+afaan: It's because, you know, sometimes it's because they are not clearly able to understand the structure, so that is a part of uncertainty and hallucination.
+
+230
+00:28:56.640 --> 00:29:09.899
+afaan: But mainly, I think that occurs because I am… sometimes… so that we have updated it later on. We are not… if we have too much of data, too much… many pages have been detected, then we are passing in multiple prompts.
+
+231
+00:29:10.190 --> 00:29:15.649
+afaan: So, for that, they are minimized very much. So, it is the number of tokens you are passing.
+
+232
+00:29:15.870 --> 00:29:18.189
+afaan: Okay. I think that's the answer for that.
+
+233
+00:29:18.190 --> 00:29:20.080
+Zhongzheng Xu: Okay.
+
+234
+00:29:20.290 --> 00:29:33.369
+Zhongzheng Xu: Okay, and this is… this might not be true, but, like, have you ever encountered cases where… since you have… you're comparing the final result with some ground truth, has there been any cases where the ground truth
+
+235
+00:29:34.610 --> 00:29:37.490
+Zhongzheng Xu: it's like… Or actually…
+
+236
+00:29:39.680 --> 00:29:47.190
+Zhongzheng Xu: That might not be possible. But, like, has there been cases where, like, the ground truth is correct, but then there's some problems in the process?
+
+237
+00:29:49.590 --> 00:29:55.250
+afaan: So yeah, for, like, initial, when writing the pipeline, we have that problem.
+
+238
+00:29:55.580 --> 00:30:17.999
+afaan: So, it's in the validation agent, it's in our validation agent, where, the ground truth is correct, we are getting the correct response from the agent, but somehow our LLM, it's not working. So, our agent is not, specifying it valid. So, but it's not an LLM issue, it's not an agentic issue, it was a programmatical, like, initial debugging.
+
+239
+00:30:19.000 --> 00:30:34.129
+afaan: It's not an error from LLM set, it's, like, a developer error, we have missed out something, or some line is not… some condition is not working as intended to be. It should be, like, output format error, because if we are getting, like, 1 in numeric, but it's 1.0,
+
+240
+00:30:34.560 --> 00:30:43.459
+afaan: Both are same, but data types are different. It's one of the examples. So, we have fixed it, but it's, like, initial setup, and we are writing the code. It's before testing also.
+
+241
+00:30:43.750 --> 00:30:45.050
+Zhongzheng Xu: Okay, I see.
+
+242
+00:30:45.190 --> 00:30:47.499
+afaan: And then… okay.
+
+243
+00:30:47.500 --> 00:30:53.109
+Zhongzheng Xu: The next, question is more, like, open-ended, so if you can…
+
+244
+00:30:53.640 --> 00:31:02.270
+Zhongzheng Xu: design, like, an ideal, building multi-agent system workflow. So what kind of signals
+
+245
+00:31:02.410 --> 00:31:09.459
+Zhongzheng Xu: Or, like, information would, would be helpful.
+
+246
+00:31:10.880 --> 00:31:22.720
+afaan: Basically, first two should be the main agenda of the multi-agent workflow, input, output, and to determine exactly which agent LLM should be needed.
+
+247
+00:31:23.080 --> 00:31:34.160
+afaan: And is it, like, needed, that's why we are using, or just to make it as a fancy LLM agentic term, that's what you are using… we are using. That, to difference, will be very much needed.
+
+248
+00:31:34.710 --> 00:31:37.120
+Zhongzheng Xu: Okay. And input-output, okay.
+
+249
+00:31:37.790 --> 00:31:48.320
+afaan: Input-output is the base, we need that, and goal also of the project. It doesn't mean, like, we should have 10, 20 agents there in our project.
+
+250
+00:31:50.220 --> 00:31:51.530
+Zhongzheng Xu: I see. Okay.
+
+251
+00:31:51.960 --> 00:31:54.810
+Zhongzheng Xu: And then… okay.
+
+252
+00:31:55.960 --> 00:32:15.769
+Zhongzheng Xu: And then, okay, I finally have some… also, like, more open-ended questions. And I think you also touched a little bit on it. So, like, for… like, just generally, what kind of problems do you think, multi-agent system is, like, especially appropriate and work the best?
+
+253
+00:32:17.960 --> 00:32:20.040
+afaan: Oh, sorry, I couldn't get that part.
+
+254
+00:32:20.040 --> 00:32:23.349
+Zhongzheng Xu: Okay, yeah, so, what kind of,
+
+255
+00:32:23.760 --> 00:32:27.739
+Zhongzheng Xu: tasks? Do you think a multi-agent system is,
+
+256
+00:32:27.910 --> 00:32:32.420
+Zhongzheng Xu: The most appropriate, or we should definitely choose multi-agent system for…
+
+257
+00:32:32.420 --> 00:32:43.310
+afaan: where you should have at least one LLM call happening, and other is that the process of the pipeline should include more than one operation.
+
+258
+00:32:44.280 --> 00:32:46.180
+afaan: That includes, like, end-to-end flow.
+
+259
+00:32:47.340 --> 00:32:50.909
+afaan: What I mean by end-to-end flow is, like.
+
+260
+00:32:51.170 --> 00:33:00.450
+afaan: If you are reading the data to output the data, so this is one operation, an extra one operation should be included.
+
+261
+00:33:01.130 --> 00:33:05.249
+afaan: Rather than read and output, then we should use multi-agent flow.
+
+262
+00:33:07.860 --> 00:33:08.750
+Zhongzheng Xu: Okay.
+
+263
+00:33:09.590 --> 00:33:12.989
+Zhongzheng Xu: And then… okay. I see.
+
+264
+00:33:13.110 --> 00:33:17.019
+Zhongzheng Xu: Yeah, so… I watched this,
+
+265
+00:33:17.770 --> 00:33:20.920
+Zhongzheng Xu: I think it was a video from, LaneGraph, but…
+
+266
+00:33:21.050 --> 00:33:40.199
+Zhongzheng Xu: I think their definition was kind of similar. Basically, whenever you need to make multiple tool calls, it's good to have multiple agents, because the more available tools for a single LLM, the less reliable it can be. Sometimes it doesn't know how to choose the right tool… tools.
+
+267
+00:33:40.200 --> 00:33:55.359
+afaan: Yeah, that's the right part. Yeah. Sometimes it doesn't know that. And also, one more thing, there is no harm to have, like, one operation, one tool. Sometimes people use multi-agent, but only on single agent, they involve multiple operations.
+
+268
+00:33:56.840 --> 00:33:57.810
+Zhongzheng Xu: Yeah, yeah.
+
+269
+00:33:57.810 --> 00:34:00.619
+afaan: Yeah, we can have single tool, single operation.
+
+270
+00:34:00.620 --> 00:34:01.900
+Zhongzheng Xu: Okay.
+
+271
+00:34:02.730 --> 00:34:04.270
+Zhongzheng Xu: Okay.
+
+272
+00:34:04.590 --> 00:34:10.959
+Zhongzheng Xu: And then, okay, and okay, I have a final question.
+
+273
+00:34:11.199 --> 00:34:14.469
+Zhongzheng Xu: We have 40 minutes. So,
+
+274
+00:34:15.050 --> 00:34:19.080
+Zhongzheng Xu: I think this is a little bit similar, but, just what are some…
+
+275
+00:34:20.030 --> 00:34:33.670
+Zhongzheng Xu: challenges that you can think of when you're, developing… it doesn't matter if it's, like, designing or actually implementing a multi-agent system. And, like, what do you think that can make this easier?
+
+276
+00:34:35.050 --> 00:34:41.369
+afaan: When developing an agent, Yeah, rely on… so you're talking about as a developer point of view, right?
+
+277
+00:34:41.370 --> 00:34:43.150
+Zhongzheng Xu: Yeah, like a developer point of view.
+
+278
+00:34:43.150 --> 00:34:45.530
+afaan: Yeah, rely heavily on documentation.
+
+279
+00:34:46.790 --> 00:34:48.310
+Zhongzheng Xu: on documentation?
+
+280
+00:34:48.600 --> 00:34:55.089
+afaan: Yes, Langraph Langchain documentation. That's the best result you will get. Yeah, that's…
+
+281
+00:34:55.420 --> 00:35:07.409
+afaan: Basically, because you're developing an agent workflow is not that hard when we talk about coding's point of view, but how you orchestrate it, that is the orchestration agent. That's the critical part.
+
+282
+00:35:08.430 --> 00:35:11.380
+afaan: Because code is very simpl… similar.
+
+283
+00:35:11.380 --> 00:35:12.249
+Zhongzheng Xu: Yeah. And by all…
+
+284
+00:35:12.250 --> 00:35:13.180
+afaan: Easy to the…
+
+285
+00:35:13.380 --> 00:35:14.679
+Zhongzheng Xu: You mean, like,
+
+286
+00:35:14.680 --> 00:35:18.029
+afaan: Connecting different agents together, import and output.
+
+287
+00:35:18.030 --> 00:35:18.590
+Zhongzheng Xu: Infinite amount.
+
+288
+00:35:18.590 --> 00:35:36.110
+afaan: agent should receive what output, which agent should receive what input from which agent, and which produce what output, and that output should be input to which will… which and which all possible agents. That's the main part. So it's not a coding part.
+
+289
+00:35:36.340 --> 00:35:42.819
+Zhongzheng Xu: But it's an operational orchestration part. Orchestration. And then I guess, like, system prompt as well, because you need to try…
+
+290
+00:35:42.820 --> 00:35:48.199
+afaan: system problem. Yeah, that's for the LLM agent, because every agent won't be an LLM agent.
+
+291
+00:35:49.270 --> 00:35:50.320
+afaan: Yeah. Okay.
+
+292
+00:35:51.930 --> 00:35:52.620
+afaan: Cool.
+
+293
+00:35:53.090 --> 00:35:58.620
+Zhongzheng Xu: Yeah, okay. And, that was all the questions I have, but,
+
+294
+00:35:58.790 --> 00:36:07.510
+Zhongzheng Xu: I think that was really helpful, because I think a lot of other people are just students, and you actually have some industry experience, so that's good.
+
+295
+00:36:08.550 --> 00:36:15.290
+Zhongzheng Xu: Yeah, and… I'm also surprised, because, like, people have, like, different,
+
+296
+00:36:16.300 --> 00:36:22.920
+Zhongzheng Xu: they use multi-agent systems for, like, completely different purposes. Some of them even used, like, a clinical…
+
+297
+00:36:24.530 --> 00:36:26.430
+Zhongzheng Xu: Something related to clinical.
+
+298
+00:36:26.930 --> 00:36:34.550
+Zhongzheng Xu: And there's also… One response that use, like, I think this is less…
+
+299
+00:36:34.670 --> 00:36:39.390
+Zhongzheng Xu: Similar to yours, but they use multiple agents to do debates.
+
+300
+00:36:39.650 --> 00:36:47.830
+Zhongzheng Xu: they, like, each agent debate against, like, other agents, to increase the overall accuracy of the response, I think.
+
+301
+00:36:50.460 --> 00:36:56.620
+afaan: Yeah, it will be, like, don't know. Might be a different use case, but sometime… It's not needed, also.
+
+302
+00:36:56.870 --> 00:37:05.569
+Zhongzheng Xu: They're going to find some benchmark that's… that's going to prove their framework is better.
+
+303
+00:37:05.570 --> 00:37:06.320
+afaan: Yeah.
+
+304
+00:37:06.320 --> 00:37:12.109
+Zhongzheng Xu: Yeah, it's not always about branching out. If you implement same thing using a single agent or Python, single script.
+
+305
+00:37:12.110 --> 00:37:18.800
+afaan: You will… you will get that benchmark, but it doesn't mean that it's suitable for multi-law.
+
+306
+00:37:19.600 --> 00:37:20.360
+Zhongzheng Xu: Okay.
+
+307
+00:37:20.470 --> 00:37:22.659
+afaan: But yeah, oh, that, that, that's…
+
+308
+00:37:22.690 --> 00:37:28.060
+Zhongzheng Xu: the end of our interview. I guess thank you again for coming, and then that was really helpful.
+
+309
+00:37:28.300 --> 00:37:35.250
+Zhongzheng Xu: Yeah, and I will talk to my mentor about the $40 gift card and send it out to you.
+
+310
+00:37:35.250 --> 00:37:35.920
+afaan: Oh, yeah, sure.
+
+311
+00:37:35.920 --> 00:37:37.430
+Zhongzheng Xu: As soon as possible.
+
+312
+00:37:37.750 --> 00:37:40.709
+afaan: Yeah, so with the mentor, I think…
+
+313
+00:37:41.030 --> 00:37:41.480
+Zhongzheng Xu: Are you serious?
+
+314
+00:37:41.480 --> 00:37:42.689
+afaan: mail from you.
+
+315
+00:37:42.980 --> 00:37:47.699
+Zhongzheng Xu: It's, it's Fu Meng Yiang. She's, she's new.
+
+316
+00:37:48.700 --> 00:37:49.179
+afaan: Oh, good.
+
+317
+00:37:49.810 --> 00:37:52.979
+Zhongzheng Xu: I would have… Oh, spelled it wrong.
+
+318
+00:37:56.190 --> 00:38:02.920
+afaan: Okay, I think I know her. Does she take, any courses?
+
+319
+00:38:03.700 --> 00:38:07.179
+Zhongzheng Xu: She's, she's teaching the uncertainty…
+
+320
+00:38:07.670 --> 00:38:10.219
+afaan: Uncertainty 8390, right?
+
+321
+00:38:10.220 --> 00:38:11.240
+Zhongzheng Xu: Yeah, yeah, yeah.
+
+322
+00:38:11.240 --> 00:38:15.009
+afaan: Yeah, yeah, today only I've presented in… I'm talking about that lecture.
+
+323
+00:38:15.180 --> 00:38:16.309
+Zhongzheng Xu: Oh, okay, okay.
+
+324
+00:38:16.310 --> 00:38:18.550
+afaan: Actually, yeah, yeah, yeah, I know.
+
+325
+00:38:19.050 --> 00:38:21.539
+afaan: Oh, I don't know, like, she is new.
+
+326
+00:38:21.990 --> 00:38:25.909
+afaan: She's new, so, are you an undergrad or a master's student here?
+
+327
+00:38:26.070 --> 00:38:27.990
+Zhongzheng Xu: I'm a… I'm a PhD.
+
+328
+00:38:27.990 --> 00:38:28.770
+afaan: Oh, BSV.
+
+329
+00:38:28.770 --> 00:38:36.199
+Zhongzheng Xu: I'm kind of her first PhD. She got 3 PhDs. Actually, I'll stop… stop recording for this.
+
+330
+00:38:36.760 --> 00:38:37.870
+afaan: Yeah, okay.
+

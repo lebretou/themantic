@@ -1,0 +1,121 @@
+{
+    "interview_questions": [
+      {
+        "question": "To start off, when you hear the term Multi-Agent System, what does it mean to you?"
+      },
+      {
+        "question": "How do you see it different from a single-agent/model LLM setup?"
+      },
+      {
+        "question": "Can you tell me about one or two representative MAS projects that you have used or developed?"
+      },
+      {
+        "question": "What was the goal of the system? And if possible, could you show a demo of the system that you used or developed?"
+      },
+      {
+        "question": "What tools or frameworks did you use?",
+        "notes": "Ask only if participant is a developer. Examples: OpenAI Agent Builder, n8n, Dify, LangChain, LangGraph, MetaGPT, AutoGen."
+      },
+      {
+        "question": "If the workflow was manual, how did you decide what roles or responsibilities each agent should have?"
+      },
+      {
+        "question": "Would you say that your system structure is linear (flat), hierarchical, cyclic, star-shaped, etc.?"
+      },
+      {
+        "question": "What steps did you take to develop the system?",
+        "notes": "Ask only if participant is a developer."
+      },
+      {
+        "question": "Is the system you are using or developed mostly for one-time execution or reuse?"
+      },
+      {
+        "question": "What made you choose a MAS approach for that project, given the goal? Were there particular reasons or trade-offs that led you to the system design decision?"
+      },
+      {
+        "question": "What advantages and disadvantages do you see compared to using a single LLM only?"
+      },
+      {
+        "question": "For the project you described, could you walk me through how you went from the initial idea to a concrete MAS architecture, step by step?"
+      },
+      {
+        "question": "What were the first things you decided?"
+      },
+      {
+        "question": "At what point did you commit to a particular structure?"
+      },
+      {
+        "question": "Do you sketch diagrams, write docs, keep everything in code, or use tools like whiteboards, Notion, or Figma?"
+      },
+      {
+        "question": "How did you decide what context, memory, or tools each agent should have access to?"
+      },
+      {
+        "question": "Was that mostly trial-and-error, intuition, or based on explicit guidelines you follow?"
+      },
+      {
+        "question": "Thinking specifically about the design phase (before worrying about infrastructure or deployment), what are the hardest parts for you?"
+      },
+      {
+        "question": "Are there parts of the architecture you tend to 'just guess and hope' about?"
+      },
+      {
+        "question": "Can you tell me about how you usually interact with or monitor the system once it is running?"
+      },
+      {
+        "question": "When the system gives you a result, do you usually verify it yourself? How?"
+      },
+      {
+        "question": "What kind of signals or feedback do you rely on to know that the agents are doing what you expect?"
+      },
+      {
+        "question": "Are there types of signals or feedback that you wish existed but don’t?"
+      },
+      {
+        "question": "Have you ever encountered situations where either an individual agent or your overall system behaved unexpectedly or failed?"
+      },
+      {
+        "question": "How did you become aware of the problem?"
+      },
+      {
+        "question": "What was the reason that caused the failure and how did you handle it?"
+      },
+      {
+        "question": "What made you regain confidence in the system again after an error?"
+      },
+      {
+        "question": "Some people describe their relationship with AI systems in terms of how much they trust or rely on them. Does that feel relevant to your experience?"
+      },
+      {
+        "question": "Do you ever feel unsure about whether to believe the system? What makes you feel that way?"
+      },
+      {
+        "question": "If yes, in what scenarios do you think trust or confidence is most relevant?"
+      },
+      {
+        "question": "In the tools or frameworks you have used, are there any indicators of confidence or uncertainty in the system?"
+      },
+      {
+        "question": "Were those indicators helpful or confusing?"
+      },
+      {
+        "question": "If you could design an ideal MAS, what kinds of signals or transparency would make you feel confident using it?"
+      },
+      {
+        "question": "For what kinds of problems do you think MAS works the best and the worst?"
+      },
+      {
+        "question": "Are there types of problems where you think MAS is unnecessary or even counterproductive?"
+      },
+      {
+        "question": "What are the biggest challenges in developing a MAS from your experience?"
+      },
+      {
+        "question": "What would make MAS development easier or more reliable for you?"
+      },
+      {
+        "question": "Are there capabilities you wish current MAS frameworks had but don’t?"
+      }
+    ]
+  }
+  

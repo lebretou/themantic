@@ -304,10 +304,13 @@
     const transcriptContainer = document.getElementById('transcriptContainer');
     const toast = document.getElementById('toast');
     let toastTimeout;
+    let currentParticipantId = '';
 
     fileInput.addEventListener('change', function(e) {
         const file = e.target.files[0];
         if (!file) return;
+
+        currentParticipantId = file.name.replace(/\.[^/.]+$/, "");
 
         const reader = new FileReader();
         reader.onload = function(e) {
@@ -371,7 +374,8 @@
     }
 
     function copyText(text) {
-        navigator.clipboard.writeText(text).then(() => {
+        const textToCopy = currentParticipantId ? `${text} (${currentParticipantId})` : text;
+        navigator.clipboard.writeText(textToCopy).then(() => {
             showToast();
         }).catch(err => {
             console.error('Failed to copy text: ', err);
@@ -429,6 +433,19 @@
             copyText(text);
             floatingBtn.style.display = 'none';
             window.getSelection().removeAllRanges();
+        }
+    });
+
+    // Handle Ctrl+C / Cmd+C
+    document.addEventListener('copy', (e) => {
+        const selection = window.getSelection();
+        const text = selection.toString().trim();
+        
+        if (text && currentParticipantId) {
+            e.preventDefault();
+            const textToCopy = `${text} (${currentParticipantId})`;
+            e.clipboardData.setData('text/plain', textToCopy);
+            showToast();
         }
     });
 </script>

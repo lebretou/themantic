@@ -1,0 +1,1358 @@
+WEBVTT
+
+1
+00:00:01.470 --> 00:00:03.590
+Zhongzheng Xu: Alright, so…
+
+2
+00:00:04.000 --> 00:00:13.960
+Zhongzheng Xu: I will start with something that's pretty abstract. So, when you hear, the term multi-agent system, what does it mean to you? Like, what's your definition of.
+
+3
+00:00:20.660 --> 00:00:21.520
+Sam Lee: Hello?
+
+4
+00:00:21.840 --> 00:00:22.180
+Zhongzheng Xu: Hello?
+
+5
+00:00:22.180 --> 00:00:24.549
+Sam Lee: Sorry, I think we lost traction for a while.
+
+6
+00:00:24.550 --> 00:00:34.980
+Zhongzheng Xu: Okay, okay, sorry. So, what is your definition of a multi-agent system? Or, to be specific, LLM-based multi-agent system?
+
+7
+00:00:34.980 --> 00:00:35.580
+Sam Lee: Okay.
+
+8
+00:00:35.800 --> 00:00:38.010
+Sam Lee: So,
+
+9
+00:00:38.600 --> 00:00:54.000
+Sam Lee: I understand there is, an overload of definition on agents, specifically. So, nowadays, especially in tech, in industry, people refer to agents as having the ability to make tool calls.
+
+10
+00:00:54.150 --> 00:01:02.019
+Sam Lee: You, do web search, do, like, use one of the tools, which is different from…
+
+11
+00:01:02.370 --> 00:01:18.230
+Sam Lee: But we have been calling agents in HCI, like, dates dating back to, like, 20, 30 years ago. So, typically, in HCI, we have been calling agents as autonomous
+
+12
+00:01:18.520 --> 00:01:20.630
+Sam Lee: any autonomous…
+
+13
+00:01:20.740 --> 00:01:30.759
+Sam Lee: software or program that does something automatically for the user. So, any kind of recommendation system can be seen as an agent.
+
+14
+00:01:31.020 --> 00:01:36.140
+Sam Lee: A lot of universities, specifically any of the,
+
+15
+00:01:36.660 --> 00:01:46.360
+Sam Lee: Automatic functionalities we do for the user, like suggesting data patterns, suggesting data operations can be seen as agents.
+
+16
+00:01:46.610 --> 00:01:50.160
+Sam Lee: Now, of course, if we're just calling the…
+
+17
+00:01:50.670 --> 00:01:57.550
+Sam Lee: Toll call using the toll call definitions as agent, and the multi-agent system would be…
+
+18
+00:01:57.690 --> 00:02:00.009
+Sam Lee: You just have,
+
+19
+00:02:00.120 --> 00:02:14.019
+Sam Lee: multiple agents coordinated, together. They each have… maybe they have own… their own unique, tools to use, maybe they have the same tools to use, but then there are,
+
+20
+00:02:15.550 --> 00:02:20.220
+Sam Lee: Communicating, in the system, probably using chat, using text.
+
+21
+00:02:21.400 --> 00:02:25.180
+Sam Lee: And they'll automatically decide what…
+
+22
+00:02:25.710 --> 00:02:30.589
+Sam Lee: Kind of branches, logical branches to go from… to go to.
+
+23
+00:02:30.880 --> 00:02:40.510
+Sam Lee: And I've been using LaneGraph, so, you know, LaneGraph is a typical library for building these kind of systems. I've also used Autogen.
+
+24
+00:02:40.740 --> 00:02:52.340
+Sam Lee: Before, that's more conversation, systems, not necessarily having tools. I think they have tool calls support now, but when I use it, I didn't use it for the tool calls.
+
+25
+00:02:52.560 --> 00:02:55.160
+Sam Lee: So yeah, that's my Definition.
+
+26
+00:02:56.010 --> 00:03:09.660
+Zhongzheng Xu: Alright, that was great. So, could you now tell me about, like, one or two representative projects that have used multi-agent system? You can start from the line graph one that I just mentioned.
+
+27
+00:03:10.760 --> 00:03:20.649
+Sam Lee: Though… That project was a multi-agent system for tax analytics,
+
+28
+00:03:20.820 --> 00:03:28.830
+Sam Lee: So, I built a system that the user enters a goal, like a text analytics goal, say if they want to
+
+29
+00:03:29.040 --> 00:03:35.949
+Sam Lee: Analyze, customer comments, and they have, like, 10,000 customer comments.
+
+30
+00:03:36.200 --> 00:03:43.939
+Sam Lee: And then they just enter. Now when they analyze it, then an agent will first decompose it into multiple steps of
+
+31
+00:03:44.090 --> 00:03:47.680
+Sam Lee: And analysis methods and analysis tasks.
+
+32
+00:03:48.060 --> 00:03:56.569
+Sam Lee: And then each task will be conducted using another agent, because most of these tasks will be using prompts.
+
+33
+00:03:56.990 --> 00:04:02.729
+Sam Lee: To, complete, or they will generate code to complete those tasks.
+
+34
+00:04:03.010 --> 00:04:15.529
+Sam Lee: So I have one agent do the decomposition, multiple agents do all of the analysis tasks, and then one final agent to aggregate all the results, back into something the user can understand.
+
+35
+00:04:16.640 --> 00:04:24.219
+Zhongzheng Xu: I see, I see. So there could be multiple agents in the middle doing different kind of, analytics, analytic.
+
+36
+00:04:24.220 --> 00:04:24.900
+Sam Lee: Yes.
+
+37
+00:04:25.060 --> 00:04:26.160
+Zhongzheng Xu: Okay. Yeah.
+
+38
+00:04:26.340 --> 00:04:31.029
+Zhongzheng Xu: And then, so…
+
+39
+00:04:31.850 --> 00:04:43.149
+Zhongzheng Xu: Did you, was this, like, this overall structure pretty intuitive, to you in the beginning? Didn't I have to worry too much about the structure, or did you, like, kind of tweak it?
+
+40
+00:04:46.020 --> 00:04:55.070
+Sam Lee: I think the overall structure is… has been clear to me from the very beginning.
+
+41
+00:04:55.200 --> 00:05:05.759
+Sam Lee: We have referred to… we have looked at… I mean, I myself, I'm a researcher in visual text analytics, so I know how typical
+
+42
+00:05:05.820 --> 00:05:20.580
+Sam Lee: Next analytics pipeline or workflow works already, so I know there should be, you know, some processing, and then you run the analysis methods, and then you have post-processing to do that. So the overall, like, the architecture
+
+43
+00:05:20.860 --> 00:05:30.229
+Sam Lee: has been clear from me in the beginning. But exactly how to implement those agents and how to connect them together is something we experimented a lot with.
+
+44
+00:05:30.610 --> 00:05:45.240
+Sam Lee: And of course, there's… we encounter many technical issues, how, like, consistent, how reliable these agent responses are. It's always hard to control the agents in, like, a software, like a…
+
+45
+00:05:45.240 --> 00:05:45.790
+Zhongzheng Xu: Yup.
+
+46
+00:05:45.790 --> 00:05:46.600
+Sam Lee: program.
+
+47
+00:05:46.780 --> 00:05:47.360
+Zhongzheng Xu: Okay.
+
+48
+00:05:48.720 --> 00:05:53.860
+Zhongzheng Xu: Alright, we'll go into that in a bit. But before that, so, did you also…
+
+49
+00:05:54.530 --> 00:06:00.379
+Zhongzheng Xu: So given this task, did you think… at the very beginning, did you think a multi-agent system is, like.
+
+50
+00:06:00.500 --> 00:06:01.630
+Zhongzheng Xu: the most.
+
+51
+00:06:01.750 --> 00:06:05.809
+Zhongzheng Xu: optimal approach? Did you try to, like, just use a single LLM?
+
+52
+00:06:06.040 --> 00:06:07.150
+Zhongzheng Xu: Single agent.
+
+53
+00:06:09.180 --> 00:06:17.959
+Sam Lee: So… Did I try to use a single one? I think I do, yes.
+
+54
+00:06:18.410 --> 00:06:30.239
+Sam Lee: So… when I, I think it depends on…
+
+55
+00:06:30.430 --> 00:06:33.039
+Sam Lee: What you mean by a single agent?
+
+56
+00:06:34.100 --> 00:06:40.790
+Sam Lee: Does it mean I put all the system prompts in it, and I have all the tool codes in it, and then…
+
+57
+00:06:40.790 --> 00:06:43.659
+Zhongzheng Xu: Potentially, yeah, just in a single model.
+
+58
+00:06:43.990 --> 00:06:45.450
+Zhongzheng Xu: Have all the tools.
+
+59
+00:06:48.250 --> 00:06:56.720
+Sam Lee: I don't think I've tried the final version that we have, but we have definitely tried some simpler ones. So, say I have…
+
+60
+00:06:56.840 --> 00:07:01.709
+Sam Lee: I give it a goal, I give it a few analysis tasks, not the full list that we have.
+
+61
+00:07:02.160 --> 00:07:09.470
+Sam Lee: And I ask it to write the code to, like, connect the codes together to generate a response,
+
+62
+00:07:09.470 --> 00:07:10.010
+Zhongzheng Xu: I see.
+
+63
+00:07:10.010 --> 00:07:12.450
+Sam Lee: for the user,
+
+64
+00:07:12.710 --> 00:07:26.849
+Sam Lee: I think I know from the beginning that it will fail, it's just an experiment to prove to, like, the professor that it will fail. So of course, I don't think, even today, I don't think a single agent could
+
+65
+00:07:26.930 --> 00:07:33.080
+Sam Lee: Do a task, end-to-end task, analytic task, end-to-end,
+
+66
+00:07:33.470 --> 00:07:40.079
+Sam Lee: If it's, you know, too complicated and involves multiple tool calls, and everything.
+
+67
+00:07:40.400 --> 00:07:40.920
+Zhongzheng Xu: Yeah.
+
+68
+00:07:41.490 --> 00:07:53.710
+Zhongzheng Xu: And just to clarify, so, like, what kind of texts that you'll be analyzing using the system, and, could you, like, give one or two examples of, like, the analytic tasks that you will do?
+
+69
+00:07:53.710 --> 00:07:54.370
+Sam Lee: Yeah.
+
+70
+00:07:54.620 --> 00:08:09.800
+Sam Lee: So the simpler one… the simplest one is, say, literature review, right? So you… if I give it… have a data set of publications, maybe there's 10,000 articles in it, and ask it to…
+
+71
+00:08:10.020 --> 00:08:18.490
+Sam Lee: Tell me which, how many, like, how would you categorize the research topics in this field?
+
+72
+00:08:18.570 --> 00:08:20.930
+Zhongzheng Xu: Maybe there are 10, maybe there are more.
+
+73
+00:08:21.290 --> 00:08:29.639
+Sam Lee: Apparently, this is a task that involves multiple NLP, or text analysis methods.
+
+74
+00:08:29.640 --> 00:08:29.960
+Zhongzheng Xu: Yep.
+
+75
+00:08:29.960 --> 00:08:49.630
+Sam Lee: You need to do segmentation, you need to, do clustering, topic modeling, keyword extraction, and then, of course, summarization, and there's many kind of way to do this already, and then these multiple kind of ways, there's parameters to set.
+
+76
+00:08:50.020 --> 00:08:56.039
+Sam Lee: I don't think it's a thing that a single agent can do, for sure.
+
+77
+00:08:56.600 --> 00:08:57.470
+Zhongzheng Xu: For sure.
+
+78
+00:08:57.580 --> 00:09:06.610
+Zhongzheng Xu: And then… Okay, so you mentioned that, Communication between agents, also, like.
+
+79
+00:09:06.780 --> 00:09:11.890
+Zhongzheng Xu: Context management was, one of the challenges that you guys had.
+
+80
+00:09:12.060 --> 00:09:13.310
+Zhongzheng Xu: Yeah.
+
+81
+00:09:13.760 --> 00:09:16.660
+Zhongzheng Xu: Could you, like, elaborate on that?
+
+82
+00:09:19.090 --> 00:09:31.070
+Sam Lee: So, I… in this project, in this system, I… we don't specifically encounter issues in context management.
+
+83
+00:09:31.200 --> 00:09:43.990
+Sam Lee: I don't know what you mean by context management, but this is not… I mean, I can talk about it in my other project, but in this project, it's more about decomposition and connecting agents together, because…
+
+84
+00:09:44.160 --> 00:09:48.869
+Sam Lee: Actually… The decomposer agent,
+
+85
+00:09:49.290 --> 00:09:55.280
+Sam Lee: So first of all, we have a decomposer agent, right? And we have the execution agents.
+
+86
+00:09:55.520 --> 00:09:59.260
+Sam Lee: We have a… we even have an emulation, agent.
+
+87
+00:09:59.420 --> 00:10:01.809
+Sam Lee: And then…
+
+88
+00:10:02.460 --> 00:10:11.060
+Sam Lee: We have to use or come up with our own, DSL, or Domain Specific language, in…
+
+89
+00:10:11.110 --> 00:10:24.029
+Sam Lee: a JSON format, because, you know, that's how best to communicate between agents. The decomposer agent outputs some result in the DSL we have, and then
+
+90
+00:10:24.250 --> 00:10:42.320
+Sam Lee: the execution agent takes it, and then outputs something… another thing, and then, the evaluation do another thing. So this DSL is something we, experimented with a lot, how to design this DSL, how to, make everything robust, how to do, like, error correction.
+
+91
+00:10:42.340 --> 00:10:46.490
+Sam Lee: Or output checks, consistency checks, stuff like that.
+
+92
+00:10:46.910 --> 00:10:50.710
+Sam Lee: Another thing is, text analysis methods.
+
+93
+00:10:50.870 --> 00:10:53.270
+Sam Lee: Is a very long list.
+
+94
+00:10:53.450 --> 00:11:07.929
+Sam Lee: to… to pick from. And so, sometimes we still have issues, by the time we finish the project, we still have issues with agents sometimes picking the wrong methods, or not the.
+
+95
+00:11:07.930 --> 00:11:08.530
+Zhongzheng Xu: True.
+
+96
+00:11:08.530 --> 00:11:14.309
+Sam Lee: The full list of, methods that we need it to… that we need.
+
+97
+00:11:14.310 --> 00:11:14.650
+Zhongzheng Xu: Right.
+
+98
+00:11:14.650 --> 00:11:22.630
+Sam Lee: Another very specific to text analytics issue that we have
+
+99
+00:11:22.970 --> 00:11:30.010
+Sam Lee: Is the results are chained, Between the execution pipeline.
+
+100
+00:11:30.150 --> 00:11:35.320
+Sam Lee: Say we start with an article that's, like, free from unstructured text.
+
+101
+00:11:35.500 --> 00:11:37.099
+Zhongzheng Xu: we.
+
+102
+00:11:37.390 --> 00:11:40.090
+Sam Lee: Say, do a summarization of it.
+
+103
+00:11:40.460 --> 00:11:46.739
+Sam Lee: And then… We also do a keyword extraction from the text.
+
+104
+00:11:47.030 --> 00:11:54.430
+Sam Lee: So now we have this branched out output, one is the summitization, one is the keyword, and any subsequent tests.
+
+105
+00:11:54.560 --> 00:11:56.350
+Sam Lee: That follows…
+
+106
+00:11:56.530 --> 00:12:09.599
+Sam Lee: after this, too, can choose to operate on the summarization, or the keywords, or the original article. So it's… there's 3 possible inputs that a subsequent task can take.
+
+107
+00:12:10.190 --> 00:12:16.989
+Sam Lee: And we need a way to specify that dynamically, because the outputs are dynamically generated.
+
+108
+00:12:17.150 --> 00:12:17.640
+Zhongzheng Xu: Okay.
+
+109
+00:12:17.640 --> 00:12:21.420
+Sam Lee: And so… I guess…
+
+110
+00:12:21.750 --> 00:12:29.349
+Sam Lee: One, like, in high level, one general issue we have in this is we're generating a data pipeline that's dynamic.
+
+111
+00:12:29.570 --> 00:12:30.650
+Sam Lee: And…
+
+112
+00:12:30.770 --> 00:12:39.570
+Sam Lee: We need a system that supports this dynamic generation and dynamic connection of the pipeline, which is quite hard.
+
+113
+00:12:40.860 --> 00:12:50.499
+Sam Lee: And we have to, of course, have to limit it to text analytics to make this thing possible. I can't imagine if we want to support every task.
+
+114
+00:12:50.690 --> 00:13:00.470
+Sam Lee: I don't… I don't think, at least for our scale, maybe if you have a multi-billion dollar company, you can do that, but not… not for us.
+
+115
+00:13:01.130 --> 00:13:07.910
+Zhongzheng Xu: So, like, how did you eventually reach that dynamic, input? Was it, like.
+
+116
+00:13:08.080 --> 00:13:12.069
+Zhongzheng Xu: Was it more engineering, or, like, was it those system prompts that…
+
+117
+00:13:14.140 --> 00:13:30.580
+Sam Lee: I think it's both. So, first, we have to come up with a new conceptual framework to do this. So, basically, we, in the land graph, language, we formulate every task.
+
+118
+00:13:30.770 --> 00:13:34.459
+Sam Lee: as, as having a map-reduced chain.
+
+119
+00:13:35.040 --> 00:13:41.679
+Sam Lee: So… So, basically, the input of a task for any length graph node.
+
+120
+00:13:42.260 --> 00:13:48.739
+Sam Lee: It's mapped… is first mapped to, like, any, input that we want it to be.
+
+121
+00:13:48.880 --> 00:13:51.100
+Sam Lee: Let's say the input is a…
+
+122
+00:13:51.420 --> 00:14:01.799
+Sam Lee: it has all three fields, right? Original article, summary, and keyword. We do a map to pick the input we want, maybe multiple ones, and then we have
+
+123
+00:14:02.420 --> 00:14:11.680
+Sam Lee: some actual analysis method note, or chain, that takes this input, executes a function, and it generates an output.
+
+124
+00:14:11.700 --> 00:14:27.859
+Sam Lee: Then we have a reduce step that aggregates the output into another format that we want it to be. Okay. Every node is in the structure, and using the structure, we're able to support all the analysis methods we want it to support.
+
+125
+00:14:27.960 --> 00:14:32.629
+Sam Lee: While ensuring that these things can be dynamically connected.
+
+126
+00:14:32.990 --> 00:14:36.559
+Sam Lee: So that's both… I think that's both a conceptual
+
+127
+00:14:36.900 --> 00:14:43.390
+Sam Lee: thing, research thing, and an engineering thing, because this is not a typical way to use LaneGraph.
+
+128
+00:14:43.410 --> 00:14:46.689
+Zhongzheng Xu: We're actually generating then graph nodes on the fly.
+
+129
+00:14:46.740 --> 00:14:54.090
+Sam Lee: And generating the functions that the engraf node needs to execute on the fly, too. So that's, engineering effort.
+
+130
+00:14:54.760 --> 00:14:56.820
+Sam Lee: So, I guess it's both, yeah.
+
+131
+00:14:57.020 --> 00:15:00.810
+Zhongzheng Xu: I see, I see. And then… okay.
+
+132
+00:15:01.120 --> 00:15:02.190
+Zhongzheng Xu: So…
+
+133
+00:15:02.570 --> 00:15:14.180
+Zhongzheng Xu: A lot of my other interviews mentioned that, writing system prompts was, another challenge is when, when, when they were trying to build a multi-agent system. Yeah. Because, it's…
+
+134
+00:15:14.330 --> 00:15:33.869
+Zhongzheng Xu: it's a lot of trials and errors, you kind of just have an initial prompt, and then you run the pipeline, like, multiple times, just wait for unexpected behaviors, and then, if you see them, like, you would just go back and, try to include that unexpected behavior into the system prompt. And, for example, like, do not do this, do not do that.
+
+135
+00:15:33.870 --> 00:15:34.920
+Sam Lee: Yeah, yeah.
+
+136
+00:15:34.920 --> 00:15:36.530
+Zhongzheng Xu: Did you have similar issues?
+
+137
+00:15:36.810 --> 00:15:44.840
+Sam Lee: Yes, so we have the exact issue, too, but my collaborator was mainly responsible for writing the system prompts.
+
+138
+00:15:44.870 --> 00:15:56.820
+Sam Lee: I, myself, I know how to write the system prompts, it's just, you know, we delegate… I delegate it to my collaborator. But the system prompt that we ended up with are very long.
+
+139
+00:15:57.290 --> 00:15:58.710
+Sam Lee: I think it's…
+
+140
+00:15:59.300 --> 00:16:13.089
+Sam Lee: it's, like, 50 to 100 lines, even more, and I saw him having to do exactly like you said, do not do this, or he has to give a lot of future examples in the prompt.
+
+141
+00:16:13.260 --> 00:16:13.640
+Zhongzheng Xu: Yep.
+
+142
+00:16:13.640 --> 00:16:22.079
+Sam Lee: So, and that's just one system prompt, because we need a system prompt for every analysis method.
+
+143
+00:16:22.080 --> 00:16:36.250
+Sam Lee: that we have, and we have a list of analysis methods. We also need system prompts for all the agents, the composer, the evaluation agents. Those are also very hard to, like, craft a prompt. I think we eventually ended up with
+
+144
+00:16:36.260 --> 00:16:42.820
+Sam Lee: because we have… we're at the paper, and then in the appendix, we have all the system prompts. We have at least 20…
+
+145
+00:16:42.940 --> 00:16:45.879
+Sam Lee: 30 different system prompts in the system.
+
+146
+00:16:46.150 --> 00:16:55.259
+Sam Lee: And they're all, like, very long and very hard to write. We spend a lot of time trial and error this.
+
+147
+00:16:55.710 --> 00:16:57.650
+Sam Lee: I don't think there's a…
+
+148
+00:16:58.060 --> 00:17:13.500
+Sam Lee: And I think that's also why we have to limit few text analytics, is because the prompts are very specifically written for text analytics, and it will not generalize to other kinds of tasks.
+
+149
+00:17:14.020 --> 00:17:22.000
+Sam Lee: And… I think he, my collaborators, spent a lot of time trial and narrowing this, and…
+
+150
+00:17:22.150 --> 00:17:30.249
+Sam Lee: I think it's this… Effort of traveling and airling that got us to…
+
+151
+00:17:30.360 --> 00:17:34.580
+Sam Lee: Coming up with that conceptual framework that we ended up with.
+
+152
+00:17:34.580 --> 00:17:37.629
+Zhongzheng Xu: That eventually we are… at least make it…
+
+153
+00:17:37.810 --> 00:17:42.750
+Sam Lee: Feasible to do, and we don't, like, spiral down the chaos.
+
+154
+00:17:43.120 --> 00:17:50.759
+Zhongzheng Xu: Okay. Sorry, could you, re-explain the conceptual framework? I think I was lost a little bit.
+
+155
+00:17:51.180 --> 00:17:54.279
+Zhongzheng Xu: You talked about Wrapping the inputs and outputs.
+
+156
+00:17:54.490 --> 00:18:04.999
+Sam Lee: Yes, so that's very specific to text analytics, for sure, but essentially, it's a framework to handle the input-output format
+
+157
+00:18:05.110 --> 00:18:17.119
+Sam Lee: between the analysis methods we're gonna run. So the first step is summarization, second step is sentiment analysis, and then topic modeling, and then keyword extraction, stuff like that.
+
+158
+00:18:17.350 --> 00:18:25.060
+Sam Lee: All of these tabs have a specific input and output format that it needs, and they're all generated
+
+159
+00:18:25.400 --> 00:18:38.560
+Sam Lee: dynamically. So, first, we have to generate these, I mean, we can have these steps conceptually in general, generated, but we're actually generating the parameters of each function.
+
+160
+00:18:38.630 --> 00:18:41.090
+Zhongzheng Xu: We have to generate it in SQL.
+
+161
+00:18:41.090 --> 00:18:52.349
+Sam Lee: or sequentially, because, say, the second step is sentiment analysis, I need to know the input of the sentiment analysis, right? And the input could be generated by the first step.
+
+162
+00:18:52.530 --> 00:19:01.460
+Sam Lee: to generate the output of the first step first, and then generate the input… use that as the input as the second step. So we're kind of filling in
+
+163
+00:19:01.720 --> 00:19:11.030
+Sam Lee: these, function parameters. And of course, the function body itself needs to also sometimes needs to be generated, too.
+
+164
+00:19:11.030 --> 00:19:11.470
+Zhongzheng Xu: Okay.
+
+165
+00:19:11.470 --> 00:19:18.370
+Sam Lee: but then everything, when everything is, like, being dynamic… dynamically generated,
+
+166
+00:19:18.830 --> 00:19:35.809
+Sam Lee: first, the output, format needs to be exactly the ones that we want it to be. That's why we have the DSL, to make sure of that. We can check the type errors and stuff like that. And we need that conceptual framework.
+
+167
+00:19:35.910 --> 00:19:40.030
+Sam Lee: To formulate, every node
+
+168
+00:19:40.320 --> 00:19:50.959
+Sam Lee: in this chain, and consistently, because we have to generate something, and we… if we don't have a structure, we don't know what we're generating, and it's not going to… it's…
+
+169
+00:19:51.110 --> 00:20:07.200
+Sam Lee: it's going to have type issues, or syntax issues, or any kind of issues that you could have in generating codes. So we have to have that dynamic framework, conceptual framework, and the agent is essentially filling in the templates.
+
+170
+00:20:07.840 --> 00:20:08.530
+Zhongzheng Xu: I see.
+
+171
+00:20:08.530 --> 00:20:12.890
+Sam Lee: of the conceptual framework. That makes it much easier to do.
+
+172
+00:20:13.300 --> 00:20:13.990
+Zhongzheng Xu: I see.
+
+173
+00:20:14.210 --> 00:20:21.000
+Zhongzheng Xu: Could you also talk about, a little bit about, the debugging, process?
+
+174
+00:20:21.520 --> 00:20:28.730
+Zhongzheng Xu: like, you mentioned, like, having all these errors, did you… I know Langraph has this,
+
+175
+00:20:29.720 --> 00:20:32.939
+Zhongzheng Xu: It's called… I think it's called Lane Smith Studio.
+
+176
+00:20:32.940 --> 00:20:33.450
+Sam Lee: Yeah.
+
+177
+00:20:33.450 --> 00:20:34.600
+Zhongzheng Xu: For you to, like, monitor.
+
+178
+00:20:34.600 --> 00:20:35.380
+Sam Lee: It's just…
+
+179
+00:20:35.570 --> 00:20:39.920
+Zhongzheng Xu: Did you use something like that, or did you have your own methods?
+
+180
+00:20:41.700 --> 00:20:45.479
+Sam Lee: when we developed the project, I think Len Smith was still…
+
+181
+00:20:45.630 --> 00:20:50.530
+Sam Lee: Under development, or at least, if not exactly what we wanted.
+
+182
+00:20:51.140 --> 00:20:52.740
+Sam Lee: So we did not use Stan Smith.
+
+183
+00:20:53.180 --> 00:20:56.340
+Sam Lee: So the debugging has been…
+
+184
+00:20:56.900 --> 00:21:02.480
+Sam Lee: purely, traditional machine learning, or Python.
+
+185
+00:21:02.630 --> 00:21:04.260
+Sam Lee: And debugging?
+
+186
+00:21:04.260 --> 00:21:04.760
+Zhongzheng Xu: Okay.
+
+187
+00:21:04.760 --> 00:21:07.120
+Sam Lee: It's a lot of printing.
+
+188
+00:21:07.390 --> 00:21:09.129
+Sam Lee: We're looking at.
+
+189
+00:21:09.130 --> 00:21:10.930
+Zhongzheng Xu: The, intermediate outputs.
+
+190
+00:21:11.560 --> 00:21:13.160
+Sam Lee: Yes, yes.
+
+191
+00:21:13.160 --> 00:21:13.580
+Zhongzheng Xu: Okay.
+
+192
+00:21:13.580 --> 00:21:17.050
+Sam Lee: I was using Jupyter Notebook, of course, to do the debugging.
+
+193
+00:21:17.070 --> 00:21:21.160
+Zhongzheng Xu: Okay. Because that way I can save the states and, you know, execute one cell.
+
+194
+00:21:21.440 --> 00:21:30.329
+Sam Lee: But that's all that we have. I think LaneGraph has some… Built-in, debugging support.
+
+195
+00:21:30.850 --> 00:21:36.639
+Sam Lee: for, I don't know if they're called Debug Explorer, just…
+
+196
+00:21:37.530 --> 00:21:42.290
+Sam Lee: Memory handling, or state handling, and stuff.
+
+197
+00:21:42.900 --> 00:21:50.030
+Sam Lee: But I would say the whole debugging is just… Python.
+
+198
+00:21:50.490 --> 00:21:52.279
+Zhongzheng Xu: Okay, I see.
+
+199
+00:21:53.240 --> 00:21:57.890
+Zhongzheng Xu: And then… You talked about your…
+
+200
+00:21:58.580 --> 00:22:08.940
+Zhongzheng Xu: like, sort of your agent roles, you have decomposer, and then a bunch of execution agents, and then, some evaluation agent. What was…
+
+201
+00:22:09.820 --> 00:22:13.779
+Zhongzheng Xu: Like, which agent failed the most?
+
+202
+00:22:14.830 --> 00:22:17.210
+Zhongzheng Xu: According to your experience.
+
+203
+00:22:20.070 --> 00:22:23.930
+Sam Lee: domain felt the most. I mean… the most.
+
+204
+00:22:24.310 --> 00:22:30.420
+Sam Lee: Of course, it's the execution agent. So the decomposer agent basically just does…
+
+205
+00:22:30.820 --> 00:22:42.549
+Sam Lee: text generation, as long as the generated text fits the upload format, and we want it's not a complicated format, it's good, it's less likely to fail.
+
+206
+00:22:42.670 --> 00:22:48.390
+Sam Lee: The execution agent is where it generates codes, and…
+
+207
+00:22:48.540 --> 00:22:53.600
+Sam Lee: connect co… connect functions together. So the logic has to be…
+
+208
+00:22:53.860 --> 00:23:01.620
+Sam Lee: It cannot be wrong. Like, none of the logic can be wrong, and whenever there's something wrong in it, it's gonna fail.
+
+209
+00:23:01.800 --> 00:23:13.879
+Sam Lee: And I think eventually, we have to use… we have to engage the user to, surface the errors and help… let them fix the errors, because the,
+
+210
+00:23:13.990 --> 00:23:24.570
+Sam Lee: ultimate system where we have is not guaranteed to generate… to always generate a working pipeline. It's, like, 80% of the time, maybe, it can generate a working pipeline.
+
+211
+00:23:24.680 --> 00:23:39.449
+Sam Lee: But there's always edge cases where it just doesn't pick the right parameter, or it doesn't pick the right, method altogether. And something has to be done to intervene and fix the issues.
+
+212
+00:23:39.680 --> 00:23:45.279
+Sam Lee: The evaluator agents are actually… They should be…
+
+213
+00:23:45.450 --> 00:23:55.680
+Sam Lee: equally complicated with the execution Agent, but we did not go too deep into the evaluator Agent, so we intentionally let it be
+
+214
+00:23:55.980 --> 00:23:59.730
+Sam Lee: simple. It just runs,
+
+215
+00:24:00.010 --> 00:24:08.340
+Sam Lee: it just runs self-evaluation judges, on the execution results, so, that's…
+
+216
+00:24:08.500 --> 00:24:16.709
+Sam Lee: That turned out to be much easier and much less likely to fail, to have, like, technical issues to fail.
+
+217
+00:24:16.860 --> 00:24:19.560
+Sam Lee: Of course, it has some…
+
+218
+00:24:20.020 --> 00:24:30.789
+Sam Lee: compromises in the evaluation rigorousness, but, technically the system, you know, is at least working. We can run the user study on it, at least.
+
+219
+00:24:30.890 --> 00:24:35.290
+Sam Lee: And so, in general, I think, whenever… so, one of the…
+
+220
+00:24:35.650 --> 00:24:43.620
+Sam Lee: thing we're generating is prompts, too. So for some… for all of the evaluation methods, we're generating prompts
+
+221
+00:24:43.780 --> 00:24:46.199
+Sam Lee: For that evaluation criteria, and…
+
+222
+00:24:46.200 --> 00:24:46.810
+Zhongzheng Xu: Correct.
+
+223
+00:24:46.810 --> 00:24:53.710
+Sam Lee: So, whenever we're generating prompts, it's much like… much, much less likely to fail.
+
+224
+00:24:53.950 --> 00:24:57.129
+Sam Lee: Because the LMs are already trained
+
+225
+00:24:57.330 --> 00:25:06.740
+Sam Lee: I guess OpenAI tuned their model to follow the JSON output, quite well, so as long as we have that defined,
+
+226
+00:25:07.030 --> 00:25:09.969
+Sam Lee: At least, there's no… there's not going to be…
+
+227
+00:25:10.220 --> 00:25:19.920
+Sam Lee: Syntax errors, for sure, you can have… you cannot have syntax error in the prompts, or you cannot… you won't have the format issues,
+
+228
+00:25:20.190 --> 00:25:27.160
+Sam Lee: Because, you know, it follows the format. Whereas in code generation, it can generate
+
+229
+00:25:27.310 --> 00:25:33.599
+Sam Lee: syntax errors, for sure. It can generate the wrong parameter that doesn't exist.
+
+230
+00:25:33.790 --> 00:25:38.830
+Sam Lee: or… In our conceptual framework, it needs to pick
+
+231
+00:25:38.950 --> 00:25:47.689
+Sam Lee: The, so for a block, for a node, it needs to pick its input, key.
+
+232
+00:25:47.860 --> 00:25:58.170
+Sam Lee: Which is, you know, the output of a previous node, and sometimes it can pick the wrong key. And that's the major issue of the fail.
+
+233
+00:25:58.670 --> 00:26:02.939
+Sam Lee: So that could happen in… that's most likely to happen in execution.
+
+234
+00:26:03.060 --> 00:26:04.140
+Sam Lee: Agents.
+
+235
+00:26:05.100 --> 00:26:05.839
+Zhongzheng Xu: That's it.
+
+236
+00:26:06.470 --> 00:26:12.889
+Zhongzheng Xu: So, so you talked about, in the end, you wanted to have, like, a reliable pipeline.
+
+237
+00:26:13.030 --> 00:26:20.259
+Zhongzheng Xu: And then… So, like, what made you decide that, okay, this is…
+
+238
+00:26:20.740 --> 00:26:23.649
+Zhongzheng Xu: pretty much viable, we can put this in a paper.
+
+239
+00:26:26.600 --> 00:26:31.350
+Sam Lee: It's… to be honest, it's because the deadline is approaching.
+
+240
+00:26:32.430 --> 00:26:33.670
+Sam Lee: about the system.
+
+241
+00:26:33.670 --> 00:26:35.080
+Zhongzheng Xu: We have tried…
+
+242
+00:26:35.220 --> 00:26:36.970
+Sam Lee: And we have, actually.
+
+243
+00:26:37.170 --> 00:26:43.130
+Sam Lee: Tried all the methods that we can think of to increase… to improve the reliability of the system.
+
+244
+00:26:43.130 --> 00:26:43.730
+Zhongzheng Xu: Yeah.
+
+245
+00:26:43.730 --> 00:26:50.210
+Sam Lee: I think the decision for cutting off development was…
+
+246
+00:26:50.600 --> 00:26:58.779
+Sam Lee: partly influenced by the deadline, but also because I think we think it's enough to run a user study.
+
+247
+00:26:58.970 --> 00:27:11.690
+Sam Lee: And we're able to get, reasonable or, like, interesting insights from the user study, even though some corner cases might not be supported, we'll just…
+
+248
+00:27:12.020 --> 00:27:24.700
+Sam Lee: try to not let that happen in the user study, which is focused on… because eventually the research is on the human-centered factors of the teaching systems, not just about the
+
+249
+00:27:24.760 --> 00:27:40.140
+Sam Lee: technical contribution. And so, if we can get something interesting from this study, that's enough. Of course, we'll have to… we'll explain the reliability issues in the paper, and that's enough for us.
+
+250
+00:27:40.490 --> 00:27:41.040
+Zhongzheng Xu: Okay.
+
+251
+00:27:42.050 --> 00:27:51.460
+Zhongzheng Xu: And then… So… you mentioned that, so you used Langraph, and then…
+
+252
+00:27:52.180 --> 00:27:56.690
+Zhongzheng Xu: I want to ask if there's any features
+
+253
+00:27:57.050 --> 00:28:11.369
+Zhongzheng Xu: That I think… that you think, it would be great to have, to add to LaneGraph. But of course, like, you guys, eventually even developed a framework, to make it more…
+
+254
+00:28:11.810 --> 00:28:22.869
+Zhongzheng Xu: like, suited for your project. But are there any, like, new features that you think would be great to have, to speed up either development or…
+
+255
+00:28:23.100 --> 00:28:25.499
+Zhongzheng Xu: Create more reliable pipelines.
+
+256
+00:28:29.840 --> 00:28:33.200
+Sam Lee: I think…
+
+257
+00:28:36.990 --> 00:28:40.500
+Sam Lee: So, it has been… Half a year.
+
+258
+00:28:40.830 --> 00:28:48.440
+Sam Lee: since I used Langraphs, I don't know what new features they've added to the library, but just from my PAX experience.
+
+259
+00:28:55.700 --> 00:29:08.099
+Sam Lee: I… don't remember, but I think there are some… like, Linegraph is supposed to support all the possible
+
+260
+00:29:08.410 --> 00:29:10.370
+Sam Lee: logical…
+
+261
+00:29:11.360 --> 00:29:13.729
+Sam Lee: Branches that you could have with nodes.
+
+262
+00:29:14.070 --> 00:29:17.699
+Sam Lee: I think…
+
+263
+00:29:18.660 --> 00:29:27.879
+Sam Lee: I don't remember, but maybe there's some logics that is very hard to express using land graph specifications.
+
+264
+00:29:28.360 --> 00:29:42.250
+Sam Lee: And then… Typically, right, you would add… you would, you would… House.
+
+265
+00:29:42.520 --> 00:29:43.780
+Sam Lee: to…
+
+266
+00:29:44.830 --> 00:29:51.770
+Sam Lee: I think LaneGraph was not built for this, but in my case, I was dynamically generating the nodes.
+
+267
+00:29:51.990 --> 00:30:05.340
+Sam Lee: And that's not something that LineGraph natively supports. I think that could be supported, because I imagine there's going to be, like, really complex cases
+
+268
+00:30:05.630 --> 00:30:10.079
+Sam Lee: Where you, like, the developer needs to generate a new node on the fly.
+
+269
+00:30:10.220 --> 00:30:17.000
+Sam Lee: It cannot be all covered with the existing, With their existing development.
+
+270
+00:30:17.270 --> 00:30:20.470
+Sam Lee: effort. And then the…
+
+271
+00:30:23.070 --> 00:30:32.470
+Sam Lee: Langraph is mostly for the evaluation part. Most of Langraph has support for, like, checking the formats, like, throwing errors for it.
+
+272
+00:30:32.890 --> 00:30:39.890
+Sam Lee: I think that's what they intended to do.
+
+273
+00:30:40.140 --> 00:30:53.749
+Sam Lee: But for, I think, many cases, especially seeing that agents are so unreliable, it's good if they have some native support for evaluation in general.
+
+274
+00:30:54.030 --> 00:30:55.130
+Sam Lee: say…
+
+275
+00:30:55.420 --> 00:31:02.900
+Sam Lee: I want to, like, it's basically most of the agents are just generating text, right? Yeah. So you could have…
+
+276
+00:31:03.200 --> 00:31:09.690
+Sam Lee: evaluations on, like, based on these text generation, methods.
+
+277
+00:31:10.420 --> 00:31:17.550
+Sam Lee: There are existing validation methods to do this. I don't think they have support for any of them, so we have to do it ourselves.
+
+278
+00:31:17.900 --> 00:31:29.130
+Sam Lee: I think… The other ones are, to construct a graph,
+
+279
+00:31:29.330 --> 00:31:37.969
+Sam Lee: not using codes, so I think they have support for this. I… at least AutoGene have the support for this, I don't know if Lancraph has it.
+
+280
+00:31:38.120 --> 00:31:40.909
+Sam Lee: It shouldn't be too hard to do this.
+
+281
+00:31:40.910 --> 00:31:44.979
+Zhongzheng Xu: Not using code, so using, like, natural language.
+
+282
+00:31:45.140 --> 00:31:48.880
+Sam Lee: Oh, no, using, like… Why?
+
+283
+00:31:48.880 --> 00:31:49.260
+Zhongzheng Xu: Okay.
+
+284
+00:31:49.260 --> 00:31:55.999
+Sam Lee: Yeah, so Autogen has Autogen Studio to do this. I don't know if… I don't know if I have a LaneGraph Studio or something.
+
+285
+00:31:56.200 --> 00:32:02.000
+Zhongzheng Xu: They actually do, but they're… I don't think they're, like, the… the best.
+
+286
+00:32:03.080 --> 00:32:04.370
+Sam Lee: Yeah, yeah, yeah.
+
+287
+00:32:04.370 --> 00:32:09.189
+Zhongzheng Xu: There's many, different, you know, like, those kind of UI out there.
+
+288
+00:32:09.900 --> 00:32:11.270
+Sam Lee: Yeah.
+
+289
+00:32:11.470 --> 00:32:22.480
+Sam Lee: And so, once you have the UI, if they have a really good UI, and thengraph has this human-in-the-loop method, like, for interrupts,
+
+290
+00:32:23.150 --> 00:32:29.169
+Sam Lee: Right now, the interrupts is just, you know, having a breakpoint, and then…
+
+291
+00:32:29.390 --> 00:32:34.999
+Sam Lee: Have some human input, like, because they're essentially a library.
+
+292
+00:32:35.130 --> 00:32:41.780
+Sam Lee: a Python library. So, if you have a UI, and if they have support for
+
+293
+00:32:41.890 --> 00:32:55.610
+Sam Lee: human in the loop on the UI. It can be for develop… just for developers, or it can be something that the developer can release into a full system, a customer-facing system, and the customer can intervene in the loop
+
+294
+00:32:55.840 --> 00:33:00.149
+Sam Lee: That would be nice, because right now, we have to do it all ourselves.
+
+295
+00:33:01.020 --> 00:33:02.340
+Zhongzheng Xu: Hmm, I see.
+
+296
+00:33:04.160 --> 00:33:12.460
+Zhongzheng Xu: Okay. And then… that was a lot of information. I think I'll…
+
+297
+00:33:12.920 --> 00:33:21.320
+Zhongzheng Xu: I won't let you describe as in detail, but, you said that you also worked on other projects, that used a multi-agent system,
+
+298
+00:33:21.420 --> 00:33:24.380
+Zhongzheng Xu: just, like, Couple sentences.
+
+299
+00:33:26.700 --> 00:33:33.020
+Zhongzheng Xu: What was, like, the goal of the system, and then, just, like, a high-level structure of the system architecture.
+
+300
+00:33:34.170 --> 00:33:42.669
+Sam Lee: So, an ongoing system we're building is for multi-agent debate, or multi-agent dialogue, and we're building a system to see
+
+301
+00:33:42.790 --> 00:33:47.999
+Sam Lee: Where are the opportunities for human intervention, and how we support that human intervention?
+
+302
+00:33:50.150 --> 00:34:06.019
+Sam Lee: I've also mentioned another project that, involves contacts management, but that's not exactly a multi-agent system, that's more like a single-agent system that has rack, has tool calls… not tool calls, it's just a… it's just a rack agent.
+
+303
+00:34:06.020 --> 00:34:06.340
+Zhongzheng Xu: Okay.
+
+304
+00:34:06.340 --> 00:34:08.350
+Sam Lee: So, yeah.
+
+305
+00:34:09.120 --> 00:34:24.769
+Zhongzheng Xu: I see. So, you actually worked on quite many, projects that used multi-agent system, so, like, if you have to generalize, for what type of tasks or problems do you think a multi-agent system is, like.
+
+306
+00:34:25.320 --> 00:34:28.690
+Zhongzheng Xu: The, the optimal approach.
+
+307
+00:34:31.719 --> 00:34:34.710
+Sam Lee: I think it's…
+
+308
+00:34:36.460 --> 00:34:48.169
+Sam Lee: So, first, it's always, because the LLM's capabilities are always improving. We now even have reasoning models. When I did the multi-agent system, we didn't have reasoning models.
+
+309
+00:34:48.340 --> 00:34:51.500
+Sam Lee: So, I think…
+
+310
+00:34:51.690 --> 00:34:59.390
+Sam Lee: some of the multi-agent systems can now be replaced by a reasoning model… reasoning agent, for sure. So…
+
+311
+00:34:59.450 --> 00:35:14.159
+Sam Lee: We have to always look at the capability of a single agent to decide if we need multiple agents. It's only when the case… the use case is so complex that the single agent cannot handle.
+
+312
+00:35:14.160 --> 00:35:22.939
+Sam Lee: That you employ a multi-agent system to do this, because when you have multiple agents, it's always more technical complexity.
+
+313
+00:35:23.040 --> 00:35:25.409
+Sam Lee: More… or less transparency.
+
+314
+00:35:25.750 --> 00:35:31.799
+Sam Lee: It's harder to control. But there's also another case where if the…
+
+315
+00:35:32.270 --> 00:35:40.030
+Sam Lee: problem you're dealing with is well-defined, or you can… if you can find a good theoretical…
+
+316
+00:35:40.630 --> 00:35:44.280
+Sam Lee: Brainwork or structure, underlying it.
+
+317
+00:35:44.400 --> 00:35:49.559
+Sam Lee: Then you can build a multi-agent system that roughly follows that structure.
+
+318
+00:35:49.810 --> 00:35:55.510
+Sam Lee: So… Yeah. Now I remind, like, you might… I remind you of one of the past projects.
+
+319
+00:35:55.800 --> 00:36:01.880
+Sam Lee: It's, it's not an agent, but it's a… Mental health chatbots.
+
+320
+00:36:02.300 --> 00:36:10.720
+Sam Lee: So, as you can imagine, mental health is, you know, they have a bunch of guidelines, principles for that.
+
+321
+00:36:10.860 --> 00:36:28.650
+Sam Lee: And so that's what I meant as a very well-defined guidelines and principles, and you can easily build a multi-agent system following that guideline, or you can transfer that guideline into a multi-agent system. And theoretically, right, this multi-agent system should perform more…
+
+322
+00:36:29.200 --> 00:36:39.929
+Sam Lee: rigorously, compared to a single agent, because single agents, they always have contact issues, it might not always follow the steps you give it, but if you.
+
+323
+00:36:39.930 --> 00:36:40.260
+Zhongzheng Xu: you have.
+
+324
+00:36:40.260 --> 00:36:58.709
+Sam Lee: a multi-agent system, you can force it to follow… force the system to follow the structure you want. Because every agent is just one step in this flow, then, you know, you just need to control the connection of the nodes, and you can guarantee you have the structure you want.
+
+325
+00:36:58.880 --> 00:37:00.210
+Sam Lee: So that's good.
+
+326
+00:37:00.690 --> 00:37:05.969
+Sam Lee: And then, there's also other cases where you want to have… this is more like a…
+
+327
+00:37:06.310 --> 00:37:12.640
+Sam Lee: Multi-agent dialogue, where you have… you want to have a diversity of opinion.
+
+328
+00:37:12.780 --> 00:37:26.609
+Sam Lee: or you want to have a diversity of… basically, you want diversity. Then you can have, different role-playing agents. Each agent plays as a role. Say you're,
+
+329
+00:37:26.850 --> 00:37:37.069
+Sam Lee: making your policymaker, and you're dealing with, multiple, stakeholders in that policy, you can have
+
+330
+00:37:37.200 --> 00:37:52.710
+Sam Lee: a typical resident, you can have an insurance company, you can have private companies, private sector companies, public sector companies, and you can have each of them represented by an agent that then engage in a debate, or a conversation or a dialogue, and then
+
+331
+00:37:52.710 --> 00:37:57.419
+Sam Lee: Try to get a more diverse, outcome of it.
+
+332
+00:37:57.820 --> 00:38:01.220
+Sam Lee: That's also one thing I can think of to use water agents.
+
+333
+00:38:01.650 --> 00:38:08.679
+Sam Lee: Let's see… I think that's it for now.
+
+334
+00:38:11.680 --> 00:38:12.460
+Sam Lee: Yeah.
+
+335
+00:38:12.900 --> 00:38:13.659
+Sam Lee: I think so.
+
+336
+00:38:14.220 --> 00:38:18.890
+Zhongzheng Xu: Also… Very comprehensive response.
+
+337
+00:38:19.550 --> 00:38:25.020
+Zhongzheng Xu: And okay, that was actually the last question I have.
+
+338
+00:38:25.670 --> 00:38:28.719
+Zhongzheng Xu: Can go ahead and stop the recording.
+
+339
+00:38:30.170 --> 00:38:30.930
+Sam Lee: Great.
+

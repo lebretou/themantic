@@ -1,0 +1,478 @@
+WEBVTT
+
+1
+00:00:02.430 --> 00:00:08.280
+Zhongzheng Xu: Okay, we can start, and then I will start with the…
+
+2
+00:00:08.450 --> 00:00:21.480
+Zhongzheng Xu: pretty abstract question. So, could you tell me your definition of a multi-agent system? For example, when you hear the term multi-agent system, what does it mean to you?
+
+3
+00:00:22.780 --> 00:00:33.170
+Dora Kingston: Multi-agent systems… Or, like, to me, honestly, there are systems for… solving complex…
+
+4
+00:00:33.290 --> 00:00:36.080
+Dora Kingston: Tasks, like, for breaking them down.
+
+5
+00:00:36.350 --> 00:00:44.799
+Dora Kingston: Into different, responsibilities, so we have, like, multiple agents solving them.
+
+6
+00:00:46.790 --> 00:00:47.720
+Dora Kingston: Yep.
+
+7
+00:00:48.730 --> 00:01:00.999
+Zhongzheng Xu: Okay, alright, and could you go ahead and tell me about one or two projects that you have done in the past that have used multi-agent systems?
+
+8
+00:01:02.360 --> 00:01:08.030
+Dora Kingston: I think, particularly, I would like to talk about the one…
+
+9
+00:01:08.350 --> 00:01:13.549
+Dora Kingston: where I use for, like, content, like, content writing, content…
+
+10
+00:01:14.260 --> 00:01:22.760
+Dora Kingston: So, I think, like, the multi-agents helped me In, like, the drafting…
+
+11
+00:01:22.920 --> 00:01:26.820
+Dora Kingston: The writing, the reviewing, so, like, it was very beneficial to me.
+
+12
+00:01:31.560 --> 00:01:32.120
+Dora Kingston: Yeah.
+
+13
+00:01:32.440 --> 00:01:47.479
+Zhongzheng Xu: Could you, describe a little bit more in detail, like, so, for example, what were the agents, like, how many agents that the, the system had, and, what were, like, the roles of each agent?
+
+14
+00:01:48.730 --> 00:01:55.519
+Dora Kingston: So… I had an agent provide, like, the initial drafts for the content.
+
+15
+00:01:55.930 --> 00:02:01.530
+Dora Kingston: So, apart from, like, the agents giving me the initial draft, I also had to…
+
+16
+00:02:01.820 --> 00:02:06.610
+Dora Kingston: to check through, but I also had some other agents, also reviewing it.
+
+17
+00:02:07.180 --> 00:02:08.599
+Dora Kingston: I'm working on it.
+
+18
+00:02:10.630 --> 00:02:18.010
+Zhongzheng Xu: Okay, so… I'm, like, how many, how many agents were there?
+
+19
+00:02:18.220 --> 00:02:22.069
+Zhongzheng Xu: A draft agent, some reviewer agents.
+
+20
+00:02:24.230 --> 00:02:25.340
+Dora Kingston: So, I didn't get us.
+
+21
+00:02:25.550 --> 00:02:28.859
+Zhongzheng Xu: So, like, what was the number of agents?
+
+22
+00:02:29.310 --> 00:02:31.799
+Dora Kingston: Oh, okay, sorry. Add 3 agents.
+
+23
+00:02:32.750 --> 00:02:44.239
+Dora Kingston: One was particularly the one drafting, then the second one was more like the one I was more consultant with. We were both reviewing together, and there was one mainly to just, like.
+
+24
+00:02:44.590 --> 00:02:48.690
+Dora Kingston: For clarity, basically, to just improve the clarity of the whole project.
+
+25
+00:02:48.990 --> 00:02:49.840
+Zhongzheng Xu: Yep.
+
+26
+00:02:50.410 --> 00:02:59.859
+Zhongzheng Xu: I see. And then for the… for this project, did you, use any frameworks, like, LaneChain or LaneGraph?
+
+27
+00:03:01.590 --> 00:03:07.900
+Dora Kingston: I would say none particularly, because I was just, like, mainly focused on the assigning of the rules.
+
+28
+00:03:08.390 --> 00:03:08.770
+Zhongzheng Xu: Okay.
+
+29
+00:03:08.770 --> 00:03:11.400
+Dora Kingston: how to come together for what I wanted.
+
+30
+00:03:12.150 --> 00:03:22.170
+Zhongzheng Xu: Okay, and then by assigning roles, do you mean, like, just mainly tuning the system prompts, or the task instructions?
+
+31
+00:03:23.190 --> 00:03:24.410
+Dora Kingston: Sorry, I didn't get that.
+
+32
+00:03:24.660 --> 00:03:34.150
+Zhongzheng Xu: Oh, sorry. So, you said that assigning roles, so do you mean, like, refining the system prompts, for example?
+
+33
+00:03:35.140 --> 00:03:39.169
+Dora Kingston: Yes, yes, yes, I was basically working on prompts, I was refining the prompts, yeah.
+
+34
+00:03:39.670 --> 00:03:53.370
+Zhongzheng Xu: I see. Could you also, like, describe, that process a little bit? Like, how did you come up with the initial prompt, and then, were there any modifications, done to your prompt?
+
+35
+00:03:55.900 --> 00:04:02.470
+Dora Kingston: I'm so… basically, I started with, like, the basic rule… for each agent.
+
+36
+00:04:03.360 --> 00:04:15.410
+Dora Kingston: by specifying the responsibilities, and over time, I would, like, review each responses, apart from even the agents review, and I reviewed by myself also, then try to see if they're, like.
+
+37
+00:04:15.870 --> 00:04:22.189
+Dora Kingston: Inconsistent, data, trying to see, like, they are missing part of the work.
+
+38
+00:04:22.380 --> 00:04:22.910
+Zhongzheng Xu: Yeah.
+
+39
+00:04:22.910 --> 00:04:26.609
+Dora Kingston: I give that, and I refine the prompts based on that.
+
+40
+00:04:28.450 --> 00:04:34.380
+Zhongzheng Xu: I see. And so in the end, could you, like, what was the…
+
+41
+00:04:34.530 --> 00:04:39.290
+Zhongzheng Xu: The overall structure of the prompt that you ended up with.
+
+42
+00:04:40.810 --> 00:04:44.100
+Dora Kingston: Generate drafts.
+
+43
+00:04:44.580 --> 00:04:49.660
+Dora Kingston: Review the results, then adjust the, prompts.
+
+44
+00:04:51.690 --> 00:04:56.560
+Zhongzheng Xu: Okay, and then just making sure, so, like,
+
+45
+00:04:57.230 --> 00:05:03.900
+Zhongzheng Xu: Did the prompt also include, like, the communication schema between agents?
+
+46
+00:05:05.800 --> 00:05:10.820
+Dora Kingston: Yeah, the, agents were not, interacting directly.
+
+47
+00:05:11.120 --> 00:05:19.060
+Dora Kingston: So… We, like, the results are gathered in a particular location, so it was not like…
+
+48
+00:05:19.350 --> 00:05:21.730
+Dora Kingston: A direct interaction.
+
+49
+00:05:22.260 --> 00:05:27.790
+Zhongzheng Xu: Okay, okay. And then, just to clarify, so you said,
+
+50
+00:05:27.910 --> 00:05:36.669
+Zhongzheng Xu: the system… the system is for, content writing. Can I know which, like, what kind of content is it writing?
+
+51
+00:05:38.900 --> 00:05:41.749
+Dora Kingston: I would rather not answer that.
+
+52
+00:05:44.080 --> 00:05:45.439
+Zhongzheng Xu: I'm sorry?
+
+53
+00:05:45.930 --> 00:05:47.599
+Dora Kingston: I said I would rather not go into the.
+
+54
+00:05:47.600 --> 00:05:49.270
+Zhongzheng Xu: Oh, okay, that's fine.
+
+55
+00:05:49.540 --> 00:05:51.859
+Zhongzheng Xu: And
+
+56
+00:05:52.640 --> 00:06:01.810
+Zhongzheng Xu: Can I know if it's for, if this… if this system or this project is done for a company, in the industry?
+
+57
+00:06:03.720 --> 00:06:05.400
+Dora Kingston: Yeah, it's a company work.
+
+58
+00:06:05.810 --> 00:06:11.249
+Zhongzheng Xu: Okay, I see, I see. Okay. And, so…
+
+59
+00:06:11.570 --> 00:06:30.099
+Zhongzheng Xu: when you were developing the system, like, what was the biggest challenge that you have? So, for example, like, what was the most common bug, that you ran into, or which part of development that, took the longest time?
+
+60
+00:06:31.560 --> 00:06:34.839
+Dora Kingston: I think, to be very honest.
+
+61
+00:06:35.170 --> 00:06:42.270
+Dora Kingston: it has to be, like, my prompts. Sometimes they were not so clear, they were ambiguous, so the,
+
+62
+00:06:42.380 --> 00:06:50.779
+Dora Kingston: the agents would, like, do the same thing over and over again, so I had to, like, be very clear. So, like, the most common issue was, for me, the prompting.
+
+63
+00:06:51.330 --> 00:06:52.670
+Zhongzheng Xu: I see, I see.
+
+64
+00:06:52.780 --> 00:07:09.960
+Zhongzheng Xu: So, like, so you said prompting, and then in the end, did you find anything helpful, or, any, like, prompting patterns, or, some tricks that you used that would, you know, make the agents more predictable?
+
+65
+00:07:11.100 --> 00:07:17.010
+Dora Kingston: I didn't particularly use any trick, well, I just made sure to be more consistent and to just
+
+66
+00:07:17.430 --> 00:07:22.210
+Dora Kingston: be careful about the way I define the rules for each of the agents.
+
+67
+00:07:23.340 --> 00:07:24.530
+Zhongzheng Xu: I see, I see.
+
+68
+00:07:24.910 --> 00:07:29.590
+Zhongzheng Xu: And okay.
+
+69
+00:07:32.410 --> 00:07:33.890
+Zhongzheng Xu: So…
+
+70
+00:07:34.710 --> 00:07:45.200
+Zhongzheng Xu: Sorry, let me just, look. Okay, yeah. So, could you tell me about, like, how did you, monitor the system? For example,
+
+71
+00:07:46.450 --> 00:07:55.320
+Zhongzheng Xu: Okay, so for example, like, how did you make sure that the system is behaving the way that you want? So for example, like.
+
+72
+00:07:55.600 --> 00:08:15.399
+Zhongzheng Xu: some… some of my other interviewees said they would, manually look at the inputs and outputs, by themselves, and some people… some people also used, like, tools that… for example, there's, like, a dashboard for them to monitor the system.
+
+73
+00:08:18.350 --> 00:08:24.259
+Dora Kingston: Yeah… So, it's the same thing I've been quite saying earlier.
+
+74
+00:08:24.970 --> 00:08:38.299
+Dora Kingston: from the agent reviewing it, I also had to review on my end, like, manually. I also had to do that. So, it was mainly me reviewing the imputes, mainly me reviewing the output.
+
+75
+00:08:39.039 --> 00:08:41.519
+Zhongzheng Xu: Okay, I see. And,
+
+76
+00:08:41.579 --> 00:09:01.539
+Zhongzheng Xu: just to think out loud, it doesn't have to be this project. So, let's say you are building some multi-agent system. So, like, what do you think would be helpful for you to, you know, monitor the system, or evaluating the system,
+
+77
+00:09:02.099 --> 00:09:08.389
+Zhongzheng Xu: In the way that you know the system is behaving that you're… you're expecting.
+
+78
+00:09:10.150 --> 00:09:18.870
+Dora Kingston: I think there should be, automated checks, so instead of me, like, reviewing manually, there should be, like, expectations, like, already defined.
+
+79
+00:09:19.780 --> 00:09:31.409
+Dora Kingston: So, I don't have to keep checking in, keep checking in their expectations, so if the, output doesn't meet up, the bot knows that, like, the agents know that they have to redo the work visiting.
+
+80
+00:09:31.560 --> 00:09:34.379
+Dora Kingston: So, like, an automated system.
+
+81
+00:09:35.010 --> 00:09:36.520
+Zhongzheng Xu: I see, I see.
+
+82
+00:09:37.160 --> 00:09:40.679
+Zhongzheng Xu: Whoa, anything else?
+
+83
+00:09:42.800 --> 00:09:50.239
+Dora Kingston: I'm sorry, I didn't get the, consent form, because I was checking through and I didn't see it, so could you please resend it?
+
+84
+00:09:51.800 --> 00:09:56.059
+Zhongzheng Xu: You said, are we talking about the last question?
+
+85
+00:09:56.500 --> 00:09:58.939
+Dora Kingston: No, no, I meant the consent form.
+
+86
+00:09:58.940 --> 00:10:03.810
+Zhongzheng Xu: I didn't get it. I'm checking for my mail, and I didn't get it, so could you please resend it?
+
+87
+00:10:04.070 --> 00:10:04.800
+Zhongzheng Xu: Okay.
+
+88
+00:10:05.140 --> 00:10:06.740
+Zhongzheng Xu: I see.
+
+89
+00:10:07.380 --> 00:10:11.430
+Zhongzheng Xu: And,
+
+90
+00:10:11.980 --> 00:10:19.180
+Zhongzheng Xu: So, okay, I'm so sorry, but could you repeat that? Because, I realized I paused the recording for the consent.
+
+91
+00:10:19.590 --> 00:10:20.460
+Dora Kingston: Oh, God.
+
+92
+00:10:20.870 --> 00:10:24.580
+Dora Kingston: I said I would define the scope.
+
+93
+00:10:25.270 --> 00:10:25.720
+Zhongzheng Xu: Yep.
+
+94
+00:10:25.720 --> 00:10:29.429
+Dora Kingston: And, like, enforce rules for each agent to not go beyond the scope.
+
+95
+00:10:29.580 --> 00:10:32.609
+Dora Kingston: So every agent knows particularly what they're doing.
+
+96
+00:10:32.750 --> 00:10:36.670
+Dora Kingston: Like, what is expected of them, what they should do and what they should not do.
+
+97
+00:10:38.120 --> 00:10:47.529
+Zhongzheng Xu: Okay, so, basically the constraints, and then clear definition of the tasks, so making… just making sure they're staying in scope.
+
+98
+00:10:48.360 --> 00:10:48.980
+Dora Kingston: Yes.
+
+99
+00:10:49.820 --> 00:10:50.880
+Zhongzheng Xu: Okay.
+
+100
+00:10:51.150 --> 00:10:52.970
+Zhongzheng Xu: And…
+
+101
+00:10:54.800 --> 00:11:07.310
+Zhongzheng Xu: this is going to be a more general question, so it doesn't have to be the project that you just talked about. So, like, for what type of problems do you think a multi-agent system work the best?
+
+102
+00:11:07.500 --> 00:11:08.989
+Zhongzheng Xu: And the worst.
+
+103
+00:11:10.920 --> 00:11:15.790
+Dora Kingston: I think the best should be… knowledge beasts.
+
+104
+00:11:17.470 --> 00:11:26.090
+Dora Kingston: work, like, complex knowledge base that requires critical thinking, because not everybody can work So quick.
+
+105
+00:11:26.210 --> 00:11:28.470
+Dora Kingston: I wouldn't say that it's a worst poll.
+
+106
+00:11:29.800 --> 00:11:37.029
+Dora Kingston: I think sole responsibility. Sole responsibilities, like, ones that you don't have to break down the tasks.
+
+107
+00:11:37.550 --> 00:11:40.470
+Dora Kingston: I can't exactly think of one right now, but for…
+
+108
+00:11:40.620 --> 00:11:49.169
+Dora Kingston: Complex ones are, like, knowledge-based, reasoning-based, you have to break down the tasks, so multiple agent systems are the best for those.
+
+109
+00:11:50.460 --> 00:11:54.800
+Zhongzheng Xu: Okay, so for tasks that are, decomposable…
+
+110
+00:11:55.540 --> 00:11:56.080
+Dora Kingston: Dear.
+
+111
+00:11:56.080 --> 00:11:58.319
+Zhongzheng Xu: Components. I see, I see.
+
+112
+00:11:58.550 --> 00:12:01.509
+Zhongzheng Xu: Okay. And then, just…
+
+113
+00:12:02.000 --> 00:12:11.820
+Zhongzheng Xu: So, I asked you about, like, features that would help you with Monitor, and for now, could you think about, like, just anything
+
+114
+00:12:11.820 --> 00:12:24.550
+Zhongzheng Xu: Any feature, including, like, the developing framework. What are something that you think that would be helpful in terms of just developing a multi-agent system overall?
+
+115
+00:12:26.290 --> 00:12:30.900
+Dora Kingston: Honestly, I don't have any in mind.
+
+116
+00:12:32.350 --> 00:12:39.260
+Dora Kingston: I'll just see… like… Honestly, I don't have any in mind.
+
+117
+00:12:39.680 --> 00:12:41.459
+Zhongzheng Xu: Okay, that's fine. That's fine.
+
+118
+00:12:41.870 --> 00:12:47.250
+Zhongzheng Xu: And that was actually all the questions I have.
+
+119
+00:12:47.920 --> 00:12:50.060
+Zhongzheng Xu: I can stop the recording.
+

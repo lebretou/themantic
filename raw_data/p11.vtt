@@ -1,0 +1,838 @@
+WEBVTT
+
+1
+00:00:00.020 --> 00:00:09.509
+Zhongzheng Xu: Okay Yeah, and let's go ahead and start. So, I'll start with a pretty basic, or…
+
+2
+00:00:10.060 --> 00:00:11.770
+Zhongzheng Xu: Pretty abstract question.
+
+3
+00:00:12.040 --> 00:00:22.250
+Zhongzheng Xu: So, what is your definition of multi-agent system? And, so, for example, when you hear the term multi-agent system, like, what does it mean to you?
+
+4
+00:00:23.870 --> 00:00:29.569
+Ray Charles: Please, you just have to try and be audible. I'm having a difficulty hearing you.
+
+5
+00:00:31.360 --> 00:00:32.740
+Zhongzheng Xu: Oh, oh, sorry.
+
+6
+00:00:36.400 --> 00:00:39.219
+Ray Charles: Are you… are you there with me? You have to be audible.
+
+7
+00:00:40.270 --> 00:00:44.079
+Zhongzheng Xu: can… can you hear me now?
+
+8
+00:00:44.080 --> 00:00:46.179
+Ray Charles: Here, you're coming in with the question.
+
+9
+00:00:46.780 --> 00:01:02.199
+Zhongzheng Xu: Yeah, yeah, okay. Yeah, so what will… so I'll start with this abstract question. So what is your definition of multi-agent system? And when you hear the term multi-agent system, like, what does it mean to you?
+
+10
+00:01:03.010 --> 00:01:06.740
+Ray Charles: Okay, alright, thank you very much for your question. You know,
+
+11
+00:01:06.950 --> 00:01:11.540
+Ray Charles: To me, a multi-agent system is a computational
+
+12
+00:01:11.660 --> 00:01:20.120
+Ray Charles: Or artificial intelligence system made up to… made up to have a… Autonomous, reply.
+
+13
+00:01:20.510 --> 00:01:24.130
+Ray Charles: You know, to interact with, all the…
+
+14
+00:01:25.080 --> 00:01:34.680
+Ray Charles: You know, it's a kind of surrounding that makes on decision acts and overall system behavior emerges from the coordination of the system.
+
+15
+00:01:35.320 --> 00:01:36.580
+Ray Charles: Oh, I understand.
+
+16
+00:01:39.810 --> 00:01:40.470
+Zhongzheng Xu: Okay.
+
+17
+00:01:40.620 --> 00:01:42.850
+Zhongzheng Xu: Okay, and
+
+18
+00:01:42.960 --> 00:01:52.530
+Zhongzheng Xu: Could you tell me about, one or two, projects that you have developed in the past, that use the multi-agent system?
+
+19
+00:01:53.920 --> 00:01:56.990
+Ray Charles: Okay, like I feel earlier in my screen here.
+
+20
+00:01:57.120 --> 00:02:03.740
+Ray Charles: I've used it to, compute customer feedback system on a project.
+
+21
+00:02:03.900 --> 00:02:22.580
+Ray Charles: or on a system. Like, I'm working in the medical field, and I've used it… I've used it in pre-processing agent to, you know, normalize incoming images for analyzing. And I also have a way that, I can automate diagnosis from customer.
+
+22
+00:02:22.660 --> 00:02:42.349
+Ray Charles: you know, even if I have, AI, everything, everything frame and… or just created, you know, it's a way I receive, user input and decide which tool or models to work on them before seeing, or after even seeing the patients.
+
+23
+00:02:45.590 --> 00:02:50.539
+Zhongzheng Xu: Okay, and then to develop, okay, could you also…
+
+24
+00:02:51.420 --> 00:03:00.520
+Zhongzheng Xu: Describe a little bit more in detail, of, like, each… each role of the agents, and,
+
+25
+00:03:00.830 --> 00:03:05.000
+Zhongzheng Xu: just… Like, each, the functionality of each agent.
+
+26
+00:03:06.240 --> 00:03:11.740
+Ray Charles: Okay, they have a, very, varied, functionality.
+
+27
+00:03:12.440 --> 00:03:17.240
+Ray Charles: And, like, I will still use my medical field, because…
+
+28
+00:03:17.480 --> 00:03:19.320
+Ray Charles: That is very unique to me.
+
+29
+00:03:19.760 --> 00:03:27.969
+Ray Charles: Their role is to make our image clearer and have a precise information from a patient.
+
+30
+00:03:28.120 --> 00:03:33.480
+Ray Charles: Like, in the sense of functionality, I ingest raw X-ray.
+
+31
+00:03:33.680 --> 00:03:40.989
+Ray Charles: you know, MRI images to perform resizing, normalization, and artificial removal of,
+
+32
+00:03:41.130 --> 00:03:46.239
+Ray Charles: Of models, making the diagnosis very clear and precise.
+
+33
+00:03:46.450 --> 00:03:51.459
+Ray Charles: You know, the role there is, to have a patent recognizer.
+
+34
+00:03:54.980 --> 00:03:55.710
+Zhongzheng Xu: I see
+
+35
+00:03:57.800 --> 00:04:08.039
+Zhongzheng Xu: Okay, and then, so, so for this project, did you use any framework? So for example, like, LaneChain, or LaneGraph?
+
+36
+00:04:09.760 --> 00:04:13.140
+Ray Charles: Yeah, I use a multiple framework, like,
+
+37
+00:04:13.640 --> 00:04:16.770
+Ray Charles: long chain, and, the PyTorch.
+
+38
+00:04:18.209 --> 00:04:19.059
+Zhongzheng Xu: I see.
+
+39
+00:04:19.199 --> 00:04:26.749
+Zhongzheng Xu: Okay, and then… Could, so, sorry.
+
+40
+00:04:26.909 --> 00:04:35.249
+Zhongzheng Xu: I think I didn't hear you quite well. Could you, reiterate on, like, what agents that you have?
+
+41
+00:04:36.550 --> 00:04:43.339
+Ray Charles: Okay, I am agents like, critic and safety agent, generation agent, and, Retriever analytic Agent.
+
+42
+00:04:43.570 --> 00:05:01.180
+Ray Charles: you know, they have different rules, playing in data insights provider, natural response, language responder, and also to make a quality policy checker, reviewing the LLM outputs for correctness, coherence, and policy compliance.
+
+43
+00:05:02.970 --> 00:05:05.630
+Zhongzheng Xu: I see. Okay, and then…
+
+44
+00:05:06.050 --> 00:05:10.610
+Zhongzheng Xu: Could you tell me a little bit more about the…
+
+45
+00:05:11.190 --> 00:05:17.600
+Zhongzheng Xu: developing process. So, for example, did you, did you have this…
+
+46
+00:05:17.770 --> 00:05:31.429
+Zhongzheng Xu: like, overall architecture, pretty clear in the beginning. And then, what are the steps you took to develop, for example, the system prompts, and then, the context?
+
+47
+00:05:32.710 --> 00:05:35.700
+Ray Charles: Yes, I can. Okay, the steps is a…
+
+48
+00:05:35.900 --> 00:05:40.440
+Ray Charles: I make a design such a way that,
+
+49
+00:05:40.560 --> 00:05:46.359
+Ray Charles: It can define goals and scenarios, you know, clarifying main objectives of the system.
+
+50
+00:05:46.380 --> 00:05:50.280
+Zhongzheng Xu: That, in this case, I'm using it for patient diagnosis, so…
+
+51
+00:05:50.350 --> 00:05:54.280
+Ray Charles: I try to write two to three concrete user journeys.
+
+52
+00:05:54.490 --> 00:06:04.229
+Ray Charles: to, analyze the workflow so it's so clear. You know, it depends on the input, the clarity of the input you're giving into the system.
+
+53
+00:06:04.300 --> 00:06:19.559
+Ray Charles: So, to this, I'm able to identify agents and roles in the system, planning, retrieval, analysis, generation, review, and reporting. You know, it works on steps. Then I have… they have… I group their responsibility into agents. Like I said before, I have the
+
+54
+00:06:19.560 --> 00:06:30.610
+Ray Charles: orchestrators, retrievers, and analyzers. By this, they work on their clerical, retrieving, analyzing, and generating information. Then,
+
+55
+00:06:31.040 --> 00:06:47.950
+Ray Charles: how I chose the interaction pattern and architecture. I decide, I might decide to use a centralized request, or, like, a… a more decentralized, event-driven setup. I'm setting it in a way that,
+
+56
+00:06:48.090 --> 00:06:52.610
+Ray Charles: It maps out how agents will communicate with the APIs.
+
+57
+00:06:52.660 --> 00:07:04.449
+Ray Charles: function calls and the context they share. So to this, I have a narrow path to select framework and implement approaches. Picking the agent.
+
+58
+00:07:04.450 --> 00:07:14.550
+Ray Charles: like, the long-chain multi-agent thing, I will then define a technical contract, you know, by, this is me now logging in
+
+59
+00:07:14.550 --> 00:07:24.499
+Ray Charles: to clear, check on errors, check on, telemetry for each of the components. Then, the last, last one, I would just have to…
+
+60
+00:07:24.600 --> 00:07:37.750
+Ray Charles: illiterate, with prototypes to evaluate the procession of an accuracy, clarity of what, the system has produced. Now, it is in my work and
+
+61
+00:07:37.750 --> 00:07:50.209
+Ray Charles: My space to refine prompts, routing logic, and safeguarding the information on checking if there are actually failure cases, latency, and also to check quality metrics.
+
+62
+00:07:51.190 --> 00:08:03.300
+Zhongzheng Xu: I see, I see. And then in the end, like, could you tell me a little bit about, the overall structure of the prompt? Like, what were the components in the prompt?
+
+63
+00:08:07.320 --> 00:08:22.950
+Ray Charles: Okay, the overall structure of the prompt needs to be very concise and brief. You know, starting with a short statement of the overall objective, I and my team, we try to group the agents into collaborative constraints.
+
+64
+00:08:23.080 --> 00:08:23.420
+Zhongzheng Xu: Dana.
+
+65
+00:08:23.420 --> 00:08:27.590
+Ray Charles: We set… we set up their, capabilities.
+
+66
+00:08:27.750 --> 00:08:36.049
+Ray Charles: You know, I… in my workflow, I try to analyze Planner, breaking down user goal into steps.
+
+67
+00:08:36.169 --> 00:08:37.709
+Ray Charles: from the Retriever.
+
+68
+00:08:37.780 --> 00:08:56.730
+Ray Charles: and the web search called Vipto. By this, I'm able to review output for correction and safety. Then, the overall steps is just to collaborate and communicate, define how agents work with each other, include explicit formats for messaging, output format for evaluation, then,
+
+69
+00:08:56.750 --> 00:09:00.579
+Ray Charles: I approved, but this approval is somehow optional.
+
+70
+00:09:00.720 --> 00:09:05.030
+Ray Charles: Because I might decide to add some internal evaluation instruction.
+
+71
+00:09:05.600 --> 00:09:12.110
+Ray Charles: Just to, respond to the… the… the specification.
+
+72
+00:09:12.470 --> 00:09:17.440
+Ray Charles: By this, I will either approve or revise to the issue.
+
+73
+00:09:19.060 --> 00:09:26.610
+Zhongzheng Xu: Okay, thanks for sharing. And, so, can I ask you, what type of, bugs
+
+74
+00:09:26.800 --> 00:09:29.899
+Zhongzheng Xu: Or issues that, that was…
+
+75
+00:09:30.230 --> 00:09:33.509
+Zhongzheng Xu: The most common when you're developing?
+
+76
+00:09:36.350 --> 00:09:38.219
+Ray Charles: Sorry, can you come again with your question?
+
+77
+00:09:38.590 --> 00:09:49.830
+Zhongzheng Xu: Oh, yeah, so, like, what type of bugs or issues that, you ran into the most often, or what was, like, the most common bugs that you had when you were developing?
+
+78
+00:09:50.090 --> 00:09:51.539
+Ray Charles: Okay, that's the chatbot.
+
+79
+00:09:55.410 --> 00:09:56.420
+Zhongzheng Xu: The, the what?
+
+80
+00:09:56.790 --> 00:09:58.379
+Ray Charles: The most common is the chatbot.
+
+81
+00:09:59.750 --> 00:10:08.330
+Zhongzheng Xu: No, I was asking, like, what type of bugs that you had? Like, what kind of issues that you had when you were developing?
+
+82
+00:10:08.800 --> 00:10:14.869
+Ray Charles: Oh, oh, okay, issues, Issues like, slow retrieval.
+
+83
+00:10:15.110 --> 00:10:26.680
+Ray Charles: agents can, you know, agents can conflict with each other, making, alignment difficult. By this, coordination and communication becomes unclear.
+
+84
+00:10:29.550 --> 00:10:33.129
+Zhongzheng Xu: Okay. And then, how did you,
+
+85
+00:10:33.430 --> 00:10:44.270
+Zhongzheng Xu: Could you tell me a little bit more in detail that, like, how did you, evaluate the system, or what was, like, the debugging process? So,
+
+86
+00:10:44.370 --> 00:10:54.179
+Zhongzheng Xu: for example, did you use any, so you said that you used the LaneChain, did you use any tool? So I know LaneChain has this,
+
+87
+00:10:54.190 --> 00:11:10.040
+Zhongzheng Xu: extra tool called, Lanesmith, which allows you to, you know, like, look at the output and monitor the system. How does you, monitor your system, and then just making sure everything is working as, expected?
+
+88
+00:11:10.650 --> 00:11:14.489
+Ray Charles: Okay, I tried to use end-to-end tax evaluation.
+
+89
+00:11:14.730 --> 00:11:23.309
+Ray Charles: you know, working per agent metrics, you know, this, treat agents is to separate models or tools, so I'll be able to
+
+90
+00:11:23.560 --> 00:11:26.839
+Ray Charles: and off some quality, so I use end-to-end.
+
+91
+00:11:30.810 --> 00:11:31.690
+Zhongzheng Xu: Okay.
+
+92
+00:11:33.210 --> 00:11:34.929
+Zhongzheng Xu: And,
+
+93
+00:11:38.310 --> 00:11:51.619
+Zhongzheng Xu: So, I, I, okay, so next question, so what was, like, the hardest, part of your, developing process, or, like, which part took the longest time?
+
+94
+00:12:01.780 --> 00:12:02.750
+Ray Charles: Are you there?
+
+95
+00:12:03.060 --> 00:12:05.030
+Zhongzheng Xu: Yeah, could you hear me?
+
+96
+00:12:05.500 --> 00:12:09.040
+Ray Charles: Yeah, I can hear you. The hardest and the most difficult
+
+97
+00:12:09.150 --> 00:12:14.180
+Ray Charles: Process of developing is on tax decomposition and assigning roads.
+
+98
+00:12:14.480 --> 00:12:18.220
+Ray Charles: You know, trying to communicate in context,
+
+99
+00:12:18.730 --> 00:12:24.569
+Ray Charles: to debug emergent behavior. Let me just say, the hardest part of developing is debugging.
+
+100
+00:12:26.260 --> 00:12:28.169
+Zhongzheng Xu: Is, is debugging?
+
+101
+00:12:28.940 --> 00:12:29.570
+Ray Charles: Yeah.
+
+102
+00:12:29.930 --> 00:12:32.469
+Ray Charles: Oh, okay. And.
+
+103
+00:12:32.470 --> 00:12:35.839
+Zhongzheng Xu: Well, like, what makes it hard, do you think?
+
+104
+00:12:37.830 --> 00:12:47.749
+Ray Charles: Okay, I think what makes it that is, trying to get the workflow, you know, we have many parts interacting at once.
+
+105
+00:12:47.850 --> 00:13:00.410
+Ray Charles: Yeah. So, we have some hidden coupling and imaging box, of which may cause some partial information and misalignment. So, to this, you have to be very concise and fast, keeping all agents aligned in a non-traditional.
+
+106
+00:13:02.370 --> 00:13:10.209
+Zhongzheng Xu: Okay, and then, like, the way you do that is, through… Being concise in the prompt.
+
+107
+00:13:10.210 --> 00:13:13.140
+Ray Charles: Being concise with the information, that will help.
+
+108
+00:13:14.220 --> 00:13:15.480
+Zhongzheng Xu: I see, I see.
+
+109
+00:13:15.590 --> 00:13:27.140
+Zhongzheng Xu: And then, so for your prompt, did you also kind of have to trial and error? So some of my other, participants mentioned that
+
+110
+00:13:27.140 --> 00:13:41.770
+Zhongzheng Xu: They often have to, you know, run the system a few times, and then, if something comes up, they will have to, like, manually, include that issue into the prompt.
+
+111
+00:13:41.770 --> 00:13:43.509
+Zhongzheng Xu: Things like that.
+
+112
+00:13:44.510 --> 00:13:54.499
+Ray Charles: Yeah, I… I… yes, you can absolutely try… use trial and error, but it works best if you make a structured and safe… safe, rather than purely an ad hoc.
+
+113
+00:13:54.650 --> 00:14:13.520
+Ray Charles: You can try the trial and error ball. Exploring prompts and rules. Illustratively trick some agents, you know, writing logic and traces where agents can stock or add value. So the best thing is to tune collaboration patterns. Like I said, working with planner to worker,
+
+114
+00:14:13.850 --> 00:14:20.249
+Ray Charles: and tax processes. That's being concise with your latency and the cost of the
+
+115
+00:14:20.350 --> 00:14:23.319
+Ray Charles: Time. Like, being fast and concise.
+
+116
+00:14:23.610 --> 00:14:25.080
+Ray Charles: But, you know,
+
+117
+00:14:25.220 --> 00:14:31.439
+Ray Charles: It's… it's… it can all be… it can also be safely through a sandbox and simulating.
+
+118
+00:14:31.850 --> 00:14:32.340
+Zhongzheng Xu: You know?
+
+119
+00:14:32.340 --> 00:14:41.319
+Ray Charles: in a controlled environment, off-testacks, rather than trial and error, we can use an off-testax synthetic or anonymized data
+
+120
+00:14:41.670 --> 00:14:44.539
+Ray Charles: So bad behavior has not affected the real datas.
+
+121
+00:14:45.520 --> 00:14:49.849
+Zhongzheng Xu: I see, I see. So you thought the sandbox was very helpful?
+
+122
+00:14:50.250 --> 00:14:50.920
+Ray Charles: Dear.
+
+123
+00:14:51.230 --> 00:14:52.040
+Zhongzheng Xu: I see.
+
+124
+00:14:53.360 --> 00:15:02.999
+Zhongzheng Xu: And, so… Okay, oh, wait. So, just to clarify, was this project,
+
+125
+00:15:03.300 --> 00:15:05.729
+Zhongzheng Xu: Developed for a company.
+
+126
+00:15:06.910 --> 00:15:14.390
+Ray Charles: Yeah, I… it's a private organization, though, so I'm using it for, my private need. It's not for a company.
+
+127
+00:15:15.190 --> 00:15:17.010
+Zhongzheng Xu: Okay, I see, I see.
+
+128
+00:15:17.670 --> 00:15:19.320
+Zhongzheng Xu: And.
+
+129
+00:15:21.020 --> 00:15:28.260
+Zhongzheng Xu: Was this, like, the only, project that you, implemented using multi-agent system?
+
+130
+00:15:28.870 --> 00:15:36.239
+Ray Charles: No, I have several, projects, but this was the one I can actually presume I work best. It worked best for me.
+
+131
+00:15:37.640 --> 00:15:38.500
+Zhongzheng Xu: Okay.
+
+132
+00:15:39.770 --> 00:15:44.889
+Zhongzheng Xu: Is there another, like, another project that also used multi-agent system?
+
+133
+00:15:45.510 --> 00:15:52.030
+Ray Charles: Yeah, there are other projects, like website, imaging, and
+
+134
+00:15:52.200 --> 00:16:06.659
+Ray Charles: feedback system, like imagery. You can send in pictures, encrypting pictures in a synchronized way, where you can have an image, whenever the patient's details is,
+
+135
+00:16:06.850 --> 00:16:10.089
+Ray Charles: It searched on, like, the automatic web searched.
+
+136
+00:16:12.550 --> 00:16:13.899
+Zhongzheng Xu: That's it.
+
+137
+00:16:14.590 --> 00:16:24.280
+Zhongzheng Xu: Okay, and let me ask you this. So, you said that you used, LaneChain as your, sort of, like, your agent framework.
+
+138
+00:16:24.510 --> 00:16:26.100
+Zhongzheng Xu: And then… Yeah.
+
+139
+00:16:26.640 --> 00:16:35.670
+Zhongzheng Xu: what did you… what did you like about using LaneChain, and what are some things that you would improve, in terms of the framework?
+
+140
+00:16:35.780 --> 00:16:40.990
+Zhongzheng Xu: Like, the abstraction, did you like, how you define tools?
+
+141
+00:16:43.160 --> 00:16:48.660
+Ray Charles: Okay, there are a lot of things to improve on, but the primary ones are…
+
+142
+00:16:48.970 --> 00:16:52.300
+Ray Charles: Clara agent topology and rules, you know.
+
+143
+00:16:52.450 --> 00:16:59.479
+Ray Charles: I… I really want… I really need to simplify agent graphs so they can be more narrower.
+
+144
+00:16:59.650 --> 00:17:12.289
+Ray Charles: Then I, I move towards hierarchical, goal-oriented decomposition, so that my orchestrator can spend less time micromanaging and delegating coherent chunks of work.
+
+145
+00:17:12.490 --> 00:17:15.629
+Ray Charles: So, that's the only thing I just have to work on.
+
+146
+00:17:17.000 --> 00:17:20.059
+Zhongzheng Xu: What are some other things?
+
+147
+00:17:22.569 --> 00:17:29.589
+Ray Charles: Okay, other things are peak tracking metrics and,
+
+148
+00:17:30.029 --> 00:17:34.509
+Ray Charles: Providing a reusable dashboard on a lot.
+
+149
+00:17:34.619 --> 00:17:50.879
+Ray Charles: That's to say, I… I have to… I need to have a particular framework on which I operate and inspect multi-agents on. You know, this will help my debugging and illiteration much more faster. So I have to prepare a graph, a lot.
+
+150
+00:17:50.999 --> 00:17:54.969
+Ray Charles: That contains some deboking, frameworks.
+
+151
+00:17:55.129 --> 00:17:57.759
+Ray Charles: So I have a pattern of workflow.
+
+152
+00:17:58.640 --> 00:18:02.479
+Ray Charles: This is the area I really need to, improve on.
+
+153
+00:18:05.360 --> 00:18:06.030
+Zhongzheng Xu: I see.
+
+154
+00:18:06.200 --> 00:18:09.140
+Zhongzheng Xu: Okay. And then…
+
+155
+00:18:09.870 --> 00:18:16.730
+Zhongzheng Xu: Just to be a little bit more in detail, like, what, like, what type of… feature, or…
+
+156
+00:18:17.570 --> 00:18:25.640
+Zhongzheng Xu: Interface that you think it would make the work, like, the pipeline or your system more transparent?
+
+157
+00:18:27.020 --> 00:18:29.610
+Ray Charles: Sorry, do you mind communicating with the question, please?
+
+158
+00:18:30.550 --> 00:18:41.339
+Zhongzheng Xu: Yeah, so, like, what type of, feature that you think can make your system more transparent, that, for, or, like, easier to debug?
+
+159
+00:18:42.530 --> 00:18:46.309
+Ray Charles: Okay, a lot of, things, can really help.
+
+160
+00:18:46.710 --> 00:18:55.760
+Ray Charles: But I would prefer, like I always say, the comprehensive tracing and logs. Having an end-to-end traces of every agent message is
+
+161
+00:18:55.960 --> 00:19:00.630
+Ray Charles: decision on INOF. Then, I also appreciate if I have a real-time
+
+162
+00:19:00.800 --> 00:19:04.730
+Ray Charles: Visual workflow diagram, showing agent interaction topology.
+
+163
+00:19:04.880 --> 00:19:20.060
+Ray Charles: This will answer who I'm talking to, whom are interesting, when and why. You know, explainability per agent will really help to choose, tools, like X, because why evidence.
+
+164
+00:19:20.060 --> 00:19:20.820
+Zhongzheng Xu: Yeah. Funk.
+
+165
+00:19:20.820 --> 00:19:27.410
+Ray Charles: Yes, yes. So to these, the features of our built-in metrics dashboard.
+
+166
+00:19:27.540 --> 00:19:35.850
+Ray Charles: you know, showing life stats and to track successes. Then, I will have, alerting anomalies, like unexpected agent behaviors.
+
+167
+00:19:35.980 --> 00:19:50.069
+Ray Charles: Something like a beep, you know, like an alarm to show you that you are out of track, or it can be a red pop-up, or an auto-generated page that might act as an executive summary of what happened.
+
+168
+00:19:50.170 --> 00:19:57.580
+Ray Charles: to this, I'll be able to have a prompt key decision, evidence-based and confidence course.
+
+169
+00:19:59.050 --> 00:20:09.610
+Zhongzheng Xu: I see. Okay. Yeah, that was… that was very helpful. And… So, okay.
+
+170
+00:20:10.260 --> 00:20:25.529
+Zhongzheng Xu: So, so not just the projects that you mentioned, so, like, for what type of problems do you think a multi-agent system worked the best, or it makes the most sense to implement a multi-agent system?
+
+171
+00:20:26.160 --> 00:20:26.940
+Ray Charles: Okay.
+
+172
+00:20:26.940 --> 00:20:27.630
+Zhongzheng Xu: tasks.
+
+173
+00:20:28.460 --> 00:20:36.459
+Ray Charles: Okay, types of problems are, you know, there are other ways to mitigate the problem, but it's miscommunication and of errors.
+
+174
+00:20:36.460 --> 00:20:39.049
+Zhongzheng Xu: This, system that I use,
+
+175
+00:20:39.130 --> 00:20:52.779
+Ray Charles: has led to some… so many duplicated works, and loops, and deadlocks. You know, I don't have the right to call it piracy, but I just see it as a rule overlap, and ambiguity.
+
+176
+00:20:52.890 --> 00:20:59.339
+Ray Charles: Showing some, local and… Global optimizing… optimization, rather.
+
+177
+00:21:00.540 --> 00:21:05.590
+Ray Charles: So, they have a link in similar, behaviors.
+
+178
+00:21:08.940 --> 00:21:09.960
+Zhongzheng Xu: Okay.
+
+179
+00:21:09.960 --> 00:21:11.060
+Ray Charles: And…
+
+180
+00:21:16.250 --> 00:21:25.790
+Zhongzheng Xu: Okay. And, so I… I feel like I asked this question before, but, so, like, what are the…
+
+181
+00:21:26.510 --> 00:21:31.460
+Zhongzheng Xu: The biggest challenges that, you had when you were developing?
+
+182
+00:21:32.550 --> 00:21:37.459
+Ray Charles: Missing… mis… That is a debugging and miscommunication.
+
+183
+00:21:38.030 --> 00:21:38.940
+Zhongzheng Xu: I see.
+
+184
+00:21:39.920 --> 00:21:43.250
+Zhongzheng Xu: Okay, and, like, what,
+
+185
+00:21:43.550 --> 00:21:50.540
+Zhongzheng Xu: So we talked about the input-out. Do you think there's anything that can help with the communication?
+
+186
+00:21:52.340 --> 00:21:53.800
+Ray Charles: Yeah, there are a lot of things.
+
+187
+00:21:57.640 --> 00:22:01.100
+Zhongzheng Xu: Mmm… Could you, yeah, definitely.
+
+188
+00:22:01.100 --> 00:22:03.870
+Ray Charles: Things that… there are things that could be done, like,
+
+189
+00:22:03.990 --> 00:22:10.369
+Ray Charles: using a standardized schema, like JSON with fixed field example, the
+
+190
+00:22:10.480 --> 00:22:14.619
+Ray Charles: Rule, the planner, the action, the end of the context. You know, this will help to
+
+191
+00:22:14.730 --> 00:22:22.169
+Ray Charles: adopt protocols like FYPAL or, KQML for speech acts.
+
+192
+00:22:24.600 --> 00:22:28.720
+Zhongzheng Xu: Okay, so, just, like, clearly defining the schemas.
+
+193
+00:22:28.980 --> 00:22:29.610
+Ray Charles: Yeah.
+
+194
+00:22:31.470 --> 00:22:32.470
+Zhongzheng Xu: I see.
+
+195
+00:22:33.580 --> 00:22:41.639
+Zhongzheng Xu: And, that was, okay, so that was all, actually, all the questions I have.
+
+196
+00:22:42.190 --> 00:22:44.849
+Zhongzheng Xu: And
+
+197
+00:22:45.170 --> 00:22:55.800
+Zhongzheng Xu: Thank you for participating, and I will… I'll send you the gift card. Is it okay if I use the same email that we used for contact?
+
+198
+00:22:56.770 --> 00:22:59.499
+Ray Charles: That's okay. You have to send it, Derek.
+
+199
+00:23:01.340 --> 00:23:02.140
+Zhongzheng Xu: Okay.
+
+200
+00:23:02.650 --> 00:23:05.370
+Ray Charles: You know, when am I… when are you using it at the moment?
+
+201
+00:23:07.930 --> 00:23:09.140
+Zhongzheng Xu: I'm sorry?
+
+202
+00:23:09.460 --> 00:23:12.230
+Ray Charles: Are you sending the card at the mo- at the moment?
+
+203
+00:23:12.440 --> 00:23:18.389
+Zhongzheng Xu: Yeah, yeah, just, stay in the Zoom for a second. I will…
+
+204
+00:23:19.270 --> 00:23:20.690
+Ray Charles: Okay, yeah.
+
+205
+00:24:08.880 --> 00:24:11.159
+Zhongzheng Xu: Okay, did you get an email?
+
+206
+00:24:20.260 --> 00:24:21.999
+Ray Charles: Alright, no problem, thank you.
+
+207
+00:24:22.450 --> 00:24:25.739
+Zhongzheng Xu: Okay, thank you so much, you have a good rest of your day.
+
+208
+00:24:26.060 --> 00:24:26.989
+Ray Charles: Thank you, bye.
+
+209
+00:24:27.280 --> 00:24:28.170
+Zhongzheng Xu: Thank you.
+

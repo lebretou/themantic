@@ -1,0 +1,95 @@
+{"speaker": "Interviewer", "text": "Okay, yeah, and let's go ahead and start. So, I'll start with a pretty basic, or pretty abstract question. So, what is your definition of a multi-agent system? And, for example, when you hear the term multi-agent system, like, what does it mean to you?"}
+{"speaker": "Participant", "text": "Please, you just have to try and be audible. I'm having difficulty hearing you."}
+{"speaker": "Interviewer", "text": "Oh, sorry."}
+{"speaker": "Participant", "text": "Are you there with me? You have to be audible."}
+{"speaker": "Interviewer", "text": "Can you hear me now?"}
+{"speaker": "Participant", "text": "Here, you're coming in with the question."}
+{"speaker": "Interviewer", "text": "Yeah, yeah, okay. Yeah, so I'll start with this abstract question. So what is your definition of a multi-agent system? And when you hear the term multi-agent system, like, what does it mean to you?"}
+{"speaker": "Participant", "text": "Okay, alright, thank you very much for your question. You know, to me, a multi-agent system is a computational or artificial intelligence system made up to have autonomous agents. You know, to interact with all the environment. It's a kind of system that makes decisions, acts, and overall system behavior emerges from the coordination of the agents."}
+{"speaker": "Interviewer", "text": "Okay, and could you tell me about one or two projects that you have developed in the past that use multi-agent systems?"}
+{"speaker": "Participant", "text": "Okay, like I felt earlier in my screen here. I've used it to compute a customer feedback system on a project, or on a system. Like, I'm working in the medical field, and I've used it in a pre-processing agent to, you know, normalize incoming images for analysis. And I also have a way that I can automate diagnosis from customer input. You know, even if I have everything framed, or just created, you know, it's a way I receive user input and decide which tool or models to work on them before, or after even seeing the patients."}
+{"speaker": "Interviewer", "text": "Okay, and then to develop that—could you also describe a little bit more in detail, like, each role of the agents and the functionality of each agent?"}
+{"speaker": "Participant", "text": "Okay, they have very varied functionality. And, like, I will still use my medical field example, because that is very unique to me. Their role is to make our image clearer and have precise information from a patient. Like, in the sense of functionality, I ingest raw X-ray, you know, MRI images to perform resizing, normalization, and artificial removal of artifacts from models, making the diagnosis very clear and precise. You know, the role there is to have a pattern recognizer."}
+{"speaker": "Interviewer", "text": "I see. Okay, and then, so for this project, did you use any framework? So for example, like, LangChain or LangGraph?"}
+{"speaker": "Participant", "text": "Yeah, I use multiple frameworks, like LangChain and PyTorch."}
+{"speaker": "Interviewer", "text": "I see. Okay, and then could you reiterate on what agents that you have?"}
+{"speaker": "Participant", "text": "Okay, I use agents like a critic and safety agent, generation agent, and retriever analytic agent. You know, they have different roles, playing in data insights provider, natural response, language responder, and also to make a quality policy checker, reviewing the LLM outputs for correctness, coherence, and policy compliance."}
+{"speaker": "Interviewer", "text": "I see. Okay, and then could you tell me a little bit more about the developing process? So, for example, did you have this overall architecture pretty clear in the beginning? And then, what are the steps you took to develop, for example, the system prompts and then the context?"}
+{"speaker": "Participant", "text": "Yes, I can. Okay, the steps are to make a design in such a way that it can define goals and scenarios, you know, clarifying the main objectives of the system."}
+{"speaker": "Interviewer", "text": "That, in this case, I'm using it for patient diagnosis, so..."}
+{"speaker": "Participant", "text": "I try to write two to three concrete user journeys to analyze the workflow so it's clear. You know, it depends on the input, the clarity of the input you're giving into the system. So, with this, I'm able to identify agents and roles in the system: planning, retrieval, analysis, generation, review, and reporting. You know, it works in steps. Then I group their responsibilities into agents. Like I said before, I have the orchestrators, retrievers, and analyzers. By this, they work on their clerical, retrieving, analyzing, and generating information. Then, I choose the interaction pattern and architecture. I might decide to use a centralized request or a more decentralized, event-driven setup. I'm setting it in a way that it maps out how agents will communicate with the APIs, function calls, and the context they share. So with this, I have a narrow path to select a framework and implement approaches. Picking the agent, like the LangChain multi-agent thing, I will then define a technical contract. You know, by this I'm now logging in to clear, check on errors, check on telemetry for each of the components. Then, the last one, I would just have to iterate with prototypes to evaluate the precision and accuracy, clarity of what the system has produced. Now, it is in my work and my space to refine prompts, routing logic, and safeguard the information by checking if there are actually failure cases, latency, and also to check quality metrics."}
+{"speaker": "Interviewer", "text": "I see. And then in the end, could you tell me a little bit about the overall structure of the prompt? Like, what were the components in the prompt?"}
+{"speaker": "Participant", "text": "Okay, the overall structure of the prompt needs to be very concise and brief. You know, starting with a short statement of the overall objective, my team and I try to group the agents into collaborative constraints."}
+{"speaker": "Interviewer", "text": "Dana."}
+{"speaker": "Participant", "text": "We set up their capabilities. You know, in my workflow, I try to analyze the Planner, breaking down user goals into steps from the Retriever and the web search called Vipro. By this, I'm able to review output for correction and safety. Then, the overall steps are just to collaborate and communicate, define how agents work with each other, include explicit formats for messaging, output format for evaluation. Then I approved, but this approval is somehow optional because I might decide to add some internal evaluation instruction just to respond to the specification. By this, I will either approve or revise the issue."}
+{"speaker": "Interviewer", "text": "Okay, thanks for sharing. And so, can I ask you, what type of bugs or issues were the most common when you were developing?"}
+{"speaker": "Participant", "text": "Sorry, could you ask your question again?"}
+{"speaker": "Interviewer", "text": "Oh yeah, so like, what type of bugs or issues did you run into the most often, or what were the most common bugs that you had when you were developing?"}
+{"speaker": "Participant", "text": "Okay, that's the chatbot."}
+{"speaker": "Interviewer", "text": "What?"}
+{"speaker": "Participant", "text": "The most common is the chatbot."}
+{"speaker": "Interviewer", "text": "No, I was asking, like, what type of bugs you had? Like, what kind of issues you had when you were developing?"}
+{"speaker": "Participant", "text": "Oh, okay. Issues like slow retrieval. Agents can, you know, agents can conflict with each other, making alignment difficult. By this, coordination and communication becomes unclear."}
+{"speaker": "Interviewer", "text": "Okay. And then, could you tell me a little bit more in detail about how you evaluated the system or what was the debugging process? For example, did you use any tools? So you said that you used LangChain. Did you use any tool? I know LangChain has this extra tool called LangSmith, which allows you to look at the output and monitor the system. How do you monitor your system and then make sure everything is working as expected?"}
+{"speaker": "Participant", "text": "Okay, I tried to use end-to-end task evaluation. You know, working per agent metrics, you know, this treats agents as separate models or tools, so I'll be able to add some quality. So I use end-to-end."}
+{"speaker": "Interviewer", "text": "Okay, so the next question is: what was the hardest part of your development process, or which part took the longest time?"}
+{"speaker": "Participant", "text": "Are you there?"}
+{"speaker": "Interviewer", "text": "Yeah, can you hear me?"}
+{"speaker": "Participant", "text": "Yeah, I can hear you. The hardest and most difficult process of developing is task decomposition and assigning roles. You know, trying to communicate in context, to debug emergent behavior. Let me just say, the hardest part of developing is debugging."}
+{"speaker": "Interviewer", "text": "Is debugging?"}
+{"speaker": "Participant", "text": "Yeah, okay."}
+{"speaker": "Interviewer", "text": "Well, like, what makes it hard, do you think?"}
+{"speaker": "Participant", "text": "Okay, I think what makes it that is trying to get the workflow, you know, we have many parts interacting at once. Yeah. So we have some hidden coupling and imaging bottleneck, which may cause some partial information and misalignment. So to this, you have to be very concise and fast, keeping all agents aligned in a non-traditional way."}
+{"speaker": "Interviewer", "text": "Okay, and then the way you do that is through being concise in the prompt."}
+{"speaker": "Participant", "text": "Being concise with the information will help."}
+{"speaker": "Interviewer", "text": "I see. And then, for your prompt, did you also kind of have to trial and error? So some of my other participants mentioned that they often have to run the system a few times, and then, if something comes up, they will have to manually include that issue into the prompt. Things like that."}
+{"speaker": "Participant", "text": "Yeah, I… yes, you can absolutely try using trial and error, but it works best if you make a structured and safe approach rather than purely ad hoc. You can try the trial and error approach, exploring prompts and rules. Illustratively, trick some agents, you know, writing logic and traces where agents can stock or add value. So the best thing is to tune collaboration patterns. Like I said, working with planner to worker, and task processes. That's being concise with your latency and the cost of time. Like, being fast and concise. But, you know, it can all be done safely through a sandbox and simulating."}
+{"speaker": "Interviewer", "text": "You know?"}
+{"speaker": "Participant", "text": "In a controlled environment, off-the-shelf, rather than trial and error, we can use an off-the-shelf synthetic or anonymized data so bad behavior has not affected the real data."}
+{"speaker": "Interviewer", "text": "I see. So you thought the sandbox was very helpful?"}
+{"speaker": "Participant", "text": "Dear."}
+{"speaker": "Interviewer", "text": "I see. And so, okay, wait. So just to clarify, was this project developed for a company?"}
+{"speaker": "Participant", "text": "Yeah, I'm using it for my private needs. It's not for a company."}
+{"speaker": "Interviewer", "text": "Okay, I see. And was this like the only project that you implemented using a multi-agent system?"}
+{"speaker": "Participant", "text": "No, I have several projects, but this was the one I can actually say I work best with. It worked best for me."}
+{"speaker": "Interviewer", "text": "Okay. Is there another project that also used a multi-agent system?"}
+{"speaker": "Participant", "text": "Yeah, there are other projects, like website imaging and feedback systems with imagery. You can send in pictures, encrypting pictures in a synchronized way, where you can have an image whenever the patient's details are searched, like with automatic web search."}
+{"speaker": "Interviewer", "text": "That's it. Okay, and let me ask you this. So, you said that you used LangChain as your sort of agent framework. And then, yeah. What did you like about using LangChain, and what are some things that you would improve in terms of the framework? Like, the abstraction—did you like how you define tools?"}
+{"speaker": "Participant", "text": "Okay, there are a lot of things to improve on, but the primary ones are Clara agent topology and rules, you know. I really want to simplify agent graphs so they can be narrower. Then I move towards hierarchical, goal-oriented decomposition, so that my orchestrator can spend less time micromanaging and delegating coherent chunks of work. So, that's the main thing I just have to work on."}
+{"speaker": "Interviewer", "text": "What are some other things?"}
+{"speaker": "Participant", "text": "Okay, other things are peak tracking metrics and providing a reusable dashboard on a lot. That's to say, I need to have a particular framework on which I operate and inspect multi-agents on. You know, this will help my debugging and iteration much more faster. So I have to prepare a graph, a lot, that contains some debugging frameworks. So I have a pattern of workflow. This is the area I really need to improve on."}
+{"speaker": "Interviewer", "text": "I see. Okay. And then, just to be a little bit more in detail, what type of feature or interface do you think would make the work, like the pipeline or your system, more transparent?"}
+{"speaker": "Participant", "text": "Could you please rephrase the question for me?"}
+{"speaker": "Interviewer", "text": "Yeah, so what type of feature do you think can make your system more transparent or easier to debug?"}
+{"speaker": "Participant", "text": "Okay, a lot of things can really help. But I would prefer, like I always say, comprehensive tracing and logs. Having end-to-end traces of every agent message and decision is important. Then, I also appreciate having a real-time visual workflow diagram showing agent interaction topology. This will answer who I'm talking to, which agents are interesting, when, and why. You know, explainability per agent will really help to choose tools, like X, because of the evidence."}
+{"speaker": "Interviewer", "text": "Yeah, fun."}
+{"speaker": "Participant", "text": "Yes. So these are the features of our built-in metrics dashboard, you know, showing live stats and tracking successes. Then I will have alerting for anomalies, like unexpected agent behaviors. Something like a beep, you know, like an alarm to show you that you are off track, or it can be a red pop-up, or an auto-generated page that might act as an executive summary of what happened. With this, I'll be able to have a prompt key decision based on evidence and confidence scores."}
+{"speaker": "Interviewer", "text": "I see. Okay. Yeah, that was very helpful. So, for what type of problems do you think a multi-agent system worked the best, or when does it make the most sense to implement a multi-agent system?"}
+{"speaker": "Participant", "text": "Okay."}
+{"speaker": "Interviewer", "text": "I notice the text provided contains only the word \"tasks.\" with a period. There are no transcription errors, stutters, grammar errors, or spelling errors to correct in this minimal fragment.\n\ntasks."}
+{"speaker": "Participant", "text": "Okay, types of problems are, you know, there are other ways to mitigate the problem, but it's miscommunication and errors."}
+{"speaker": "Interviewer", "text": "This system that I use,"}
+{"speaker": "Participant", "text": "has led to some so many duplicated works and loops and deadlocks. You know, I don't have the right to call it piracy, but I just see it as a rule overlap and ambiguity, showing some local and global optimization rather. So they have a link in similar behaviors."}
+{"speaker": "Interviewer", "text": "Okay."}
+{"speaker": "Participant", "text": "I'm ready to help you transcribe and correct interview text about LLM-based multi-agent systems. However, it seems you've only provided \"And…\" which appears to be incomplete.\n\nPlease provide the full text that needs to be corrected, and I'll fix any transcription errors, grammar issues, spelling mistakes, and remove any stuttering while maintaining the natural flow of the conversation."}
+{"speaker": "Interviewer", "text": "Okay. And so I feel like I asked this question before, but what are the biggest challenges that you had when you were developing?"}
+{"speaker": "Participant", "text": "Missing... that is a debugging and miscommunication issue."}
+{"speaker": "Interviewer", "text": "I see. Okay, and like, so we talked about the input-output. Do you think there's anything that can help with the communication?"}
+{"speaker": "Participant", "text": "Yeah, there are a lot of things."}
+{"speaker": "Interviewer", "text": "Mm, yeah, definitely."}
+{"speaker": "Participant", "text": "Things that could be done, like using a standardized schema, like JSON with fixed fields—for example, the Rule, the Planner, the Action, the end of the Context. You know, this will help to adopt protocols like FIPA or KQML for speech acts."}
+{"speaker": "Interviewer", "text": "Okay, so just clearly defining the schemas."}
+{"speaker": "Participant", "text": "Yeah."}
+{"speaker": "Interviewer", "text": "I see. And that was all the questions I have. Thank you for participating, and I'll send you the gift card. Is it okay if I use the same email that we used for contact?"}
+{"speaker": "Participant", "text": "That's okay. You have to send it, Derek."}
+{"speaker": "Interviewer", "text": "Okay."}
+{"speaker": "Participant", "text": "You know, when are you using it at the moment?"}
+{"speaker": "Interviewer", "text": "I'm sorry?"}
+{"speaker": "Participant", "text": "Are you sending the card at the moment?"}
+{"speaker": "Interviewer", "text": "Yeah, just stay in the Zoom for a second. I will…"}
+{"speaker": "Participant", "text": "Okay, yeah."}
+{"speaker": "Interviewer", "text": "Okay, did you get an email?"}
+{"speaker": "Participant", "text": "Alright, no problem, thank you."}
+{"speaker": "Interviewer", "text": "Okay, thank you so much. You have a good rest of your day."}
+{"speaker": "Participant", "text": "Thank you. Bye."}
+{"speaker": "Interviewer", "text": "Thank you."}

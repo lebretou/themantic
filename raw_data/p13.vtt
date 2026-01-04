@@ -1,0 +1,638 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:05.830
+Sean: Each agent has… Oh, sorry, she'll diced it again.
+
+2
+00:00:05.830 --> 00:00:11.269
+Zhongzheng Xu: Oh, okay, that was my bad. Please start over.
+
+3
+00:00:11.740 --> 00:00:27.909
+Sean: Sure, no problem. So, multi-agent system, as I said, is just a setup where multiple independent agents, do work together within the, within the same environment to achieve a certain goal.
+
+4
+00:00:27.910 --> 00:00:40.350
+Sean: So, each agent, has its own role of, responsibility, and they can make decisions on their own, but they also need to communicate or coordinate with other agents.
+
+5
+00:00:42.320 --> 00:00:44.270
+Zhongzheng Xu: Okay,
+
+6
+00:00:44.450 --> 00:00:55.910
+Zhongzheng Xu: And, could you tell me about, one or two representative projects that you have done in the past that have used a multi-agent system? You can start from, like.
+
+7
+00:00:55.930 --> 00:01:08.129
+Zhongzheng Xu: what was the overall goal of the system, and then, what are the… what are the distinct agents that, were present in the system? Yeah.
+
+8
+00:01:10.150 --> 00:01:16.120
+Sean: Okay, well, so… Personally, I… I…
+
+9
+00:01:16.850 --> 00:01:36.390
+Sean: One representative project I worked on was, it was a task automation system where the goal was to handle a workflow from, you know, start to finish without, human intervention. The system, it needed to collect data, process it, and then make a decision based on certain roles.
+
+10
+00:01:36.390 --> 00:01:53.400
+Sean: So, in that system, there are a few distinct agents. One agent was responsible for data collection, like pulling information from different sources. Another agent focused on analyzing the data and checking it against our predefined conditions.
+
+11
+00:01:53.400 --> 00:02:09.920
+Sean: Then, there was a decision-making agent that, looked, that it took the analyzed, results and decided what action to take next, such as, you know, triggering, another process of regenerating an output.
+
+12
+00:02:10.580 --> 00:02:21.470
+Sean: The other project was, more simulation-based, you know, the goal was, was to model how different entities interact in a shared environment.
+
+13
+00:02:21.560 --> 00:02:41.250
+Sean: Because each agent represented an independent entity that could observe its surroundings, make decisions, and react to other agents. So the challenges there was making sure the agents didn't conflict with each other, and that their interactions felt realistic.
+
+14
+00:02:42.370 --> 00:02:44.769
+Zhongzheng Xu: Okay, and then…
+
+15
+00:02:45.020 --> 00:02:54.259
+Zhongzheng Xu: I have several questions. So, would you mind telling me, what kind of data that you're, that the system handles?
+
+16
+00:02:55.670 --> 00:02:58.039
+Zhongzheng Xu: It's okay if you don't want to share.
+
+17
+00:02:58.910 --> 00:03:15.860
+Sean: No problem, no problem. So, the type of data the system handled depended… it depended on the project itself, you know. But in general, it was structured and semi-structured data. For example, in the task automation system, the agent
+
+18
+00:03:15.860 --> 00:03:21.690
+Sean: worked with things like JSON data logs, you know, user input and system outputs.
+
+19
+00:03:21.690 --> 00:03:37.490
+Sean: So, because the data usually included timestamps, things like key-value pairs that helped agents understand what stage the process was in. In the simulation project, the data was more state-based.
+
+20
+00:03:37.560 --> 00:03:48.940
+Sean: Meaning, each data… each agent had data, about its own state, like position, status, or recent actions, and also shared data, about the environment.
+
+21
+00:03:49.880 --> 00:03:50.580
+Zhongzheng Xu: Okay.
+
+22
+00:03:50.890 --> 00:04:00.800
+Zhongzheng Xu: I see. And then, for this project, did you use any framework, such as, LaneChain or LaneGraph, or did you build it from scratch?
+
+23
+00:04:03.740 --> 00:04:21.019
+Sean: Yes, that project, I did use Framework to help manage the agent. I mainly used Langchain to structure the agent and handle how they interact with the tasks and the data. It helped me define agent roles more clearly and manage tool usage and the memory.
+
+24
+00:04:21.740 --> 00:04:22.829
+Zhongzheng Xu: I see, I see.
+
+25
+00:04:22.960 --> 00:04:24.689
+Zhongzheng Xu: And
+
+26
+00:04:24.850 --> 00:04:33.539
+Zhongzheng Xu: So, for this project, when you were still developing, what was, like, the biggest,
+
+27
+00:04:33.910 --> 00:04:38.989
+Zhongzheng Xu: Challenge that you had, or, for example, like, which part took the longest time?
+
+28
+00:04:39.010 --> 00:04:55.080
+Zhongzheng Xu: For example, my… some of my other interviewees said that they spent a lot of time on refining the system prompts. Other people were saying they had to handle errors and unexpected behaviors from the
+
+29
+00:04:55.080 --> 00:05:00.549
+Zhongzheng Xu: the LLMs. Yeah, feel free to share any challenge that you had.
+
+30
+00:05:01.500 --> 00:05:10.649
+Sean: Oh, sure. My biggest challenge during development was getting the agents to coordinate properly with each other. That part took the longest time.
+
+31
+00:05:11.130 --> 00:05:29.529
+Sean: Individually, each agent worked fine, but once they started interacting, small issues will create bigger problems, like agents repeating tasks, waiting on each other, or, you know, passing incomplete information. So, a lot of time went into debugging and testing those interactions.
+
+32
+00:05:29.530 --> 00:05:47.690
+Sean: I had to add, logging and step through different scenarios to understand why an agent made a certain decision. So, making sure the agent stayed aligned with our overall goal, especially when something unexpected happened, was the most time-consuming part of the project.
+
+33
+00:05:48.090 --> 00:05:57.260
+Zhongzheng Xu: Mmm, I see, I see. So in the end, what were something that helped with that, helped with the coordination that we mentioned?
+
+34
+00:06:00.090 --> 00:06:01.490
+Sean: Okay, so…
+
+35
+00:06:02.010 --> 00:06:21.560
+Sean: What helped the most was adding more structure on how the agents communicated and interacted, because I defined clear rules for when an agent could act and when it had to wait for input from another agent. Because having a shared state of common memory also helped, so all agents
+
+36
+00:06:21.560 --> 00:06:24.409
+Sean: Had access to the same up-to-date information.
+
+37
+00:06:24.840 --> 00:06:26.310
+Zhongzheng Xu: I see, I see.
+
+38
+00:06:26.580 --> 00:06:31.080
+Zhongzheng Xu: And is that mostly, like, engineering?
+
+39
+00:06:31.730 --> 00:06:42.220
+Zhongzheng Xu: Like, you, you clearly defined, you know, like, the action and stopping criteria, or was that through, system prompts as well?
+
+40
+00:06:46.540 --> 00:06:47.929
+Sean: Oh, well, so…
+
+41
+00:06:48.320 --> 00:07:05.849
+Sean: It was mostly engineering, because I clearly defined the actions each agent could take, and the, you know, the stopping criteria for tasks, because I set the rules and conditions in the system, so agents knew when to start, pause, or finish the task.
+
+42
+00:07:05.850 --> 00:07:21.759
+Sean: I did use system prompts in some cases, especially for agents that had to generate text or interact with external tools, but the main coordination and decision-making were controlled through the engineered tools, rather than relying on prompts.
+
+43
+00:07:22.670 --> 00:07:25.730
+Zhongzheng Xu: I see, I see. And then…
+
+44
+00:07:25.930 --> 00:07:32.009
+Zhongzheng Xu: Since you mentioned tools, I think some of my other interviewees said that
+
+45
+00:07:32.200 --> 00:07:36.439
+Zhongzheng Xu: When there were tools presented to agents,
+
+46
+00:07:36.640 --> 00:07:54.659
+Zhongzheng Xu: sometimes they don't know how to choose, you know, the right tool, given some task, and there's some inconsistency in the scenarios, when they choose a tool. Was that kind of relevant to you, or…
+
+47
+00:07:57.910 --> 00:07:59.200
+Zhongzheng Xu: Or… or no?
+
+48
+00:08:00.950 --> 00:08:12.460
+Sean: Okay. So, yes, that was definitely relevant, because sometimes the agents didn't pick the best tool for a task, especially when multiple tools could do similar things.
+
+49
+00:08:12.520 --> 00:08:27.880
+Sean: caused inconsistency and slowed down the process. Now, to handle that, I had to add some rules and scoring logic to guide the agent's choices. And I also tested scenarios repeatedly to see which tools agent
+
+50
+00:08:27.880 --> 00:08:36.129
+Sean: Tended to pick and adjusted the prompts or, or constraints so that the agents will make more consistent decisions.
+
+51
+00:08:36.530 --> 00:08:42.049
+Zhongzheng Xu: Okay, and then the constraints were added through prompts, I guess.
+
+52
+00:08:42.730 --> 00:08:43.350
+Sean: Yeah.
+
+53
+00:08:43.559 --> 00:08:44.259
+Zhongzheng Xu: Okay.
+
+54
+00:08:44.359 --> 00:08:46.229
+Zhongzheng Xu: And
+
+55
+00:08:46.309 --> 00:08:55.269
+Zhongzheng Xu: Could you tell me a little bit about, how did you debug the system? Did you rely on any tools? So…
+
+56
+00:08:55.269 --> 00:09:11.339
+Zhongzheng Xu: for example, some of my other interviewees mentioned that they were… it was rather more manual for them. They were checking, you know, the inputs and outputs for each agent. Some other people used,
+
+57
+00:09:11.439 --> 00:09:17.949
+Zhongzheng Xu: like, external tools. For example, I know how, LaneChain has this
+
+58
+00:09:18.369 --> 00:09:22.029
+Zhongzheng Xu: tool called LaneGraph, for them to monitor the system.
+
+59
+00:09:24.320 --> 00:09:25.610
+Sean: Okay, awesome.
+
+60
+00:09:26.590 --> 00:09:27.770
+Zhongzheng Xu: Sorry, go ahead.
+
+61
+00:09:28.100 --> 00:09:46.090
+Sean: Okay, so… so, for me, debugging was mostly a mix of manual checking and, using some of, some basic tools. Now, I set up logging for each agent so I could see what decisions they were making and what data they were sending or receiving.
+
+62
+00:09:46.090 --> 00:09:51.510
+Sean: You know, that helped me track where most, where I was going wrong most of the time.
+
+63
+00:09:51.520 --> 00:10:08.969
+Sean: I also tested the systems in smaller steps, like running one agent at a time, or running a small scenario instead of the full system. I feel like that made it easier to isolate problems. I didn't use any fancy debugging tool.
+
+64
+00:10:08.970 --> 00:10:13.779
+Sean: Most of it was just checking inputs, outputs, and log sche
+
+65
+00:10:13.920 --> 00:10:18.269
+Sean: Carefully, then adjusting roles or prompts to fix the issues.
+
+66
+00:10:18.850 --> 00:10:22.389
+Zhongzheng Xu: I see, I see. And
+
+67
+00:10:22.820 --> 00:10:27.230
+Zhongzheng Xu: So, since you said you used LandChain,
+
+68
+00:10:28.610 --> 00:10:31.499
+Zhongzheng Xu: If you have to, like, brainstorm.
+
+69
+00:10:31.620 --> 00:10:34.980
+Zhongzheng Xu: What were something that you think
+
+70
+00:10:35.330 --> 00:10:45.640
+Zhongzheng Xu: like, what are some improvements that you would add to LaneChain, so that, you know, your development process can be easier?
+
+71
+00:10:49.650 --> 00:10:50.660
+Sean: Okay, so…
+
+72
+00:10:51.420 --> 00:11:09.870
+Sean: If I could improve it, I will add better building tools for agent coordination and debugging. For example, a visual interface that shows how agents are interacting in real time. That would be really helpful. Right now, I spend a lot of time checking logs and trying to figure out
+
+73
+00:11:09.870 --> 00:11:12.650
+Sean: Where things go wrong. So, something like…
+
+74
+00:11:12.650 --> 00:11:29.159
+Sean: a live map of agent actions will save time. I would also like smarter suggestions for tool selection, so agents could, more consistently pick the best tool for the task without needing as many rules as manual adjustment.
+
+75
+00:11:29.690 --> 00:11:30.999
+Zhongzheng Xu: Mmm, I see.
+
+76
+00:11:31.120 --> 00:11:35.790
+Zhongzheng Xu: And since we mentioned visual interface,
+
+77
+00:11:36.520 --> 00:11:39.210
+Zhongzheng Xu: Could you imagine that? Like…
+
+78
+00:11:39.480 --> 00:11:41.950
+Zhongzheng Xu: What is going to be on that interface?
+
+79
+00:11:44.350 --> 00:11:46.120
+Sean: On the visual interface.
+
+80
+00:11:46.280 --> 00:11:55.280
+Zhongzheng Xu: Yeah, yeah, for the visual interface that you mentioned, that, that that can help you monitor, the interaction in real time.
+
+81
+00:11:55.870 --> 00:12:15.270
+Sean: Oh, sure, I got you. So, I feel like the interface will show a kind of map or flow of all the agents in the system, whereby each agent will be represented by a box or something like a nod, and arrows will show how they are communicating or passing the data.
+
+82
+00:12:15.270 --> 00:12:32.309
+Sean: You could click on an agent to see its current state, what task it's working on, and what data it's just receiving, or the data it's sending. So, it could also have a timeline or step-by-step view, so you can watch.
+
+83
+00:12:32.310 --> 00:12:32.770
+Zhongzheng Xu: which…
+
+84
+00:12:32.840 --> 00:12:36.619
+Sean: Agents act overtime and see where problems happen.
+
+85
+00:12:37.530 --> 00:12:38.800
+Zhongzheng Xu: I see, I see.
+
+86
+00:12:38.990 --> 00:12:45.600
+Zhongzheng Xu: So, I know that there's, there's, this…
+
+87
+00:12:45.780 --> 00:12:51.790
+Zhongzheng Xu: Or this type of tools, doubt.
+
+88
+00:12:52.070 --> 00:13:07.070
+Zhongzheng Xu: itself is like a visual interface, and then you don't really need to write code. In order to build a multi-agent system, you kind of just, like, you drag and drop the boxes or the nodes.
+
+89
+00:13:09.650 --> 00:13:10.640
+Sean: Is it…
+
+90
+00:13:10.900 --> 00:13:15.129
+Zhongzheng Xu: Have you heard of, these type of tools? And,
+
+91
+00:13:15.410 --> 00:13:17.319
+Zhongzheng Xu: Did you think about, like, using them?
+
+92
+00:13:21.320 --> 00:13:22.990
+Sean: Well,
+
+93
+00:13:23.300 --> 00:13:39.440
+Sean: I have heard of those drag-and-drop tools. They seem interesting because you can visually set up agents and their interactions without writing too much code. I did think about using them, but for my projects, I preferred coding directly.
+
+94
+00:13:39.920 --> 00:13:41.500
+Zhongzheng Xu: Hmm, I see, I see.
+
+95
+00:13:41.680 --> 00:13:57.090
+Zhongzheng Xu: Yeah, so I think some of my other participants also mentioned that, you know, like, these tools are there, and they're cool, but they don't offer as much flexibility as just, you know, using Python and code.
+
+96
+00:13:57.090 --> 00:14:04.310
+Zhongzheng Xu: And I think you're not the only one that mentioned, that instead of, like, you know, using those tools.
+
+97
+00:14:04.350 --> 00:14:07.890
+Zhongzheng Xu: From the very beginning, it's… it's maybe better to have
+
+98
+00:14:08.250 --> 00:14:15.740
+Zhongzheng Xu: Just a visual interface that can, you know, monitor the system they built, like, in real time, that they built using code.
+
+99
+00:14:16.290 --> 00:14:16.960
+Sean: Yo.
+
+100
+00:14:18.400 --> 00:14:19.340
+Zhongzheng Xu: I see, I see.
+
+101
+00:14:20.240 --> 00:14:32.250
+Zhongzheng Xu: And… So… Sorry, just let me tell… let me locate the questions real quick.
+
+102
+00:14:32.660 --> 00:14:33.600
+Sean: No problem.
+
+103
+00:14:48.500 --> 00:14:56.830
+Zhongzheng Xu: Okay, and… So, is this the only,
+
+104
+00:14:57.330 --> 00:15:02.899
+Zhongzheng Xu: Have you built, any other systems that also used multi-agent system?
+
+105
+00:15:06.780 --> 00:15:09.730
+Sean: Well, yeah, I, I, I have…
+
+106
+00:15:09.840 --> 00:15:24.170
+Sean: worked on another project as well. It was a simulation system where agents represented different entities in a shared environment, where the goal was to see how they interact and respond to changes in the environment, or actions from other agents.
+
+107
+00:15:24.170 --> 00:15:34.039
+Sean: So, in that system, each agent had its own behavior rules, like moving, reacting, or making decisions based on what other agents did.
+
+108
+00:15:34.130 --> 00:15:52.999
+Sean: The challenge there was making sure the interactions felt realistic and the agents didn't conflict or get stuck in loops, you know. It was more about studying behavior and coordination than completing a specific task, unlike the task automation system I mentioned earlier.
+
+109
+00:15:53.650 --> 00:16:01.890
+Zhongzheng Xu: I see, I see. And I'm guessing that one is more about, refining system prompts?
+
+110
+00:16:02.710 --> 00:16:03.330
+Zhongzheng Xu: Or…
+
+111
+00:16:03.330 --> 00:16:04.340
+Sean: Yeah, yeah.
+
+112
+00:16:04.340 --> 00:16:05.940
+Zhongzheng Xu: Okay. Okay.
+
+113
+00:16:06.280 --> 00:16:13.929
+Zhongzheng Xu: And then… So for two… for the two projects that, you shared.
+
+114
+00:16:13.940 --> 00:16:30.160
+Zhongzheng Xu: Just specifically thinking about system prompts, do you think, in the end, there's some sort of structure, to the system prompts? So, for example, are there certain components that are always there?
+
+115
+00:16:30.340 --> 00:16:38.559
+Zhongzheng Xu: I would imagine there to be, like, you know, the inputs and outputs, like, for inputs, what kind of data, or what kind of…
+
+116
+00:16:38.720 --> 00:16:52.470
+Zhongzheng Xu: what type of information, what type of input that you'll be getting, and, what type of, like, outputs that you should be sending out to other agents or to the user. And also, like, tool information.
+
+117
+00:16:52.570 --> 00:16:56.699
+Zhongzheng Xu: Do you think there's some consistency in that?
+
+118
+00:16:59.980 --> 00:17:17.149
+Sean: Well, yeah, in both projects, there ended up being a kind of structure to the system prompts, even if it wasn't formally written down at first, because usually a prompt had a few consistent components. So, first, the inputs
+
+119
+00:17:17.359 --> 00:17:22.089
+Sean: They included data the agents had to access to.
+
+120
+00:17:22.560 --> 00:17:37.329
+Sean: like, its own state, recent actions, information from other agents, or, things like environmental data. Then, the instructions of folks which guided, what the agents should do, with the data.
+
+121
+00:17:37.410 --> 00:17:48.579
+Sean: So, this part often included, constraints like, don't repeat the tests, or, only act if certain conditions are met.
+
+122
+00:17:48.580 --> 00:18:04.230
+Sean: So, next was the expected outputs, which defined what the agent should return, like messages or, other agents' actions to take, or results to report the user. Finally, there was,
+
+123
+00:18:04.230 --> 00:18:18.410
+Sean: sometimes tool information, especially if the agent needed to call out an external tool, like an API or a database. The prompt will include when and how to use the tool.
+
+124
+00:18:19.450 --> 00:18:20.720
+Zhongzheng Xu: I see, I see.
+
+125
+00:18:21.840 --> 00:18:26.790
+Zhongzheng Xu: And… Okay, that was really helpful.
+
+126
+00:18:27.280 --> 00:18:37.040
+Zhongzheng Xu: And… So… Okay, I'm going… I'm gonna go back to… Some…
+
+127
+00:18:37.890 --> 00:18:44.750
+Zhongzheng Xu: abstract questions, so it doesn't have to be about the two projects that you shared. So, so…
+
+128
+00:18:44.860 --> 00:18:59.300
+Zhongzheng Xu: Generally, for what type of problems do you think a multi-agent system work the best, and for what type of scenarios that it may not be the most optimal choice?
+
+129
+00:19:02.950 --> 00:19:03.760
+Sean: Okay.
+
+130
+00:19:05.280 --> 00:19:09.800
+Sean: If I answer it wrongly, you can just tell me and I can rephrase it.
+
+131
+00:19:09.800 --> 00:19:10.280
+Zhongzheng Xu: Trust me.
+
+132
+00:19:10.320 --> 00:19:13.050
+Sean: to be sure I got you correctly.
+
+133
+00:19:14.420 --> 00:19:23.110
+Sean: So, I think MAS would, best, would be… Best fix problems that
+
+134
+00:19:23.110 --> 00:19:40.600
+Sean: can be broken down into smaller tasks that can be handled independently, but still needs some coordination. For example, tasks like simulations, scheduling, workflow automations, or managing multiple resources at the same time are
+
+135
+00:19:40.660 --> 00:19:43.769
+Sean: some examples of, I think they are a good fit.
+
+136
+00:19:44.130 --> 00:19:56.510
+Sean: They are also useful when you want flexibility and scalability, because adding more agents can, help, handle bigger or more complex, problems.
+
+137
+00:19:57.480 --> 00:19:58.940
+Zhongzheng Xu: Hmm, I see.
+
+138
+00:20:00.860 --> 00:20:01.660
+Zhongzheng Xu: I see.
+
+139
+00:20:02.060 --> 00:20:04.009
+Zhongzheng Xu: And.
+
+140
+00:20:04.920 --> 00:20:05.920
+Sean: So…
+
+141
+00:20:09.440 --> 00:20:26.260
+Zhongzheng Xu: Okay, and, I, I know maybe I have already asked, this question, but, just ending this, this interview study, if you can think of any, so, first of all, think about…
+
+142
+00:20:26.500 --> 00:20:35.379
+Zhongzheng Xu: like, generally the challenges that you have, when you're developing these systems. And then, what are some…
+
+143
+00:20:35.500 --> 00:20:47.599
+Zhongzheng Xu: Features that you wish that there were, in the framework, or in your debugging process, or, in your evaluation and testing process?
+
+144
+00:20:51.170 --> 00:20:59.350
+Sean: Okay, sure, so… if I may think it through, I'll mention,
+
+145
+00:20:59.440 --> 00:21:15.809
+Sean: Generally, the biggest challenges that I've faced when developing MAS systems are around coordination, tool selection, and debugging. Now, coordination can get tricky when agents start interacting in unexpected ways, and sometimes they pick
+
+146
+00:21:15.810 --> 00:21:30.950
+Sean: the wrong tools or make inconsistent decisions. Debugging, on the other hand, takes a lot of time, because there are many agents acting at the same time, and it's hard to see what went wrong without carefully checking the logs and output.
+
+147
+00:21:31.550 --> 00:21:48.509
+Sean: As for features, I wish existed. I think a visual interface for agent interactions will be really helpful, you know, something that shows a real time of what agent is doing, how they communicate, and where conflicts happen.
+
+148
+00:21:48.820 --> 00:22:00.159
+Sean: A better guidance or automation for tool selection will also save a lot of time, so agents can pick the right tool more consistently without me having to, you know, write extra rules.
+
+149
+00:22:00.380 --> 00:22:12.250
+Sean: So, finally, I would, improve testing and evaluation tools, because this will be great, like, the ability to run multiple scenarios automatically.
+
+150
+00:22:12.250 --> 00:22:20.799
+Sean: and report errors in a way that's easy to understand. That will make the development process much faster and less frustrating.
+
+151
+00:22:21.110 --> 00:22:23.049
+Zhongzheng Xu: Hmm. So you said that…
+
+152
+00:22:23.170 --> 00:22:27.390
+Zhongzheng Xu: You want the errors to be…
+
+153
+00:22:27.900 --> 00:22:36.159
+Zhongzheng Xu: you know, better presented. I'm wondering, how is the errors currently, being shown?
+
+154
+00:22:38.710 --> 00:22:41.439
+Sean: All the errors in the MIS?
+
+155
+00:22:41.440 --> 00:22:42.139
+Zhongzheng Xu: Yeah, yeah.
+
+156
+00:22:43.360 --> 00:23:00.150
+Sean: The… it's usually… it's just through logs or console outputs, where each agent prints, what it's doing and any, any problems it runs into. So, if something goes wrong, I have to dig through all the messages from different agents to figure out what happened.
+
+157
+00:23:00.360 --> 00:23:01.679
+Zhongzheng Xu: I see, I see.
+
+158
+00:23:03.280 --> 00:23:17.529
+Zhongzheng Xu: Okay, that was the last question that, I had. I think there was a lot of, valuable information that you shared, so thank you again for, for coming. And
+
+159
+00:23:18.020 --> 00:23:21.629
+Zhongzheng Xu: I will end the recording.
+

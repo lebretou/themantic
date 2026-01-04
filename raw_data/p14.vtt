@@ -1,0 +1,718 @@
+WEBVTT
+
+1
+00:00:00.670 --> 00:00:17.340
+Zhongzheng Xu: Okay, and we can go ahead and start. So, I will start off from a pretty basic question, kind of abstract. So, what is your definition of multi-agent system? So, like, when you hear the term multi-agent system, what does it mean?
+
+2
+00:00:19.220 --> 00:00:27.999
+Curtis Hollis : Well, I would derive so many, answers to that, but, one specific answer I'd say, for me, a multi-agent system is a setup where, like,
+
+3
+00:00:28.260 --> 00:00:33.420
+Curtis Hollis : multiple AI agents walk together to solve, like, a problem instead of one single AI doing everything.
+
+4
+00:00:35.360 --> 00:00:54.530
+Zhongzheng Xu: Alright, gotcha, gotcha. And, so, could you tell me about one or two, representative projects that, you've done in the past, that have implemented a multi-agent system? You can start off from, you know, like, what was the overall goal of the system, and,
+
+5
+00:00:54.540 --> 00:01:06.740
+Zhongzheng Xu: What were the agents, present in that system? And how did they, you know, interact, and how did you, define, like, the system roles for each agent?
+
+6
+00:01:08.180 --> 00:01:11.410
+Curtis Hollis : Alright, that's a pretty long question, but let me break it down for you.
+
+7
+00:01:12.480 --> 00:01:24.809
+Curtis Hollis : Well, I'd start off with what you've begun with. I'd say I've worked with two main projects that I've used multi-agent systems. And, the first project was a multi-agent research and a workflow system.
+
+8
+00:01:25.610 --> 00:01:31.809
+Curtis Hollis : The overall goal was to, like, take one big request, like, researching a topic and creating a report.
+
+9
+00:01:31.950 --> 00:01:36.510
+Curtis Hollis : And I'll split it into, like, our smaller tasks that, different agents could handle.
+
+10
+00:01:36.790 --> 00:01:44.389
+Curtis Hollis : So, we had clear agents with different roles. There was a planner agent that looked at a user request and broke it into steps.
+
+11
+00:01:44.660 --> 00:01:52.150
+Curtis Hollis : There was a research agent collecting information and summarized sources, and there was an analysis agent, a writer agent, so yeah.
+
+12
+00:01:53.310 --> 00:02:03.230
+Curtis Hollis : And the second, project was task coordination system, where the goal was to, like, solve problems step by step, like, I was scheduling simple tasks, or just making decisions using tools.
+
+13
+00:02:05.500 --> 00:02:14.830
+Zhongzheng Xu: I see, I see. And, for those projects, did you happen to use any frameworks, like LaneChain.
+
+14
+00:02:15.230 --> 00:02:18.049
+Zhongzheng Xu: Or did you build it from scratch?
+
+15
+00:02:19.800 --> 00:02:25.920
+Curtis Hollis : Well, for the two projects, actually, what happened, sorry.
+
+16
+00:02:27.480 --> 00:02:43.240
+Curtis Hollis : Sorry about that. For the, like, for the… for the, yeah, for those projects, I didn't use, like, a light chain specifically. For the first project, the research and, content workflow system. We used Lightweight agent framework to help with, agent, orchestration and, message parsing.
+
+17
+00:02:43.650 --> 00:02:50.950
+Curtis Hollis : It helps so much manage the prompts, shared context, and basic coordination. And for the second task-oriented system, it was mostly built from scratch.
+
+18
+00:02:51.050 --> 00:02:53.160
+Curtis Hollis : Because we wanted more control.
+
+19
+00:02:53.430 --> 00:03:03.259
+Curtis Hollis : So we wrote our own simple coordination layer, then each agent was basically a separate module with a clear role, and they communicated so well through the shared step and structured messages.
+
+20
+00:03:03.740 --> 00:03:13.540
+Zhongzheng Xu: I see, I see. So you said that for the second project, you wanted more control, so you didn't use a framework. I'm wondering, like.
+
+21
+00:03:13.870 --> 00:03:21.239
+Zhongzheng Xu: If you were using one of these frameworks, like, why do you feel like you have less control?
+
+22
+00:03:25.400 --> 00:03:26.160
+Curtis Hollis : Oh.
+
+23
+00:03:26.840 --> 00:03:27.930
+Curtis Hollis : I get you.
+
+24
+00:03:28.610 --> 00:03:34.949
+Curtis Hollis : So… let me say it this way, for the second project, I tried using the framework at first.
+
+25
+00:03:35.560 --> 00:03:51.320
+Curtis Hollis : I felt like, I had less control over how agents behaved. So the main issue was that, the framework made a lot of decisions for you, and it already had built-in ways for agents to talk, you know, plan and respond. So that was helpful at the start, but,
+
+26
+00:03:51.430 --> 00:04:07.630
+Curtis Hollis : When I wanted to change small things, like how agents, parse context, you know, or when, one agent should stop and hand off to another, it was harder to do, so… and also, when something unexpected happened, it was harder to debug.
+
+27
+00:04:07.790 --> 00:04:22.619
+Curtis Hollis : And, a lot of logic was hidden inside framework, so I couldn't easily see why an agent made a certain decision. So, for that project, I started to, like, be more from scratch, so that way I could clearly, like, define each agent's role.
+
+28
+00:04:22.820 --> 00:04:27.309
+Curtis Hollis : Control the message flow, and just directly adjust behaviors when things went wrong.
+
+29
+00:04:28.470 --> 00:04:32.099
+Zhongzheng Xu: I see, I see. And
+
+30
+00:04:32.720 --> 00:04:39.079
+Zhongzheng Xu: Could you talk about, a little bit about your, okay, first of all,
+
+31
+00:04:39.080 --> 00:04:45.630
+Zhongzheng Xu: So, for both of these projects, like, what are the biggest challenges that you ran into?
+
+32
+00:04:45.630 --> 00:05:02.110
+Zhongzheng Xu: When you're developing, and… so, for example, like, which part take, took the longest time? So for example, like, some of my other participants said that, they spend a lot of time on, refining system prompts, and…
+
+33
+00:05:02.110 --> 00:05:16.299
+Zhongzheng Xu: Other people said that, they were, you know, like, writing the fallback, for the system, so, when there's something unexpected happen, that the system can handle it, itself.
+
+34
+00:05:16.600 --> 00:05:20.179
+Zhongzheng Xu: So, like, what was the biggest challenges that you had?
+
+35
+00:05:22.760 --> 00:05:24.779
+Curtis Hollis : Oh, alright, I see, I see.
+
+36
+00:05:25.430 --> 00:05:34.709
+Curtis Hollis : So basically for me, the biggest challenge I had was, for both projects, the biggest challenge was getting the agents to work, together smoothly.
+
+37
+00:05:36.190 --> 00:05:36.790
+Curtis Hollis : Yes.
+
+38
+00:05:37.720 --> 00:05:40.520
+Zhongzheng Xu: Oh, because you're the…
+
+39
+00:05:41.060 --> 00:05:47.930
+Curtis Hollis : I felt like overall prompt design and coordination and fallback handling tool took the most time during development, because,
+
+40
+00:05:48.260 --> 00:05:59.519
+Curtis Hollis : The part that, took the longest time was refining the system prompts and agent roles. That's why I said that. And at first, some agents were overlapping in a way that they did, or they misunderstood their responsibilities.
+
+41
+00:05:59.820 --> 00:06:05.370
+Curtis Hollis : And also, another big challenge was handling unexpected behavior, because sometimes an agent would just give an incomplete output.
+
+42
+00:06:05.750 --> 00:06:09.479
+Curtis Hollis : Repeat work, or just fail when the input wasn't clear.
+
+43
+00:06:09.710 --> 00:06:20.650
+Curtis Hollis : And so I had to, like, build a fallback logic, like, retries, you know, simple validation checks, and ways for one agent to, like, ask another agent for clarification, so…
+
+44
+00:06:21.020 --> 00:06:35.349
+Curtis Hollis : And the research and content workflow project coordination was hard, because the agents depended on each other's output, so if the research agent fell, everything after it broke, making that more reliable took a lot of, testing.
+
+45
+00:06:35.820 --> 00:06:43.780
+Zhongzheng Xu: Mmm, I see, I see. So, in the end, like, what do you feel like helped the most?
+
+46
+00:06:43.960 --> 00:06:49.739
+Zhongzheng Xu: In terms of helping the coordination, the interaction among agents.
+
+47
+00:06:57.180 --> 00:07:11.469
+Curtis Hollis : like, at the end, I think what helped most was having a very clear, roles and rules for each agent, because each agent knew exactly what job was and what it was not supposed to do, so that reduced confusion and, overlap.
+
+48
+00:07:11.940 --> 00:07:16.980
+Zhongzheng Xu: Okay, okay. And that was mostly through, just refining the system prompts, right?
+
+49
+00:07:17.360 --> 00:07:18.250
+Curtis Hollis : Yeah, yeah, right.
+
+50
+00:07:18.680 --> 00:07:32.659
+Zhongzheng Xu: Okay, okay. And in the end, was there any, like, or could you walk me through, the structure of your system prompts in the end? Like, what are the components?
+
+51
+00:07:32.860 --> 00:07:40.369
+Zhongzheng Xu: And was there anything that's, like, Any shared patterns?
+
+52
+00:07:46.040 --> 00:07:48.749
+Curtis Hollis : Oh, I got your question, I was trying to understand what you just told me.
+
+53
+00:07:48.750 --> 00:07:49.190
+Zhongzheng Xu: Oh, okay.
+
+54
+00:07:49.190 --> 00:07:55.220
+Curtis Hollis : So… Yeah, yeah, so yeah, for the bot projects, I'd say the system prompts follow their similar structure.
+
+55
+00:07:55.330 --> 00:08:07.350
+Curtis Hollis : Because, the first… for the first… first, each agent had a clear role description at the top of the prompt. For example, the planner agent was told that its main job is to break our big tasks into smaller steps.
+
+56
+00:08:07.350 --> 00:08:07.770
+Zhongzheng Xu: And then…
+
+57
+00:08:07.770 --> 00:08:12.769
+Curtis Hollis : A research agent was told to only focus on gathering info and then summarizing it.
+
+58
+00:08:12.900 --> 00:08:19.600
+Curtis Hollis : And the writer agent was told, like, turn in inputs into clean or readable text, so this helped each agent stay in its length.
+
+59
+00:08:20.080 --> 00:08:25.920
+Curtis Hollis : So, overall, I think my main pattern was role definition first, clear rules second, and
+
+60
+00:08:26.510 --> 00:08:39.419
+Curtis Hollis : Structured outputs last, and the structure really helped the agents coordinate better and make, meta-debarging much easier, which, something unexpected, which, when something unexpected happened, actually, sorry about that.
+
+61
+00:08:40.210 --> 00:08:45.509
+Zhongzheng Xu: Okay, I see, I see. And then for… for debugging,
+
+62
+00:08:46.320 --> 00:08:51.430
+Zhongzheng Xu: What did it look like for you? Were you, like,
+
+63
+00:08:51.580 --> 00:08:57.789
+Zhongzheng Xu: Kind of manually check the input-output of each agent, or did you rely on some tools?
+
+64
+00:09:03.890 --> 00:09:08.210
+Curtis Hollis : Actually, to just be clear with you, what happened was,
+
+65
+00:09:08.980 --> 00:09:12.589
+Curtis Hollis : Because you're talking about how the whole process, the presidency process just described, right?
+
+66
+00:09:12.760 --> 00:09:13.860
+Zhongzheng Xu: Yeah, yeah, yeah.
+
+67
+00:09:18.270 --> 00:09:23.699
+Curtis Hollis : So for that, for debugging, I mostly did a manual, step-by-step check for each of each agent.
+
+68
+00:09:24.300 --> 00:09:40.020
+Curtis Hollis : And I also run agents one at a time instead of all together. For example, I will just pla… I will just, I will just… I will test just the planner agent first, then feed its output into the research agent, and so on. So that made it, like, easier to isolate problems.
+
+69
+00:09:40.300 --> 00:09:46.499
+Curtis Hollis : And, I think over time, this helped me learn common failure patterns, like, agents, repeating work.
+
+70
+00:09:46.670 --> 00:09:52.469
+Curtis Hollis : conflict, or conflicting with each other, and I adjusted the prompts and coordination logic to fix that.
+
+71
+00:09:53.390 --> 00:09:55.620
+Curtis Hollis : It was pretty smooth.
+
+72
+00:09:56.700 --> 00:09:57.879
+Zhongzheng Xu: I see, I see.
+
+73
+00:09:58.000 --> 00:10:03.549
+Zhongzheng Xu: So you felt like the, like, individual checking definitely helped, right?
+
+74
+00:10:04.190 --> 00:10:05.060
+Curtis Hollis : Yeah.
+
+75
+00:10:05.620 --> 00:10:11.550
+Zhongzheng Xu: I see, yes. Yeah, this was mentioned by, a lot of the other participants as well.
+
+76
+00:10:11.550 --> 00:10:12.090
+Curtis Hollis : varsity.
+
+77
+00:10:12.090 --> 00:10:14.060
+Zhongzheng Xu: Yeah, just for isolating the problem.
+
+78
+00:10:16.570 --> 00:10:18.309
+Curtis Hollis : Yeah, yeah, yeah, I see, I see.
+
+79
+00:10:19.790 --> 00:10:31.410
+Zhongzheng Xu: And okay, since… okay, since you had a project that used a framework, and then, another project that didn't, what are some…
+
+80
+00:10:31.560 --> 00:10:44.119
+Zhongzheng Xu: If you have to brainstorm, what are some improvements that you want to make, for the framework so that, you know, you can have more control, or, just to make it better?
+
+81
+00:10:54.340 --> 00:11:03.720
+Curtis Hollis : So, when you talk about improvements, or basically, after working with both search terms, I think there were a few improvements I'd, weren't in the framework to
+
+82
+00:11:03.750 --> 00:11:20.449
+Curtis Hollis : give, me more control. First, I'd like if more control over the agent communication, because in the framework, a lot of, like, our messaging between agents was abstracted away, and that made things easier at first, but, when something went wrong, it was, like, hard to, like.
+
+83
+00:11:20.620 --> 00:11:23.849
+Curtis Hollis : Exactly… to see exactly which agent said what.
+
+84
+00:11:24.060 --> 00:11:29.560
+Curtis Hollis : And, I'd want better tools to inspect and, control those message flows. And second.
+
+85
+00:11:29.750 --> 00:11:33.329
+Curtis Hollis : I'd want more flexibility in defining urgent behavior.
+
+86
+00:11:33.490 --> 00:11:46.700
+Curtis Hollis : And, the framework had some default patterns, but they were helpful. But sometimes they felt restrictive. For example, I couldn't easily customize how an agent handled edge cases, or retries that, fighting the framework.
+
+87
+00:11:48.080 --> 00:11:49.630
+Zhongzheng Xu: I see, I see.
+
+88
+00:11:51.290 --> 00:11:58.199
+Zhongzheng Xu: And, just for… Okay. So…
+
+89
+00:11:58.370 --> 00:12:12.850
+Zhongzheng Xu: in the end, like, what… what made you, think that, okay, the system is, pretty reliable now and, pretty consistent? so…
+
+90
+00:12:13.780 --> 00:12:24.000
+Zhongzheng Xu: I guess what I'm asking is, like, how did you evaluate the system, and what made you think that, okay, the system is, you know, like, good to go?
+
+91
+00:12:43.820 --> 00:12:54.270
+Curtis Hollis : Sorry about that. Well, for both projects, what made me feel the system was reliable was testing it step by step, not all at once.
+
+92
+00:12:54.710 --> 00:12:55.880
+Zhongzheng Xu: I see.
+
+93
+00:13:00.880 --> 00:13:07.580
+Zhongzheng Xu: So, it was kind of like, just testing each individual agent, and then,
+
+94
+00:13:07.980 --> 00:13:20.309
+Zhongzheng Xu: If, like, each individual agent is, doing, what it should, then you felt like the overall… the system overall is, pretty consistent.
+
+95
+00:13:21.000 --> 00:13:25.530
+Curtis Hollis : Yeah, yeah, actually, you just broke it down so well, I appreciate that, bro.
+
+96
+00:13:25.530 --> 00:13:26.940
+Zhongzheng Xu: Okay.
+
+97
+00:13:26.940 --> 00:13:28.160
+Curtis Hollis : Yeah.
+
+98
+00:13:28.920 --> 00:13:32.250
+Zhongzheng Xu: And alright.
+
+99
+00:13:32.740 --> 00:13:36.250
+Zhongzheng Xu: Just let me… Locate the questions…
+
+100
+00:13:36.630 --> 00:13:38.010
+Curtis Hollis : Alright, take your time.
+
+101
+00:13:44.980 --> 00:13:48.549
+Zhongzheng Xu: Okay, so you also said that, your…
+
+102
+00:13:49.430 --> 00:14:08.300
+Zhongzheng Xu: your, your checking was pretty manual, and that, you're checking them, like, sort of one by one. Do you feel like there's anything that can help with that? So, like, some of the other participants mentioned that it might be good to have
+
+103
+00:14:08.350 --> 00:14:24.590
+Zhongzheng Xu: a visual interface, where they can, you know, better monitor, the… each… each input and output of every agent. And it would be nice if it's, like, presented in a structured way.
+
+104
+00:14:24.880 --> 00:14:34.809
+Zhongzheng Xu: Just, try to brainstorm, and, what are something that can help with you, in terms of monitoring your system and just, evals?
+
+105
+00:14:48.600 --> 00:14:49.250
+Curtis Hollis : Sorry.
+
+106
+00:14:49.300 --> 00:15:00.729
+Curtis Hollis : I agree that, most of my checking also was manual, like you said, and I think, a visual interface will help a lot. For example, a dashboard where I can see each agent as a box.
+
+107
+00:15:00.750 --> 00:15:19.559
+Curtis Hollis : And, inside it, I can see the input, output, and the status of every step. And, that will make it easier to understand each agent is doing without, digging… digging logs, sorry. And, another thing that will help, I think, is having structured logs instead of, like, plain text, because it will be nice if outputs
+
+108
+00:15:19.670 --> 00:15:23.729
+Curtis Hollis : Who are grouped by an agent, task, and time.
+
+109
+00:15:24.030 --> 00:15:27.989
+Curtis Hollis : And that way, if something goes wrong, I can quickly, like, trace where the problem started.
+
+110
+00:15:28.150 --> 00:15:33.499
+Curtis Hollis : And, for Evos, I think having basic automatic checks would help.
+
+111
+00:15:33.970 --> 00:15:40.739
+Curtis Hollis : And, it will also be useful to replay a full run of the system, step by step, the way…
+
+112
+00:15:40.890 --> 00:15:48.379
+Curtis Hollis : That way, I can see how context changed as agents talk to each other. So overall, I don't think that makes an agent behavior more visible.
+
+113
+00:15:48.970 --> 00:15:54.040
+Curtis Hollis : Structured and maybe traceable will really help with monetizing and evaluation.
+
+114
+00:15:54.790 --> 00:16:07.819
+Zhongzheng Xu: I see, I see. And just, just making sure, so when you're checking each individual agent, what, what type of bugs, or what type of issues that they had, like.
+
+115
+00:16:08.110 --> 00:16:10.880
+Zhongzheng Xu: Most com- like, most often.
+
+116
+00:16:27.970 --> 00:16:34.070
+Curtis Hollis : Well, when I checked each agent, the most common issues were context problems and coordination issues.
+
+117
+00:16:34.420 --> 00:16:35.989
+Curtis Hollis : That's what I mainly faced.
+
+118
+00:16:37.590 --> 00:16:38.820
+Zhongzheng Xu: Okay,
+
+119
+00:16:39.450 --> 00:16:56.040
+Zhongzheng Xu: What, could you elaborate on… a little bit on the coordination? Actually, just elaborate on both, like, what was the context issue, and, why… like, why did the coordination fail?
+
+120
+00:17:18.339 --> 00:17:22.299
+Curtis Hollis : In simple terms, can you hear me?
+
+121
+00:17:22.740 --> 00:17:26.840
+Zhongzheng Xu: Oh, sorry, yeah, sorry, I think I lost you for a bit.
+
+122
+00:17:27.480 --> 00:17:28.689
+Curtis Hollis : Can you hear me?
+
+123
+00:17:28.690 --> 00:17:29.750
+Zhongzheng Xu: Yeah, I can hear that.
+
+124
+00:17:29.750 --> 00:17:30.390
+Curtis Hollis : Okay.
+
+125
+00:17:30.890 --> 00:17:36.060
+Curtis Hollis : Okay, so, would you maybe, ask your question again? I think you broke up.
+
+126
+00:17:36.400 --> 00:17:45.220
+Zhongzheng Xu: Yeah, I was just asking, could you elaborate a little bit on the context and coordination problem that you said?
+
+127
+00:17:52.270 --> 00:17:54.589
+Curtis Hollis : Alright, alright, alright, sorry.
+
+128
+00:17:55.350 --> 00:18:00.149
+Curtis Hollis : Well, so for this research, and then, like, so what I was trying to say was.
+
+129
+00:18:05.310 --> 00:18:06.289
+Curtis Hollis : I don't know.
+
+130
+00:18:11.710 --> 00:18:13.480
+Curtis Hollis : I don't know, I keep on losing you.
+
+131
+00:18:14.000 --> 00:18:15.270
+Zhongzheng Xu: Oh, I'm sorry.
+
+132
+00:18:15.890 --> 00:18:16.610
+Curtis Hollis : Yeah.
+
+133
+00:18:16.610 --> 00:18:18.040
+Zhongzheng Xu: Can you hear me now?
+
+134
+00:18:19.050 --> 00:18:22.049
+Curtis Hollis : Yeah, would you maybe repeat that? Okay.
+
+135
+00:18:22.070 --> 00:18:25.499
+Zhongzheng Xu: Oh yeah, sorry. Yeah, I was just asking, could you…
+
+136
+00:18:25.510 --> 00:18:28.159
+Curtis Hollis : Elaborate on the…
+
+137
+00:18:28.160 --> 00:18:31.879
+Zhongzheng Xu: Context and coordination problem that you said.
+
+138
+00:18:36.000 --> 00:18:39.050
+Zhongzheng Xu: Or maybe, like, just give me some concrete examples.
+
+139
+00:18:40.380 --> 00:18:55.299
+Curtis Hollis : Alright, so for the first project, the context was, that we wanted the system to handle our full tasks, like end-to-end, like, research, writing, without one agent doing everything, and the coordination problem was making sure each agent knew when to act and, what information to parse next.
+
+140
+00:18:55.610 --> 00:19:04.169
+Curtis Hollis : And I mean, the second project, the context was more about step-by-step execution, like decision-making and tool usage, and I think the coordination issue…
+
+141
+00:19:04.440 --> 00:19:15.859
+Curtis Hollis : there was, that agents sometimes tried to act at the same time, or made assumptions that another agent already finished its work. So that caused conflicts or repeated actions. That's what I wanted to say.
+
+142
+00:19:15.860 --> 00:19:25.420
+Zhongzheng Xu: Okay, okay, thank you. And, okay, just, making sure… so, for those two projects, were they,
+
+143
+00:19:25.630 --> 00:19:30.189
+Zhongzheng Xu: Don, for… A company in the industry.
+
+144
+00:19:35.900 --> 00:19:42.820
+Curtis Hollis : For the two pro- well, for the two projects, both projects were done in an industry or professional setting, not just for school.
+
+145
+00:19:43.560 --> 00:19:59.679
+Curtis Hollis : Because one of them was done as a real-world work, where the goal was to build something practical that people could actually use. Another project was also industry-focused, more like a practical build, where we were testing how multi… multiple agents can work together
+
+146
+00:19:59.760 --> 00:20:11.519
+Curtis Hollis : Reliably. So, it wasn't academic research only, it was about making sure the system actually worked in practice and could handle real inputs and, edge cases.
+
+147
+00:20:12.060 --> 00:20:13.250
+Zhongzheng Xu: I see, I see.
+
+148
+00:20:13.390 --> 00:20:16.939
+Zhongzheng Xu: Thanks for, clarification. And
+
+149
+00:20:17.350 --> 00:20:31.629
+Zhongzheng Xu: Okay, and this… and I have another question on, so when you were writing the prompts, did you just write it in, like, your code editor, or did you have, like, a separate place,
+
+150
+00:20:31.740 --> 00:20:33.620
+Zhongzheng Xu: Where you edit the prompts.
+
+151
+00:20:41.120 --> 00:20:48.349
+Curtis Hollis : I usually wrote the prompts directly in my code editor, actually, because it's easier to, like, keep track of them and, test things.
+
+152
+00:20:48.350 --> 00:20:53.210
+Zhongzheng Xu: I see, I see. Okay, and alright,
+
+153
+00:20:53.970 --> 00:21:08.979
+Zhongzheng Xu: I… okay, I will finish off with, two more questions, and first one of them is, a little bit abstract and general, so it doesn't have to be the two projects that, you shared.
+
+154
+00:21:09.040 --> 00:21:16.940
+Zhongzheng Xu: Generally, for what type of problems do you think a multi-agent system worked the best? And,
+
+155
+00:21:17.540 --> 00:21:20.710
+Zhongzheng Xu: Similarly, like, Or what type of…
+
+156
+00:21:20.920 --> 00:21:26.230
+Zhongzheng Xu: Scenarios that you don't think multi-agent system is the best, choice.
+
+157
+00:21:36.070 --> 00:21:42.619
+Curtis Hollis : So, in regard to that, I think… I think our multi-agent systems work best for problems.
+
+158
+00:21:42.760 --> 00:21:47.079
+Curtis Hollis : Where you have different tasks, and, that can be split up.
+
+159
+00:21:47.200 --> 00:21:52.479
+Curtis Hollis : and handled at the same time. So, for example, I'd say, when you need to collect info.
+
+160
+00:21:52.620 --> 00:21:59.310
+Curtis Hollis : Analyze it and produce results, or when different agents can, like, are specialized in different roles, you know.
+
+161
+00:21:59.420 --> 00:22:19.170
+Curtis Hollis : And, they are also good when problem is complex or changes over time, and agents need to, like, adapt or coordinate to handle new situations. And, I think on the other hand, I'd say the MAS is not the best choice for problems that are very simple or linear, because where one program or one AI can solve everything quickly.
+
+162
+00:22:19.420 --> 00:22:26.680
+Curtis Hollis : So, if the test doesn't, like, need multiple agents to work together, I think adding MAS just makes it more complicated without much benefit.
+
+163
+00:22:27.900 --> 00:22:35.359
+Zhongzheng Xu: Okay. And then, alright, I'll finish off with this last question, and
+
+164
+00:22:35.500 --> 00:22:38.340
+Zhongzheng Xu: I might have already asked you, but just…
+
+165
+00:22:38.830 --> 00:22:45.119
+Zhongzheng Xu: Generally, think about, or think through your entire development process,
+
+166
+00:22:45.660 --> 00:22:50.169
+Zhongzheng Xu: So, what are the biggest… so, in terms of, you know,
+
+167
+00:22:50.420 --> 00:23:03.000
+Zhongzheng Xu: From the beginning, like, designing your system, and, writing system prompts, debugging, and, doing eval. So what are the biggest challenges and,
+
+168
+00:23:03.110 --> 00:23:08.570
+Zhongzheng Xu: For each, like, what are something that you think that would help?
+
+169
+00:23:08.950 --> 00:23:21.200
+Zhongzheng Xu: Yeah, so… I think I already asked this, and you already shared a lot, so maybe just reiterate on the things that are on top of your head.
+
+170
+00:23:29.050 --> 00:23:35.340
+Curtis Hollis : Well, thinking about the whole process, I think the biggest challenges I usually see are a few things.
+
+171
+00:23:35.500 --> 00:23:46.210
+Curtis Hollis : First, designing the system and defining each other… each agent's role can be tricky, because it's easy to, like, either make roles too big or too small.
+
+172
+00:23:46.230 --> 00:23:58.189
+Curtis Hollis : And then agents either overlap or miss tasks, and what helps is searching simple and testing small pieces first, then building up. Second, I think writing system prompts for the agent is sometimes hard.
+
+173
+00:23:58.290 --> 00:24:17.929
+Curtis Hollis : Because if a prompt isn't clear, the agent might do the wrong thing, and what helps is, iterating and trying variations. And also writing prompts in a way that's easy to understand. And, third, I think debugging is a big challenge too, especially when agents interact, because problems can come from one agent, you know, but affect the whole system.
+
+174
+00:24:17.970 --> 00:24:22.530
+Curtis Hollis : So what helps is checking each agent individually first, then testing how they work together.
+
+175
+00:24:22.670 --> 00:24:35.629
+Curtis Hollis : And, finally, I think evaluation can be also tough, because sometimes the system, you know, works in a normal… works in normal cases, but fails in unusual situations. And it helps me… it helps to think, edge cases early.
+
+176
+00:24:35.810 --> 00:24:41.039
+Curtis Hollis : think of our educators, Ali, and watch how the system behaves, so you can fix,
+
+177
+00:24:41.210 --> 00:24:52.089
+Curtis Hollis : issues before they get bigger. So overall, the main idea is to start small, keep it simple, and then build step-by-step, because it makes the process much even easier.
+
+178
+00:24:53.260 --> 00:24:55.510
+Curtis Hollis : Person like me, and person in my field.
+
+179
+00:24:55.770 --> 00:25:00.530
+Zhongzheng Xu: I see, I see. Alright, okay, I'll…
+

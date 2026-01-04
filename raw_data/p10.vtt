@@ -1,0 +1,1102 @@
+WEBVTT
+
+1
+00:00:02.470 --> 00:00:06.370
+Zhongzheng Xu: Oh, okay. And then we can go ahead and start. So…
+
+2
+00:00:06.370 --> 00:00:27.890
+Zhongzheng Xu: I will start off from a very… a pretty abstract question. So, can I ask your, definition of, the term multi-agent system? So, like, when you hear the term, how… what does it mean to you? And, for example, like, how do you see it different from a single agent system? Or a single agent, or single model?
+
+3
+00:00:28.590 --> 00:00:30.080
+Branden: Okay,
+
+4
+00:00:31.050 --> 00:00:37.479
+Branden: To me, I would say, it's a kind of setup whereby you don't have to rely on
+
+5
+00:00:37.820 --> 00:00:42.250
+Branden: A single model to, perform multiple operations.
+
+6
+00:00:43.190 --> 00:00:49.619
+Branden: So instead of working with just a particular agent, you're working with multiple agents, and
+
+7
+00:00:50.060 --> 00:00:54.940
+Branden: These agents are interacting around the same kind of problem.
+
+8
+00:01:00.100 --> 00:01:05.739
+Zhongzheng Xu: I see, so basically, just, multiple agents collaborating.
+
+9
+00:01:06.040 --> 00:01:08.669
+Zhongzheng Xu: To accomplish some task.
+
+10
+00:01:09.030 --> 00:01:09.650
+Branden: Yeah.
+
+11
+00:01:09.810 --> 00:01:22.489
+Zhongzheng Xu: Okay, and then, could you tell me about, like, one or two, representative projects that, you know, implemented multi-agent system that you have done in the past?
+
+12
+00:01:23.650 --> 00:01:26.030
+Branden: Okay, yeah.
+
+13
+00:01:26.210 --> 00:01:30.279
+Branden: I've worked with… okay, I've worked on,
+
+14
+00:01:30.590 --> 00:01:35.940
+Branden: using the MAIs to actually, Support…
+
+15
+00:01:36.220 --> 00:01:40.200
+Branden: Decision-making and, and kind of an healthcare system.
+
+16
+00:01:40.420 --> 00:01:42.319
+Branden: Or the orchestrating, actually.
+
+17
+00:01:42.540 --> 00:01:45.449
+Branden: So, in that project, I actually,
+
+18
+00:01:45.680 --> 00:01:50.610
+Branden: I designed several agents with, Separate, distinct roles.
+
+19
+00:01:51.610 --> 00:02:02.800
+Branden: One focused on risk and failure, while the other focused on, costs and, Operational efficiency.
+
+20
+00:02:03.090 --> 00:02:09.000
+Branden: And there were also constraints, such as compliance, due to, the healthcare shutdown.
+
+21
+00:02:09.780 --> 00:02:12.000
+Branden: And, I would say,
+
+22
+00:02:12.400 --> 00:02:17.980
+Branden: For the outcome, each agent evaluated the same set of options.
+
+23
+00:02:18.010 --> 00:02:19.539
+Zhongzheng Xu: But.
+
+24
+00:02:19.540 --> 00:02:24.320
+Branden: So, they kind of shared the data, but the priorities were different.
+
+25
+00:02:24.840 --> 00:02:31.669
+Branden: So, the… bringing the outputs so, stakeholders could actually see
+
+26
+00:02:32.330 --> 00:02:35.639
+Branden: The trade-offs between different choices, instead of just,
+
+27
+00:02:36.130 --> 00:02:40.799
+Branden: Getting, a direct, or just a single recommendation.
+
+28
+00:02:41.940 --> 00:02:43.320
+Zhongzheng Xu: I see, I see.
+
+29
+00:02:43.670 --> 00:02:46.929
+Zhongzheng Xu: And could you also, like…
+
+30
+00:02:48.840 --> 00:02:53.439
+Zhongzheng Xu: Say it, describe a little bit more in detail in,
+
+31
+00:02:53.600 --> 00:03:05.859
+Zhongzheng Xu: Of, like, the entire pipe, or if it's a pipeline, like, how did the, data get shared between, like, among the agents, and then…
+
+32
+00:03:07.010 --> 00:03:11.709
+Zhongzheng Xu: Like, yeah, like, what was the context, and like…
+
+33
+00:03:11.920 --> 00:03:15.270
+Zhongzheng Xu: How did you, like, come up with the system prompts and that stuff?
+
+34
+00:03:15.270 --> 00:03:16.010
+Branden: Thanks, cool.
+
+35
+00:03:16.190 --> 00:03:21.279
+Branden: I would say, the workflow basically was, something like this,
+
+36
+00:03:21.510 --> 00:03:30.509
+Branden: getting the data at first, that's, the data collection. And, so we got, some sort of data on
+
+37
+00:03:30.630 --> 00:03:37.699
+Branden: Costs, staffing… Some data on operational constraint also.
+
+38
+00:03:38.060 --> 00:03:42.539
+Branden: And, all of the… all of this data was actually claimed
+
+39
+00:03:42.740 --> 00:03:47.419
+Branden: And organized so the agents could access the information properly.
+
+40
+00:03:47.680 --> 00:03:49.520
+Zhongzheng Xu: And then.
+
+41
+00:03:49.630 --> 00:03:53.140
+Branden: Move on to the step of, creating the agents.
+
+42
+00:03:53.260 --> 00:04:01.729
+Branden: So, there were, 3 agents. There were risk agents, and, costs or efficiency agent, and then compliance agent.
+
+43
+00:04:01.910 --> 00:04:06.870
+Branden: Each agent had its own, specific role.
+
+44
+00:04:07.180 --> 00:04:11.540
+Branden: And then, moving on to the processing.
+
+45
+00:04:12.210 --> 00:04:21.420
+Branden: Each agent would receive the shared data sets, but it would process it differ, differently based on its role.
+
+46
+00:04:21.640 --> 00:04:30.760
+Branden: Yeah. So, for example, the risk agent will focus on, patterns that indicate, delays or system failures.
+
+47
+00:04:31.020 --> 00:04:40.260
+Branden: Well, the cost agents would, focus on On areas such as, resource allocation or expenses.
+
+48
+00:04:40.890 --> 00:04:46.040
+Branden: And then, we'll move to data sharing,
+
+49
+00:04:46.320 --> 00:04:56.169
+Branden: So, the results will be stored… the results will be actually stored in a central layer. So, like, this layer, the layer would allow me to,
+
+50
+00:04:56.610 --> 00:05:08.269
+Branden: view all outputs side by side, and then I would be able to, identify areas where the recommendations might be conflicted.
+
+51
+00:05:09.440 --> 00:05:11.460
+Branden: And,
+
+52
+00:05:12.450 --> 00:05:19.739
+Branden: review. I would, review those outputs and, create a summary. A summary or, like, a report.
+
+53
+00:05:19.960 --> 00:05:25.570
+Branden: And, I would highlight the risks, the trade-offs.
+
+54
+00:05:25.730 --> 00:05:30.100
+Branden: And then those three trade-offs would be included in this report, and…
+
+55
+00:05:30.270 --> 00:05:32.699
+Branden: How to present it, so…
+
+56
+00:05:33.470 --> 00:05:37.239
+Branden: Decisions can be made, informed decisions can naturally be made.
+
+57
+00:05:37.430 --> 00:05:47.450
+Branden: And then… there's also a sort of feedback process. After the feedback, I get from the stakeholders.
+
+58
+00:05:47.720 --> 00:05:59.349
+Branden: We would refine some agent prompts, sometimes adjust the data inputs. Sometimes you might also add new agents, depending on the feedback.
+
+59
+00:05:59.530 --> 00:06:01.789
+Branden: We can receive, yes.
+
+60
+00:06:02.220 --> 00:06:07.689
+Zhongzheng Xu: Oh, just to clarify, the feedbacks were given back to the agents?
+
+61
+00:06:08.950 --> 00:06:09.780
+Branden: Come again.
+
+62
+00:06:10.020 --> 00:06:15.869
+Zhongzheng Xu: So the feedbacks were, given to the agents.
+
+63
+00:06:16.490 --> 00:06:18.499
+Branden: Not direct… not directly, not directly.
+
+64
+00:06:18.500 --> 00:06:19.689
+Zhongzheng Xu: Oh, okay, okay.
+
+65
+00:06:20.990 --> 00:06:24.119
+Zhongzheng Xu: It's more so just refining the system prompts.
+
+66
+00:06:24.630 --> 00:06:25.420
+Branden: Yes.
+
+67
+00:06:25.420 --> 00:06:34.130
+Zhongzheng Xu: Okay, I see, I see. And then, you also said that, you were, there was, like, a summary report in the end. Was that…
+
+68
+00:06:34.410 --> 00:06:38.440
+Zhongzheng Xu: Done by another agent, or was that done by you?
+
+69
+00:06:39.340 --> 00:06:40.469
+Branden: It was done by me.
+
+70
+00:06:40.470 --> 00:06:41.649
+Zhongzheng Xu: Okay, I see this.
+
+71
+00:06:43.020 --> 00:06:48.950
+Zhongzheng Xu: And then… Could… can I ask you, which…
+
+72
+00:06:49.200 --> 00:06:57.550
+Zhongzheng Xu: Did you ever use any framework for, this pipeline, like LaneChain or LaneGraph, or was it built from scratch?
+
+73
+00:06:58.340 --> 00:07:01.419
+Branden: I used Python and LangChain.
+
+74
+00:07:01.770 --> 00:07:03.840
+Zhongzheng Xu: And the land chain. I see, I see.
+
+75
+00:07:04.010 --> 00:07:11.499
+Zhongzheng Xu: Okay, and then, could I ask you, was this project for, like, a company?
+
+76
+00:07:13.380 --> 00:07:14.939
+Branden: Yes, actually.
+
+77
+00:07:14.940 --> 00:07:15.800
+Zhongzheng Xu: Okay.
+
+78
+00:07:16.190 --> 00:07:22.070
+Zhongzheng Xu: Nice. And okay.
+
+79
+00:07:22.220 --> 00:07:25.780
+Zhongzheng Xu: I have some more questions, about…
+
+80
+00:07:26.180 --> 00:07:30.980
+Zhongzheng Xu: So, for example, in this project, you have…
+
+81
+00:07:31.370 --> 00:07:34.759
+Zhongzheng Xu: Sort of, like, 3 agents, normally, right?
+
+82
+00:07:34.880 --> 00:07:39.429
+Zhongzheng Xu: Like, did you have this overall system structure,
+
+83
+00:07:40.980 --> 00:07:45.859
+Zhongzheng Xu: Clear at the very beginning, or did you, you know…
+
+84
+00:07:46.210 --> 00:07:52.150
+Zhongzheng Xu: It's really developed over time that, in the end, that you'll have the three agents.
+
+85
+00:07:53.770 --> 00:08:00.560
+Branden: Okay, I would say… well… I would say…
+
+86
+00:08:00.670 --> 00:08:11.379
+Branden: Would you mean, like, if all of them were, structured at the same time? Well, all of the agents actually accessed the data at the same time, is what I'm saying, but,
+
+87
+00:08:12.150 --> 00:08:16.840
+Branden: But they were actually separate. They were separate, and then…
+
+88
+00:08:17.080 --> 00:08:22.920
+Branden: We would compare, we would get the outputs together, and then make a final decision report.
+
+89
+00:08:23.250 --> 00:08:24.789
+Zhongzheng Xu: Okay, okay.
+
+90
+00:08:26.100 --> 00:08:32.909
+Zhongzheng Xu: can I ask you, like, you said that you eventually, were…
+
+91
+00:08:32.909 --> 00:08:49.709
+Zhongzheng Xu: you know, evaluating the outputs from each agent, and you had, like, results side by side, and then you were, like, writing the final report. Did you think about, like, just having another AI agent, LLM agent, to write the report for you?
+
+92
+00:08:51.380 --> 00:09:01.490
+Branden: Yes, yes, Considering, another LLM to actually
+
+93
+00:09:01.620 --> 00:09:06.249
+Branden: write the final reports was, was actually considered, but,
+
+94
+00:09:06.900 --> 00:09:15.189
+Branden: I would say, well, I didn't fully automate it. I didn't fully automate it. I would say…
+
+95
+00:09:16.200 --> 00:09:21.020
+Branden: The idea would actually be to, I think…
+
+96
+00:09:21.370 --> 00:09:28.239
+Branden: it would actually be a better idea if, we could leverage an LLM to, like, draft summaries.
+
+97
+00:09:28.550 --> 00:09:32.009
+Branden: Based on the different outputs of the agents.
+
+98
+00:09:33.000 --> 00:09:38.009
+Branden: they could actually, save time, but I didn't,
+
+99
+00:09:38.120 --> 00:09:39.950
+Branden: I didn't fully automate it, no.
+
+100
+00:09:40.680 --> 00:09:44.729
+Zhongzheng Xu: Okay, can I ask you, like, why, did, like…
+
+101
+00:09:45.890 --> 00:09:49.629
+Zhongzheng Xu: So, did you not really trust the LLMs?
+
+102
+00:09:51.110 --> 00:10:01.919
+Branden: Okay, well, for me, I would say the major reason was I didn't just want to use LLMs to, draft the final report. I wanted to make sure
+
+103
+00:10:02.820 --> 00:10:04.860
+Branden: There's a level of view and impute.
+
+104
+00:10:05.020 --> 00:10:09.559
+Zhongzheng Xu: There's a level of human input in the… in the final report, and…
+
+105
+00:10:09.560 --> 00:10:17.659
+Branden: I feel like, even if LLMs could generate a lot of text and, over a little period of time.
+
+106
+00:10:17.870 --> 00:10:21.739
+Branden: It might, misinterpret a couple of trade-offs, or…
+
+107
+00:10:22.000 --> 00:10:26.830
+Branden: Overgeneralized, sort of conflicts between agents.
+
+108
+00:10:28.140 --> 00:10:30.010
+Zhongzheng Xu: Hmm, I see, I see.
+
+109
+00:10:30.190 --> 00:10:48.299
+Zhongzheng Xu: Okay, and then when you were developing this system, what would you say that it was, like, what was the most challenging part for you? So, for example, some of my other interviewees mentioned, developing system prompts because it was like.
+
+110
+00:10:48.300 --> 00:11:00.969
+Zhongzheng Xu: a lot of trials and errors, and then, some other people said it was, like, just managing the APIs, making sure that they're consistent, and then also having, like, a fallback.
+
+111
+00:11:01.270 --> 00:11:08.859
+Zhongzheng Xu: So that when it had error, the entire workflow or pipeline just doesn't fail.
+
+112
+00:11:10.180 --> 00:11:17.590
+Branden: Okay, let's see. I would say… I think I would say first would be, defining the roles. I think,
+
+113
+00:11:17.770 --> 00:11:23.020
+Branden: Making sure each agent had different roles without, data redundancy.
+
+114
+00:11:23.020 --> 00:11:23.390
+Zhongzheng Xu: Yep.
+
+115
+00:11:23.390 --> 00:11:26.139
+Branden: And, I would say also,
+
+116
+00:11:28.160 --> 00:11:32.910
+Branden: Making sure each agent had the right data enough
+
+117
+00:11:33.230 --> 00:11:38.629
+Branden: To be accurate, but at the same time, not so much that it will cause, like, a lot of confusion.
+
+118
+00:11:38.710 --> 00:11:39.930
+Zhongzheng Xu: I would say.
+
+119
+00:11:40.130 --> 00:11:40.940
+Branden: Yeah.
+
+120
+00:11:42.170 --> 00:11:42.750
+Zhongzheng Xu: I.
+
+121
+00:11:42.750 --> 00:11:44.739
+Branden: I think those would be my true talent.
+
+122
+00:11:45.320 --> 00:11:52.519
+Zhongzheng Xu: Okay. And then you said that, so, like, your agents were kind of just,
+
+123
+00:11:53.660 --> 00:11:56.969
+Zhongzheng Xu: You know, like, analyzing the data that you provide.
+
+124
+00:11:58.590 --> 00:12:14.220
+Zhongzheng Xu: And then… could I ask you, like, were the agents generating Python code, and then doing the analysis, or, did you write the code yourself, and, like, was provided to the agent as tools?
+
+125
+00:12:14.970 --> 00:12:19.870
+Branden: No, the agents were not, generating code.
+
+126
+00:12:20.000 --> 00:12:23.750
+Branden: The agents didn't write scripts itself.
+
+127
+00:12:23.750 --> 00:12:25.190
+Zhongzheng Xu: Oh, just… okay.
+
+128
+00:12:25.190 --> 00:12:28.929
+Branden: Yeah, most of the codes and the pipeline updates are done by me.
+
+129
+00:12:31.790 --> 00:12:32.750
+Zhongzheng Xu: Okay.
+
+130
+00:12:34.280 --> 00:12:43.860
+Zhongzheng Xu: And… So, you also said that, like, your agents were sharing, the data.
+
+131
+00:12:44.340 --> 00:12:47.930
+Zhongzheng Xu: Could you also describe that a little bit?
+
+132
+00:12:48.870 --> 00:12:52.479
+Zhongzheng Xu: Like, just engineeringly, how is that done?
+
+133
+00:12:53.570 --> 00:12:58.850
+Branden: Okay, I would say, just the way he walked,
+
+134
+00:12:59.800 --> 00:13:04.679
+Branden: The… each agent would have access to the… the same claims data.
+
+135
+00:13:04.830 --> 00:13:11.609
+Branden: Relevant to its particular role at first, then they would process, they would process that data, and then…
+
+136
+00:13:11.710 --> 00:13:17.189
+Branden: The results would be… would be stored, probably in a… in a database, or…
+
+137
+00:13:17.480 --> 00:13:21.609
+Branden: Probably a file, an output file, and then…
+
+138
+00:13:22.050 --> 00:13:31.230
+Branden: I would collect the outputs from those different layers, and then I would, use those outputs to spot conflict.
+
+139
+00:13:31.360 --> 00:13:34.620
+Branden: So, most of the data sharing was, like,
+
+140
+00:13:34.790 --> 00:13:48.620
+Branden: was, like, just a central place where outputs were stored, not direct communication between the agents. Yeah. You know, like, it makes it easier for them to, keep the work independently, like, separately, yeah.
+
+141
+00:13:50.340 --> 00:13:50.920
+Zhongzheng Xu: Fantastic.
+
+142
+00:13:51.130 --> 00:13:54.299
+Zhongzheng Xu: Okay, and then, so…
+
+143
+00:13:55.250 --> 00:14:01.879
+Zhongzheng Xu: When you were developing, what was, like, the most common bugs that you ran into?
+
+144
+00:14:04.790 --> 00:14:09.110
+Branden: Let's see… Okay. Well…
+
+145
+00:14:09.250 --> 00:14:14.449
+Branden: first was output conflicts, sometimes,
+
+146
+00:14:14.610 --> 00:14:19.669
+Branden: Sometimes, some of the agents would produce contrary outputs.
+
+147
+00:14:20.590 --> 00:14:24.800
+Branden: Probably because of their defined definition of the roles.
+
+148
+00:14:25.510 --> 00:14:30.039
+Branden: Sometimes I think, I also had data access issues also,
+
+149
+00:14:30.290 --> 00:14:34.759
+Branden: Some agents couldn't get the right… didn't get the right, data subset.
+
+150
+00:14:34.930 --> 00:14:36.120
+Branden: So.
+
+151
+00:14:36.120 --> 00:14:36.480
+Zhongzheng Xu: Yep.
+
+152
+00:14:36.480 --> 00:14:39.190
+Branden: Some of the analysis were inaccurate at some time.
+
+153
+00:14:39.710 --> 00:14:46.439
+Branden: And, I think there were also prompts or logic errors, some mistakes in the prompts.
+
+154
+00:14:46.670 --> 00:14:52.060
+Branden: Also, Cause, some irrelevant outputs, yeah.
+
+155
+00:14:53.900 --> 00:15:02.390
+Zhongzheng Xu: I see. So for the prompts, like… What was,
+
+156
+00:15:04.310 --> 00:15:14.290
+Zhongzheng Xu: like, what was, like, the toughest thing that you have to, decide? Or, can I just ask you, like, like, what's the overall structure of your prompt?
+
+157
+00:15:15.920 --> 00:15:23.049
+Branden: Okay, let's see, which one would you want to know, like, the toughest…
+
+158
+00:15:23.250 --> 00:15:28.049
+Branden: Then as you decide with the prompts, or just the structure of the prompts directly?
+
+159
+00:15:28.790 --> 00:15:30.880
+Zhongzheng Xu: Actually both, both.
+
+160
+00:15:31.160 --> 00:15:37.659
+Branden: Okay, so I think that… I think, actually, the toughest would be, deciding how much…
+
+161
+00:15:38.080 --> 00:15:43.139
+Branden: Context to given agent without overloading it at the same time.
+
+162
+00:15:44.310 --> 00:15:49.770
+Branden: I think if the agent gets too much of information, it could give irrelevant outputs.
+
+163
+00:15:50.050 --> 00:15:53.510
+Branden: And, if it was truly to, at the same time.
+
+164
+00:15:54.010 --> 00:15:56.520
+Branden: A couple of important details would be missing.
+
+165
+00:15:57.430 --> 00:15:59.280
+Branden: I would say, and
+
+166
+00:15:59.500 --> 00:16:09.930
+Branden: I would say the overall structure, the prompts are actually structured around the role and the task at which the agent would perform.
+
+167
+00:16:10.700 --> 00:16:15.109
+Branden: So, the prompts were basically on role definition.
+
+168
+00:16:15.780 --> 00:16:19.950
+Branden: Instructions and, outputs also.
+
+169
+00:16:20.300 --> 00:16:26.190
+Zhongzheng Xu: outputs. And, oh… what's the output, like, in JSON?
+
+170
+00:16:28.620 --> 00:16:29.950
+Branden: Come again, sorry.
+
+171
+00:16:30.170 --> 00:16:33.259
+Zhongzheng Xu: Oh, sorry. What's the output in JSON?
+
+172
+00:16:34.720 --> 00:16:46.340
+Branden: Yes. So, most of the output formats were in JSON, and, we actually set it that way, so, like, it's very easy to compare and process
+
+173
+00:16:46.990 --> 00:16:51.329
+Branden: I think, Jason actually makes it simpler to store multiple fields, yeah.
+
+174
+00:16:51.750 --> 00:16:53.849
+Zhongzheng Xu: I see, I see. Okay.
+
+175
+00:16:54.320 --> 00:16:55.659
+Zhongzheng Xu: And then…
+
+176
+00:16:55.940 --> 00:17:07.249
+Zhongzheng Xu: So, could you also tell me a little bit about, like, your, your, your debugging, not debugging, but, like, evaluation, or…
+
+177
+00:17:07.380 --> 00:17:28.720
+Zhongzheng Xu: like, how did you… how did you, like, monitor the system? So, for example, some of my other interviewees said, when they were debugging, and then when they were making sure that the work, like, the pipeline is working as they expected, they were, just looking at the, like, output manually.
+
+178
+00:17:28.720 --> 00:17:31.229
+Zhongzheng Xu: Basically looking at,
+
+179
+00:17:32.720 --> 00:17:52.379
+Zhongzheng Xu: like, the output from each agent, and then some people also used, some monitoring tools, like, if you're using LaneChain, I think they have this tool called, Lanesmith, which basically, kind of, like, visualize the system, and then also show the output, in a structure.
+
+180
+00:17:53.870 --> 00:18:00.640
+Branden: Okay, so, in my own, okay, I would say…
+
+181
+00:18:01.400 --> 00:18:04.519
+Branden: Most of the… most of the evaluation, actually.
+
+182
+00:18:04.650 --> 00:18:09.470
+Branden: was… was done by me, I would say, and then…
+
+183
+00:18:10.250 --> 00:18:15.779
+Branden: the way it works was this, I focused more on whether the outputs I was getting
+
+184
+00:18:15.930 --> 00:18:23.479
+Branden: were accurate, or, or if they aligned with, real-world decision context, actually.
+
+185
+00:18:23.770 --> 00:18:33.230
+Branden: So, I didn't just check for, the technical correctness or just, the code. I reviewed most of the recommendations to see if
+
+186
+00:18:33.430 --> 00:18:40.800
+Branden: They actually, gave rec… were actually given recommendations that actually mattered to the… to the stakeholders.
+
+187
+00:18:41.600 --> 00:18:47.220
+Branden: And then, I would say the… the process was literally, like,
+
+188
+00:18:47.570 --> 00:18:59.169
+Branden: Run the agents, then review the outputs, then after reviewing the outputs, refine the prompts, or… or the agent logic at most times, and
+
+189
+00:18:59.560 --> 00:19:03.970
+Branden: I would say, mainly, for evaluation, I used, Python and Jupyter.
+
+190
+00:19:04.230 --> 00:19:12.609
+Branden: I wrote scripts to, process the outputs and check for, and, compare results, actually.
+
+191
+00:19:12.840 --> 00:19:16.670
+Branden: And, yeah, it just made it easier to,
+
+192
+00:19:16.810 --> 00:19:25.460
+Branden: Spots, any inconsistencies, or, conflicts, or… Misinformations.
+
+193
+00:19:25.700 --> 00:19:27.120
+Zhongzheng Xu: I see, I see.
+
+194
+00:19:27.510 --> 00:19:42.590
+Zhongzheng Xu: And then, I guess… so, some of my other interviews said that, like, the prompt refining process was very, iterative, and it was, like, very trial… trial and error. So…
+
+195
+00:19:43.140 --> 00:20:00.259
+Zhongzheng Xu: sometimes they have to, like, just run the pipeline, see what kind of issues come up, and then, like, and then… and then just manually add the issue back into the prompt. That was kind of the refining process.
+
+196
+00:20:01.180 --> 00:20:01.970
+Branden: Oh.
+
+197
+00:20:03.660 --> 00:20:06.559
+Branden: Well, for mine, I would say,
+
+198
+00:20:07.180 --> 00:20:12.799
+Branden: it's… it's, I would say it's similar, it's similar, but,
+
+199
+00:20:13.770 --> 00:20:19.250
+Branden: In my case, I would start with probably an initial prompt, and then
+
+200
+00:20:19.570 --> 00:20:27.959
+Branden: I would make sure the data would focus, the data which would be fed into the agent's role would be focused on the kind of output I would be expecting.
+
+201
+00:20:28.380 --> 00:20:37.049
+Branden: So, after running the agent, I would check the outputs to see if, if it was still on the, on the, on the roadmap, it was still on the task.
+
+202
+00:20:37.250 --> 00:20:42.010
+Branden: and then I would be able to, judge, I would say.
+
+203
+00:20:42.210 --> 00:20:45.119
+Branden: So, cause sometimes, sometimes,
+
+204
+00:20:45.270 --> 00:20:51.339
+Branden: sometimes I might need to clarify rules, so I would adjust the prompt sometimes, or,
+
+205
+00:20:51.540 --> 00:20:55.060
+Branden: Or add more constraints or contexts.
+
+206
+00:20:55.350 --> 00:20:56.110
+Branden: Yeah.
+
+207
+00:20:56.770 --> 00:21:04.600
+Zhongzheng Xu: I see. Okay. And then, so, like, the constraints…
+
+208
+00:21:05.070 --> 00:21:08.150
+Zhongzheng Xu: Was, was it literally, like, like…
+
+209
+00:21:09.110 --> 00:21:15.739
+Zhongzheng Xu: to, like, straight up telling the LLM, do not, you know, do not do this, do not do that, something like that.
+
+210
+00:21:16.240 --> 00:21:23.279
+Branden: No, there, no, most of the constraints were actually, boundaries, like, scope, scope constraints. Oh, okay, scope, I see.
+
+211
+00:21:24.910 --> 00:21:39.280
+Zhongzheng Xu: Okay, and, so you said that you use Python and Lynching for, for this development, and just… actually, maybe not this project, just more in general, like.
+
+212
+00:21:39.560 --> 00:21:49.509
+Zhongzheng Xu: What are some improvements that you, you would, add to LaneChain, to, to, like, make it more… make it better?
+
+213
+00:21:50.090 --> 00:21:54.549
+Zhongzheng Xu: Or, like, just make it easier for implementation process.
+
+214
+00:21:55.740 --> 00:21:59.540
+Branden: Okay, I think… okay, first one, I would say…
+
+215
+00:22:00.360 --> 00:22:02.540
+Branden: I would just see, like,
+
+216
+00:22:02.970 --> 00:22:07.599
+Branden: I would say it's… I would focus more on debugging, actually.
+
+217
+00:22:07.900 --> 00:22:12.299
+Branden: Focus more on better form of debugging and transparency for,
+
+218
+00:22:12.710 --> 00:22:19.480
+Branden: For AMA assistance, because, sometimes, yes, because sometimes it can be very hard to, like, see why…
+
+219
+00:22:19.630 --> 00:22:24.440
+Branden: Some agents give out some certain outputs, or…
+
+220
+00:22:24.780 --> 00:22:27.769
+Branden: Or, see where conflicts actually originate.
+
+221
+00:22:29.520 --> 00:22:31.100
+Zhongzheng Xu: I see.
+
+222
+00:22:31.380 --> 00:22:39.900
+Zhongzheng Xu: And could you say a little… could you just describe it in a little bit more in detail? Like, just…
+
+223
+00:22:40.290 --> 00:22:47.440
+Zhongzheng Xu: What would… what would the ideal, environment look like, the development environment look like?
+
+224
+00:22:48.890 --> 00:22:51.730
+Branden: Okay, let's see, I would say, okay.
+
+225
+00:22:51.850 --> 00:22:59.439
+Branden: An ideal environment would be, having, like, having a full visibility into
+
+226
+00:23:00.120 --> 00:23:06.770
+Branden: The agent's reasoning, not just the final output, but, like, Like, a step-by-step trace of…
+
+227
+00:23:07.200 --> 00:23:10.059
+Branden: How the output, is getting out.
+
+228
+00:23:10.180 --> 00:23:11.270
+Zhongzheng Xu: Yum…
+
+229
+00:23:11.470 --> 00:23:19.920
+Branden: Because, that would make the… that would make debugging… Prompts, refinements, Much faster, I would say.
+
+230
+00:23:20.600 --> 00:23:27.049
+Branden: And, you would, it would, reduce the surprises you would have in your outputs. You would basically know
+
+231
+00:23:27.720 --> 00:23:29.719
+Branden: The output you're supposed to get.
+
+232
+00:23:30.010 --> 00:23:31.200
+Branden: Yeah.
+
+233
+00:23:32.160 --> 00:23:33.599
+Zhongzheng Xu: I see, I see.
+
+234
+00:23:34.340 --> 00:23:36.050
+Zhongzheng Xu: Okay.
+
+235
+00:23:36.440 --> 00:23:43.919
+Zhongzheng Xu: And, so, to help, so this project that you, that we…
+
+236
+00:23:44.580 --> 00:23:52.610
+Zhongzheng Xu: That we talked about, was this, like, the only project that, you developed using MAS.
+
+237
+00:23:53.850 --> 00:23:54.620
+Branden: Coming in.
+
+238
+00:23:57.910 --> 00:24:05.239
+Zhongzheng Xu: Oh, okay, sir. So, was the healthcare project, the only project that, you developed using MAS?
+
+239
+00:24:05.890 --> 00:24:07.120
+Branden: Yes, majorly.
+
+240
+00:24:07.310 --> 00:24:08.030
+Zhongzheng Xu: Okay.
+
+241
+00:24:08.280 --> 00:24:11.319
+Zhongzheng Xu: I see. And then…
+
+242
+00:24:11.350 --> 00:24:29.219
+Zhongzheng Xu: that was kind of all my questions, but I guess I will end with another more broad question, so it doesn't have to be about your healthcare project. Okay. Just in general, what type of problems do you think, like, multi-agent system work the best?
+
+243
+00:24:30.860 --> 00:24:36.590
+Branden: Okay, let's see… well, I would say…
+
+244
+00:24:37.000 --> 00:24:40.029
+Branden: Multiple agent systems actually work for,
+
+245
+00:24:40.560 --> 00:24:50.160
+Branden: high-stake problems, or, like, complex high-stake problems, or, like, problems with multiple Probably having multiple trade-offs.
+
+246
+00:24:50.170 --> 00:24:53.440
+Zhongzheng Xu: Especially, like, when…
+
+247
+00:24:53.440 --> 00:25:00.059
+Branden: Single models can easily capture, like, all the… all the dimensions of a particular decision.
+
+248
+00:25:00.160 --> 00:25:18.229
+Branden: like, for example, when you're having, like, different contexts, like, risk, cost, compliance, like, having this kind of, different features would be, ideal for using an LMS system, and I think they're also great, like, if you have,
+
+249
+00:25:18.780 --> 00:25:25.270
+Branden: What-if situations, or like, stress test situations also.
+
+250
+00:25:25.790 --> 00:25:34.240
+Branden: Because, like, each agent, like, a different agent can, give a different angle, basically.
+
+251
+00:25:34.450 --> 00:25:35.120
+Zhongzheng Xu: Yeah.
+
+252
+00:25:35.600 --> 00:25:38.779
+Branden: Yeah, so it's like… it's like hiding… it's like…
+
+253
+00:25:38.920 --> 00:25:41.190
+Branden: Adding some kind of real value.
+
+254
+00:25:41.380 --> 00:25:43.710
+Branden: To the kind of decisions you're making.
+
+255
+00:25:44.900 --> 00:25:46.400
+Zhongzheng Xu: I see, I see.
+
+256
+00:25:48.140 --> 00:25:56.120
+Zhongzheng Xu: Okay. Sorry, I said it was the last question, but I actually thought about something. So,
+
+257
+00:25:56.530 --> 00:26:03.249
+Zhongzheng Xu: You s… You said that you were actually kind of looking at the results yourself.
+
+258
+00:26:03.440 --> 00:26:12.830
+Zhongzheng Xu: You're, you know, you're checking the output, making sure that it's aligned with the stakeholders. So… like…
+
+259
+00:26:13.180 --> 00:26:20.610
+Zhongzheng Xu: Do you feel like there's a point in the future that you can just fully automate the process?
+
+260
+00:26:20.720 --> 00:26:23.220
+Zhongzheng Xu: And, what might…
+
+261
+00:26:23.480 --> 00:26:30.890
+Zhongzheng Xu: lead to that situation, like, for example, the models just get better, and more trustworthy, or…
+
+262
+00:26:32.940 --> 00:26:36.830
+Branden: Okay, yeah, I think I would say,
+
+263
+00:26:38.300 --> 00:26:40.930
+Branden: I would say in the future, actually, if…
+
+264
+00:26:41.530 --> 00:26:48.019
+Branden: If agents, if the old aggregation system becomes, reliable enough.
+
+265
+00:26:48.390 --> 00:26:54.370
+Branden: Automating reports, and then, you know, keeping it,
+
+266
+00:26:54.620 --> 00:26:58.210
+Branden: Keeping it basically automated might be actually possible.
+
+267
+00:26:59.580 --> 00:27:08.090
+Branden: But I think that would still be dependent on the… And, efficiency, and the other outputs, yeah.
+
+268
+00:27:08.920 --> 00:27:10.490
+Zhongzheng Xu: I see. The old portion.
+
+269
+00:27:12.020 --> 00:27:15.289
+Zhongzheng Xu: But, okay. But you think that, like…
+
+270
+00:27:15.870 --> 00:27:22.030
+Zhongzheng Xu: Right now, as of right now, like, human evaluation is probably still necessary.
+
+271
+00:27:22.440 --> 00:27:23.210
+Branden: Yeah.
+
+272
+00:27:24.580 --> 00:27:25.520
+Zhongzheng Xu: Okay.
+
+273
+00:27:27.130 --> 00:27:33.340
+Zhongzheng Xu: Alright, I guess that was all the kind of questions I had.
+
+274
+00:27:33.560 --> 00:27:39.919
+Zhongzheng Xu: And, thank you for participating. So…
+
+275
+00:27:40.710 --> 00:27:43.610
+Zhongzheng Xu: Okay, I can end the recording.
+

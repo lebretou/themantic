@@ -1,0 +1,850 @@
+WEBVTT
+
+1
+00:00:06.820 --> 00:00:07.960
+Zhongzheng Xu: And…
+
+2
+00:00:15.850 --> 00:00:20.590
+Zhongzheng Xu: Okay, let's get started…
+
+3
+00:00:21.690 --> 00:00:29.029
+Zhongzheng Xu: Okay, so I will… I'll start off, with a, pretty general question,
+
+4
+00:00:29.700 --> 00:00:39.529
+Zhongzheng Xu: Can I ask your definition of multi-agent system? For example, when you hear the term multi-agent system, what does it mean?
+
+5
+00:00:41.520 --> 00:00:51.770
+Malik: I mean, from my perspective, I think it's basically, a framework comprised of, let's say,
+
+6
+00:00:51.960 --> 00:00:57.210
+Malik: Say, different components working together, to achieve, like, let's say a shared goal.
+
+7
+00:00:57.920 --> 00:01:11.780
+Malik: say, say in the case of, let's say, AI systems, you might have, like, different AI agents that are, like, kind of, like, synchronized in a way, yeah, to complete, like, a certain goal that, is preset for them.
+
+8
+00:01:12.600 --> 00:01:14.590
+Zhongzheng Xu: Okay. And,
+
+9
+00:01:14.880 --> 00:01:26.139
+Zhongzheng Xu: And could you tell me about, one or two, projects that you have worked on in the past, that have implemented a multi-agent system?
+
+10
+00:01:26.250 --> 00:01:38.200
+Zhongzheng Xu: You can start from, what was the overall goal of the system, and then, briefly go over, each agent, or models, inside of the system.
+
+11
+00:01:39.640 --> 00:01:41.100
+Malik: Yeah,
+
+12
+00:01:41.900 --> 00:01:48.070
+Malik: I think we… see, like, we had, like, a project, for… it was, like, a drone farm.
+
+13
+00:01:48.230 --> 00:01:50.129
+Malik: For, like, search and rescue.
+
+14
+00:01:50.350 --> 00:01:54.800
+Malik: Basically, the main objective was basically
+
+15
+00:01:55.060 --> 00:02:00.589
+Malik: The system comprised of drones that, like, work, like, in a collaborative way.
+
+16
+00:02:00.790 --> 00:02:09.490
+Malik: To, like, locate missing persons in large, say, environments. Like, let's say, like, a disaster zone, or a forest, or something of that sort.
+
+17
+00:02:09.699 --> 00:02:10.389
+Malik: Yeah.
+
+18
+00:02:11.030 --> 00:02:19.860
+Malik: And in regards to how, like, we set the system, we had, like, each drone as an autonomous agent, like, working independently.
+
+19
+00:02:20.000 --> 00:02:28.039
+Malik: And they had roles such as one had, like, one for scouting, another one, like, for communication, and another one for rescuing.
+
+20
+00:02:28.270 --> 00:02:36.680
+Malik: Yeah, and, say, the tools that we use, we use Jade for, like, managing, say, communication.
+
+21
+00:02:37.160 --> 00:02:39.350
+Malik: The whole coordination of the whole stuff.
+
+22
+00:02:39.600 --> 00:02:46.159
+Malik: And also long-chain for, like, high decision-making, like, let's say, for example,
+
+23
+00:02:46.840 --> 00:02:59.199
+Malik: maybe you have, like, different tasks, and you, like, require agents to, like, coordinate the tasks, based on, let's say, the environmental input, like, say, the problem that you placed there. So, yeah, use that for… for that.
+
+24
+00:02:59.320 --> 00:03:06.410
+Malik: Yeah, and T… There is also, basically, we had, like.
+
+25
+00:03:06.520 --> 00:03:09.170
+Malik: There's such time to reduce, like.
+
+26
+00:03:09.720 --> 00:03:28.630
+Malik: very significantly, as compared to, like, let's say, a random, like, say, strategy. Let's say, for example, like, random, like, strategies, where you have, like, simulated areas. So, yeah, I think there's, like, a reduced, like, search, time, say, for… by around, like, let's say 30, let's say 30, 33%.
+
+27
+00:03:29.010 --> 00:03:31.330
+Malik: And yeah, there was obviously leak.
+
+28
+00:03:31.470 --> 00:03:32.740
+Malik: Variety.
+
+29
+00:03:33.140 --> 00:03:37.470
+Malik: coordinated the… Say, coordinated,
+
+30
+00:03:38.270 --> 00:03:45.120
+Malik: Okay, I see. Coordinated, like, demonstrations in that, like, environment that you're observing. Yeah, yeah, and I'll say…
+
+31
+00:03:46.640 --> 00:03:49.089
+Malik: Yeah, I think it was, I think that's that.
+
+32
+00:03:51.490 --> 00:03:56.069
+Zhongzheng Xu: Okay, and you said that you used, LaneChain for this?
+
+33
+00:03:57.010 --> 00:03:59.729
+Malik: Yes, you use lanchain in Jade.
+
+34
+00:04:00.710 --> 00:04:01.570
+Zhongzheng Xu: I see.
+
+35
+00:04:01.840 --> 00:04:21.739
+Zhongzheng Xu: And, so, during your, development, like, what, can you think of any challenges that you faced? So, for example, like, which part, took the longest time? So, for example, some of the other participants
+
+36
+00:04:21.740 --> 00:04:40.280
+Zhongzheng Xu: said that, it took them a lot of time to, refine system prompts. Other people also mentioned, they have to, like, handle the errors, coming up with fallbacks or retries, so that the system can, you know, handle by itself when
+
+37
+00:04:40.280 --> 00:04:44.999
+Zhongzheng Xu: there's some errors. What was, like, the most challenging part for you?
+
+38
+00:04:48.620 --> 00:05:03.020
+Malik: I think was… I think the most challenging was, like, coordination, because we had, like, a number of drones, say, approximately, like, 50 drones, so, obviously the number of agents increased, and there were, like, delays in communication.
+
+39
+00:05:03.260 --> 00:05:07.279
+Malik: Yeah, and we had to, like, basically…
+
+40
+00:05:07.440 --> 00:05:12.389
+Malik: Implement some consensus protocols in between them, like some, let's say.
+
+41
+00:05:12.640 --> 00:05:20.860
+Malik: say, like, centralized control. So, I think that, like, took, like, a long time. Yeah, and
+
+42
+00:05:21.480 --> 00:05:26.900
+Malik: I think it took, like, resolving the issue, like, took a really, let's say, a number of weeks or so.
+
+43
+00:05:27.200 --> 00:05:31.060
+Malik: Because we had to, like, debug and optimize the agent codes.
+
+44
+00:05:31.240 --> 00:05:35.790
+Malik: And also the communication infrastructure, yeah. I think that's the most challenging part.
+
+45
+00:05:37.080 --> 00:05:41.659
+Zhongzheng Xu: Okay. Could you talk, could you talk a little bit about the protocol?
+
+46
+00:05:42.080 --> 00:05:50.359
+Zhongzheng Xu: What type of protocol was it, and what are some other things that, in the end, helped with the coordination?
+
+47
+00:05:53.120 --> 00:06:01.049
+Malik: So, yeah, I think the basic approach is first, as I said, Drinkley.
+
+48
+00:06:01.120 --> 00:06:18.260
+Malik: to basically implement, like, a consensus, distributed consensus, like, protocol, like, inside of, like, it's a centralized control. So, you had, like, reduce the message that was passing overhead. So, that was the first phase. And then, basically, optimize the data.
+
+49
+00:06:18.270 --> 00:06:25.000
+Malik: In regards to, like, reducing, say, latency, so you have to, like, kind of, like, work on that issue.
+
+50
+00:06:25.150 --> 00:06:28.419
+Malik: And then, kind of, like, simulate it on a large scale.
+
+51
+00:06:28.600 --> 00:06:31.710
+Malik: So you use, like, Unity and allegiance.
+
+52
+00:06:32.070 --> 00:06:32.850
+Malik: Oh, Mom.
+
+53
+00:06:33.230 --> 00:06:37.710
+Malik: So, like, before the actual deployment, so as to identify, like, any…
+
+54
+00:06:38.130 --> 00:06:43.029
+Malik: I'd say, bottlenecks that could arise, so, on the early phase. Yeah.
+
+55
+00:06:44.550 --> 00:06:47.010
+Zhongzheng Xu: Okay. And
+
+56
+00:06:47.330 --> 00:07:05.430
+Zhongzheng Xu: Could you also talk about a little bit, about your debugging process? Did you rely on any tool, to debug, or did you mostly just, manually check, like, the inputs, outputs yourself?
+
+57
+00:07:07.030 --> 00:07:10.070
+Malik: I think you're cut out for a moment there. Can you, can you repeat?
+
+58
+00:07:10.730 --> 00:07:22.660
+Zhongzheng Xu: Oh yeah, could you talk a little bit about your debugging process? Did you rely on any tools, or were you mostly, just manually looking at the inputs and outputs yourself?
+
+59
+00:07:24.270 --> 00:07:33.010
+Malik: See… I think, say, say, like, from identifying the issues,
+
+60
+00:07:33.870 --> 00:07:38.240
+Malik: I think he used the, like, Unity, machine learning agents,
+
+61
+00:07:38.560 --> 00:07:47.120
+Malik: So, like, yeah, I think, that is, like, to identify the issues, basically, say the communication delays and such.
+
+62
+00:07:47.420 --> 00:07:52.489
+Malik: And obviously, like, clogging in them, like, you use, like, Jade Agents as well to, like, log.
+
+63
+00:07:52.870 --> 00:07:56.490
+Malik: To, like, maybe, like, have, like, some detailed logs and such.
+
+64
+00:07:56.690 --> 00:08:00.259
+Malik: And also, like, check, like, message timestamps and such.
+
+65
+00:08:00.370 --> 00:08:02.640
+Malik: And then, basically…
+
+66
+00:08:02.860 --> 00:08:13.429
+Malik: Yeah, and then, basically, the actual testing phase. So, link, it was like a phase process, and we used, like, I'd say Jade, as well as ML agents as well, so…
+
+67
+00:08:14.280 --> 00:08:15.520
+Zhongzheng Xu: I see, I see.
+
+68
+00:08:15.920 --> 00:08:21.230
+Zhongzheng Xu: And then, was this project for, a company, industry, or…
+
+69
+00:08:21.350 --> 00:08:23.599
+Zhongzheng Xu: Was there something else?
+
+70
+00:08:25.040 --> 00:08:26.910
+Malik: The whole, like, drone project.
+
+71
+00:08:27.710 --> 00:08:28.710
+Zhongzheng Xu: Yeah, yeah.
+
+72
+00:08:30.500 --> 00:08:35.310
+Malik: Yeah, Inc. is basically, is like a robotics company, so…
+
+73
+00:08:35.440 --> 00:08:36.710
+Zhongzheng Xu: I see.
+
+74
+00:08:37.809 --> 00:08:38.499
+Zhongzheng Xu: I see.
+
+75
+00:08:38.839 --> 00:08:44.449
+Zhongzheng Xu: Okay. And, since you used, LaneChain, could you…
+
+76
+00:08:44.549 --> 00:08:48.169
+Zhongzheng Xu: Try to brainstorm and,
+
+77
+00:08:48.439 --> 00:09:07.749
+Zhongzheng Xu: think about if you can make any improvement, to the, to the framework, what would it be? So I think some other participants mentioned that, like, LangChain, even though it provides abstraction, sometimes, there can be less control.
+
+78
+00:09:07.889 --> 00:09:15.989
+Zhongzheng Xu: Yeah, what are your thoughts on online chain, and if there's any improvement you can make, what would it be?
+
+79
+00:09:19.610 --> 00:09:20.300
+Malik: Okay.
+
+80
+00:09:21.230 --> 00:09:26.910
+Malik: I think if you can improve on the scaling…
+
+81
+00:09:27.030 --> 00:09:29.599
+Malik: Yeah, you can have, like, say, concurrent tasks.
+
+82
+00:09:30.070 --> 00:09:39.429
+Malik: are happening, you know, like, as I say, like, delayed communications and such. Kind of, like, have, like, some kind of, like, synchrony in between them, and I think that will be…
+
+83
+00:09:40.020 --> 00:09:40.820
+Malik: Okay.
+
+84
+00:09:41.100 --> 00:09:46.709
+Malik: And also, if they can also,
+
+85
+00:09:47.250 --> 00:09:50.439
+Malik: Because I think there's some certain limitation in regards to
+
+86
+00:09:50.640 --> 00:10:01.530
+Malik: how, the agent can, let's say, break the entire chain, without, like, manual handling. So, if you can have, like, better, like, fallback strategies, and also retries.
+
+87
+00:10:01.650 --> 00:10:02.919
+Malik: For that.
+
+88
+00:10:03.060 --> 00:10:07.210
+Malik: I think that will really improve the whole system as a whole.
+
+89
+00:10:07.680 --> 00:10:13.770
+Malik: And I think I've also, like, noticed, some kind of limitation in regards to
+
+90
+00:10:14.350 --> 00:10:24.209
+Malik: it's a memory, especially when it's a, like, it's a multi-step, process. So, it kind of, like, makes the whole coordination harder. So, if you can have, like.
+
+91
+00:10:24.540 --> 00:10:28.579
+Malik: Some kind of, like, say, multi-agent, like, say.
+
+92
+00:10:31.440 --> 00:10:45.270
+Malik: like, say, multi-agent, like, follow-up, in regards to that, where you have, like, the agent, like, actually being reliable in regards to, like, memory tracking, I think that would also be really helpful.
+
+93
+00:10:45.840 --> 00:10:51.290
+Malik: Yeah, I think those are the things that I think should improve in that regard.
+
+94
+00:10:51.290 --> 00:10:51.840
+Zhongzheng Xu: Go ahead.
+
+95
+00:10:52.210 --> 00:11:04.759
+Zhongzheng Xu: I see. And then, so, some of… or actually, a lot of my other, participants were mentioning, that they also have a really hard time in terms of
+
+96
+00:11:04.770 --> 00:11:16.200
+Zhongzheng Xu: writing system prompt. It just took them a lot of time, and, it was a lot of trial and errors, because, you know, like, for…
+
+97
+00:11:16.430 --> 00:11:31.260
+Zhongzheng Xu: especially LLM models, system prompts is one of the few ways that you can control agent behavior. Was that also relevant to you, or, did you spend less time on system prompts?
+
+98
+00:11:35.080 --> 00:11:40.730
+Malik: Yeah, I think… I think there's… I think there's also an issue in that regard, cause,
+
+99
+00:11:41.150 --> 00:11:46.290
+Malik: I feel sometimes, like, the system prompts, like, are generic.
+
+100
+00:11:46.600 --> 00:11:47.730
+Malik: And you have to leak.
+
+101
+00:11:48.180 --> 00:11:53.600
+Malik: Yeah, each kind of, like, creates some inconsistent actions in the whole framework.
+
+102
+00:11:55.630 --> 00:12:02.889
+Malik: So, like, for example, in the drone, like, simulation, some simulation, say if an agent, like, interprets, like.
+
+103
+00:12:03.470 --> 00:12:07.380
+Malik: Some specific, like, area that you're working on differently.
+
+104
+00:12:07.490 --> 00:12:08.680
+Zhongzheng Xu: from another.
+
+105
+00:12:08.680 --> 00:12:11.350
+Malik: That creates some kind of overlap, so…
+
+106
+00:12:11.660 --> 00:12:18.800
+Malik: That time being with you was obviously a challenge, yeah. So, yeah, I think… yeah, I think there's also a challenge in that regard.
+
+107
+00:12:19.960 --> 00:12:24.709
+Zhongzheng Xu: I see. And then, were there, any, like.
+
+108
+00:12:25.330 --> 00:12:31.549
+Zhongzheng Xu: overall structure of your prompt, in the end.
+
+109
+00:12:31.970 --> 00:12:43.780
+Zhongzheng Xu: Yeah, oh, sorry, so, were there any, overall structure, in the system prompts that you developed, in the end? For example, like, what are some components that are always there?
+
+110
+00:12:45.980 --> 00:12:47.429
+Malik: In what regards?
+
+111
+00:12:50.410 --> 00:12:53.580
+Zhongzheng Xu: And, and, and prompt, in your system prompt.
+
+112
+00:12:55.220 --> 00:12:56.700
+Malik: I didn't get your question.
+
+113
+00:12:57.940 --> 00:13:13.159
+Zhongzheng Xu: Oh, sorry, so I was asking, so in the end, were there any shared structure or overall structure of your system prompts? For example, like, what are some, components in the system prompt that are always there?
+
+114
+00:13:15.280 --> 00:13:16.069
+Malik: Okay.
+
+115
+00:13:16.250 --> 00:13:23.550
+Malik: I think… In rifty.
+
+116
+00:13:25.260 --> 00:13:26.899
+Malik: I didn't click OK.
+
+117
+00:13:29.350 --> 00:13:31.440
+Malik: Okay, I'm trying to, like, structure that.
+
+118
+00:13:31.850 --> 00:13:32.870
+Malik: Oh, yeah.
+
+119
+00:13:32.870 --> 00:13:33.650
+Zhongzheng Xu: Bigger time.
+
+120
+00:13:37.840 --> 00:13:42.920
+Malik: I think what's always, like, there. I think…
+
+121
+00:13:43.120 --> 00:13:57.199
+Malik: the goal, say, how you define the goal is always a concern, because it… it's, like, what, like, say, controls the system, and how… say, what type of action that you're taking. So, I think that's…
+
+122
+00:13:57.310 --> 00:14:00.080
+Malik: I must be The whole system prompt.
+
+123
+00:14:01.880 --> 00:14:08.740
+Malik: And also, like, the structure in regards to how you structure your… the structure… how you structure your output, cause that kind of, like…
+
+124
+00:14:09.260 --> 00:14:15.500
+Malik: That kind of, like, shapes the whole… System as a whole, because
+
+125
+00:14:15.720 --> 00:14:18.439
+Malik: From the start, like, how you structured them.
+
+126
+00:14:19.940 --> 00:14:29.279
+Malik: needs to, like, be consistent first to, like, provide, like, some consistent results. So I think that's also… that is also, like, something that has to be there from the start, as well, to the end.
+
+127
+00:14:29.450 --> 00:14:31.089
+Malik: Yeah.
+
+128
+00:14:31.820 --> 00:14:33.109
+Zhongzheng Xu: And also leak.
+
+129
+00:14:33.110 --> 00:14:38.189
+Malik: I think she should also define the role of, say, the agents from the start.
+
+130
+00:14:38.790 --> 00:14:43.799
+Malik: I think that kind of, like, creates some kind of, like, let's say, fine line between what
+
+131
+00:14:44.140 --> 00:14:54.139
+Malik: Like, is expected, and what, like, the air produces, so that you can, like, prevent any, like, misalignments, the objectives as a whole.
+
+132
+00:14:55.660 --> 00:14:57.159
+Zhongzheng Xu: Hmm, I see, I see.
+
+133
+00:14:57.220 --> 00:15:16.540
+Zhongzheng Xu: And then, could you talk about, a little bit about your testing process, your evaluation? So, for example, did you, just test the system as a whole, or did you, try to, you know, test each individual agent, one after one?
+
+134
+00:15:16.640 --> 00:15:18.870
+Zhongzheng Xu: Individually.
+
+135
+00:15:23.010 --> 00:15:25.390
+Malik: I think, garlic.
+
+136
+00:15:26.200 --> 00:15:29.240
+Malik: We had, like, some testing for individual legends.
+
+137
+00:15:29.530 --> 00:15:36.359
+Malik: Basically, I think her approach was basically isolate the agents,
+
+138
+00:15:36.670 --> 00:15:44.010
+Malik: And run some simulation nodes, and then, like, kind of, like, document the decision-making and…
+
+139
+00:15:44.410 --> 00:15:46.059
+Malik: the action execution.
+
+140
+00:15:46.320 --> 00:15:51.300
+Malik: So, But I think you had a team that actually did that,
+
+141
+00:15:51.620 --> 00:15:56.800
+Malik: Because, again, basically, by the unit tests, so… And simulation also.
+
+142
+00:15:57.240 --> 00:16:01.509
+Malik: I think you had, like, individual, testing for the agents in that regard.
+
+143
+00:16:02.460 --> 00:16:04.720
+Zhongzheng Xu: I see, I see.
+
+144
+00:16:05.290 --> 00:16:11.230
+Zhongzheng Xu: Okay, and so… Going back to,
+
+145
+00:16:11.950 --> 00:16:24.509
+Zhongzheng Xu: So, it doesn't have to be the project that you shared. Just generally, for what kind of problems do you think a multi-agent system worked the best, and for what scenarios?
+
+146
+00:16:25.120 --> 00:16:27.840
+Zhongzheng Xu: Do you think that multi-agent system,
+
+147
+00:16:28.260 --> 00:16:32.159
+Zhongzheng Xu: It's, like, not the most, not the optimal choice.
+
+148
+00:16:33.590 --> 00:16:34.969
+Malik: Oh, can you kindly repeat?
+
+149
+00:16:35.430 --> 00:16:41.620
+Zhongzheng Xu: Yeah, so basically, for what kind of problems do you think multi-agent system work the best?
+
+150
+00:16:41.730 --> 00:16:42.939
+Zhongzheng Xu: And, the.
+
+151
+00:16:45.060 --> 00:16:48.300
+Malik: Okay, the Incoop.
+
+152
+00:16:48.610 --> 00:16:56.040
+Malik: My systems work best, where you have, like… Let's see…
+
+153
+00:16:57.230 --> 00:17:00.289
+Malik: Where, like, maybe tasks are, like, distributed.
+
+154
+00:17:02.260 --> 00:17:18.109
+Malik: Yeah, I think… I think they work best there, because, yeah, an agent, like, gets to handle, like, a portion of the problem, so there's, like, minimal risk of errors in regards to, like, overlaying, and it's a miscommunication in between them.
+
+155
+00:17:18.390 --> 00:17:26.080
+Malik: And also… I'm editing, when, let's say, like.
+
+156
+00:17:27.880 --> 00:17:32.239
+Malik: When you need, like, to scale, like, say, systems, horizontally.
+
+157
+00:17:33.590 --> 00:17:38.159
+Malik: So you're, like, having, let's say, it's more like a distribution network.
+
+158
+00:17:38.840 --> 00:17:43.840
+Malik: an agent, as I said, is working on specific, subsections. I think…
+
+159
+00:17:44.500 --> 00:17:47.670
+Malik: Air system will work, effectively in that regard.
+
+160
+00:17:48.430 --> 00:17:52.840
+Malik: And where I think it won't work as well is really…
+
+161
+00:17:55.660 --> 00:17:58.529
+Malik: A centralized, like, decision-making phase.
+
+162
+00:17:58.880 --> 00:18:02.549
+Malik: Because you can't, like, really rely
+
+163
+00:18:02.660 --> 00:18:10.230
+Malik: Or, let's say, like, overlaid networks and channels, let's say there is more likelihood of miscommunication in that regard.
+
+164
+00:18:10.800 --> 00:18:18.799
+Malik: And also… Yeah, I think, I think that for now.
+
+165
+00:18:19.190 --> 00:18:27.550
+Zhongzheng Xu: Okay, no, no, that's a lot of things. Thanks for sharing. Okay. And then, I actually just have the last question,
+
+166
+00:18:28.190 --> 00:18:32.089
+Zhongzheng Xu: This might feel repetitive. So if you think…
+
+167
+00:18:32.400 --> 00:18:49.979
+Zhongzheng Xu: throughout your development process, from, initially designing the overall system architecture, to implementing the system, writing the system prompts, and evaluating, what are, what is, like, the most
+
+168
+00:18:49.980 --> 00:19:00.010
+Zhongzheng Xu: Challenging part, and what are something that you think it'll be… you think that can be helpful, in terms of speeding up the process?
+
+169
+00:19:02.400 --> 00:19:07.840
+Malik: In regards to… can you, like, restructure the question? Yeah.
+
+170
+00:19:08.120 --> 00:19:23.030
+Zhongzheng Xu: So, just throughout your entire development phase, what is, like, the most challenging part, and what are some features or, maybe even an interface that can help?
+
+171
+00:19:26.820 --> 00:19:27.510
+Malik: Okay.
+
+172
+00:19:27.710 --> 00:19:30.290
+Malik: A dink.
+
+173
+00:19:31.550 --> 00:19:33.200
+Malik: I think the most challenging part.
+
+174
+00:19:33.340 --> 00:19:36.269
+Malik: Especially in a large-scale, say, project.
+
+175
+00:19:36.800 --> 00:19:42.699
+Malik: Is, like, aligning… aligning, like, let's say.
+
+176
+00:19:43.190 --> 00:19:46.249
+Zhongzheng Xu: Decisions by these different agents to work…
+
+177
+00:19:47.110 --> 00:19:50.160
+Malik: Towards, let's say, the overall system goals.
+
+178
+00:19:50.370 --> 00:19:57.580
+Malik: Because I think there's some kind of autonomy in regards to agents, so, like, kind of, like, synchronizing that to, like.
+
+179
+00:19:57.870 --> 00:20:02.629
+Malik: be effective for your overall goal. I think it's always a challenge.
+
+180
+00:20:02.830 --> 00:20:10.160
+Malik: Yeah, because I said, notice, like, communication delays and such, conflicting decisions because of the autonomy, so… Yeah.
+
+181
+00:20:10.460 --> 00:20:15.449
+Malik: I think what can help Eve… Will be, like, let's say…
+
+182
+00:20:16.020 --> 00:20:20.859
+Malik: We had, like, a really robust, say, framework, communication framework.
+
+183
+00:20:21.090 --> 00:20:25.350
+Malik: That is some kind of, like, synchron… self-synchrony.
+
+184
+00:20:25.470 --> 00:20:31.870
+Malik: In regards to, how the agents communicate with each other.
+
+185
+00:20:32.010 --> 00:20:35.590
+Malik: To avoid these communication delays, and
+
+186
+00:20:36.270 --> 00:20:39.829
+Malik: And also, like, the totally contrasting decisions.
+
+187
+00:20:40.090 --> 00:20:41.880
+Malik: I think that will help.
+
+188
+00:20:44.390 --> 00:20:45.520
+Zhongzheng Xu: I see, I see.
+
+189
+00:20:45.710 --> 00:20:55.800
+Zhongzheng Xu: Okay. And yeah, that was actually my last question, and thank you again for joining. I will…
+
+190
+00:20:55.920 --> 00:21:03.059
+Zhongzheng Xu: I can, I can send you the gift card, now. Is it okay if I use the same email address?
+
+191
+00:21:05.020 --> 00:21:06.049
+Malik: Okay.
+
+192
+00:21:07.660 --> 00:21:09.050
+Zhongzheng Xu: It's,
+
+193
+00:21:39.080 --> 00:21:46.229
+Zhongzheng Xu: Okay, I just sent, it should be instant, see if you have gotten that email.
+
+194
+00:21:50.500 --> 00:21:51.899
+Malik: Oh, you already sent it?
+
+195
+00:21:53.410 --> 00:21:54.780
+Zhongzheng Xu: Yeah, just…
+
+196
+00:21:55.000 --> 00:21:56.500
+Malik: I received it, yeah.
+
+197
+00:21:57.310 --> 00:21:58.209
+Zhongzheng Xu: Oh, you got it?
+
+198
+00:21:58.940 --> 00:21:59.740
+Malik: Oh, yes.
+
+199
+00:21:59.870 --> 00:22:00.560
+Zhongzheng Xu: Okay.
+
+200
+00:22:00.690 --> 00:22:05.659
+Zhongzheng Xu: Awesome. Okay, thanks again for joining, you have a good rest of your day.
+
+201
+00:22:06.480 --> 00:22:08.819
+Malik: Sure, also had a question.
+
+202
+00:22:08.820 --> 00:22:09.260
+Zhongzheng Xu: Yeah, good.
+
+203
+00:22:09.260 --> 00:22:15.329
+Malik: That's true. I had said… I had requested if you contact my friend, but you never did.
+
+204
+00:22:15.730 --> 00:22:23.099
+Zhongzheng Xu: Oh, oh, sorry. So, you… you're actually, the last, so I have,
+
+205
+00:22:23.550 --> 00:22:29.140
+Zhongzheng Xu: enough for 15 participants, and, you're the… you're the 15th. You're the.
+
+206
+00:22:29.140 --> 00:22:30.770
+Malik: Oh, sure, no problem then.
+
+207
+00:22:30.950 --> 00:22:31.750
+Zhongzheng Xu: Yeah.
+
+208
+00:22:32.790 --> 00:22:36.039
+Malik: Okay, I totally understand. Good luck with your research.
+
+209
+00:22:36.320 --> 00:22:38.540
+Zhongzheng Xu: Okay, oh, thank you so much. Alright.
+
+210
+00:22:39.050 --> 00:22:40.700
+Malik: You too, have a nice day.
+
+211
+00:22:41.000 --> 00:22:41.979
+Zhongzheng Xu: Use it. Bye.
+
+212
+00:22:42.690 --> 00:22:43.230
+Malik: Bye.
+

@@ -1,0 +1,57 @@
+{"speaker": "Interviewer", "text": "Okay, we can start, and then I will start with the… pretty abstract question. So, could you tell me your definition of a multi-agent system? For example, when you hear the term multi-agent system, what does it mean to you?"}
+{"speaker": "Participant", "text": "Multi-agent systems… Or, like, to me, honestly, there are systems for… solving complex… Tasks, like, for breaking them down. Into different, responsibilities, so we have, like, multiple agents solving them. Yep."}
+{"speaker": "Interviewer", "text": "Okay, alright, and could you go ahead and tell me about one or two projects that you have done in the past that have used multi-agent systems?"}
+{"speaker": "Participant", "text": "I think, particularly, I would like to talk about the one… where I use for, like, content, like, content writing, content… So, I think, like, the multi-agents helped me In, like, the drafting… The writing, the reviewing, so, like, it was very beneficial to me. Yeah."}
+{"speaker": "Interviewer", "text": "Could you, describe a little bit more in detail, like, so, for example, what were the agents, like, how many agents that the, the system had, and, what were, like, the roles of each agent?"}
+{"speaker": "Participant", "text": "So… I had an agent provide, like, the initial drafts for the content. So, apart from, like, the agents giving me the initial draft, I also had to… to check through, but I also had some other agents, also reviewing it. I'm working on it."}
+{"speaker": "Interviewer", "text": "Okay, so… I'm, like, how many, how many agents were there? A draft agent, some reviewer agents."}
+{"speaker": "Participant", "text": "So, I didn't get us."}
+{"speaker": "Interviewer", "text": "So, like, what was the number of agents?"}
+{"speaker": "Participant", "text": "Oh, okay, sorry. Add 3 agents. One was particularly the one drafting, then the second one was more like the one I was more consultant with. We were both reviewing together, and there was one mainly to just, like. For clarity, basically, to just improve the clarity of the whole project."}
+{"speaker": "Interviewer", "text": "Yep. I see. And then for the… for this project, did you, use any frameworks, like, LaneChain or LaneGraph?"}
+{"speaker": "Participant", "text": "I would say none particularly, because I was just, like, mainly focused on the assigning of the rules."}
+{"speaker": "Interviewer", "text": "Okay."}
+{"speaker": "Participant", "text": "how to come together for what I wanted."}
+{"speaker": "Interviewer", "text": "Okay, and then by assigning roles, do you mean, like, just mainly tuning the system prompts, or the task instructions?"}
+{"speaker": "Participant", "text": "Sorry, I didn't get that."}
+{"speaker": "Interviewer", "text": "Oh, sorry. So, you said that assigning roles, so do you mean, like, refining the system prompts, for example?"}
+{"speaker": "Participant", "text": "Yes, yes, yes, I was basically working on prompts, I was refining the prompts, yeah."}
+{"speaker": "Interviewer", "text": "I see. Could you also, like, describe, that process a little bit? Like, how did you come up with the initial prompt, and then, were there any modifications, done to your prompt?"}
+{"speaker": "Participant", "text": "I'm so… basically, I started with, like, the basic rule… for each agent. by specifying the responsibilities, and over time, I would, like, review each responses, apart from even the agents review, and I reviewed by myself also, then try to see if they're, like. Inconsistent, data, trying to see, like, they are missing part of the work."}
+{"speaker": "Interviewer", "text": "Yeah."}
+{"speaker": "Participant", "text": "I give that, and I refine the prompts based on that."}
+{"speaker": "Interviewer", "text": "I see. And so in the end, could you, like, what was the… The overall structure of the prompt that you ended up with."}
+{"speaker": "Participant", "text": "Generate drafts. Review the results, then adjust the, prompts."}
+{"speaker": "Interviewer", "text": "Okay, and then just making sure, so, like, Did the prompt also include, like, the communication schema between agents?"}
+{"speaker": "Participant", "text": "Yeah, the, agents were not, interacting directly. So… We, like, the results are gathered in a particular location, so it was not like… A direct interaction."}
+{"speaker": "Interviewer", "text": "Okay, okay. And then, just to clarify, so you said, the system… the system is for, content writing. Can I know which, like, what kind of content is it writing?"}
+{"speaker": "Participant", "text": "I would rather not answer that."}
+{"speaker": "Interviewer", "text": "I'm sorry?"}
+{"speaker": "Participant", "text": "I said I would rather not go into the."}
+{"speaker": "Interviewer", "text": "Oh, okay, that's fine. And Can I know if it's for, if this… if this system or this project is done for a company, in the industry?"}
+{"speaker": "Participant", "text": "Yeah, it's a company work."}
+{"speaker": "Interviewer", "text": "Okay, I see, I see. Okay. And, so… when you were developing the system, like, what was the biggest challenge that you have? So, for example, like, what was the most common bug, that you ran into, or which part of development that, took the longest time?"}
+{"speaker": "Participant", "text": "I think, to be very honest. it has to be, like, my prompts. Sometimes they were not so clear, they were ambiguous, so the, the agents would, like, do the same thing over and over again, so I had to, like, be very clear. So, like, the most common issue was, for me, the prompting."}
+{"speaker": "Interviewer", "text": "I see, I see. So, like, so you said prompting, and then in the end, did you find anything helpful, or, any, like, prompting patterns, or, some tricks that you used that would, you know, make the agents more predictable?"}
+{"speaker": "Participant", "text": "I didn't particularly use any trick, well, I just made sure to be more consistent and to just be careful about the way I define the rules for each of the agents."}
+{"speaker": "Interviewer", "text": "I see, I see. And okay. So… Sorry, let me just, look. Okay, yeah. So, could you tell me about, like, how did you, monitor the system? For example, Okay, so for example, like, how did you make sure that the system is behaving the way that you want? So for example, like. some… some of my other interviewees said they would, manually look at the inputs and outputs, by themselves, and some people… some people also used, like, tools that… for example, there's, like, a dashboard for them to monitor the system."}
+{"speaker": "Participant", "text": "Yeah… So, it's the same thing I've been quite saying earlier. from the agent reviewing it, I also had to review on my end, like, manually. I also had to do that. So, it was mainly me reviewing the imputes, mainly me reviewing the output."}
+{"speaker": "Interviewer", "text": "Okay, I see. And, just to think out loud, it doesn't have to be this project. So, let's say you are building some multi-agent system. So, like, what do you think would be helpful for you to, you know, monitor the system, or evaluating the system, In the way that you know the system is behaving that you're… you're expecting."}
+{"speaker": "Participant", "text": "I think there should be, automated checks, so instead of me, like, reviewing manually, there should be, like, expectations, like, already defined. So, I don't have to keep checking in, keep checking in their expectations, so if the, output doesn't meet up, the bot knows that, like, the agents know that they have to redo the work visiting. So, like, an automated system."}
+{"speaker": "Interviewer", "text": "I see, I see. Whoa, anything else?"}
+{"speaker": "Participant", "text": "I'm sorry, I didn't get the, consent form, because I was checking through and I didn't see it, so could you please resend it?"}
+{"speaker": "Interviewer", "text": "You said, are we talking about the last question?"}
+{"speaker": "Participant", "text": "No, no, I meant the consent form."}
+{"speaker": "Interviewer", "text": "I didn't get it. I'm checking for my mail, and I didn't get it, so could you please resend it? Okay. I see. And, So, okay, I'm so sorry, but could you repeat that? Because, I realized I paused the recording for the consent."}
+{"speaker": "Participant", "text": "Oh, God. I said I would define the scope."}
+{"speaker": "Interviewer", "text": "Yep."}
+{"speaker": "Participant", "text": "And, like, enforce rules for each agent to not go beyond the scope. So every agent knows particularly what they're doing. Like, what is expected of them, what they should do and what they should not do."}
+{"speaker": "Interviewer", "text": "Okay, so, basically the constraints, and then clear definition of the tasks, so making… just making sure they're staying in scope."}
+{"speaker": "Participant", "text": "Yes."}
+{"speaker": "Interviewer", "text": "Okay. And… this is going to be a more general question, so it doesn't have to be the project that you just talked about. So, like, for what type of problems do you think a multi-agent system work the best? And the worst."}
+{"speaker": "Participant", "text": "I think the best should be… knowledge beasts. work, like, complex knowledge base that requires critical thinking, because not everybody can work So quick. I wouldn't say that it's a worst poll. I think sole responsibility. Sole responsibilities, like, ones that you don't have to break down the tasks. I can't exactly think of one right now, but for… Complex ones are, like, knowledge-based, reasoning-based, you have to break down the tasks, so multiple agent systems are the best for those."}
+{"speaker": "Interviewer", "text": "Okay, so for tasks that are, decomposable…"}
+{"speaker": "Participant", "text": "Dear."}
+{"speaker": "Interviewer", "text": "Components. I see, I see. Okay. And then, just… So, I asked you about, like, features that would help you with Monitor, and for now, could you think about, like, just anything Any feature, including, like, the developing framework. What are something that you think that would be helpful in terms of just developing a multi-agent system overall?"}
+{"speaker": "Participant", "text": "Honestly, I don't have any in mind. I'll just see… like… Honestly, I don't have any in mind."}
+{"speaker": "Interviewer", "text": "Okay, that's fine. That's fine. And that was actually all the questions I have. I can stop the recording."}

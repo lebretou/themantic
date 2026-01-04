@@ -3,9 +3,6 @@ import json
 import glob
 import argparse
 from anthropic import Anthropic
-from dotenv import load_dotenv
-
-load_dotenv()
 
 # --------------------------------------------------------------------------------
 # USER CONFIGURATION
@@ -88,13 +85,7 @@ def main():
     args = parser.parse_args()
 
     # Initialize Anthropic client
-    # Ensure ANTHROPIC_API_KEY is set in your environment variables
-    api_key = os.environ.get("ANTHROPIC_API_KEY")
-    if not api_key:
-        print("Error: ANTHROPIC_API_KEY environment variable not set.")
-        return
-
-    client = Anthropic(api_key=api_key)
+    client = Anthropic(api_key="")
 
     output_dir = args.output_dir
 
